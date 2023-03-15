@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 8247705066116958943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.0194}
-  m_LocalScale: {x: 120, y: 120, z: 120}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1646747506166607058}
@@ -312,11 +312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db14f41dccaa4a5083bf7f3a09db616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialScale: {x: 120, y: 120, z: 120}
   _stoneAnimator: {fileID: 9130157497571243912}
 --- !u!95 &9130157497571243912
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -333,7 +332,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!135 &-8619271367637515522
 SphereCollider:
   m_ObjectHideFlags: 0

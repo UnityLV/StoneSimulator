@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using Stone.Interfaces;
+﻿using Stone.Interfaces;
 using UnityEngine;
 using Zenject;
 
@@ -8,13 +6,6 @@ namespace Stone
 {
     public class StoneAnimatorController : MonoBehaviour, IStoneAnimatorCallbackInvoke
     {
-        private Coroutine _scaleCoroutine;
-        [SerializeField]
-        private Vector3 _initialScale;
-        private const float DELTA_SCALE = 0.1f;
-        private const int SCALE_TIME = 15;
-
-
         [SerializeField]
         private Animator _stoneAnimator;
 
@@ -79,19 +70,5 @@ namespace Stone
             _stoneAnimatorCallbackInvoke.OnStoneSpawnedInvoke();
         }
 
-        private IEnumerator IScaleAnimation()
-        {
-            Debug.Log($"Why we still here {_initialScale * (1 + DELTA_SCALE)}");
-            yield return StartCoroutine(transform.ScaleWithLerp(_initialScale, _initialScale * (1 + DELTA_SCALE),
-                SCALE_TIME));
-            Debug.Log("Why we still here");
-            yield return StartCoroutine(transform.ScaleWithLerp(_initialScale * (1 + DELTA_SCALE),
-                _initialScale * (1 - DELTA_SCALE), SCALE_TIME));
-            Debug.Log("Why we still here");
-            yield return StartCoroutine(transform.ScaleWithLerp(_initialScale * (1 - DELTA_SCALE), _initialScale,
-                SCALE_TIME));
-            Debug.Log("Why we still here");
-            _stoneAnimatorCallbackInvoke.OnStoneClickedInvoke();
-        }
     }
 }

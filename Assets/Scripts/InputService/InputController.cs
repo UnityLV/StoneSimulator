@@ -23,7 +23,7 @@ namespace InputService
             _cameraInput.CameraTouch.Swipe.performed += context =>
             {
                 if (Touch.activeTouches.Count == 1)
-                    OnRotationSwipe?.Invoke(_cameraInput.CameraTouch.Swipe.ReadValue<Vector2>());
+                    OnRotationSwipe?.Invoke(-_cameraInput.CameraTouch.Swipe.ReadValue<Vector2>());
             };
             _cameraInput.CameraTouch.TouchContact.started += context => StartZoom();
             _cameraInput.CameraTouch.TouchContact.canceled += context => EndZoom();
@@ -36,7 +36,7 @@ namespace InputService
             _cameraInput.CameraMouse.Drag.canceled += context => _isMouseDrag = false;
             _cameraInput.CameraMouse.DragDelta.performed += context =>
             {
-                if (_isMouseDrag) OnRotationSwipe?.Invoke(_cameraInput.CameraMouse.DragDelta.ReadValue<Vector2>());
+                if (_isMouseDrag) OnRotationSwipe?.Invoke(-_cameraInput.CameraMouse.DragDelta.ReadValue<Vector2>());
             };
         }
 

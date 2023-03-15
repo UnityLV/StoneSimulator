@@ -19,7 +19,7 @@ namespace CameraRotation
         [SerializeField, Range(1, 5), Header("Zoom properties")]
         private float _minZoom;
         
-        [SerializeField, Range(5, 15)]
+        [SerializeField, Range(5, 50)]
         private float _maxZoom;
         
         [SerializeField, Range(-5,5)]
