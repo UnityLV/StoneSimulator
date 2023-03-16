@@ -1,4 +1,5 @@
 using GameScene.Interfaces;
+using Mirror;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +11,7 @@ namespace GameScene
 
         private string _currentAsyncLoad = "";
 
-        public void BeginLoadGameScene(GameSceneType state)
+     public void BeginLoadGameScene(GameSceneType state)
         {
             _currentAsyncLoad = state switch
             {
@@ -18,8 +19,7 @@ namespace GameScene
                 GameSceneType.MainMenu => "MainMenuScene",
                 _ => _currentAsyncLoad
             };
-
-            _asyncOperation = SceneManager.LoadSceneAsync(_currentAsyncLoad);
+            _asyncOperation = SceneManager.LoadSceneAsync(_currentAsyncLoad, LoadSceneMode.Additive);
             _asyncOperation.allowSceneActivation = false;
         }
 
