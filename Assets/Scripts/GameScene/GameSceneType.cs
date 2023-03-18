@@ -2,6 +2,7 @@
 {
     public enum GameSceneType
     {
+        Boot,
         MainMenu,
         Game
     }

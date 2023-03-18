@@ -6,11 +6,6 @@ namespace Stone
     public class StoneEventController : IStoneClickEvents, IStoneClickEventsInvoke, IStoneAnimatorEvents,
         IStoneAnimatorEventsInvoke, IStoneAnimatorEventCallback, IStoneAnimatorCallbackInvoke
     {
-
-        public StoneEventController()
-        {
-            OnStoneClick += OnStoneClickPlayInvoke;
-        }
         
         public event Action OnStoneClick;
 

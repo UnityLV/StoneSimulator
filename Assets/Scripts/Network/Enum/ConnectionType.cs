@@ -2,6 +2,7 @@
 {
     public enum ConnectionType
     {
-        
+        Client,
+        Server
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections;
+using System.Threading.Tasks;
 using GameScene;
 using GameScene.Interfaces;
 using UnityEngine;
@@ -22,6 +23,12 @@ namespace InGameUI
 
         private void Start()
         {
+            StartCoroutine(ILoadSceneAwait());
+        }
+
+        private IEnumerator ILoadSceneAwait()
+        {
+            yield return new WaitForSecondsRealtime(1);
             _gameSceneService.BeginLoadGameScene(GameSceneType.MainMenu);
         }
 

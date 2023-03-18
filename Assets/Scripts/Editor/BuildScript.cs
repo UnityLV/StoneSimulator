@@ -7,7 +7,7 @@ public class BuildScript
 {
     private static readonly string[] sceneList = new[]
     {
-        "Assets/Scenes/MainMenuScene.unity", "Assets/Scenes/GameplayScene.unity"
+        "Assets/Scenes/BootScene.unity",  "Assets/Scenes/MainMenuScene.unity", "Assets/Scenes/GameplayScene.unity"
     };
 
     [MenuItem("Build/Build All")]

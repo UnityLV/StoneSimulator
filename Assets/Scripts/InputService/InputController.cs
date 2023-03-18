@@ -20,20 +20,24 @@ namespace InputService
         private void Awake()
         {
             _cameraInput = new CameraInput();
+            
             _cameraInput.CameraTouch.Swipe.performed += context =>
             {
                 if (Touch.activeTouches.Count == 1)
                     OnRotationSwipe?.Invoke(-_cameraInput.CameraTouch.Swipe.ReadValue<Vector2>());
             };
+            
             _cameraInput.CameraTouch.TouchContact.started += context => StartZoom();
             _cameraInput.CameraTouch.TouchContact.canceled += context => EndZoom();
+            
             _cameraInput.CameraMouse.Zoom.performed += context =>
             {
                 OnZoomChange?.Invoke(_cameraInput.CameraMouse.Zoom.ReadValue<float>() / 360f);
-                Debug.Log(_cameraInput.CameraMouse.Zoom.ReadValue<float>() / 360f);
             };
+            
             _cameraInput.CameraMouse.Drag.started += context => _isMouseDrag = true;
             _cameraInput.CameraMouse.Drag.canceled += context => _isMouseDrag = false;
+            
             _cameraInput.CameraMouse.DragDelta.performed += context =>
             {
                 if (_isMouseDrag) OnRotationSwipe?.Invoke(-_cameraInput.CameraMouse.DragDelta.ReadValue<Vector2>());
@@ -82,6 +86,11 @@ namespace InputService
         {
             EnhancedTouchSupport.Enable();
             _cameraInput.Enable();
+       }
+
+        private void OnDestroy()
+        {
+            Debug.Log("DESTROYED!!!");
         }
     }
 }

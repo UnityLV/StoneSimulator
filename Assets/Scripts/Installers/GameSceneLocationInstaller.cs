@@ -6,6 +6,7 @@ using InputService;
 using InputService.Interfaces;
 using LocationGameObjects;
 using LocationGameObjects.Interfaces;
+using Network.Interfaces;
 using Stone;
 
 namespace Installers
@@ -28,6 +29,8 @@ namespace Installers
            BindLocationFactory();
            BindStoneEventClick();
            BindUIHealthBar();
+           BindNetworkCallbacks();
+           BindNetworkManager();
        }
 
        private void BindUIHealthBar()
@@ -50,10 +53,21 @@ namespace Installers
            Container.Bind<IGetLocationGameObjectService>().FromInstance(_locationsObjectDataHolder).AsSingle();
            Container.Bind<IGetLocationCountService>().FromInstance(_locationsObjectDataHolder).AsSingle();
        }
+       
+       private void BindNetworkManager()
+       {
+           Container.Bind<INetworkManagerService>().FromInstance(BootSceneInstaller.CustomNetworkManager).AsSingle().NonLazy();
+       }
 
        private void BindController()
        {
            Container.Bind<IInputEvents>().FromInstance(_inputController).AsSingle();
+       }
+       
+       
+       private void BindNetworkCallbacks()
+       {
+           Container.Bind<INetworkCallbacks>().FromInstance(BootSceneInstaller.NetworkCallbackObject).AsSingle().NonLazy();
        }
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace Network.Interfaces
+﻿using Network.Enum;
+
+namespace Network.Interfaces
 {
-    public interface INetworkManagerSevice
+    public interface INetworkManagerService
     {
-        
+        public ConnectionType GetConnectionType();
     }
 }

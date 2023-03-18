@@ -15,11 +15,12 @@ namespace GameScene
         {
             _currentAsyncLoad = state switch
             {
+                GameSceneType.Boot => "BootScene",
                 GameSceneType.Game => "GameplayScene",
                 GameSceneType.MainMenu => "MainMenuScene",
                 _ => _currentAsyncLoad
             };
-            _asyncOperation = SceneManager.LoadSceneAsync(_currentAsyncLoad, LoadSceneMode.Additive);
+            _asyncOperation = SceneManager.LoadSceneAsync(_currentAsyncLoad);
             _asyncOperation.allowSceneActivation = false;
         }
 
