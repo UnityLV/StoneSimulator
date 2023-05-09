@@ -1,4 +1,5 @@
 ﻿using System;
+using CameraRotation;
 using Stone.Interfaces;
 using UnityEngine;
 using Zenject;
@@ -18,7 +19,6 @@ namespace Stone
         }
 
         #endregion
- 
         
         public void OnObjectClick()
         {

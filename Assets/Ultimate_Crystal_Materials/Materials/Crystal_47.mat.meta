@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b42b789e708f1bf4697c10ed0723bdc6
+labels:
+- Crystal
+- Floor
+- Material
+- Pbr
+- Wall
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -16,8 +16,7 @@ namespace GameScene
             _currentAsyncLoad = state switch
             {
                 GameSceneType.Boot => "BootScene",
-                GameSceneType.Game => "GameplayScene",
-                GameSceneType.MainMenu => "MainMenuScene",
+                GameSceneType.Game => "GameScene",
                 _ => _currentAsyncLoad
             };
             _asyncOperation = SceneManager.LoadSceneAsync(_currentAsyncLoad);

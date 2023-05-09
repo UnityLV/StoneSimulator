@@ -3,7 +3,72 @@ guid: f37d0ff08cae2bb45ba05a2537ace885
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ROCKS_SMALL
+    second: {fileID: 2100000, guid: 7289305bb9897354bb6bcb0d84a4072b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flame
+    second: {fileID: 2100000, guid: 06458db50796a92449654e0e5d8a428f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: foliage_baked
+    second: {fileID: 2100000, guid: 6dbe1488b7112f34db8d4e896f4bdd76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: house_baked
+    second: {fileID: 2100000, guid: 54d9483cce51e764ea30eb382f142f53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipes_moving_baked
+    second: {fileID: 2100000, guid: 6a9d611d3e7a52a4686c3e19d29343ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: platform_calm
+    second: {fileID: 2100000, guid: 485a07b94001ed84680fff1c87e0ce87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: platform_unstable_baked
+    second: {fileID: 2100000, guid: 1a390b42b76c17d4b840b6603a93a6e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_A
+    second: {fileID: 2100000, guid: fe39efda66510964eb5384cb31276eb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_B
+    second: {fileID: 2100000, guid: fe39efda66510964eb5384cb31276eb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_middle_baked
+    second: {fileID: 2100000, guid: 7289305bb9897354bb6bcb0d84a4072b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_right_baked
+    second: {fileID: 2100000, guid: b74f8a8bd9f1df5438418316fc79fefc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_top_baked
+    second: {fileID: 2100000, guid: dbb5165e36a92214881e8c810ba32540, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stones
+    second: {fileID: 2100000, guid: fe39efda66510964eb5384cb31276eb0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -31,7 +96,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Scene
+      takeName: Scene
+      internalID: -623603649343465320
+      firstFrame: 0
+      lastFrame: 360
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []

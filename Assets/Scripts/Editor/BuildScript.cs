@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,13 +6,13 @@ public class BuildScript
 {
     private static readonly string[] sceneList = new[]
     {
-        "Assets/Scenes/BootScene.unity",  "Assets/Scenes/MainMenuScene.unity", "Assets/Scenes/GameplayScene.unity"
+        "Assets/Scenes/BootScene.unity", "Assets/Scenes/GameScene.unity"
     };
 
     [MenuItem("Build/Build All")]
     public static void BuildAll()
     {
-        BuildWindowsServer(); 
+        BuildWindowsServer();
         BuildLinuxServer();
         BuildWindowsClient();
     }
@@ -28,7 +27,8 @@ public class BuildScript
         buildPlayerOptions.subtarget = (int) StandaloneBuildSubtarget.Server;
         buildPlayerOptions.options = BuildOptions.CompressWithLz4HC;
 
-        Debug.Log($"Building Server (Windows)..., Target {buildPlayerOptions.target}, SubTarget {buildPlayerOptions.subtarget}");
+        Debug.Log(
+            $"Building Server (Windows)..., Target {buildPlayerOptions.target}, SubTarget {buildPlayerOptions.subtarget}");
         BuildPipeline.BuildPlayer(buildPlayerOptions);
         Console.WriteLine("Built Server (Windows).");
     }

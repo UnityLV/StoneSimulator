@@ -87,10 +87,5 @@ namespace InputService
             EnhancedTouchSupport.Enable();
             _cameraInput.Enable();
        }
-
-        private void OnDestroy()
-        {
-            Debug.Log("DESTROYED!!!");
-        }
     }
 }

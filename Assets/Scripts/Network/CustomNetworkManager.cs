@@ -1,10 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using GameScene;
 using GameScene.Interfaces;
 using Mirror;
 using Network.Enum;
 using Network.Interfaces;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Networking;
 using Zenject;
 
 namespace Network
@@ -27,21 +30,18 @@ namespace Network
         private ConnectionType _currentConnectionType;
         
         private const string LOCALHOST_ADDRESS = "localhost";
-        private const string IP_ADDRESS = "80.80.109.15";
+        private const string IP_ADDRESS = "3.127.138.57";
 
         public override void Start()
         {
-// #if ENABLE_IL2CPP
-//                 nonalloc = false
-// #endif
-            //_gameSceneService.BeginTransaction();
+            //base.Start();
             
-            //TryConnect();
+            TryConnect();
         }
 
         private void TryConnect()
         {
-            networkAddress = LOCALHOST_ADDRESS;
+            networkAddress = IP_ADDRESS;
 #if UNITY_SERVER
 Debug.Log("Try start server");
             StartServer();
@@ -56,7 +56,8 @@ Debug.Log("Try start server");
         {
             base.OnStartServer();
             _currentConnectionType = ConnectionType.Server;
-            _gameSceneService.BeginTransaction();
+            //_gameSceneService.BeginTransaction();
+            NetworkServer.SpawnObjects();
         }
 
         public override void OnServerConnect(NetworkConnectionToClient conn)
@@ -66,17 +67,16 @@ Debug.Log("Try start server");
             GameObject player = Instantiate(playerPrefab);
             DontDestroyOnLoad(player);
             NetworkServer.AddPlayerForConnection(conn, player);
-            NetworkServer.SpawnObjects();
         }
 
          public override async void OnClientDisconnect()
          {
              base.OnClientDisconnect();
-             //for (int i = 0; i < 5; i++) await Task.Yield();
+             for (int i = 0; i < 5; i++) await Task.Yield();
              //TryConnect();
-             _gameSceneService.BeginTransaction();
-             _gameSceneService.BeginLoadGameScene(GameSceneType.Boot);
-             _gameSceneService.BeginTransaction();
+             //_gameSceneService.BeginTransaction();
+             //_gameSceneService.BeginLoadGameScene(GameSceneType.Boot);
+             //_gameSceneService.BeginTransaction();
          }
         
         public override async void OnClientConnect()
@@ -85,7 +85,7 @@ Debug.Log("Try start server");
             Debug.Log("Join on server");
             for (int i = 0; i < 60; i++) await Task.Yield();
             _currentConnectionType = ConnectionType.Client;
-            _gameSceneService.BeginTransaction();
+            //_gameSceneService.BeginTransaction();
         }
 
         //
@@ -98,6 +98,11 @@ Debug.Log("Try start server");
         public ConnectionType GetConnectionType()
         {
             return  _currentConnectionType;
+        }
+
+        public void SetPort(string port)
+        {
+            GetComponent<TelepathyTransport>().port = Convert.ToUInt16(port);
         }
     }
 }

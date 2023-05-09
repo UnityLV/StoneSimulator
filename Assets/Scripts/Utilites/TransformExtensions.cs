@@ -15,7 +15,6 @@ public static class TransformExtensions
         {
             percentage = (float) frame / (float) countFrame;
             transform.localScale = Vector2.Lerp(initialScale, finalScale, percentage);
-            Debug.Log($"Current scale {transform.localScale}");
             frame += 1;
             yield return null;
         }
@@ -31,7 +30,7 @@ public static class TransformExtensions
         while (frame <= countFrame)
         {
             percentage = (float) frame / (float) countFrame;
-            transform.position = Vector2.Lerp(initalPosition, finalPosition, percentage);
+            transform.position = Vector3.Lerp(initalPosition, finalPosition, percentage);
             frame += 1;
             yield return null;
         }
