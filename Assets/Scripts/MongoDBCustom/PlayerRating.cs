@@ -24,7 +24,6 @@ public class PlayerRating : MonoBehaviour
     [Inject]
     private void Construct(
         IStoneClickEvents stoneClickEvents,
-        IStoneAnimatorEventsInvoke stoneAnimatorEventsInvoke,
         IClickDataService clickDataService
     )
     {
@@ -53,7 +52,7 @@ public class PlayerRating : MonoBehaviour
 
     private void UpdateRating()
     {
-        _ratingSaver.Save(_clickData.GetClickCount());
+        _ratingSaver?.Save(_clickData.GetClickCount());
         _lastUpdateTimestamp = DateTime.Now;
     }
 }

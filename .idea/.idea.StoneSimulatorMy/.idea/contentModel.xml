@@ -2070,13 +2070,15 @@
           <e p="MongoDBCustom" t="Include">
             <e p="DBKeys.cs" t="Include" />
             <e p="DeviceInfo.cs" t="Include" />
+            <e p="Filters.cs" t="Include" />
             <e p="IDBProvider.cs" t="Include" />
             <e p="MongoDBConnectionConfig.cs" t="Include" />
             <e p="MongoDBConnectionData.cs" t="Include" />
+            <e p="MongoDBConnectionDataHolder.cs" t="Include" />
             <e p="MongoDBConnector.cs" t="Include" />
-            <e p="MongoDBDataHolder.cs" t="Include" />
             <e p="MongoDBPlayerDataExample.cs" t="Include" />
             <e p="MongoDBProvider.cs" t="Include" />
+            <e p="PlayerRating.cs" t="Include" />
           </e>
           <e p="Network" t="Include">
             <e p="CustomNetworkManager.cs" t="Include" />
@@ -2121,7 +2123,6 @@
             </e>
             <e p="PlayerDataHolder.cs" t="Include" />
           </e>
-          <e p="PlayerRating.cs" t="Include" />
           <e p="SaveSystem" t="Include">
             <e p="BinarySaveSystem.cs" t="Include" />
             <e p="ISaveSystem.cs" t="Include" />

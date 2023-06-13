@@ -11,41 +11,42 @@ namespace MongoDBCustom
 
         private void OnEnable()
         {
-            _jsonExample = ( GetPlayerDataById());
+            _jsonExample = (GetPlayerDataById().ToString());
         }
 
-        private string GetPlayerDataById()
+        private BsonDocument GetPlayerDataById()
         {
-            var filter = Builders<BsonDocument>.Filter.Eq(DBKeys.DeviceID, DeviceInfo.GetDeviceId());
-            var document = MongoDBDataHolder.Data.Collection.Find(filter).FirstOrDefault();
+            BsonDocument playerData = FindPlayerData();
 
-            if (document != null)
+            if (playerData == null)
             {
-                return document.ToJson();
+                playerData = new BsonDocument
+                {
+                    {DBKeys.DeviceID, DeviceInfo.GetDeviceId()},
+                };
+
+                InsertPlayerData(playerData);
+                Debug.Log("Player data insert");
+            }
+            else
+            {
+                Debug.Log("Player data find");
             }
 
-            return "";
+            return playerData;
+        }
+
+        public BsonDocument FindPlayerData()
+        {
+            var filter = Filters.DeviseIDFilter();
+            BsonDocument playerData = MongoDBConnectionDataHolder.Data.Collection.Find(filter).FirstOrDefault();
+
+            return playerData;
+        }
+
+        public void InsertPlayerData(BsonDocument playerData)
+        {
+            MongoDBConnectionDataHolder.Data.Collection.InsertOne(playerData);
         }
     }
-
-
-    // public class JsonFormatter
-    // {
-    //     public static string FormatJson(string jsonString)
-    //     {
-    //         try
-    //         {
-    //             JToken parsedJson = JToken.Parse(jsonString);
-    //             string formattedJson = parsedJson.ToString(Formatting.Indented);
-    //             return formattedJson;
-    //         }
-    //         catch (JsonReaderException)
-    //         {
-    //             // Обработка ошибки парсинга некорректного JSON
-    //             return jsonString;
-    //         }
-    //     }
-    // }
-
-    
 }

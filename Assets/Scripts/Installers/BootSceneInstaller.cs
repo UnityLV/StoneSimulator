@@ -13,7 +13,7 @@ namespace Installers
 
         [SerializeField] private MongoDBProvider _mongoDBProvider;
 
-        [SerializeField] private MongoDBDataHolder _mongoDBDataHolder;
+        [SerializeField] private MongoDBConnectionDataHolder _mongoDBConnectionDataHolder;
 
 
         public static CustomNetworkManager CustomNetworkManager;
@@ -23,7 +23,7 @@ namespace Installers
             BindNetworkManager();
             
             Container.Bind<IDBProvider>().FromInstance(_mongoDBProvider).AsSingle().NonLazy();
-            Container.Bind<MongoDBDataHolder>().FromInstance(_mongoDBDataHolder).AsSingle().NonLazy();
+            Container.Bind<MongoDBConnectionDataHolder>().FromInstance(_mongoDBConnectionDataHolder).AsSingle().NonLazy();
         }
 
         private void BindNetworkManager()

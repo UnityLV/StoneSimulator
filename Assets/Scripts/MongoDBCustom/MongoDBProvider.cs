@@ -47,14 +47,16 @@ namespace MongoDBCustom
 
         private void HandleSuccessConnect(MongoDBConnectionData connection)
         {
-            SuccessConnect?.Invoke(connection);
             Debug.Log($"{nameof(MongoDBConnector)} SuccessConnect");
+            SuccessConnect?.Invoke(connection);
+            
         }
 
         private void HandleFailConnect(Exception ex)
         {
-            FailedConnect?.Invoke(ex);
             Debug.LogError($"{nameof(MongoDBConnector)} FailedConnect {ex.Message}");
+            FailedConnect?.Invoke(ex);
+           
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Installers
            BindInGameUIController();
            BindCameraRotation();
            
-           Container.BindInterfacesTo<PlayerRating>().FromInstance(_playerRating).AsSingle();
+           Container.BindInterfacesAndSelfTo<PlayerRating>().FromInstance(_playerRating).AsSingle();
        }
 
        private void BindCameraRotation()

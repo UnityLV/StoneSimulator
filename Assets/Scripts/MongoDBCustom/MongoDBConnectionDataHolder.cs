@@ -5,7 +5,10 @@ using Zenject;
 
 namespace MongoDBCustom
 {
-    public class MongoDBDataHolder : MonoBehaviour
+    
+    
+    
+    public class MongoDBConnectionDataHolder : MonoBehaviour
     {
         [SerializeField] private UnityEvent _onGetData; 
 
@@ -18,8 +21,7 @@ namespace MongoDBCustom
             _dbProvider.SuccessConnect += OnSuccessConnect;
         }
 
-        public static MongoDBConnectionData Data;
-
+        public static MongoDBConnectionData Data { get; private set; }
 
         private void OnDisable()
         {

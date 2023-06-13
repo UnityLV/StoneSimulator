@@ -3,61 +3,85 @@ using GameState.Interfaces;
 using MainMenuUI.Inrefaces;
 using MainMenuUI.LocationMainMenu;
 using PlayerData.Interfaces;
+using Stone.Interfaces;
 using TMPro;
 using UnityEngine;
 using Zenject;
 
 namespace MainMenuUI
 {
-    public class MainMenuController : MonoBehaviour,IMainMenuService
+  
+    
+    
+    public class MainMenuController : MonoBehaviour, IMainMenuService
     {
-        [SerializeField]
-        private TMP_InputField _nicknameText;
+        [SerializeField] private TMP_Text _clickText;
 
-        [SerializeField]
-        private TextMeshProUGUI _currentHealth;
+        [SerializeField] private TMP_InputField _nicknameText;
 
-        [SerializeField]
-        private GameObject _mainMenuUI;
+        [SerializeField] private TextMeshProUGUI _currentHealth;
 
-        [SerializeField]
-        private LocationMainMenuController _locationMainMenuController;
+        [SerializeField] private GameObject _mainMenuUI;
 
-        
+        [SerializeField] private LocationMainMenuController _locationMainMenuController;
+
+
         #region Dependency
 
         private INicknameDataService _nicknameDataService;
+        private IClickDataService _clickDataService;
         private IHealthService _healthService;
         private IGameStateCallbacks _gameStateCallbacks;
-        
+        private IStoneClickEvents _stoneClickEvents;
+
         [Inject]
         private void Construct(
             INicknameDataService nicknameDataService,
             IHealthService healthService,
-            IGameStateCallbacks gameStateCallbacks)
+            IGameStateCallbacks gameStateCallbacks,IClickDataService clickDataService,IStoneClickEvents stoneClickEvents)
         {
             _nicknameDataService = nicknameDataService;
             _healthService = healthService;
             _gameStateCallbacks = gameStateCallbacks;
+            _clickDataService = clickDataService;
+            _stoneClickEvents = stoneClickEvents;
+           
         }
+
 
         #endregion
 
         public void SubscribeCallbacks()
         {
             _gameStateCallbacks.OnHealthChanged += UpdateHealth;
+            _stoneClickEvents.OnStoneClick += StoneClickEventsOnOnStoneClick;
         }
 
         public void UnsubscribeCallbacks()
         {
             _gameStateCallbacks.OnHealthChanged -= UpdateHealth;
+            _stoneClickEvents.OnStoneClick -= StoneClickEventsOnOnStoneClick;
+
         }
-        
+
         private void Start()
         {
             UpdateNicknameText();
             SubscribeCallbacks();
+            UpdateClickText();
         }
+
+      
+        private void StoneClickEventsOnOnStoneClick()
+        {
+            UpdateClickText();
+        }
+
+        private void UpdateClickText()
+        {
+            _clickText.text = _clickDataService.GetClickCount().ToString();
+        }
+        
 
         public void UpdateNicknameText()
         {
@@ -95,7 +119,7 @@ namespace MainMenuUI
 
         public void SetOnCompleteLocationClickAction(Action<int> action)
         {
-            _locationMainMenuController.SetOnCompleteLocationClickAction(action); 
+            _locationMainMenuController.SetOnCompleteLocationClickAction(action);
         }
 
         public void SetInProgressLocationClickAction(Action action)
