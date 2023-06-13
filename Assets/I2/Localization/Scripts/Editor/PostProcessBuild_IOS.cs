@@ -26,9 +26,9 @@ namespace I2.Loc
 				
             try
             {
-			//----[ Export localized languages to the info.plist ]---------
+			//----[ Export localized languages to the data.plist ]---------
 
-                string plistPath = pathToBuiltProject + "/Info.plist";
+                string plistPath = pathToBuiltProject + "/Data.plist";
                 PlistDocument plist = new PlistDocument();
                 plist.ReadFromString(File.ReadAllText(plistPath));
 

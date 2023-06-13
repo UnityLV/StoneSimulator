@@ -30,7 +30,7 @@ namespace Network
         private ConnectionType _currentConnectionType;
         
         private const string LOCALHOST_ADDRESS = "localhost";
-        private const string IP_ADDRESS = "3.127.138.57";
+        private const string IP_ADDRESS = "181.ip.ply.gg";
 
         public override void Start()
         {

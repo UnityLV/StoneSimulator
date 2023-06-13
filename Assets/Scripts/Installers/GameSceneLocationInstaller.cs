@@ -38,6 +38,9 @@ namespace Installers
 
         [SerializeField]
         private CameraRotationObject _cameraRotation;
+
+        [SerializeField] private PlayerRating _playerRating;
+
         
        public override void InstallBindings()
        {
@@ -53,6 +56,8 @@ namespace Installers
            BindMainMenuController();
            BindInGameUIController();
            BindCameraRotation();
+           
+           Container.BindInterfacesTo<PlayerRating>().FromInstance(_playerRating).AsSingle();
        }
 
        private void BindCameraRotation()

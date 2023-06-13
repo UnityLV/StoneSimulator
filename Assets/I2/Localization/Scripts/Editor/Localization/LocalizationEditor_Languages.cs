@@ -425,7 +425,7 @@ namespace I2.Loc
             lstyle.richText = true;
 
             GUILayout.BeginHorizontal ();
-                GUILayout.Label (new GUIContent("Store Integration:", "Setups the stores to detect that the game has localization, Android adds strings.xml for each language. IOS modifies the Info.plist"), EditorStyles.boldLabel, GUILayout.Width(160));
+                GUILayout.Label (new GUIContent("Store Integration:", "Setups the stores to detect that the game has localization, Android adds strings.xml for each language. IOS modifies the Data.plist"), EditorStyles.boldLabel, GUILayout.Width(160));
 				GUILayout.FlexibleSpace();
 
 					GUILayout.Label( new GUIContent( "<color=green><size=16>\u2713</size></color>  IOS", "Setups the stores to show in iTunes and the Appstore all the languages that this app supports, also localizes the app name if available" ), lstyle, GUILayout.Width( 90 ) );

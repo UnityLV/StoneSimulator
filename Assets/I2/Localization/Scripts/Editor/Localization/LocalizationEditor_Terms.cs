@@ -175,7 +175,7 @@ namespace I2.Loc
             OnGUI_Keys_ListSelection( KeyListFilterID );    // Selection Buttons
 			
 //			if (!bAnyValidUsage)
-//				EditorGUILayout.HelpBox("Use (Tools\\Parse Terms) to find how many times each of the Terms are used", UnityEditor.MessageType.Info);
+//				EditorGUILayout.HelpBox("Use (Tools\\Parse Terms) to find how many times each of the Terms are used", UnityEditor.MessageType.Data);
 
 			if (ShowTools)
 			{

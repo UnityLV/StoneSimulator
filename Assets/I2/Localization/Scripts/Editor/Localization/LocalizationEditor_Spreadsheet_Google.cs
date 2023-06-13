@@ -32,7 +32,7 @@ namespace I2.Loc
 
 #if UNITY_WEBPLAYER
 			mConnection_Text = string.Empty;
-			EditorGUILayout.HelpBox("Google Synchronization is not supported when in WebPlayer mode." + mConnection_Text, MessageType.Info);
+			EditorGUILayout.HelpBox("Google Synchronization is not supported when in WebPlayer mode." + mConnection_Text, MessageType.Data);
 
 			mProp_GoogleUpdateFrequency.enumValueIndex = mProp_GoogleUpdateFrequency.enumValueIndex;  // to avoid the warning "unused"
             mProp_GoogleUpdateSynchronization.enumValueIndex = mProp_GoogleUpdateSynchronization.enumValueIndex;

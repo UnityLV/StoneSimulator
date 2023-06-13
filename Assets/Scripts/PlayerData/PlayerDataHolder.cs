@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace PlayerData
 {
-    public class PlayerDataHolder:INicknameDataService, IClickDataService
+    public class PlayerDataHolder : INicknameDataService, IClickDataService
     {
         private static NicknameData nicknameData;
-        private BinarySaveSystem  nicknameSaveSystem;
+        private BinarySaveSystem nicknameSaveSystem;
         private const string NICKNAME_DATA_PATCH = "NicknameData";
 
         private static ClickData _clickData;
-        private BinarySaveSystem  _clickSaveSystem;
+        private BinarySaveSystem _clickSaveSystem;
         private const string CLICK_DATA_PATCH = "ClickData";
 
         public PlayerDataHolder()
@@ -23,7 +23,7 @@ namespace PlayerData
         private void LoadNicknameData()
         {
             nicknameSaveSystem ??= new BinarySaveSystem(NICKNAME_DATA_PATCH);
-            nicknameData =(NicknameData) nicknameSaveSystem.Load();
+            nicknameData = (NicknameData) nicknameSaveSystem.Load();
             if (nicknameData == null)
             {
                 nicknameData = new NicknameData();
@@ -33,14 +33,13 @@ namespace PlayerData
 
         private void SaveNicknameData()
         {
-            
             nicknameSaveSystem.Save(nicknameData);
-        } 
-        
+        }
+
         private void LoadClickData()
         {
             _clickSaveSystem ??= new BinarySaveSystem(CLICK_DATA_PATCH);
-            _clickData =(ClickData) _clickSaveSystem.Load();
+            _clickData = (ClickData) _clickSaveSystem.Load();
             if (_clickData == null)
             {
                 _clickData = new ClickData();
@@ -50,13 +49,12 @@ namespace PlayerData
 
         private void SaveClickData()
         {
-            
             _clickSaveSystem.Save(_clickData);
         }
 
         public void SetNickname(string nickname)
         {
-            string result = nickname.Substring(0, Mathf.Min(nickname.Length,15));
+            string result = nickname.Substring(0, Mathf.Min(nickname.Length, 15));
             nicknameData.CurrentNickname = result;
             SaveNicknameData();
         }
@@ -79,7 +77,7 @@ namespace PlayerData
 
         public void AddClick()
         {
-            _clickData.ClickCount +=1;
+            _clickData.ClickCount += 1;
             SaveClickData();
         }
     }

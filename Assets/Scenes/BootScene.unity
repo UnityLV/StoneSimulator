@@ -189,7 +189,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &322549354
 GameObject:
@@ -593,6 +593,9 @@ GameObject:
   - component: {fileID: 1355880926}
   - component: {fileID: 1355880925}
   - component: {fileID: 1355880924}
+  - component: {fileID: 1355880928}
+  - component: {fileID: 1355880927}
+  - component: {fileID: 1355880929}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -613,6 +616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customNetworkManager: {fileID: 1750747901}
+  _mongoDBProvider: {fileID: 1355880928}
+  _mongoDBDataHolder: {fileID: 1355880927}
 --- !u!114 &1355880925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +665,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355880927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355880923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c005cea76849c0b6d26d1988f26c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onGetData:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1355880929}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1355880928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355880923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65dc7ea2b4258c4592f1176ad53cf20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dbConnectionConfig: {fileID: 11400000, guid: 1cf8bc9d767cd8144814a78f58113d5b, type: 2}
+--- !u!114 &1355880929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355880923}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b4a8c1fe9c4287987103897a04d8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jsonExample: 
 --- !u!1 &1408288955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1218,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750747893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd80a0160a7d449084bc86fab607544b, type: 3}
   m_Name: 
@@ -1203,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: 15946
+  port: 34120
   NoDelay: 1
   SendTimeout: 5000
   ReceiveTimeout: 30000
@@ -1390,37 +1448,6 @@ MonoBehaviour:
   mGUI_ShowCallback: 0
   mLocalizeTarget: {fileID: 0}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
---- !u!1 &1965795535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1965795536}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1965795536
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965795535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.348114, y: 40.36086, z: -1.3544631}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124463205
 GameObject:
   m_ObjectHideFlags: 0

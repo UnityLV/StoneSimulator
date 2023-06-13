@@ -182,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Market
+  m_text: "\u041C\u0430\u0440\u043A\u0435\u0442"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -1417,7 +1417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Clicks: 0'
+  m_text: "\u041A\u043B\u0438\u043A\u0438: 0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Destroy the evil ball
+  m_text: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u044C \u0448\u0430\u0440 \u0437\u043B\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -3094,7 +3094,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Slaves: 1444'
+  m_text: "\u0420\u0430\u0431\u044B: 1444"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -4662,9 +4662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Place
-
-'
+  m_text: "\u041C\u0435\u0441\u0442\u043E\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -5629,7 +5627,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Location: Orc lair'
+  m_text: "\u041B\u043E\u043A\u0430\u0446\u0438\u044F: \u041B\u043E\u0433\u043E\u0432\u043E
+    \u043E\u0440\u043A\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -10365,7 +10364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1388032326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13205,6 +13204,7 @@ GameObject:
   - component: {fileID: 1671915705}
   - component: {fileID: 1671915704}
   - component: {fileID: 1671915703}
+  - component: {fileID: 1671915706}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -13231,6 +13231,7 @@ MonoBehaviour:
   _inGameUIController: {fileID: 190073347}
   _mainMenuController: {fileID: 1913887402}
   _cameraRotation: {fileID: 519420034}
+  _playerRating: {fileID: 1671915706}
 --- !u!114 &1671915704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13278,6 +13279,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671915706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671915702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad894b369d4883b4aaa0d26646488eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1694017682
 GameObject:
   m_ObjectHideFlags: 0
@@ -14009,7 +14022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUICKER
+  m_text: "\u0421\u041A\u041E\u0420\u0415\u0415"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -14543,8 +14556,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This world is full of dangers, can you destroy the ball on top of the volcano
-    and stop the evil?
+  m_text: "\u042D\u0442\u043E\u0442 \u043C\u0438\u0440 \u043F\u043E\u043B\u043E\u043D
+    \u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0435\u0439, \u0441\u043C\u043E\u0436\u0435\u0448\u044C
+    \u043B\u0438 \u0442\u044B \u0440\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u044C
+    \u0448\u0430\u0440 \u043D\u0430 \u0432\u0435\u0440\u0448\u0438\u043D\u0435 \u0432\u0443\u043B\u043A\u0430\u043D\u0430
+    \u0438 \u043E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0437\u043B\u043E?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
