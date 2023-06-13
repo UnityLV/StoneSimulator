@@ -5,27 +5,24 @@ using Zenject;
 
 namespace MongoDBCustom
 {
-    
-    
-    
     public class MongoDBConnectionDataHolder : MonoBehaviour
     {
         [SerializeField] private UnityEvent _onGetData; 
 
-        private IDBProvider _dbProvider;
+        private IDBConnectionProvider _idbConnectionProvider;
 
         [Inject]
-        private void Construct(IDBProvider dbProvider)
+        private void Construct(IDBConnectionProvider idbConnectionProvider)
         {
-            _dbProvider = dbProvider;
-            _dbProvider.SuccessConnect += OnSuccessConnect;
+            _idbConnectionProvider = idbConnectionProvider;
+            _idbConnectionProvider.SuccessConnect += OnSuccessConnect;
         }
 
         public static MongoDBConnectionData Data { get; private set; }
 
         private void OnDisable()
         {
-            _dbProvider.SuccessConnect -= OnSuccessConnect;
+            _idbConnectionProvider.SuccessConnect -= OnSuccessConnect;
         }
 
         private void OnSuccessConnect(MongoDBConnectionData data)

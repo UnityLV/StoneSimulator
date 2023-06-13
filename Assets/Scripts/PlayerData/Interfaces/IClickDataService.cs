@@ -1,7 +1,10 @@
-﻿namespace PlayerData.Interfaces
+﻿using UnityEngine.Events;
+
+namespace PlayerData.Interfaces
 {
     public interface IClickDataService
     {
+        event UnityAction<int> ClickUpdated;
         public int GetClickCount();
         public void SetClickCount(int value);
         public void AddClick();

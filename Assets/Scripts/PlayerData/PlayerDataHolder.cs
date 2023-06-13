@@ -1,6 +1,7 @@
 ﻿using PlayerData.Interfaces;
 using SaveSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PlayerData
 {
@@ -14,6 +15,8 @@ namespace PlayerData
         private BinarySaveSystem _clickSaveSystem;
         private const string CLICK_DATA_PATCH = "ClickData";
 
+        public event UnityAction<int> ClickUpdated;
+        
         public PlayerDataHolder()
         {
             LoadNicknameData();
@@ -64,6 +67,7 @@ namespace PlayerData
             return nicknameData.CurrentNickname;
         }
 
+
         public int GetClickCount()
         {
             return _clickData.ClickCount;
@@ -79,6 +83,7 @@ namespace PlayerData
         {
             _clickData.ClickCount += 1;
             SaveClickData();
+            ClickUpdated?.Invoke( _clickData.ClickCount);
         }
     }
 }

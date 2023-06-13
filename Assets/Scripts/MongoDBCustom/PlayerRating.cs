@@ -4,55 +4,53 @@ using Stone.Interfaces;
 using UnityEngine;
 using Zenject;
 
-public interface IDBRatingSaver
+namespace MongoDBCustom
 {
-    void Save(int amount);
-}
-
-
-
-public class PlayerRating : MonoBehaviour
-{
-    private IClickDataService _clickData;
-    private IStoneClickEvents _clickEvent;
-    private IDBRatingSaver _ratingSaver;
-
-    private const int MinTimeBetweenUpdatesInSeconds = 10;
-
-    private DateTime _lastUpdateTimestamp;
-
-    [Inject]
-    private void Construct(
-        IStoneClickEvents stoneClickEvents,
-        IClickDataService clickDataService
-    )
+    public class PlayerRating : MonoBehaviour
     {
-        _clickData = clickDataService;
-        _clickEvent = stoneClickEvents;
-        _clickEvent.OnStoneClick += HandleStoneClick;
-    }
+        private IClickDataService _clickData;
+        private IStoneClickEvents _clickEvent;
+        private IDBRatingSaver _ratingSaver;
 
-    private void OnDestroy()
-    {
-        _clickEvent.OnStoneClick -= HandleStoneClick;
-    }
+        private const int MinTimeBetweenUpdatesInSeconds = 10;
 
-    private void HandleStoneClick()
-    {
-        if (ShouldUpdateRating())
+        private DateTime _lastUpdateTimestamp;
+
+        [Inject]
+        private void Construct(
+            IStoneClickEvents stoneClickEvents,
+            IClickDataService clickDataService, 
+            IDBRatingSaver dbRatingSaver
+        )
         {
-            UpdateRating();
+            _clickData = clickDataService;
+            _clickEvent = stoneClickEvents;
+            _ratingSaver = dbRatingSaver;
+            _clickEvent.OnStoneClick += HandleStoneClick;
         }
-    }
 
-    private bool ShouldUpdateRating()
-    {
-        return (DateTime.Now - _lastUpdateTimestamp).TotalSeconds >= MinTimeBetweenUpdatesInSeconds;
-    }
+        private void OnDestroy()
+        {
+            _clickEvent.OnStoneClick -= HandleStoneClick;
+        }
 
-    private void UpdateRating()
-    {
-        _ratingSaver?.Save(_clickData.GetClickCount());
-        _lastUpdateTimestamp = DateTime.Now;
+        private void HandleStoneClick()
+        {
+            if (ShouldUpdateRating())
+            {
+                UpdateRating();
+            }
+        }
+
+        private bool ShouldUpdateRating()
+        {
+            return (DateTime.Now - _lastUpdateTimestamp).TotalSeconds >= MinTimeBetweenUpdatesInSeconds;
+        }
+
+        private void UpdateRating()
+        {
+            _ratingSaver?.SaveRating();
+            _lastUpdateTimestamp = DateTime.Now;
+        }
     }
 }

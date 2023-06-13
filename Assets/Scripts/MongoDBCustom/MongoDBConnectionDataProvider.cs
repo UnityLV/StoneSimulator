@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace MongoDBCustom
 {
-    public class MongoDBProvider : MonoBehaviour, IDBProvider
+    public class MongoDBConnectionDataProvider : MonoBehaviour, IDBConnectionProvider
     {
         [SerializeField] private MongoDBConnectionConfig _dbConnectionConfig;
 

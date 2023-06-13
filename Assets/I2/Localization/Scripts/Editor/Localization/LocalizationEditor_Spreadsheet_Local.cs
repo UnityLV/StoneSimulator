@@ -147,7 +147,7 @@ namespace I2.Loc
 			}
 
 			GUILayout.Space(10);
-			EditorGUILayout.HelpBox("On some Mac OS, there is a Unity Bug that makes the IDE crash when selecting a CSV file in the Open/Save File Dialog.\nJust by clicking the file, unity tries to preview the content and crashes.\n\nIf any of your the team members use Mac, its adviced to import/export the CSV Files with TXT extension.", MessageType.Warning);
+			EditorGUILayout.HelpBox("On some Mac OS, there is a Unity Bug that makes the IDE crash when selecting a CSV file in the Open/SaveRating File Dialog.\nJust by clicking the file, unity tries to preview the content and crashes.\n\nIf any of your the team members use Mac, its adviced to import/export the CSV Files with TXT extension.", MessageType.Warning);
 			GUILayout.Space(10);
 
 			OnGUI_ShowMsg();

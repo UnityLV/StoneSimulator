@@ -206,7 +206,7 @@ namespace I2.Loc
 
         #endregion
 
-        #region Save/Load Language
+        #region SaveRating/Load Language
 
         public bool AllowUnloadingLanguages()
         {

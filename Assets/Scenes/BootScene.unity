@@ -606,6 +606,7 @@ GameObject:
   - component: {fileID: 1355880928}
   - component: {fileID: 1355880927}
   - component: {fileID: 1355880929}
+  - component: {fileID: 1355880930}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -626,8 +627,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customNetworkManager: {fileID: 1750747901}
-  _mongoDBProvider: {fileID: 1355880928}
-  _mongoDBConnectionDataHolder: {fileID: 0}
+  _mongoDBConnectionDataProvider: {fileID: 1355880928}
+  _mongoDBConnectionDataHolder: {fileID: 1355880927}
+  _dbPlayerDataProvider: {fileID: 1355880929}
+  _mongoDBPlayerData: {fileID: 1355880930}
 --- !u!114 &1355880925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,22 +693,10 @@ MonoBehaviour:
   _onGetData:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1355880929}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1750747901}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 1355880930}
+        m_TargetAssemblyTypeName: MongoDBCustom.MongoDBPlayerDataHolder, Assembly-CSharp
+        m_MethodName: LoadPlayerData
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -739,7 +730,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b4a8c1fe9c4287987103897a04d8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jsonExample: 
+--- !u!114 &1355880930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355880923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e06044d9a434340aad4bb7dc732600a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onLoadData:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1750747901}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1408288955
 GameObject:
   m_ObjectHideFlags: 0

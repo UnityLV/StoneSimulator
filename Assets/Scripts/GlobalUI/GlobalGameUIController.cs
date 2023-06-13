@@ -2,6 +2,7 @@
 using GameState.Interfaces;
 using InGameUI.Interfaces;
 using MainMenuUI.Inrefaces;
+using MongoDBCustom;
 using UnityEngine;
 using Zenject;
 
@@ -14,13 +15,15 @@ namespace GlobalUI
         private IInGameService _inGameService;
         private IMainMenuService _mainMenuService;
         private IGameStateService _gameStateService;
+        private IDBRatingSaver _dbRatingSaver;
         
         [Inject]
-        private void Construct(IInGameService inGameService, IMainMenuService mainMenuService, IGameStateService gameStateService)
+        private void Construct(IInGameService inGameService, IMainMenuService mainMenuService, IGameStateService gameStateService,IDBRatingSaver dbRatingSaver)
         {
             _inGameService = inGameService;
             _mainMenuService = mainMenuService;
             _gameStateService = gameStateService;
+            _dbRatingSaver = dbRatingSaver;
         }
 
         #endregion
@@ -34,6 +37,7 @@ namespace GlobalUI
             {
                 _inGameService.SetState(false,false);
                 _mainMenuService.SetState(true);
+                _dbRatingSaver.SaveRating();
             });
             
             _mainMenuService.SetInProgressLocationClickAction(() =>

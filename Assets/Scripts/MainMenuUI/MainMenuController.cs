@@ -10,9 +10,6 @@ using Zenject;
 
 namespace MainMenuUI
 {
-  
-    
-    
     public class MainMenuController : MonoBehaviour, IMainMenuService
     {
         [SerializeField] private TMP_Text _clickText;
@@ -32,36 +29,30 @@ namespace MainMenuUI
         private IClickDataService _clickDataService;
         private IHealthService _healthService;
         private IGameStateCallbacks _gameStateCallbacks;
-        private IStoneClickEvents _stoneClickEvents;
 
         [Inject]
         private void Construct(
             INicknameDataService nicknameDataService,
             IHealthService healthService,
-            IGameStateCallbacks gameStateCallbacks,IClickDataService clickDataService,IStoneClickEvents stoneClickEvents)
+            IGameStateCallbacks gameStateCallbacks, 
+            IClickDataService clickDataService)
         {
             _nicknameDataService = nicknameDataService;
             _healthService = healthService;
             _gameStateCallbacks = gameStateCallbacks;
             _clickDataService = clickDataService;
-            _stoneClickEvents = stoneClickEvents;
-           
         }
-
 
         #endregion
 
         public void SubscribeCallbacks()
         {
             _gameStateCallbacks.OnHealthChanged += UpdateHealth;
-            _stoneClickEvents.OnStoneClick += StoneClickEventsOnOnStoneClick;
         }
 
         public void UnsubscribeCallbacks()
         {
             _gameStateCallbacks.OnHealthChanged -= UpdateHealth;
-            _stoneClickEvents.OnStoneClick -= StoneClickEventsOnOnStoneClick;
-
         }
 
         private void Start()
@@ -71,17 +62,10 @@ namespace MainMenuUI
             UpdateClickText();
         }
 
-      
-        private void StoneClickEventsOnOnStoneClick()
-        {
-            UpdateClickText();
-        }
-
         private void UpdateClickText()
         {
             _clickText.text = _clickDataService.GetClickCount().ToString();
         }
-        
 
         public void UpdateNicknameText()
         {
@@ -99,7 +83,9 @@ namespace MainMenuUI
             _mainMenuUI.SetActive(state);
             if (state)
             {
+                UpdateClickText();
                 SubscribeCallbacks();
+            
                 _locationMainMenuController.SubscribeCallbacks();
                 try
                 {

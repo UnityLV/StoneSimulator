@@ -29,16 +29,14 @@ namespace InGameUI
         #region Dependency
 
         private IClickDataService _clickDataService;
-        private IStoneClickEvents _stoneClickEvents;
         private INicknameDataService _nicknameDataService;
 
         [Inject]
-        private void Construct(IClickDataService clickDataService, IStoneClickEvents stoneClickEvents,
+        private void Construct(IClickDataService clickDataService,
             INicknameDataService nicknameDataService)
         {
             _clickDataService = clickDataService;
-            _stoneClickEvents = stoneClickEvents;
-            _stoneClickEvents.OnStoneClick += UpdateClickCount;
+            _clickDataService.ClickUpdated += UpdateClickCount;
             _nicknameDataService = nicknameDataService;
         }
 
@@ -50,7 +48,7 @@ namespace InGameUI
             _inGameUIMain.SetActive(mainState);
             if (mainState)
             {
-                UpdateClickCount();
+                UpdateClickCount(_clickDataService.GetClickCount());
                 _nickname.text = _nicknameDataService.GetNickname(); 
             }
 
@@ -70,9 +68,9 @@ namespace InGameUI
             _onHomeAction?.Invoke();
         }
 
-        public void UpdateClickCount()
+        public void UpdateClickCount(int amount)
         {
-            _clickCountParam.SetParameterValue("CLICKS", _clickDataService.GetClickCount().ToString());
+            _clickCountParam.SetParameterValue("CLICKS", amount.ToString());
         }
     }
 }
