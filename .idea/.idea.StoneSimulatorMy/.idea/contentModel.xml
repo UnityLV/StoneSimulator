@@ -4,6 +4,7 @@
     <e p="C:\Users\vazil\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\vazil\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_StoneSimulatorMy.-1211188097.00" t="ExcludeRecursive" />
     <e p="D:\Unity Projects\StoneSimulatorMy" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -11,6 +12,9 @@
         <e p="Animation" t="Include">
           <e p="DefaultAnimationClips" t="Include" />
           <e p="DefaultAnimatorController" t="Include" />
+        </e>
+        <e p="FigmaImporter" t="Include">
+          <e p="Renders" t="Include" />
         </e>
         <e p="Font" t="Include" />
         <e p="I2" t="Include">
@@ -962,6 +966,24 @@
           </e>
         </e>
         <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DOTween" t="Include">
+              <e p="Editor" t="Include">
+                <e p="Imgs" t="Include" />
+              </e>
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModuleEPOOutline.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
+            </e>
+          </e>
           <e p="Zenject" t="Include">
             <e p="License.txt" t="Include" />
             <e p="OptionalExtras" t="Include">
@@ -1967,7 +1989,9 @@
             <e p="zenject.asmdef" t="Include" />
           </e>
         </e>
-        <e p="Prefabs" t="Include" />
+        <e p="Prefabs" t="Include">
+          <e p="UI" t="Include" />
+        </e>
         <e p="Resources" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="ScriptableObjects" t="Include" />
@@ -1994,6 +2018,7 @@
             <e p="FirstAuthUI.cs" t="Include" />
           </e>
           <e p="GameScene" t="Include">
+            <e p="DOMoveY.cs" t="Include" />
             <e p="GameSceneController.cs" t="Include" />
             <e p="GameSceneType.cs" t="Include" />
             <e p="Interfaces" t="Include">
@@ -2025,6 +2050,9 @@
             <e p="Interfaces" t="Include">
               <e p="IInGameService.cs" t="Include" />
             </e>
+            <e p="RatingListUI.cs" t="Include" />
+            <e p="RatingPlayerData.cs" t="Include" />
+            <e p="RatingSingleLine.cs" t="Include" />
           </e>
           <e p="InputService" t="Include">
             <e p="CameraInput.cs" t="Include" />

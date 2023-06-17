@@ -60,7 +60,7 @@ namespace InputService
             float currentMagnitude = (_cameraInput.CameraTouch.TouchOnePosition.ReadValue<Vector2>() -
                                       _cameraInput.CameraTouch.TouchTwoPosition.ReadValue<Vector2>()).magnitude;
             float prevMagnitude = currentMagnitude;
-            ;
+            
 
             while (true)
             {
