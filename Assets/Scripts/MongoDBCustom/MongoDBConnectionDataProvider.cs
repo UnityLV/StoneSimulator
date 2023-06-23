@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using FirebaseCustom;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,8 @@ namespace MongoDBCustom
         [SerializeField] private MongoDBConnectionConfig _dbConnectionConfig;
 
         private MongoDBConnector _connector;
+        private MongoDBConnectionData _connection;
+
 
         public event UnityAction<MongoDBConnectionData> SuccessConnect;
         public event UnityAction<Exception> FailedConnect;
@@ -29,34 +32,43 @@ namespace MongoDBCustom
 
         private async void OnConnected(MongoDBConnectionData connection)
         {
+            _connection = connection;
+
+            await TryConnect();
+        }
+
+        private async Task TryConnect()
+        {
             try
             {
-                await TestConnection(connection);
-                HandleSuccessConnect(connection);
+                await TestConnection();
+                HandleSuccessConnect();
             }
             catch (Exception ex)
             {
-                HandleFailConnect(ex);
+                await HandleFailConnect(ex);
             }
         }
 
-        private async Task TestConnection(MongoDBConnectionData connection)
+        private async Task TestConnection()
         {
-            await connection.Client.ListDatabasesAsync();
+            Debug.Log("Connect To DataBase");
+            await _connection.Client.ListDatabasesAsync();
         }
 
-        private void HandleSuccessConnect(MongoDBConnectionData connection)
+        private void HandleSuccessConnect()
         {
-            Debug.Log($"{nameof(MongoDBConnector)} SuccessConnect");
-            SuccessConnect?.Invoke(connection);
-            
+            Debug.Log($"Data Base SuccessConnect");
+            SuccessConnect?.Invoke(_connection);
         }
 
-        private void HandleFailConnect(Exception ex)
+        private async Task HandleFailConnect(Exception ex)
         {
-            Debug.LogError($"{nameof(MongoDBConnector)} FailedConnect {ex.Message}");
+            Debug.LogError($"Data Base FailedConnect {ex.Message}");
             FailedConnect?.Invoke(ex);
-           
+
+            Debug.Log("Try Connect");
+            await TryConnect();
         }
     }
 }

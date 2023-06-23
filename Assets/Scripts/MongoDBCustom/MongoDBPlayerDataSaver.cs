@@ -19,16 +19,7 @@ namespace MongoDBCustom
 
         public void SaveRating()
         {
-            UpdatePlayerRatingAsync(_clickDataService.GetClickCount());
-        }
-
-        public async Task UpdatePlayerRatingAsync(int newRating)
-        {
-            var filter = Filters.DeviseIDFilter();
-            var update = Builders<BsonDocument>.Update.Set(DBKeys.Rating, newRating);
-
-            await MongoDBConnectionDataHolder.Data.Collection.UpdateOneAsync(filter, update);
-            Debug.Log("Player rating updated new is " + newRating);
+            UpdateDBValues.UpdatePlayerRatingAsync(_clickDataService.GetClickCount());
         }
     }
 }

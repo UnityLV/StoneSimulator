@@ -6,6 +6,7 @@ namespace PlayerData.Interfaces
     {
         event UnityAction<int> ClickUpdated;
         public int GetClickCount();
+        public int GetAllClickCount();
         public void SetClickCount(int value);
         public void AddClick();
     }

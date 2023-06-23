@@ -14,6 +14,8 @@ namespace Network
 {
     public class CustomNetworkManager : NetworkManager, INetworkManagerService
     {
+        [SerializeField] private FirebaseCustom.ConnectionConfig _connectionConfig; 
+        
         #region Dependency
 
         private IGameSceneService _gameSceneService;
@@ -30,7 +32,6 @@ namespace Network
         private ConnectionType _currentConnectionType;
         
         private const string LOCALHOST_ADDRESS = "localhost";
-        private const string IP_ADDRESS = "181.ip.ply.gg";
 
         public override void Start()
         {
@@ -41,7 +42,7 @@ namespace Network
 
         private void TryConnect()
         {
-            networkAddress = IP_ADDRESS;
+            networkAddress = _connectionConfig.Ip;
 #if UNITY_SERVER
 Debug.Log("Try start server");
             StartServer();

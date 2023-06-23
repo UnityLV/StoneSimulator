@@ -9,6 +9,7 @@ namespace MongoDBCustom
         public const string Collection = "users";
         public const string DeviceID = "deviceId";
         public const string PlayerId = DeviceID;
-        public const string Rating = "Rating";
+        public const string Rating = "rating";
+        public const string Name = "name";
     }
 }

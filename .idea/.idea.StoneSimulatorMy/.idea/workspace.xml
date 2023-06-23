@@ -25,16 +25,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingPlayerData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingPlayerData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingSingleLine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingSingleLine.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/Config.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/Config.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameRatingListUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameRatingListUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/OnHover.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/OnHover.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButtonGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButtonGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ConnectionConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ConnectionConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayersRatingsLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayersRatingsLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/UpdateDBValues.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/UpdateDBValues.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomTelepathyTransport.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomTelepathyTransport.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/contentModel.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Font/Roboto-Black SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mirror/Transports/Telepathy/TelepathyTransport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirror/Transports/Telepathy/TelepathyTransport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Message.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Message.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Raiting.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Raiting.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/SingleRaiting.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/SingleRaiting.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FigmaScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FigmaScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputService/CameraInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputService/CameraInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputService/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputService/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstAuth/FirstAuthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstAuth/FirstAuthUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingPlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingPlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingSingleLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingSingleLine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SettingPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SettingPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/Filters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/Filters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRatingInDBSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRating.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRatingInDBSaver.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/Interfaces/IClickDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/Interfaces/IClickDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,18 +88,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameScene/DOMoveY.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/761CF2A1-4451-4D22-91A6-78C334D49E9B/DA/JsonSerializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBConnectionProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99385446-CB37-4531-BDC7-438EC115E064/1e/f3de622a/MongoDBConnectionDataHolder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.simonoliver.unityfigma@dba294dee2/UnityFigmaBridge/Editor/UnityFigmaBridgeImporter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.manakhovn.figma_to_unity_importer@5a73f9b5b0/Editor/TMPUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Plugins/EnhancedTouch/EnhancedTouchSupport.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/88E4733A-C7BC-4AE1-B496-735E6B83BBD3/c5/54bbe3cb/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FD0A9F69-3EFA-4BB2-A8D0-097DDD0EC57F/0c/abe6d7d8/Builders`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1c8569827291471e9db0dcd976e9795246ac00/c1/920506cd/ContinuationTaskFromTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd0a9f693efa4bb2a8d0097ddd0ec57fb5e00/a0/e3cc5061/IMongoCollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fff139a198df4d4bbedfc85d4d3ca3ed5c200/cf/09ad6dc8/RatingListUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d8e1dd7a299549d0a7c7e0d6aee4fe0a29400/a2/335b5eaf/GUISkin.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1c8569827291471e9db0dcd976e9795246ac00/8f/5d66140c/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc327b7fe2814a8a95c1d82cb6a3071e15a000/e3/d0f63f3d/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Plugins/EnhancedTouch/EnhancedTouchSupport.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b3413f3712ed47e38a67aa05b489abeb8200/46/4dfdfd1c/FirebaseRemoteConfig.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1c8569827291471e9db0dcd976e9795246ac00/e4/6c68c585/ThreadPoolWorkQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.0.4/Editor/PlasticSCM/CollabPlugin.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBConnectionProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15989a8e53b4409b98a9308be8e1739713c00/21/2296c9f1/ConnectionConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.simonoliver.unityfigma@dba294dee2/UnityFigmaBridge/Editor/FigmaApi/FigmaApiUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.simonoliver.unityfigma@dba294dee2/UnityFigmaBridge/Editor/UnityFigmaBridgeImporter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f304a7e60d35404c921f5e369de9d82516000/ad/a289bdd7/FirebaseApp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc327b7fe2814a8a95c1d82cb6a3071e15a000/e0/fc9ccd44/UnityAction`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameScene/DOMoveY.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.manakhovn.figma_to_unity_importer@5a73f9b5b0/Editor/TMPUtils.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -72,13 +123,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBDataHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataPrivider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BootSceneInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRating.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBRatingSaver.cs" />
@@ -95,8 +143,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameScene/DOMoveY.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputService/InputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionDataHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilites/data.cs" />
       </list>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2R8obWdKjmQVRyMbeXWlStu1apA" />
   <component name="ProjectLevelVcsManager">
@@ -107,12 +163,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34993774" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30012453" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="RiderCSharpLiveTemplatesSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -128,17 +183,19 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31176">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="31176" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -157,13 +214,23 @@
       <workItem from="1686850084814" duration="1574000" />
       <workItem from="1686856865084" duration="1805000" />
       <workItem from="1686900114146" duration="1425000" />
-      <workItem from="1687003411025" duration="1286000" />
+      <workItem from="1687003411025" duration="1829000" />
+      <workItem from="1687008819626" duration="1838000" />
+      <workItem from="1687437117430" duration="1354000" />
+      <workItem from="1687439481124" duration="8000" />
+      <workItem from="1687439526192" duration="61000" />
+      <workItem from="1687440009124" duration="221000" />
+      <workItem from="1687441549103" duration="29000" />
+      <workItem from="1687446228690" duration="17982000" />
+      <workItem from="1687508522514" duration="3685000" />
+      <workItem from="1687518632523" duration="11053000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,103 +243,8 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1637" height="94" key="GridCell.Tab.0.bottom" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.0.bottom/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.0.center" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.0.center/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.0.center/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.0.left" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.0.left/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.0.left/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.0.right" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.0.right/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.0.right/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.1.bottom" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.1.bottom/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.1.center" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.1.center/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.1.center/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.1.left" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.1.left/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.1.left/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.1.right" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.1.right/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.1.right/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.2.bottom" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.2.bottom/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.2.bottom/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.2.center" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.2.center/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.2.center/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.2.left" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.2.left/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.2.left/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.2.right" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.2.right/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.2.right/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.3.bottom" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.3.bottom/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.3.bottom/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.3.center" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.3.center/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.3.center/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.3.left" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.3.left/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.3.left/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state width="1637" height="94" key="GridCell.Tab.3.right" timestamp="1686694091536">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state width="1637" height="90" key="GridCell.Tab.3.right/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@1920.63.1680.1002" timestamp="1686657530845" />
-    <state width="1637" height="94" key="GridCell.Tab.3.right/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686694091536" />
-    <state x="670" y="193" key="RiderGenerateDialog" timestamp="1686641444386">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="670" y="193" key="RiderGenerateDialog/0.0.1920.1032/1920.63.1680.1002/0.-1080.1920.1032@0.0.1920.1032" timestamp="1686641444386" />
-    <state x="2012" y="155" width="1496" height="866" key="VCS.FileHistoryDialog" timestamp="1686691359673">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state x="2012" y="155" width="1496" height="866" key="VCS.FileHistoryDialog/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686691359673" />
-    <state x="2416" y="274" key="run.anything.popup" timestamp="1686691797289">
-      <screen x="1920" y="63" width="1680" height="1050" />
-    </state>
-    <state x="2416" y="274" key="run.anything.popup/0.0.1920.1080/1920.63.1680.1050/0.-1080.1920.1080@1920.63.1680.1050" timestamp="1686691797289" />
   </component>
 </project>

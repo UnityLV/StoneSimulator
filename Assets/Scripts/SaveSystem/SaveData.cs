@@ -40,6 +40,7 @@ public class HealthData : ISaveble
 public class ClickData : ISaveble
 {
     public int ClickCount = 0;
+    public int AllClickCount = 0;
 }
 
 [Serializable]

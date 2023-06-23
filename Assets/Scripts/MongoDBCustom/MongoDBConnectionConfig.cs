@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 
-namespace MongoDBCustom
+namespace FirebaseCustom
 {
     [CreateAssetMenu]
-    public class MongoDBConnectionConfig : ScriptableObject
+    public class MongoDBConnectionConfig : ConnectionConfig
     {
-        [SerializeField] private string _ip;
-        [SerializeField] private string _port;
-        
         public string GetConnectionString()
         {
-            return $"mongodb://{_ip}:{_port}";
+            return $"mongodb://{Ip}:{Port}";
         }
     }
 }

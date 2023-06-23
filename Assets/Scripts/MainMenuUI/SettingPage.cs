@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MongoDBCustom;
 using PlayerData.Interfaces;
 using UnityEngine;
 using Zenject;
@@ -52,5 +53,7 @@ public class SettingPage : MonoBehaviour
     public void SetNickname(string nickname)
     {
         _nicknameDataService.SetNickname(nickname);
+        
+        UpdateDBValues.UpdatePlayerName(nickname);
     }
 }

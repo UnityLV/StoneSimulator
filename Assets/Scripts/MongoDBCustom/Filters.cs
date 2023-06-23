@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace MongoDBCustom
+namespace MongoDBCustom 
 {
     public static class Filters
     {

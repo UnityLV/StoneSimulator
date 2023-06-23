@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDBCustom;
 using Network.Enum;
 using Network.Interfaces;
 using PlayerData.Interfaces;
@@ -39,7 +43,6 @@ namespace FirstAuth
 
         #endregion
 
-
         private void Start()
         {
          if ( _networkManagerService.GetConnectionType()==ConnectionType.Server) return;
@@ -52,8 +55,12 @@ namespace FirstAuth
             string result = _inputField.text;
             _nicknameDataService.SetNickname(result);
             Debug.Log($"User set nick name \"{_nicknameDataService.GetNickname()}\"");
-        }
 
+           UpdateDBValues.UpdatePlayerName(result);
+        }
+        
+      
+        
         public void ChangeStateIsShowedPopup(bool state)
         {
             _isPopupShowed = state;

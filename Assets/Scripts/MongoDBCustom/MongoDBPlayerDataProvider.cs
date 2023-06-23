@@ -14,7 +14,7 @@ namespace MongoDBCustom
 
             if (playerData == null)
             {
-                playerData = CreatePlayerData();
+                playerData = CreateFirstPlayerData();
 
                 await InsertPlayerDataAsync(playerData);
                 Debug.Log("Player data inserted");
@@ -27,12 +27,14 @@ namespace MongoDBCustom
             return playerData;
         }
 
-        private BsonDocument CreatePlayerData()
+        private BsonDocument CreateFirstPlayerData() 
         {
             BsonDocument playerData;
             playerData = new BsonDocument
             {
                 {DBKeys.DeviceID, DeviceInfo.GetDeviceId()},
+                {DBKeys.Name, "name has not been set yet"},
+                {DBKeys.Rating, 0},
             };
             return playerData;
         }

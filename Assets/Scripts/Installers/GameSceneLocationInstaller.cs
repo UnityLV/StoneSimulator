@@ -14,6 +14,7 @@ using MainMenuUI.LocationMainMenu;
 using MongoDBCustom;
 using Network.Interfaces;
 using Stone;
+using UnityEngine.Serialization;
 
 namespace Installers
 {
@@ -32,8 +33,9 @@ namespace Installers
         [SerializeField] private MainMenuController _mainMenuController;
 
         [SerializeField] private CameraRotationObject _cameraRotation;
+        [SerializeField] private InGameRatingListUI _ratingListUI;
 
-        [SerializeField] private PlayerRating _playerRating;
+         [SerializeField] private PlayerRatingInDBSaver _playerRatingInDBSaver;
 
 
         public override void InstallBindings()
@@ -53,6 +55,8 @@ namespace Installers
 
             BindPlayerRating();
             BindRatingSaver();
+            
+            Container.BindInterfacesAndSelfTo<InGameRatingListUI>().FromInstance(_ratingListUI).AsSingle();
         }
 
         private void BindRatingSaver()
@@ -62,7 +66,7 @@ namespace Installers
 
         private void BindPlayerRating()
         {
-            Container.BindInterfacesAndSelfTo<PlayerRating>().FromInstance(_playerRating).AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerRatingInDBSaver>().FromInstance(_playerRatingInDBSaver).AsSingle();
         }
 
         private void BindCameraRotation()

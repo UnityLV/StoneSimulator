@@ -67,10 +67,14 @@ namespace PlayerData
             return nicknameData.CurrentNickname;
         }
 
-
         public int GetClickCount()
         {
             return _clickData.ClickCount;
+        }
+        
+        public int GetAllClickCount()
+        {
+            return _clickData.AllClickCount;
         }
 
         public void SetClickCount(int value)
@@ -82,6 +86,7 @@ namespace PlayerData
         public void AddClick()
         {
             _clickData.ClickCount += 1;
+            _clickData.AllClickCount += 1;
             SaveClickData();
             ClickUpdated?.Invoke( _clickData.ClickCount);
         }

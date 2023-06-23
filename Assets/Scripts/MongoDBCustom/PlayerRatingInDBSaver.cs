@@ -6,24 +6,21 @@ using Zenject;
 
 namespace MongoDBCustom
 {
-    public class PlayerRating : MonoBehaviour
+    public class PlayerRatingInDBSaver : MonoBehaviour
     {
-        private IClickDataService _clickData;
         private IStoneClickEvents _clickEvent;
         private IDBRatingSaver _ratingSaver;
 
-        private const int MinTimeBetweenUpdatesInSeconds = 10;
+        private const int MinTimeBetweenUpdatesInSeconds = 100;
 
         private DateTime _lastUpdateTimestamp;
 
         [Inject]
         private void Construct(
             IStoneClickEvents stoneClickEvents,
-            IClickDataService clickDataService, 
             IDBRatingSaver dbRatingSaver
         )
         {
-            _clickData = clickDataService;
             _clickEvent = stoneClickEvents;
             _ratingSaver = dbRatingSaver;
             _clickEvent.OnStoneClick += HandleStoneClick;

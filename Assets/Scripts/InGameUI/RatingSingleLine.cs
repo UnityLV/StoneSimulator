@@ -15,9 +15,9 @@ namespace InGameUI
         public void SetData(RatingPlayerData playerData)
         {
             _image = playerData.Image;
-            _name.text = playerData.Name.text;
-            _ratingNumber.text = playerData.RatingNumber.text;
-            _pointsAmount.text = playerData.PointsAmount.text;
+            _name.text = playerData.Name;
+            _ratingNumber.text = playerData.RatingNumber;
+            _pointsAmount.text = playerData.PointsAmount;
         }
     }
 }
