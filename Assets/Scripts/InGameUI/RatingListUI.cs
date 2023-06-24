@@ -12,26 +12,40 @@ namespace InGameUI
 {
     public class RatingListUI : MonoBehaviour
     {
+        [SerializeField] private Transform _lineParent;
+        [SerializeField] private RatingSingleLine _linePrefab;
+
         protected INicknameDataService NicknameData;
-        
+
         protected IClickDataService ClickData;
 
         private RatingSingleLine[] _lines;
-        
+
         [Inject]
-        private void Construct(INicknameDataService InicknameDataService,IClickDataService clickDataService)
+        private void Construct(INicknameDataService InicknameDataService, IClickDataService clickDataService)
         {
             NicknameData = InicknameDataService;
             ClickData = clickDataService;
+
+            CreateLines();
+        }
+
+        private void CreateLines()
+        {
+            _lines = new RatingSingleLine [100];
+            for (int i = 0; i < _lines.Length; i++)
+            {
+                _lines[i] = Instantiate(_linePrefab, _lineParent);
+            }
         }
 
 
         public void SetData(IEnumerable<RatingPlayerData> playersData)
         {
-            SetLines();
             SetPlayersData(playersData);
             OnSetData();
         }
+
 
         private void SetPlayersData(IEnumerable<RatingPlayerData> playersData)
         {
@@ -39,8 +53,10 @@ namespace InGameUI
 
             for (int i = 0; i < sortedData.Length; i++)
             {
-                _lines[i].SetData(sortedData[i]);
-
+                Debug.Log(sortedData[i].PointsAmount + gameObject.name + i);
+                RatingSingleLine line = _lines[i];
+                line.SetData(sortedData[i]);
+                line.transform.SetSiblingIndex(i);
                 SetPlayerRatingNumber(sortedData, i);
             }
         }
@@ -60,11 +76,6 @@ namespace InGameUI
 
         protected virtual void OnSetData()
         {
-        }
-
-        private void SetLines()
-        {
-            _lines = GetComponentsInChildren<RatingSingleLine>();
         }
     }
 }

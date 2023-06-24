@@ -24,7 +24,7 @@ namespace FirebaseCustom
             config.SetFromFirebaseRemoteConfig(remoteConfig);
 
 
-            Debug.Log("Remote Config Loaded");
+            Debug.Log("Remote Config Loaded" + JsonUtility.ToJson(config) );
             Loaded?.Invoke(config);
         }
     }

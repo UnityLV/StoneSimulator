@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace InGameUI
@@ -24,7 +25,8 @@ namespace InGameUI
             _toMovePosition = _defaultPosition + _inPosition;
         }
 
-        
+
+        [Button()]
         public virtual void Move()
         {
             transform.DOKill();

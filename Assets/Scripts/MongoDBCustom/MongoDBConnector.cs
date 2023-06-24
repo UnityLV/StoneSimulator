@@ -20,12 +20,12 @@ namespace MongoDBCustom
 
         public void Connection()
         {
-            MongoClient client = new MongoClient(_config.GetConnectionString());
+            IMongoClient client = new MongoClient(_config.GetConnectionString());
             IMongoDatabase database = client.GetDatabase(DBKeys.DataBase);
             IMongoCollection<BsonDocument> playerCollection = database.GetCollection<BsonDocument>(DBKeys.Collection);
 
             MongoDBConnectionData connectionData = new MongoDBConnectionData(client, database, playerCollection);
-
+            
             Connected?.Invoke(connectionData);
         }
     }

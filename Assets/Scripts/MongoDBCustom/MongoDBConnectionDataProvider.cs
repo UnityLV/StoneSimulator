@@ -53,7 +53,7 @@ namespace MongoDBCustom
         private async Task TestConnection()
         {
             Debug.Log("Connect To DataBase");
-            await _connection.Client.ListDatabasesAsync();
+            await _connection.Client.StartSessionAsync();
         }
 
         private void HandleSuccessConnect()

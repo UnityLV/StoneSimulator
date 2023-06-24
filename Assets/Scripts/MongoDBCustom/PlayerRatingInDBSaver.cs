@@ -9,7 +9,7 @@ namespace MongoDBCustom
     public class PlayerRatingInDBSaver : MonoBehaviour
     {
         private IStoneClickEvents _clickEvent;
-        private IDBRatingSaver _ratingSaver;
+        private IDBAllClickSaver _ratingSaver;
 
         private const int MinTimeBetweenUpdatesInSeconds = 100;
 
@@ -18,11 +18,11 @@ namespace MongoDBCustom
         [Inject]
         private void Construct(
             IStoneClickEvents stoneClickEvents,
-            IDBRatingSaver dbRatingSaver
+            IDBAllClickSaver idbAllClickSaver
         )
         {
             _clickEvent = stoneClickEvents;
-            _ratingSaver = dbRatingSaver;
+            _ratingSaver = idbAllClickSaver;
             _clickEvent.OnStoneClick += HandleStoneClick;
         }
 

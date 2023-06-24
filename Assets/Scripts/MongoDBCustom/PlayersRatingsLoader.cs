@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using FirstAuth;
 using InGameUI;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -9,33 +12,56 @@ namespace MongoDBCustom
 {
     public class PlayersRatingsLoader : MonoBehaviour
     {
-        [FormerlySerializedAs("menuRatingListUI")] [FormerlySerializedAs("_ratingListUI")] [SerializeField] private RatingListUI ratingListUI;  
+        [SerializeField] private RatingListUI ratingListUI;
+        [SerializeField] private RatingListUI ratingListUI2;
+
+        [SerializeField] private FirstAuthUI _firstAuth;
+
+        [SerializeField] private Sprite _image1;
+        [SerializeField] private Sprite _image2;
+        [SerializeField] private Sprite _image3;
+        [SerializeField] private Sprite _imageDefault;
+
         private async void Start()
         {
-            var collection = MongoDBConnectionDataHolder.Data.Collection;
+            await LoadRating();
+        }
 
-            var filter = Builders<BsonDocument>.Filter.Empty;
-            var sort = Builders<BsonDocument>.Sort.Descending("rating");
-            var limit = 100;
+        public void LoadFromExtern()
+        {
+            LoadRating();
+        }
 
-            var cursor = await collection.Find(filter).Sort(sort).Limit(limit).ToCursorAsync();
-
-            var playersData = await cursor.ToListAsync();
-
+        
+        
+        private async Task LoadRating()
+        {
+            var playersRatings = await DBValues.PlayersRating();
             var ratingPlayerDataList = new List<RatingPlayerData>();
 
-            for (int i = 0; i < playersData.Count; i++)
+            for (int i = 0; i < playersRatings.Count; i++)
             {
+                Sprite sprite = i switch
+                {
+                    0 => _image1,
+                    1 => _image2,
+                    2 => _image3,
+                    _ => _imageDefault
+                };
+
                 var ratingPlayerData = new RatingPlayerData
                 {
-                    Name = playersData[i]["name"].AsString,
-                    RatingNumber = (i + 1).ToString(),
-                    PointsAmount = playersData[i]["rating"].AsInt32.ToString()
+                    Sprite = sprite,
+                    Name = playersRatings[i][DBKeys.Name].AsString,
+                    RatingNumber = (i + 1),
+                    PointsAmount = playersRatings[i][DBKeys.AllClick].AsInt32
                 };
                 ratingPlayerDataList.Add(ratingPlayerData);
             }
-            
+
             ratingListUI.SetData(ratingPlayerDataList);
+            ratingListUI2.SetData(ratingPlayerDataList);
         }
+
     }
 }

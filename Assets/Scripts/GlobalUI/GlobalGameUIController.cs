@@ -15,15 +15,15 @@ namespace GlobalUI
         private IInGameService _inGameService;
         private IMainMenuService _mainMenuService;
         private IGameStateService _gameStateService;
-        private IDBRatingSaver _dbRatingSaver;
+        private IDBAllClickSaver _idbAllClickSaver;
         
         [Inject]
-        private void Construct(IInGameService inGameService, IMainMenuService mainMenuService, IGameStateService gameStateService,IDBRatingSaver dbRatingSaver)
+        private void Construct(IInGameService inGameService, IMainMenuService mainMenuService, IGameStateService gameStateService,IDBAllClickSaver idbAllClickSaver)
         {
             _inGameService = inGameService;
             _mainMenuService = mainMenuService;
             _gameStateService = gameStateService;
-            _dbRatingSaver = dbRatingSaver;
+            _idbAllClickSaver = idbAllClickSaver;
         }
 
         #endregion
@@ -37,7 +37,7 @@ namespace GlobalUI
             {
                 _inGameService.SetState(false,false);
                 _mainMenuService.SetState(true);
-                _dbRatingSaver.SaveRating();
+                _idbAllClickSaver.SaveRating();
             });
             
             _mainMenuService.SetInProgressLocationClickAction(() =>

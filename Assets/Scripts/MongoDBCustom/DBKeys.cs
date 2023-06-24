@@ -8,8 +8,9 @@ namespace MongoDBCustom
         public const string DataBase = "mongo";
         public const string Collection = "users";
         public const string DeviceID = "deviceId";
-        public const string PlayerId = DeviceID;
-        public const string Rating = "rating";
+        public const string AllClick = "allClicks";
         public const string Name = "name";
+        public const string Referrals = "referrals";
+      
     }
 }

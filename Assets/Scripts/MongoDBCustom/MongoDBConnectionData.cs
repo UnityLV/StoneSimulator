@@ -5,14 +5,14 @@ namespace MongoDBCustom
 {
     public readonly struct MongoDBConnectionData
     {
-        public MongoDBConnectionData(MongoClient client, IMongoDatabase database, IMongoCollection<BsonDocument> collection)
+        public MongoDBConnectionData(IMongoClient client, IMongoDatabase database, IMongoCollection<BsonDocument> collection)
         {
             Client = client;
             Database = database;
             Collection = collection;
         }
 
-        public readonly MongoClient Client;
+        public readonly IMongoClient Client;
         public readonly IMongoDatabase Database;
         public readonly IMongoCollection<BsonDocument> Collection;
     }

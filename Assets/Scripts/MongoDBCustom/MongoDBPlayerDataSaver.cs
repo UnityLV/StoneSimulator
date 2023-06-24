@@ -7,7 +7,7 @@ using Zenject;
 
 namespace MongoDBCustom
 {
-    public class MongoDBPlayerDataSaver : IDBRatingSaver
+    public class MongoDBPlayerDataSaver : IDBAllClickSaver
     {
         private IClickDataService _clickDataService;
 
@@ -19,7 +19,7 @@ namespace MongoDBCustom
 
         public void SaveRating()
         {
-            UpdateDBValues.UpdatePlayerRatingAsync(_clickDataService.GetClickCount());
+            DBValues.UpdateAllPlayerClicksAsync(_clickDataService.GetAllClickCount());
         }
     }
 }

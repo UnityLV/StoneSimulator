@@ -1,13 +1,14 @@
 ﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace InGameUI
 {
     public struct RatingPlayerData
     {
-        public Image Image;
+        public Sprite Sprite;
         public string Name;
-        public string RatingNumber;
-        public string PointsAmount;
+        public int RatingNumber;
+        public int PointsAmount;
     }
 }

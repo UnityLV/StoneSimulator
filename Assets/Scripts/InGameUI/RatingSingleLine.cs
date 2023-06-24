@@ -14,10 +14,10 @@ namespace InGameUI
 
         public void SetData(RatingPlayerData playerData)
         {
-            _image = playerData.Image;
+            _image.sprite = playerData.Sprite;
             _name.text = playerData.Name;
-            _ratingNumber.text = playerData.RatingNumber;
-            _pointsAmount.text = playerData.PointsAmount;
+            _ratingNumber.text = playerData.RatingNumber.ToString();
+            _pointsAmount.text = playerData.PointsAmount.ToString();
         }
     }
 }

@@ -15,16 +15,14 @@ namespace FirstAuth
 {
     public class FirstAuthUI : MonoBehaviour
     {
-        [SerializeField]
-        private TMP_InputField _inputField;
+        [SerializeField] private TMP_InputField _inputField;
 
-        [SerializeField]
-        private GameObject _popup;
+        [SerializeField] private GameObject _popup;
 
-        private bool _isPopupShowed
+        public bool IsPopupShowed
         {
             get => PlayerPrefs.GetInt("IsPopupShowed", 0) == 1;
-            set => PlayerPrefs.SetInt("IsPopupShowed", value ? 1 : 0);
+            private set => PlayerPrefs.SetInt("IsPopupShowed", value ? 1 : 0);
         }
 
         #region Dependency
@@ -45,8 +43,8 @@ namespace FirstAuth
 
         private void Start()
         {
-         if ( _networkManagerService.GetConnectionType()==ConnectionType.Server) return;
-            _popup.SetActive(!_isPopupShowed);
+            if (_networkManagerService.GetConnectionType() == ConnectionType.Server) return;
+            _popup.SetActive(!IsPopupShowed);
         }
 
         public void EndEditNickname()
@@ -56,14 +54,13 @@ namespace FirstAuth
             _nicknameDataService.SetNickname(result);
             Debug.Log($"User set nick name \"{_nicknameDataService.GetNickname()}\"");
 
-           UpdateDBValues.UpdatePlayerName(result);
+            DBValues.UpdatePlayerName(result);
         }
-        
-      
-        
+
+
         public void ChangeStateIsShowedPopup(bool state)
         {
-            _isPopupShowed = state;
+            IsPopupShowed = state;
         }
     }
 }

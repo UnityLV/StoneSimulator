@@ -54,6 +54,6 @@ public class SettingPage : MonoBehaviour
     {
         _nicknameDataService.SetNickname(nickname);
         
-        UpdateDBValues.UpdatePlayerName(nickname);
+        DBValues.UpdatePlayerName(nickname);
     }
 }

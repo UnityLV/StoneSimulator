@@ -10,7 +10,7 @@ namespace MongoDBCustom
     {
         public async Task<BsonDocument> GetPlayerDataByIdAsync()
         {
-            BsonDocument playerData = await FindPlayerDataAsync();
+            BsonDocument playerData = await DBValues.GetPlayerDataAsync();
 
             if (playerData == null)
             {
@@ -27,23 +27,15 @@ namespace MongoDBCustom
             return playerData;
         }
 
-        private BsonDocument CreateFirstPlayerData() 
+        private BsonDocument CreateFirstPlayerData()
         {
-            BsonDocument playerData;
-            playerData = new BsonDocument
+            BsonDocument playerData = new BsonDocument
             {
-                {DBKeys.DeviceID, DeviceInfo.GetDeviceId()},
-                {DBKeys.Name, "name has not been set yet"},
-                {DBKeys.Rating, 0},
+                { DBKeys.DeviceID, DeviceInfo.GetDeviceId() },
+                { DBKeys.Name, "name has not been set yet" },
+                { DBKeys.AllClick, 0 },
+                { DBKeys.Referrals, new BsonArray() }
             };
-            return playerData;
-        }
-
-        private async Task<BsonDocument> FindPlayerDataAsync()
-        {
-            var filter = Filters.DeviseIDFilter();
-            BsonDocument playerData =
-                await MongoDBConnectionDataHolder.Data.Collection.Find(filter).FirstOrDefaultAsync();
 
             return playerData;
         }
