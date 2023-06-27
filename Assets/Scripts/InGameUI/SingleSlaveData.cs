@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine.Serialization;
 
 namespace PlayerData.Interfaces
 {
@@ -7,5 +8,6 @@ namespace PlayerData.Interfaces
     {
         public string Name;
         public int Clicks;
+        [FormerlySerializedAs("deviseId")] public string DeviseId;
     }
 }

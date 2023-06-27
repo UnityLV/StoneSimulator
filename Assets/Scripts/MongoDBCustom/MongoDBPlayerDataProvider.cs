@@ -12,23 +12,24 @@ namespace MongoDBCustom
     public class MongoDBPlayerDataProvider : IDBPlayerDataProvider
     {
         private IClickDataService _clickDataService;
-        private IMongoConnection _connection;
         private IDBValues _dbValues;
 
         [Inject]
         private void Construct(IClickDataService clickDataService)
         {
             _clickDataService = clickDataService;
+         
         }
         
         public async Task<BsonDocument> GetPlayerDataByIdAsync()
         {
+            _dbValues = ValuesFromBootScene.DBValues;
             BsonDocument playerData = await _dbValues.GetPlayerDataAsync();
 
             if (playerData == null)
             {
                 playerData = CreateFirstPlayerData();
-                await InsertPlayerDataAsync(playerData);
+                await _dbValues.InsertPlayerDataAsync(playerData);
                 
                 _clickDataService.ResetAll();
                 
@@ -58,9 +59,5 @@ namespace MongoDBCustom
             return playerData;
         }
 
-        private async Task InsertPlayerDataAsync(BsonDocument playerData)
-        {
-            await _connection.Collection.InsertOneAsync(playerData);
-        }
     }
 }

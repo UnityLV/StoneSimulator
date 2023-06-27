@@ -41,28 +41,38 @@ namespace MainMenuUI
             _healthService = healthService;
             _gameStateCallbacks = gameStateCallbacks;
             _clickDataService = clickDataService;
+          
         }
+
 
         #endregion
 
         public void SubscribeCallbacks()
         {
             _gameStateCallbacks.OnHealthChanged += UpdateHealth;
+            _clickDataService.ClickUpdated += UpdateClickCountFromClickDataUpdated;
         }
 
         public void UnsubscribeCallbacks()
         {
             _gameStateCallbacks.OnHealthChanged -= UpdateHealth;
+            _clickDataService.ClickUpdated -= UpdateClickCountFromClickDataUpdated;
         }
 
         private void Start()
         {
             UpdateNicknameText();
             SubscribeCallbacks();
-            UpdateClickText();
+            UpdateClickTextFromUIState();
         }
 
-        private void UpdateClickText()
+        
+        private void UpdateClickCountFromClickDataUpdated(int newClicks)
+        {
+            _clickText.text = _clickDataService.GetClickCount().ToString();
+        }
+        
+        private void UpdateClickTextFromUIState()
         {
             _clickText.text = _clickDataService.GetClickCount().ToString();
         }
@@ -83,7 +93,7 @@ namespace MainMenuUI
             _mainMenuUI.SetActive(state);
             if (state)
             {
-                UpdateClickText();
+                UpdateClickTextFromUIState();
                 SubscribeCallbacks();
             
                 _locationMainMenuController.SubscribeCallbacks();

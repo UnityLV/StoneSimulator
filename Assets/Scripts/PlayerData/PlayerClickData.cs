@@ -1,5 +1,6 @@
 ﻿using System;
 using PlayerData.Interfaces;
+using Stone.Interfaces;
 using UnityEngine.Events;
 
 namespace PlayerData
@@ -38,10 +39,10 @@ namespace PlayerData
             Save();
         }
 
-        public void AddClick()
+        public void AddClick(int amount = 1)
         {
-            Data.ClickCount += 1;
-            Data.AllClickCount += 1;
+            Data.ClickCount += amount;
+            Data.AllClickCount += amount;
             Save();
             ClickUpdated?.Invoke(Data.ClickCount);
         }

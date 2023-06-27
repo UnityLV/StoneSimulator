@@ -34,10 +34,11 @@ namespace FirstAuth
         [Inject]
         private void Construct(
             INicknameDataService nicknameDataService,
-            INetworkManagerService networkManagerService)
+            INetworkManagerService networkManagerService,IDBValues dbValues)
         {
             _nicknameDataService = nicknameDataService;
             _networkManagerService = networkManagerService;
+            _dbValues = dbValues;
         }
 
         #endregion

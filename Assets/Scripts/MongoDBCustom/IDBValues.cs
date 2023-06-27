@@ -6,11 +6,14 @@ namespace MongoDBCustom
 {
     public interface IDBValues
     {
+        Task InsertPlayerDataAsync(BsonDocument playerData);
+        
         Task UpdatePlayerName(string result);
-        Task SetMeAsRefferalTo(string refferalId);
         Task AddPlayerClickToGiveReferrer(int clicksToAdd);
-        Task<List<BsonDocument>> PlayersRating();
         Task AddAllPlayerClicks(int add);
+        Task SetMeAsRefferalTo(string refferalId);
+        Task<List<BsonDocument>> CollectClicksToGiveReferrer(List<string> slavesId);
+        Task<List<BsonDocument>> PlayersRating();
         Task<BsonDocument> GetPlayerDataAsync();
         Task<List<BsonDocument>> GetPlayersDataById(IEnumerable<string> id);
         

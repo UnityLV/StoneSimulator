@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
@@ -12,26 +13,28 @@ namespace MongoDBCustom
     {
         private readonly IMongoConnection _connection;
 
+        public async Task InsertPlayerDataAsync(BsonDocument playerData)
+        {
+            await _connection.Collection.InsertOneAsync(playerData);
+        }
+        
         public DBValues(IMongoConnection connection)
         {
             _connection = connection;
         }
+      
+        
+        public async Task<List<BsonDocument>> CollectClicksToGiveReferrer(List<string> slavesId)
+        {
+            var filter = Builders<BsonDocument>.Filter.In(DBKeys.DeviceID, slavesId);
+            var playersDataBeforeUpdate = await _connection.Collection.Find(filter).ToListAsync();
+            var update = Builders<BsonDocument>.Update.Set(DBKeys.ClickToGiveReferrer, 0);
+            await _connection.Collection.UpdateManyAsync(filter, update);
 
-        // public async Task<List<string>> GetMyReferralsID()
-        // {
-        //     var filter = Filters.MyDeviseIDFilter();
-        //     var document = await _connection.Collection.Find(filter).FirstOrDefaultAsync();
-        //
-        //     if (document != null && document.Contains(DBKeys.Referrals))
-        //     {
-        //         var referrals = document[DBKeys.Referrals].AsBsonArray;
-        //         return referrals.Select(r => r.ToString()).ToList();
-        //     }
-        //
-        //     return new List<string>();
-        // }
-        //
-        public  async Task<List<BsonDocument>> GetPlayersDataById(IEnumerable<string> id)
+            return playersDataBeforeUpdate;
+        }
+
+        public async Task<List<BsonDocument>> GetPlayersDataById(IEnumerable<string> id)
         {
             var filter = Builders<BsonDocument>.Filter.In(DBKeys.DeviceID, id);
             var documents = await _connection.Collection.Find(filter).ToListAsync();
@@ -53,7 +56,7 @@ namespace MongoDBCustom
             var update = Builders<BsonDocument>.Update.Inc(DBKeys.AllClick, add);
 
             await _connection.Collection.UpdateOneAsync(filter, update);
-            Debug.Log("Player clicks updated new is " + add);
+            Debug.Log("Player clicks add " + add);
         }
 
         public async Task AddPlayerClickToGiveReferrer(int clicksToAdd)

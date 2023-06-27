@@ -1,4 +1,5 @@
 ﻿using MainMenuUI;
+using MongoDBCustom;
 using Network;
 using Network.Interfaces;
 using PlayerData;
@@ -14,6 +15,7 @@ namespace Installers
         public override void InstallBindings()
         {
             BindNetworkManager();
+            Container.BindInterfacesAndSelfTo<MongoDBPlayerDataProvider>().AsSingle().NonLazy();
         }
 
 

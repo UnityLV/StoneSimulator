@@ -9,6 +9,6 @@ namespace PlayerData.Interfaces
         public int GetAllClickCount();
         public void ResetAll();
         public void SetClickCount(int value);
-        public void AddClick();
+        public void AddClick(int amount = 1);
     }
 }

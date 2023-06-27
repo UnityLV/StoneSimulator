@@ -10,8 +10,9 @@ namespace MongoDBCustom
 {
     public class RefferalTest : MonoBehaviour
     {
-        private IDBValues _dbValues;
-        private IMongoConnection _connection;
+        public IDBValues _dbValues;
+        public IMongoConnection _connection;
+        
         [Button()]
         public async Task AddRandomPlayerToReferralsAsync()
         {
@@ -57,7 +58,7 @@ namespace MongoDBCustom
             {
                 var deviceId = GenerateRandomDeviceId();
                 var name = "Test Player " + (i + 1);
-                var allClicks = UnityEngine.Random.Range(0, 100);
+                var allClicks = UnityEngine.Random.Range(0, 1000);
 
                 var player = new BsonDocument
                 {

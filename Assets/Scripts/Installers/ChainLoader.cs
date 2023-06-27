@@ -16,8 +16,7 @@ namespace Installers
         [SerializeField] private ConnectionConfig _mirror;
 
         [SerializeField] private PlayerDataSetter _playerDataSetter;  
-
-        public event UnityAction Loaded;  
+  
         private DBValues _dbValues;
 
         private async void Start()

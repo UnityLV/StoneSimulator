@@ -58,6 +58,7 @@ namespace Installers
 
             Container.BindInterfacesAndSelfTo<InGameRatingListUI>().FromInstance(_ratingListUI).AsSingle();
             Container.BindInterfacesAndSelfTo<ReferrerClicks>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SlaveClicksCollector>().AsSingle();
             
             Container.Bind<IMongoConnection>().FromInstance(ValuesFromBootScene.MongoConnection).AsSingle()
                 .NonLazy(); 
