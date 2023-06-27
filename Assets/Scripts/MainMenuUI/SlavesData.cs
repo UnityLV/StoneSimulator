@@ -15,7 +15,7 @@ namespace MainMenuUI
         public int AllClicks { get; private set; }
         public int AllSlaves { get; private set; }
 
-        public SlavesData(List<BsonValue> data)
+        public SlavesData(List<BsonDocument> data)
         {
             Data = ToSlaveData(data);
             AllClicks = Data.Select(d => d.Clicks).Sum();
@@ -29,12 +29,12 @@ namespace MainMenuUI
             AllSlaves = Data.Count();
         }
 
-        private List<SingleSlaveData> ToSlaveData(List<BsonValue> data)
+        private List<SingleSlaveData> ToSlaveData(List<BsonDocument> data)
         {
             return data.Select(ToSlaveData).ToList();
         }
 
-        private SingleSlaveData ToSlaveData(BsonValue document)
+        private SingleSlaveData ToSlaveData(BsonDocument document)
         {
             return new SingleSlaveData
                 { Name = document[DBKeys.Name].AsString, Clicks = document[DBKeys.AllClickToGiveReferrer].AsInt32 };

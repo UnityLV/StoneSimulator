@@ -19,7 +19,7 @@ namespace PlayerData
         }
 
 
-        public void SetSlaves(List<BsonValue> slaves)
+        public void SetSlaves(List<BsonDocument> slaves)
         {
             _slavesData = new SlavesData(slaves);
             Data.Json = JsonUtility.ToJson(new SavablePlayerSlavesData().Data = _slavesData.Data);

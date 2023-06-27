@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &103472859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103472861}
+  - component: {fileID: 103472860}
+  - component: {fileID: 103472862}
+  m_Layer: 0
+  m_Name: PlayerDataSetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &103472860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103472859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8d5628e9764233be7e3ddc03d86074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &103472861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103472859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 925.3551, y: 982.0696, z: 3.5482602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &103472862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103472859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e86d6547864fa59444f32cb267f16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customNetworkManager: {fileID: 1750747901}
+  _db: {fileID: 11400000, guid: 1cf8bc9d767cd8144814a78f58113d5b, type: 2}
+  _mirror: {fileID: 11400000, guid: 30857f3676b81e34ebd6209eecf0a6ad, type: 2}
+  _playerDataSetter: {fileID: 103472860}
 --- !u!1 &235805071
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +837,6 @@ GameObject:
   - component: {fileID: 1355880926}
   - component: {fileID: 1355880925}
   - component: {fileID: 1355880924}
-  - component: {fileID: 1355880927}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -797,8 +857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customNetworkManager: {fileID: 1750747901}
-  _db: {fileID: 11400000, guid: 1cf8bc9d767cd8144814a78f58113d5b, type: 2}
-  _mirror: {fileID: 11400000, guid: 30857f3676b81e34ebd6209eecf0a6ad, type: 2}
 --- !u!114 &1355880925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,18 +904,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1355880927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355880923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a8d5628e9764233be7e3ddc03d86074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1408288955
 GameObject:
   m_ObjectHideFlags: 0

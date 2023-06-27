@@ -12,5 +12,7 @@ namespace MongoDBCustom
         Task<List<BsonDocument>> PlayersRating();
         Task AddAllPlayerClicks(int add);
         Task<BsonDocument> GetPlayerDataAsync();
+        Task<List<BsonDocument>> GetPlayersDataById(IEnumerable<string> id);
+        
     }
 }

@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Installers;
+using JetBrains.Annotations;
+using MongoDB.Bson;
 using MongoDBCustom;
 using PlayerData.Interfaces;
 using UnityEngine;
@@ -30,10 +34,31 @@ namespace PlayerData
             _dbValues = ValuesFromBootScene.DBValues;
 
             var PlayerData = await _dbValues.GetPlayerDataAsync();
-            _nicknameData.SetNickname(PlayerData[DBKeys.Name].AsString);
+            
+            SetNickname(PlayerData);
+            SetClicks(PlayerData);
+            SetSlaves(await GetMySlavesData(PlayerData));
+        }
+
+        private async Task<List<BsonDocument>> GetMySlavesData(BsonDocument PlayerData)
+        {
+            List<string> slavesId = PlayerData[DBKeys.Referrals].AsBsonArray.Select(v => v.AsString).ToList();
+            return await _dbValues.GetPlayersDataById(slavesId);
+        }
+
+        private void SetSlaves(List<BsonDocument> slaves)
+        {
+            _slavesDataService.SetSlaves(slaves);
+        }
+
+        private void SetClicks(BsonDocument PlayerData)
+        {
             _clickDataService.SetClickCount(PlayerData[DBKeys.AllClick].AsInt32);
-            _slavesDataService.SetSlaves(PlayerData[DBKeys.Referrals].AsBsonArray.ToList());
-            Debug.Log(_slavesDataService.GetSlaves());
+        }
+
+        private void SetNickname(BsonDocument PlayerData)
+        {
+            _nicknameData.SetNickname(PlayerData[DBKeys.Name].AsString);
         }
     }
 }

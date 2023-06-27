@@ -12,7 +12,7 @@ namespace PlayerData.Interfaces
 
     public interface ISlavesDataService
     {
-        void SetSlaves(List<BsonValue> slaves);
+        void SetSlaves(List<BsonDocument> slaves);
         SlavesData GetSlaves();
     }
 }

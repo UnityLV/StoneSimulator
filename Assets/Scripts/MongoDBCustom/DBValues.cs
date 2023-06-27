@@ -31,13 +31,12 @@ namespace MongoDBCustom
         //     return new List<string>();
         // }
         //
-        // public  async Task<List<BsonDocument>> GetReferralPlayers()
-        // {
-        //     var filter = Builders<BsonDocument>.Filter.In(DBKeys.DeviceID, await GetMyReferralsID());
-        //     var documents = await _connection.Collection.Find(filter).ToListAsync();
-        //
-        //     return documents;
-        // }
+        public  async Task<List<BsonDocument>> GetPlayersDataById(IEnumerable<string> id)
+        {
+            var filter = Builders<BsonDocument>.Filter.In(DBKeys.DeviceID, id);
+            var documents = await _connection.Collection.Find(filter).ToListAsync();
+            return documents;
+        }
 
         public async Task SetMeAsRefferalTo(string toRefferalDeviseId)
         {
