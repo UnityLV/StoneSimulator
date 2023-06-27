@@ -21,7 +21,7 @@ namespace InGameUI
 
         private void Awake()
         {
-            _defaultPosition = transform.position;
+            _defaultPosition = transform.localPosition;
             _toMovePosition = _defaultPosition + _inPosition;
         }
 
@@ -44,13 +44,13 @@ namespace InGameUI
         
         private async void MoveIn()
         {
-            await transform.DOMove(_toMovePosition, _inTime).SetEase(_inEase).AsyncWaitForCompletion();
+            await transform.DOLocalMove(_toMovePosition, _inTime).SetEase(_inEase).AsyncWaitForCompletion();
             
         }
         
         private async void MoveOut()
         {
-            await transform.DOMove(_defaultPosition, _outTime).SetEase(_outEase).AsyncWaitForCompletion();
+            await transform.DOLocalMove(_defaultPosition, _outTime).SetEase(_outEase).AsyncWaitForCompletion();
           
         }
         

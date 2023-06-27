@@ -7,6 +7,7 @@ using MongoDB.Driver;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 namespace MongoDBCustom
 {
@@ -15,12 +16,19 @@ namespace MongoDBCustom
         [SerializeField] private RatingListUI ratingListUI;
         [SerializeField] private RatingListUI ratingListUI2;
 
-        [SerializeField] private FirstAuthUI _firstAuth;
-
         [SerializeField] private Sprite _image1;
         [SerializeField] private Sprite _image2;
         [SerializeField] private Sprite _image3;
         [SerializeField] private Sprite _imageDefault;
+
+        private IDBValues _dbValues;
+        
+
+        [Inject]
+        private void Construct(IDBValues values)
+        {
+            _dbValues = values;
+        }
 
         private async void Start()
         {
@@ -36,7 +44,7 @@ namespace MongoDBCustom
         
         private async Task LoadRating()
         {
-            var playersRatings = await DBValues.PlayersRating();
+            var playersRatings = await _dbValues.PlayersRating();
             var ratingPlayerDataList = new List<RatingPlayerData>();
 
             for (int i = 0; i < playersRatings.Count; i++)

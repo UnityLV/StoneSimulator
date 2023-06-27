@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Firebase;
 using Firebase.RemoteConfig;
 using Firebase.Unity;
@@ -8,11 +9,9 @@ using UnityEngine.Events;
 
 namespace FirebaseCustom
 {
-    public class RemoteConfigLoader : MonoBehaviour
+    public class RemoteConfigLoader 
     {
-        public event UnityAction<Config> Loaded;
-
-        async void Awake()
+        public async Task<Config> Load()
         {
             await FirebaseApp.CheckAndFixDependenciesAsync();
             FirebaseRemoteConfig remoteConfig =
@@ -22,10 +21,7 @@ namespace FirebaseCustom
             await remoteConfig.ActivateAsync();
             Config config = new Config();
             config.SetFromFirebaseRemoteConfig(remoteConfig);
-
-
-            Debug.Log("Remote Config Loaded" + JsonUtility.ToJson(config) );
-            Loaded?.Invoke(config);
+            return config;
         }
     }
 }

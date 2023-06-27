@@ -4,76 +4,94 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using UnityEngine;
+using Zenject;
 
 namespace MongoDBCustom
 {
-    public class DBValues
+    public class DBValues : IDBValues
     {
-        
-        public static List<string> GetMyReferralsID()
+        private readonly IMongoConnection _connection;
+
+        public DBValues(IMongoConnection connection)
         {
-            var filter = Filters.MyDeviseIDFilter();
-            var document = MongoDBConnectionDataHolder.Data.Collection.Find(filter).FirstOrDefault();
-
-            if (document != null && document.Contains(DBKeys.Referrals))
-            {
-                var referrals = document[DBKeys.Referrals].AsBsonArray;
-                return referrals.Select(r => r.ToString()).ToList();
-            }
-
-            return new List<string>();
+            _connection = connection;
         }
-        
-        public static async Task<List<BsonDocument>> GetReferralPlayersAsync()
-        {
-            var filter = Builders<BsonDocument>.Filter.In(DBKeys.DeviceID, GetMyReferralsID());
-            var documents = await MongoDBConnectionDataHolder.Data.Collection.Find(filter).ToListAsync();
 
-            return documents;
-        }
-        
-        public static async Task SetMeAsRefferalTo(string toRefferalDeviseId)
+        // public async Task<List<string>> GetMyReferralsID()
+        // {
+        //     var filter = Filters.MyDeviseIDFilter();
+        //     var document = await _connection.Collection.Find(filter).FirstOrDefaultAsync();
+        //
+        //     if (document != null && document.Contains(DBKeys.Referrals))
+        //     {
+        //         var referrals = document[DBKeys.Referrals].AsBsonArray;
+        //         return referrals.Select(r => r.ToString()).ToList();
+        //     }
+        //
+        //     return new List<string>();
+        // }
+        //
+        // public  async Task<List<BsonDocument>> GetReferralPlayers()
+        // {
+        //     var filter = Builders<BsonDocument>.Filter.In(DBKeys.DeviceID, await GetMyReferralsID());
+        //     var documents = await _connection.Collection.Find(filter).ToListAsync();
+        //
+        //     return documents;
+        // }
+
+        public async Task SetMeAsRefferalTo(string toRefferalDeviseId)
         {
             var filter = Filters.IDFilter(toRefferalDeviseId);
             var update = Builders<BsonDocument>.Update.AddToSet(DBKeys.Referrals, DeviceInfo.GetDeviceId());
 
-            await MongoDBConnectionDataHolder.Data.Collection.UpdateOneAsync(filter, update);
+            await _connection.Collection.UpdateOneAsync(filter, update);
             Debug.Log("Referral added: to" + toRefferalDeviseId);
         }
 
-        public static async Task UpdateAllPlayerClicksAsync(int newClicks)
+        public async Task AddAllPlayerClicks(int add)
         {
             var filter = Filters.MyDeviseIDFilter();
-            var update = Builders<BsonDocument>.Update.Set(DBKeys.AllClick, newClicks);
+            var update = Builders<BsonDocument>.Update.Inc(DBKeys.AllClick, add);
 
-            await MongoDBConnectionDataHolder.Data.Collection.UpdateOneAsync(filter, update);
-            Debug.Log("Player clicks updated new is " + newClicks);
+            await _connection.Collection.UpdateOneAsync(filter, update);
+            Debug.Log("Player clicks updated new is " + add);
         }
-        
-        
-        public static async Task<BsonDocument> GetPlayerDataAsync()
+
+        public async Task AddPlayerClickToGiveReferrer(int clicksToAdd)
+        {
+            var filter = Filters.MyDeviseIDFilter();
+            var update = Builders<BsonDocument>.Update
+                .Inc(DBKeys.ClickToGiveReferrer, clicksToAdd)
+                .Inc(DBKeys.AllClickToGiveReferrer, clicksToAdd);
+
+            await _connection.Collection.UpdateOneAsync(filter, update);
+            Debug.Log("Player Click To Give Referrer updated " + clicksToAdd);
+        }
+
+
+        public async Task<BsonDocument> GetPlayerDataAsync()
         {
             var filter = Filters.MyDeviseIDFilter();
             BsonDocument playerData =
-                await MongoDBConnectionDataHolder.Data.Collection.Find(filter).FirstOrDefaultAsync();
+                await _connection.Collection.Find(filter).FirstOrDefaultAsync();
 
             return playerData;
         }
 
-        
-        public static async Task UpdatePlayerName(string newName)
+
+        public async Task UpdatePlayerName(string newName)
         {
             var filter = Filters.MyDeviseIDFilter();
             var update = Builders<BsonDocument>.Update.Set(DBKeys.Name, newName);
 
-            await MongoDBConnectionDataHolder.Data.Collection.UpdateOneAsync(filter, update);
+            await _connection.Collection.UpdateOneAsync(filter, update);
             Debug.Log("Player name updated new is " + newName);
         }
-        
-        
-        public static async Task<List<BsonDocument>> PlayersRating()
+
+
+        public async Task<List<BsonDocument>> PlayersRating()
         {
-            var collection = MongoDBConnectionDataHolder.Data.Collection;
+            var collection = _connection.Collection;
             var filter = Builders<BsonDocument>.Filter.Empty;
             var sort = Builders<BsonDocument>.Sort.Descending(DBKeys.AllClick);
             var limit = 100;

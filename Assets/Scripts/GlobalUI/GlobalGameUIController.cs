@@ -8,48 +8,52 @@ using Zenject;
 
 namespace GlobalUI
 {
-    public class GlobalGameUIController:MonoBehaviour
+    public class GlobalGameUIController : MonoBehaviour
     {
         #region Dependency
 
         private IInGameService _inGameService;
         private IMainMenuService _mainMenuService;
         private IGameStateService _gameStateService;
-        private IDBAllClickSaver _idbAllClickSaver;
-        
+        private IDBAllClickSaver _allClickSaver;
+        private IDBReferrerClicksSaver _referrerClicks;
+
         [Inject]
-        private void Construct(IInGameService inGameService, IMainMenuService mainMenuService, IGameStateService gameStateService,IDBAllClickSaver idbAllClickSaver)
+        private void Construct(IInGameService inGameService, IMainMenuService mainMenuService,
+            IGameStateService gameStateService, IDBAllClickSaver idbAllClickSaver,IDBReferrerClicksSaver referrerClicks)
         {
             _inGameService = inGameService;
             _mainMenuService = mainMenuService;
             _gameStateService = gameStateService;
-            _idbAllClickSaver = idbAllClickSaver;
+            _allClickSaver = idbAllClickSaver;
+            _referrerClicks = referrerClicks;
         }
 
         #endregion
 
         private void Start()
         {
-            _inGameService.SetState(false,false);
+            _inGameService.SetState(false, false);
             _mainMenuService.SetState(true);
-            
+
             _inGameService.SetOnHomeClickAction(() =>
             {
-                _inGameService.SetState(false,false);
+                _inGameService.SetState(false, false);
                 _mainMenuService.SetState(true);
-                _idbAllClickSaver.SaveRating();
+                _allClickSaver.Save();
+                _referrerClicks.Save();
             });
-            
+
             _mainMenuService.SetInProgressLocationClickAction(() =>
             {
-                _inGameService.SetState(true,true);
+                _inGameService.SetState(true, true);
                 _mainMenuService.SetState(false);
                 _gameStateService.TryStartGame();
             });
-            
+
             _mainMenuService.SetOnCompleteLocationClickAction((x) =>
             {
-                _inGameService.SetState(true,false);
+                _inGameService.SetState(true, false);
                 _mainMenuService.SetState(false);
                 _gameStateService.TryWatchLocation(x);
             });

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PlayerData.Interfaces;
 using UnityEngine;
 
 namespace InGameUI
@@ -7,7 +8,7 @@ namespace InGameUI
     {
         [SerializeField] private SlaveSingleLine _linePrefab;
 
-        public void SetData(IEnumerable<SlaveData> data)
+        public void SetData(IEnumerable<SingleSlaveData> data)
         {
             foreach (var slaveData in data)
             {

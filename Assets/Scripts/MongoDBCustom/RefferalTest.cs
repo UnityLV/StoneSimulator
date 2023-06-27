@@ -10,12 +10,13 @@ namespace MongoDBCustom
 {
     public class RefferalTest : MonoBehaviour
     {
-        
+        private IDBValues _dbValues;
+        private IMongoConnection _connection;
         [Button()]
-        public static async Task AddRandomPlayerToReferralsAsync()
+        public async Task AddRandomPlayerToReferralsAsync()
         {
             var filter = Builders<BsonDocument>.Filter.Ne(DBKeys.DeviceID, DeviceInfo.GetDeviceId());
-            var documents = await MongoDBConnectionDataHolder.Data.Collection.Find(filter).ToListAsync();
+            var documents = await _connection.Collection.Find(filter).ToListAsync();
 
             if (documents.Count > 0)
             {
@@ -26,7 +27,7 @@ namespace MongoDBCustom
                 var myFilter = Filters.MyDeviseIDFilter();
                 var update = Builders<BsonDocument>.Update.AddToSet(DBKeys.Referrals, referralDeviceId);
 
-                await MongoDBConnectionDataHolder.Data.Collection.UpdateOneAsync(myFilter, update);
+                await _connection.Collection.UpdateOneAsync(myFilter, update);
                 Debug.Log("Random player added to referrals: " + referralDeviceId);
             }
             else
@@ -34,42 +35,44 @@ namespace MongoDBCustom
                 Debug.Log("No players found in database");
             }
         }
-        
+
         [Button()]
-        public static async Task ClearDatabaseAsync()
+        public  async Task ClearDatabaseAsync()
         {
             var filter = new BsonDocument();
-            await MongoDBConnectionDataHolder.Data.Collection.DeleteManyAsync(filter);
+            await _connection.Collection.DeleteManyAsync(filter);
             Debug.Log("Database cleared");
         }
+
         [Button()]
-        
-        public static async Task PopulateDatabaseWithRealPlayersAsync()
+        public  async Task PopulateDatabaseWithRealPlayersAsync()
         {
             int count = 20;
             var players = new List<BsonDocument>();
 
-            var existingPlayers = await MongoDBConnectionDataHolder.Data.Collection.Find(new BsonDocument()).ToListAsync();
+            var existingPlayers =
+                await _connection.Collection.Find(new BsonDocument()).ToListAsync();
 
             for (int i = 0; i < count; i++)
             {
                 var deviceId = GenerateRandomDeviceId();
                 var name = "Test Player " + (i + 1);
                 var allClicks = UnityEngine.Random.Range(0, 100);
-                var referrals = GenerateRealReferrals(existingPlayers, deviceId);
 
                 var player = new BsonDocument
                 {
                     { DBKeys.DeviceID, deviceId },
                     { DBKeys.Name, name },
                     { DBKeys.AllClick, allClicks },
-                    { DBKeys.Referrals, new BsonArray(referrals) }
+                    { DBKeys.Referrals, new BsonArray() },
+                    { DBKeys.ClickToGiveReferrer, allClicks/ 10 },
+                    { DBKeys.AllClickToGiveReferrer, allClicks/ 10 }
                 };
 
                 players.Add(player);
             }
 
-            await MongoDBConnectionDataHolder.Data.Collection.InsertManyAsync(players);
+            await _connection.Collection.InsertManyAsync(players);
             Debug.Log("Real test players inserted into database");
         }
 
@@ -89,24 +92,17 @@ namespace MongoDBCustom
 
             return referrals;
         }
-        
+
         private static string GenerateRandomDeviceId()
         {
             return Guid.NewGuid().ToString("N");
         }
+
         
-        [Button()]
-        public async void GetRefferals()
+
+        public void SetMeAsRefferal(string refferalId)
         {
-            foreach (var VARIABLE in await DBValues.GetReferralPlayersAsync())
-            {
-                Debug.Log(VARIABLE);
-            }
-        }
-        
-        public void SetMeAsRefferal( string refferalId)
-        {
-            DBValues.SetMeAsRefferalTo(refferalId);
+            _dbValues.SetMeAsRefferalTo(refferalId);
         }
     }
 }

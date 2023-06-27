@@ -1,22 +1,37 @@
 ﻿using System.Threading.Tasks;
+using Installers;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using NaughtyAttributes;
+using PlayerData.Interfaces;
 using UnityEngine;
+using Zenject;
 
 namespace MongoDBCustom
 {
-    public class MongoDBPlayerDataProvider : MonoBehaviour, IDBPlayerDataProvider
+    public class MongoDBPlayerDataProvider : IDBPlayerDataProvider
     {
+        private IClickDataService _clickDataService;
+        private IMongoConnection _connection;
+        private IDBValues _dbValues;
+
+        [Inject]
+        private void Construct(IClickDataService clickDataService)
+        {
+            _clickDataService = clickDataService;
+        }
+        
         public async Task<BsonDocument> GetPlayerDataByIdAsync()
         {
-            BsonDocument playerData = await DBValues.GetPlayerDataAsync();
+            BsonDocument playerData = await _dbValues.GetPlayerDataAsync();
 
             if (playerData == null)
             {
                 playerData = CreateFirstPlayerData();
-
                 await InsertPlayerDataAsync(playerData);
+                
+                _clickDataService.ResetAll();
+                
                 Debug.Log("Player data inserted");
             }
             else
@@ -34,15 +49,18 @@ namespace MongoDBCustom
                 { DBKeys.DeviceID, DeviceInfo.GetDeviceId() },
                 { DBKeys.Name, "name has not been set yet" },
                 { DBKeys.AllClick, 0 },
-                { DBKeys.Referrals, new BsonArray() }
+                { DBKeys.ClickToGiveReferrer, 0 },
+                { DBKeys.AllClickToGiveReferrer, 0 },
+                { DBKeys.Referrals, new BsonArray() },
             };
+            
 
             return playerData;
         }
 
         private async Task InsertPlayerDataAsync(BsonDocument playerData)
         {
-            await MongoDBConnectionDataHolder.Data.Collection.InsertOneAsync(playerData);
+            await _connection.Collection.InsertOneAsync(playerData);
         }
     }
 }

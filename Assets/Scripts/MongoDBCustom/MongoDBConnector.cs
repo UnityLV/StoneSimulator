@@ -1,32 +1,55 @@
-using System.IO;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using FirebaseCustom;
-using MongoDB.Bson;
-using MongoDB.Driver;
+using UnityEngine;
 using UnityEngine.Events;
 
 
 namespace MongoDBCustom
 {
-    public class MongoDBConnector
+    public class MongoDBConnector : IDBConnector
     {
-        private MongoDBConnectionConfig _config;
 
-        public MongoDBConnector(MongoDBConnectionConfig config)
+        private IMongoConnection _connection;
+
+        public MongoDBConnector(IMongoConnection connectData)
         {
-            _config = config;
+            _connection = connectData;
         }
 
-        public event UnityAction<MongoDBConnectionData> Connected;
-
-        public void Connection()
+        public async Task TryConnect()
         {
-            IMongoClient client = new MongoClient(_config.GetConnectionString());
-            IMongoDatabase database = client.GetDatabase(DBKeys.DataBase);
-            IMongoCollection<BsonDocument> playerCollection = database.GetCollection<BsonDocument>(DBKeys.Collection);
-
-            MongoDBConnectionData connectionData = new MongoDBConnectionData(client, database, playerCollection);
-            
-            Connected?.Invoke(connectionData);
+            try
+            {
+                await TestConnection();
+                HandleSuccessConnect();
+            }
+            catch (Exception ex)
+            {
+                await HandleFailConnect(ex);
+            }
         }
+
+        private async Task TestConnection()
+        {
+            Debug.Log("Connect To DataBase");
+            await _connection.Client.StartSessionAsync();
+        }
+
+        private void HandleSuccessConnect()
+        {
+            Debug.Log($"Data Base SuccessConnect");
+        }
+
+        private async Task HandleFailConnect(Exception ex)
+        {
+            Debug.LogError($"Data Base FailedConnect {ex.Message}");
+            await Task.Delay(100);
+            Debug.Log("Try Connect");
+            await TryConnect();
+        }
+        
+      
     }
 }

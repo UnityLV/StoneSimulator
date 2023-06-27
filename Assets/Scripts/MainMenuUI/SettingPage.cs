@@ -19,11 +19,13 @@ public class SettingPage : MonoBehaviour
     #region Dependency
 
     private INicknameDataService _nicknameDataService;
+    private IDBValues _dbValues;
     
     [Inject]
-    private void Construct(INicknameDataService nicknameDataService)
+    private void Construct(INicknameDataService nicknameDataService, IDBValues dbValues)
     {
         _nicknameDataService = nicknameDataService;
+        _dbValues = dbValues;
     }
 
     #endregion
@@ -54,6 +56,6 @@ public class SettingPage : MonoBehaviour
     {
         _nicknameDataService.SetNickname(nickname);
         
-        DBValues.UpdatePlayerName(nickname);
+        _dbValues.UpdatePlayerName(nickname);
     }
 }

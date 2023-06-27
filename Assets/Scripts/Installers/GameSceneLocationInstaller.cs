@@ -35,7 +35,7 @@ namespace Installers
         [SerializeField] private CameraRotationObject _cameraRotation;
         [SerializeField] private InGameRatingListUI _ratingListUI;
 
-         [SerializeField] private PlayerRatingInDBSaver _playerRatingInDBSaver;
+        [SerializeField] private PlayerRatingInDBSaver _playerRatingInDBSaver;
 
 
         public override void InstallBindings()
@@ -55,13 +55,22 @@ namespace Installers
 
             BindPlayerRating();
             BindRatingSaver();
-            
+
             Container.BindInterfacesAndSelfTo<InGameRatingListUI>().FromInstance(_ratingListUI).AsSingle();
+            Container.BindInterfacesAndSelfTo<ReferrerClicks>().AsSingle();
+            
+            Container.Bind<IMongoConnection>().FromInstance(ValuesFromBootScene.MongoConnection).AsSingle()
+                .NonLazy(); 
+            
+            Container.Bind<IDBValues>().FromInstance(ValuesFromBootScene.DBValues).AsSingle()
+                .NonLazy();
+            
+            
         }
 
         private void BindRatingSaver()
         {
-            Container.BindInterfacesAndSelfTo<MongoDBPlayerDataSaver>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AllClickSaver>().AsSingle();
         }
 
         private void BindPlayerRating()
@@ -116,7 +125,7 @@ namespace Installers
 
         private void BindNetworkManager()
         {
-            Container.Bind<INetworkManagerService>().FromInstance(BootSceneInstaller.CustomNetworkManager).AsSingle()
+            Container.Bind<INetworkManagerService>().FromInstance(ValuesFromBootScene.CustomNetworkManager).AsSingle()
                 .NonLazy();
         }
 

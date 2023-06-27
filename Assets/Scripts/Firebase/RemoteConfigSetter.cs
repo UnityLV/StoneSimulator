@@ -5,34 +5,24 @@ using UnityEngine.Serialization;
 
 namespace FirebaseCustom
 {
-    public class RemoteConfigSetter : MonoBehaviour
+    public class RemoteConfigSetter
     {
-        [SerializeField] private ConnectionConfig unityServerConnectionConfig;
-        [SerializeField] private MongoDBConnectionConfig dbConnectionConfig;
-        
-        [SerializeField] private RemoteConfigLoader _loader;
-
-        [SerializeField] private UnityEvent _set; 
-
-        private void OnEnable()
+        public RemoteConfigSetter(ConnectionConfig unityServerConnectionConfig,
+            ConnectionConfig dbConnectionConfig)
         {
-            _loader.Loaded += LoaderOnLoaded;
+            this._unityServerConnectionConfig = unityServerConnectionConfig;
+            this._dbConnectionConfig = dbConnectionConfig;
         }
 
-        private void OnDisable()
-        {
-            _loader.Loaded -= LoaderOnLoaded;
-        }
+        private readonly ConnectionConfig _unityServerConnectionConfig;
+        private readonly ConnectionConfig _dbConnectionConfig;
 
-        private void LoaderOnLoaded(Config config)
+        public void SetConfigs(Config config)
         {
-            unityServerConnectionConfig.Ip = config.UnityServerIp;
-            unityServerConnectionConfig.Port = config.UnityServerPort;
-            dbConnectionConfig.Ip = config.DBServerIp;
-            dbConnectionConfig.Port = config.DBServerPort;
-          
-            _set?.Invoke();
-         
+            _unityServerConnectionConfig.Ip = config.UnityServerIp;
+            _unityServerConnectionConfig.Port = config.UnityServerPort;
+            _dbConnectionConfig.Ip = config.DBServerIp;
+            _dbConnectionConfig.Port = config.DBServerPort;
         }
     }
 }

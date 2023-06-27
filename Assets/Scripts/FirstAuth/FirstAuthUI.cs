@@ -19,6 +19,7 @@ namespace FirstAuth
 
         [SerializeField] private GameObject _popup;
 
+        private IDBValues _dbValues;
         public bool IsPopupShowed
         {
             get => PlayerPrefs.GetInt("IsPopupShowed", 0) == 1;
@@ -54,7 +55,7 @@ namespace FirstAuth
             _nicknameDataService.SetNickname(result);
             Debug.Log($"User set nick name \"{_nicknameDataService.GetNickname()}\"");
 
-            DBValues.UpdatePlayerName(result);
+            _dbValues.UpdatePlayerName(result);
         }
 
 

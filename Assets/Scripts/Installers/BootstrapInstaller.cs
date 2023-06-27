@@ -1,5 +1,6 @@
 using GameScene;
 using PlayerData;
+using PlayerData.Interfaces;
 using Zenject;
 
 public class BootstrapInstaller : MonoInstaller
@@ -12,7 +13,9 @@ public class BootstrapInstaller : MonoInstaller
 
     private void BindPlayerDataHolder()
     {
-        Container.BindInterfacesAndSelfTo<PlayerDataHolder>().AsSingle();
+        Container.BindInterfacesAndSelfTo<PlayerClickData>().AsSingle();
+        Container.BindInterfacesAndSelfTo<PlayerNicknameData>().AsSingle();
+        Container.BindInterfacesAndSelfTo<PlayerSlavesData>().AsSingle();
     }
 
     private void BindGameScene()

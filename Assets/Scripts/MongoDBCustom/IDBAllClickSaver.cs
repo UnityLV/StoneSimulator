@@ -2,6 +2,6 @@
 {
     public interface IDBAllClickSaver
     {
-        void SaveRating();
+        void Save();
     }
 }

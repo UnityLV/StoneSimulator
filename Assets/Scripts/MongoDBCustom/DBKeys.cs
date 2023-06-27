@@ -9,8 +9,10 @@ namespace MongoDBCustom
         public const string Collection = "users";
         public const string DeviceID = "deviceId";
         public const string AllClick = "allClicks";
+        public const string ClickToGiveReferrer= "clicksToGiveReferrer";
+        public const string AllClickToGiveReferrer= "allClicksToGiveReferrer";
         public const string Name = "name";
         public const string Referrals = "referrals";
-      
+
     }
 }

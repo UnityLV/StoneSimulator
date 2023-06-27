@@ -46,7 +46,7 @@ namespace MongoDBCustom
 
         private void UpdateRating()
         {
-            _ratingSaver?.SaveRating();
+            _ratingSaver?.Save();
             _lastUpdateTimestamp = DateTime.Now;
         }
     }

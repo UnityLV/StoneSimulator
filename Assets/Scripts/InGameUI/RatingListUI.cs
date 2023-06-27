@@ -53,7 +53,6 @@ namespace InGameUI
 
             for (int i = 0; i < sortedData.Length; i++)
             {
-                Debug.Log(sortedData[i].PointsAmount + gameObject.name + i);
                 RatingSingleLine line = _lines[i];
                 line.SetData(sortedData[i]);
                 line.transform.SetSiblingIndex(i);

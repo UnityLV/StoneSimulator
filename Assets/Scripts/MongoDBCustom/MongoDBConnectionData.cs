@@ -3,17 +3,15 @@ using MongoDB.Driver;
 
 namespace MongoDBCustom
 {
-    public readonly struct MongoDBConnectionData
+    public class MongoMongoConnectionData : IMongoConnection
     {
-        public MongoDBConnectionData(IMongoClient client, IMongoDatabase database, IMongoCollection<BsonDocument> collection)
+        public MongoMongoConnectionData(IMongoClient client, IMongoCollection<BsonDocument> collection)
         {
             Client = client;
-            Database = database;
             Collection = collection;
         }
 
-        public readonly IMongoClient Client;
-        public readonly IMongoDatabase Database;
-        public readonly IMongoCollection<BsonDocument> Collection;
+        public IMongoClient Client { get; }
+        public IMongoCollection<BsonDocument> Collection { get; }
     }
 }

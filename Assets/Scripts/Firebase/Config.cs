@@ -18,7 +18,7 @@ namespace FirebaseCustom
         }
     }
 
-    public class ConfigKeys
+    public static class ConfigKeys
     {
         public const string DBServerIp = "DBServerIp";
         public const string DBServerPort = "DBServerPort";
