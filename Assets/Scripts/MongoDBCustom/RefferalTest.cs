@@ -10,9 +10,16 @@ namespace MongoDBCustom
 {
     public class RefferalTest : MonoBehaviour
     {
+        public string id;
         public IDBValues _dbValues;
         public IMongoConnection _connection;
-        
+
+        [Button()]
+        private void RemoveMeFromReferrals()
+        {
+            _dbValues.RemoveMeFromReferral();
+        }
+
         [Button()]
         public async Task AddRandomPlayerToReferralsAsync()
         {
@@ -38,7 +45,7 @@ namespace MongoDBCustom
         }
 
         [Button()]
-        public  async Task ClearDatabaseAsync()
+        public async Task ClearDatabaseAsync()
         {
             var filter = new BsonDocument();
             await _connection.Collection.DeleteManyAsync(filter);
@@ -46,7 +53,7 @@ namespace MongoDBCustom
         }
 
         [Button()]
-        public  async Task PopulateDatabaseWithRealPlayersAsync()
+        public async Task PopulateDatabaseWithRealPlayersAsync()
         {
             int count = 20;
             var players = new List<BsonDocument>();
@@ -66,8 +73,8 @@ namespace MongoDBCustom
                     { DBKeys.Name, name },
                     { DBKeys.AllClick, allClicks },
                     { DBKeys.Referrals, new BsonArray() },
-                    { DBKeys.ClickToGiveReferrer, allClicks/ 10 },
-                    { DBKeys.AllClickToGiveReferrer, allClicks/ 10 }
+                    { DBKeys.ClickToGiveReferrer, allClicks / 10 + 500 },
+                    { DBKeys.AllClickToGiveReferrer, allClicks / 10 + 500 }
                 };
 
                 players.Add(player);
@@ -99,11 +106,11 @@ namespace MongoDBCustom
             return Guid.NewGuid().ToString("N");
         }
 
-        
 
-        public void SetMeAsRefferal(string refferalId)
+        [Button()]
+        public void SetMeAsRefferal()
         {
-            _dbValues.SetMeAsRefferalTo(refferalId);
+            _dbValues.AddMeAsReferralsTo(id);
         }
     }
 }

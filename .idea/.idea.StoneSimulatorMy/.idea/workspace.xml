@@ -25,29 +25,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/CollectSlaveClicksButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/CollectSlaveClicksButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveClicksCollector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveClicksCollector.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstAuth/FirstAuthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstAuth/FirstAuthUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SingleSlaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SingleSlaveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootSceneInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootSceneInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/MainMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveDataConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveDataConstructor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlavesData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlavesData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/Filters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/Filters.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBValues.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RefferalTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RefferalTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/Interfaces/IClickDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/Interfaces/IClickDataService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerClickData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerClickData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,6 +206,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.4359756" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -245,10 +230,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15088">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15088" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -283,7 +268,8 @@
       <workItem from="1687563820421" duration="3542000" />
       <workItem from="1687611343059" duration="17641000" />
       <workItem from="1687701914600" duration="14725000" />
-      <workItem from="1687796837397" duration="41966000" />
+      <workItem from="1687796837397" duration="43406000" />
+      <workItem from="1687972615410" duration="9332000" />
     </task>
     <servers />
   </component>
@@ -306,24 +292,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnector.cs</url>
-          <line>41</line>
-          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Scripts\MongoDBCustom\MongoDBConnector.cs" initialLine="41" containingFunctionPresentation="method 'HandleSuccessConnect'">
-            <startOffsets>
-              <option value="913" />
-            </startOffsets>
-            <endOffsets>
-              <option value="952" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

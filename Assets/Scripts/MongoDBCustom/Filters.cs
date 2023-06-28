@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace MongoDBCustom 
+namespace MongoDBCustom
 {
     public static class Filters
     {
@@ -10,7 +10,7 @@ namespace MongoDBCustom
             var filter = Builders<BsonDocument>.Filter.Eq(DBKeys.DeviceID, DeviceInfo.GetDeviceId());
             return filter;
         }
-        
+
         public static FilterDefinition<BsonDocument> IDFilter(string id)
         {
             var filter = Builders<BsonDocument>.Filter.Eq(DBKeys.DeviceID, id);

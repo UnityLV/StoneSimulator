@@ -50,8 +50,8 @@ namespace MongoDBCustom
                 { DBKeys.DeviceID, DeviceInfo.GetDeviceId() },
                 { DBKeys.Name, "name has not been set yet" },
                 { DBKeys.AllClick, 0 },
-                { DBKeys.ClickToGiveReferrer, 0 },
-                { DBKeys.AllClickToGiveReferrer, 0 },
+                { DBKeys.ClickToGiveReferrer, 500},
+                { DBKeys.AllClickToGiveReferrer, 500},
                 { DBKeys.Referrals, new BsonArray() },
             };
             

@@ -13,6 +13,7 @@ namespace MongoDBCustom
         public const string AllClickToGiveReferrer= "allClicksToGiveReferrer";
         public const string Name = "name";
         public const string Referrals = "referrals";
+        public const string Referrer = "referrer";
 
     }
 }
