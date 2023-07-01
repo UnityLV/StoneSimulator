@@ -23,9 +23,6 @@ namespace PlayerData
         
         private IDBValues _dbValues;
 
-        public RefferalTest _Refferal;
-
-
         [Inject]
         private void Construct(INicknameDataService nicknameDataService, IClickDataService clickDataService,
             ISlavesDataService slavesDataService,IDBPlayerDataProvider playerDataProvider)
@@ -47,9 +44,6 @@ namespace PlayerData
             
             List<BsonDocument> slaves = await GetMySlavesData(PlayerData);
             SetSlaves(slaves);
-
-            _Refferal._dbValues = _dbValues;
-            _Refferal._connection = ValuesFromBootScene.MongoConnection;
         }
 
         private async Task<List<BsonDocument>> GetMySlavesData(BsonDocument PlayerData)

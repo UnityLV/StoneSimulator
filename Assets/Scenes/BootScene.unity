@@ -187,7 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8d5628e9764233be7e3ddc03d86074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Refferal: {fileID: 1609883217}
 --- !u!4 &103472861
 Transform:
   m_ObjectHideFlags: 0
@@ -1201,7 +1200,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1609883215}
   - component: {fileID: 1609883216}
-  - component: {fileID: 1609883217}
   m_Layer: 0
   m_Name: Debug
   m_TagString: Untagged
@@ -1237,19 +1235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 237919500}
---- !u!114 &1609883217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609883214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c1e8136e9634c3c9a2c6804591c54ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 
 --- !u!1 &1669670039
 GameObject:
   m_ObjectHideFlags: 0
