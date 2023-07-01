@@ -22,6 +22,7 @@ namespace Installers
         private async void Start()
         {
             await LoadRemoteConfig();
+            Debug.Log("RemoteConfig Loaded");
             var connection = await ConstructConnection();
 
             _dbValues = new DBValues(connection);
@@ -46,6 +47,7 @@ namespace Installers
         {
             RemoteConfigSetter remoteConfigSetter = new RemoteConfigSetter(_mirror, _db);
             remoteConfigSetter.SetConfigs(await new RemoteConfigLoader().Load());
+            
         }
     }
 }

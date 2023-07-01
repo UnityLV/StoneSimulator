@@ -2,6 +2,7 @@
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace InGameUI
 {
@@ -9,10 +10,13 @@ namespace InGameUI
     {
         [SerializeField] private Vector3 _inPosition;
         [SerializeField] private float _inTime;
-        [SerializeField] private Ease _inEase; 
-        
+        [SerializeField] private Ease _inEase;
+
         [SerializeField] private float _outTime;
         [SerializeField] private Ease _outEase;
+
+        [SerializeField] private UnityEvent _onMoveIn;
+        [SerializeField] private UnityEvent _onMoveOut;
 
         private bool _isOut = true;
 
@@ -41,19 +45,17 @@ namespace InGameUI
 
             _isOut = !_isOut;
         }
-        
+
         private async void MoveIn()
         {
+            _onMoveIn?.Invoke();
             await transform.DOLocalMove(_toMovePosition, _inTime).SetEase(_inEase).AsyncWaitForCompletion();
-            
         }
-        
+
         private async void MoveOut()
         {
+            _onMoveOut?.Invoke();
             await transform.DOLocalMove(_defaultPosition, _outTime).SetEase(_outEase).AsyncWaitForCompletion();
-          
         }
-        
-        
     }
 }

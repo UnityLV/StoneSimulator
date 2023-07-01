@@ -11,11 +11,12 @@ namespace Installers
     public class BootSceneInstaller : MonoInstaller
     {
         [SerializeField] private CustomNetworkManager _customNetworkManager;
-
+ 
         public override void InstallBindings()
         {
             BindNetworkManager();
             Container.BindInterfacesAndSelfTo<MongoDBPlayerDataProvider>().AsSingle().NonLazy();
+         
         }
 
 

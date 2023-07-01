@@ -1,11 +1,13 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace InGameUI
 {
     public class UIMoveButtonGroup : MonoBehaviour
     {
-        [SerializeField] private UIMoveButton[] _buttons;  
+        [SerializeField] private UIMoveButton[] _buttons;
+  
         
         [Button()]
         public void Move()
@@ -14,6 +16,7 @@ namespace InGameUI
             {
                 _buttons[i].Move();
             }
+           
         }
     }
 }

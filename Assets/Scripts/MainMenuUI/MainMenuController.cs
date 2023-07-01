@@ -34,16 +34,14 @@ namespace MainMenuUI
         private void Construct(
             INicknameDataService nicknameDataService,
             IHealthService healthService,
-            IGameStateCallbacks gameStateCallbacks, 
+            IGameStateCallbacks gameStateCallbacks,
             IClickDataService clickDataService)
         {
             _nicknameDataService = nicknameDataService;
             _healthService = healthService;
             _gameStateCallbacks = gameStateCallbacks;
             _clickDataService = clickDataService;
-          
         }
-
 
         #endregion
 
@@ -66,12 +64,12 @@ namespace MainMenuUI
             UpdateClickTextFromUIState();
         }
 
-        
+
         private void UpdateClickCountFromClickDataUpdated(int newClicks)
         {
             _clickText.text = _clickDataService.GetClickCount().ToString();
         }
-        
+
         private void UpdateClickTextFromUIState()
         {
             _clickText.text = _clickDataService.GetClickCount().ToString();
@@ -95,7 +93,7 @@ namespace MainMenuUI
             {
                 UpdateClickTextFromUIState();
                 SubscribeCallbacks();
-            
+
                 _locationMainMenuController.SubscribeCallbacks();
                 try
                 {

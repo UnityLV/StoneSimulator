@@ -44,6 +44,10 @@ namespace MongoDBCustom
         
         private async Task LoadRating()
         {
+            if (_dbValues == null)
+            {
+                return;
+            }
             var playersRatings = await _dbValues.PlayersRating();
             var ratingPlayerDataList = new List<RatingPlayerData>();
 

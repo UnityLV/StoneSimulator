@@ -45,6 +45,10 @@ namespace FirstAuth
 
         private void Start()
         {
+            if (_networkManagerService == null)
+            {
+                return;
+            }
             if (_networkManagerService.GetConnectionType() == ConnectionType.Server) return;
             _popup.SetActive(!IsPopupShowed);
         }

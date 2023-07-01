@@ -4,30 +4,33 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
-public class ConsoleInterceptor : MonoBehaviour
+namespace Debugging
 {
-    [SerializeField] private TMP_Text _text;
-
-    private Queue<string> _toShow = new Queue<string>();
-
-    void Awake()
+    public class ConsoleInterceptor : MonoBehaviour
     {
-        Application.logMessageReceived += HandleLog;
-        ShowMessage();
-    }
+        [SerializeField] private TMP_Text _text;
 
-    void HandleLog(string logString, string stackTrace, LogType type)
-    {
-        _toShow.Enqueue(logString);
-    }
+        private Queue<string> _toShow = new Queue<string>();
 
-    private async void ShowMessage()
-    {
-        if (_toShow.TryDequeue(out string result))
+        void Awake()
         {
-            _text.text = result;
+            Application.logMessageReceived += HandleLog;
+            ShowMessage();
         }
-        await Task.Delay(100);
-        ShowMessage();
+
+        void HandleLog(string logString, string stackTrace, LogType type)
+        {
+            _toShow.Enqueue(logString);
+        }
+
+        private async void ShowMessage()
+        {
+            if (_toShow.TryDequeue(out string result))
+            {
+                _text.text = result;
+            }
+            await Task.Delay(100);
+            ShowMessage();
+        }
     }
 }

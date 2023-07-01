@@ -13,6 +13,7 @@ using MainMenuUI;
 using MainMenuUI.LocationMainMenu;
 using MongoDBCustom;
 using Network.Interfaces;
+using PlayerData;
 using Stone;
 using UnityEngine.Serialization;
 
@@ -36,6 +37,8 @@ namespace Installers
         [SerializeField] private InGameRatingListUI _ratingListUI;
 
         [SerializeField] private PlayerRatingInDBSaver _playerRatingInDBSaver;
+        [SerializeField] private RankData _rankData;
+
 
 
         public override void InstallBindings()
@@ -65,7 +68,8 @@ namespace Installers
             
             Container.Bind<IDBValues>().FromInstance(ValuesFromBootScene.DBValues).AsSingle()
                 .NonLazy();
-            
+            Container.Bind<RankData>().FromInstance(_rankData);
+            Container.BindInterfacesAndSelfTo<PlayerRank>().AsSingle();
             
         }
 
