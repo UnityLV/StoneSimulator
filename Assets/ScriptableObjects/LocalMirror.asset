@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1682ae1770b64e05af3d9c1a8bfa0a99, type: 3}
-  m_Name: ServerConnection Config
+  m_Name: LocalMirror
   m_EditorClassIdentifier: 
-  <Ip>k__BackingField: 181.ip.ply.gg
+  <Ip>k__BackingField: localhost
   <Port>k__BackingField: 34120

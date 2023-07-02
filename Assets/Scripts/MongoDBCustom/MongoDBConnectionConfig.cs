@@ -7,7 +7,12 @@ namespace FirebaseCustom
     {
         public string GetConnectionString()
         {
+            
+#if UNITY_ANDROID
             return $"mongodb://{Ip}:{Port}";
+#else
+            return $"mongodb://localhost:27017";
+#endif
         }
     }
 }
