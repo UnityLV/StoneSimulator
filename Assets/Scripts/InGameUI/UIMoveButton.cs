@@ -23,7 +23,7 @@ namespace InGameUI
         private Vector3 _toMovePosition;
         private Vector3 _defaultPosition;
 
-        private void Awake()
+        private void Start()
         {
             _defaultPosition = transform.localPosition;
             _toMovePosition = _defaultPosition + _inPosition;
