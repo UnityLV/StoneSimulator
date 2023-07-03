@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customNetworkManager: {fileID: 1750747901}
   _db: {fileID: 11400000, guid: 1cf8bc9d767cd8144814a78f58113d5b, type: 2}
-  _mirror: {fileID: 11400000, guid: 30857f3676b81e34ebd6209eecf0a6ad, type: 2}
+  _mirror: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
   _playerDataSetter: {fileID: 103472860}
 --- !u!1 &235805071
 GameObject:
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750747893}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
@@ -1482,7 +1482,7 @@ MonoBehaviour:
     dynamicAdjustmentTolerance: 1
     deliveryTimeEmaDuration: 2
   timeInterpolationGui: 0
-  _connectionConfig: {fileID: 11400000, guid: 30857f3676b81e34ebd6209eecf0a6ad, type: 2}
+  _connectionConfig: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
 --- !u!114 &1750747902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   clientMaxReceivesPerTick: 1000
   clientSendQueueLimit: 10000
   clientReceiveQueueLimit: 10000
-  _connectionConfig: {fileID: 11400000, guid: 30857f3676b81e34ebd6209eecf0a6ad, type: 2}
+  _connectionConfig: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
 --- !u!1 &1859271405
 GameObject:
   m_ObjectHideFlags: 0

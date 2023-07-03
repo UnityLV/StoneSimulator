@@ -21,10 +21,10 @@ namespace Installers
 
         private async void Start()
         {
-#if UNITY_ANDROID
+
             await LoadRemoteConfig();
             Debug.Log("RemoteConfig Loaded");
-#endif
+
             var connection = await ConstructConnection();
             _dbValues = new DBValues(connection);
             ValuesFromBootScene.DBValues = _dbValues;
