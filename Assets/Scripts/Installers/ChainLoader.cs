@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using FirebaseCustom;
 using MongoDBCustom;
 using Network;
@@ -15,23 +16,23 @@ namespace Installers
         [SerializeField] private MongoDBConnectionConfig _db;
         [SerializeField] private ConnectionConfig _mirror;
 
-        [SerializeField] private PlayerDataSetter _playerDataSetter;  
-  
+        [SerializeField] private PlayerDataSetter _playerDataSetter;
+
         private DBValues _dbValues;
 
         private async void Start()
         {
-
             await LoadRemoteConfig();
             Debug.Log("RemoteConfig Loaded");
+
 
             var connection = await ConstructConnection();
             _dbValues = new DBValues(connection);
             ValuesFromBootScene.DBValues = _dbValues;
             ValuesFromBootScene.MongoConnection = connection;
-            
+
             await _playerDataSetter.SetData();
-            
+
             _customNetworkManager.gameObject.SetActive(true);
         }
 
@@ -47,7 +48,6 @@ namespace Installers
         {
             RemoteConfigSetter remoteConfigSetter = new RemoteConfigSetter(_mirror, _db);
             remoteConfigSetter.SetConfigs(await new RemoteConfigLoader().Load());
-            
         }
     }
 }

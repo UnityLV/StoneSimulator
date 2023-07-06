@@ -84,7 +84,7 @@ Debug.Log("Try start server");
         {
             base.OnClientConnect();
             Debug.Log("Join on server");
-            for (int i = 0; i < 60; i++) await Task.Yield();
+            for (int i = 0; i < 160; i++) await Task.Yield();
             _currentConnectionType = ConnectionType.Client;
             //_gameSceneService.BeginTransaction();
         }

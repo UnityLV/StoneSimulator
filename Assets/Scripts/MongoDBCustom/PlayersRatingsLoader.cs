@@ -35,13 +35,11 @@ namespace MongoDBCustom
             await LoadRating();
         }
 
-        public void LoadFromExtern()
+        public void LoadFromButton()
         {
             LoadRating();
         }
 
-        
-        
         private async Task LoadRating()
         {
             if (_dbValues == null)

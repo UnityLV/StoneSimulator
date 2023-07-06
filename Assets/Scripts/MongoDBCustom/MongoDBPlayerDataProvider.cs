@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Installers;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -48,7 +49,7 @@ namespace MongoDBCustom
             BsonDocument playerData = new BsonDocument
             {
                 { DBKeys.DeviceID, DeviceInfo.GetDeviceId() },
-                { DBKeys.Name, "name has not been set yet" },
+                { DBKeys.Name, String.Empty },
                 { DBKeys.AllClick, 0 },
                 { DBKeys.ClickToGiveReferrer, 500},
                 { DBKeys.AllClickToGiveReferrer, 500},

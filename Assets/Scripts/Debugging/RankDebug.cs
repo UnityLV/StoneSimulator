@@ -1,4 +1,6 @@
 ﻿using System;
+using Installers;
+using MongoDBCustom;
 using NaughtyAttributes;
 using PlayerData.Interfaces;
 using UnityEngine;
@@ -8,19 +10,13 @@ namespace Debugging
 {
     public class RankDebug : MonoBehaviour
     {
-        private IRankDataService _rankDataService;
-
-        [Inject]
-        private void Construct(IRankDataService rankDataService)
-        {
-            _rankDataService = rankDataService;
-        }
-
+        private IDBValues _dbValues => ValuesFromBootScene.DBValues;
 
         [Button()]
-        private void Test()
+        private async void Test()
         {
-            Debug.Log(_rankDataService.GetMyRank().ToString());
+            var data = await _dbValues.GetPlayerDataAsync();
+            Debug.Log(data);
         }
     }
 }

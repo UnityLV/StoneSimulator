@@ -22,7 +22,7 @@ namespace MainMenuUI
             _rankData = rankData;
         }
 
-        private void Start()
+        public void UpdateText()
         {
             _nickname.text = _nicknameData.GetNickname();
             _rank.text = _rankData.GetMyRank().rankNameRu;
