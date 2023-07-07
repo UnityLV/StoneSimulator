@@ -20,12 +20,12 @@ namespace PlayerData
         private IClickDataService _clickDataService;
         private ISlavesDataService _slavesDataService;
         private IDBPlayerDataProvider _playerDataProvider;
-        
+
         private IDBValues _dbValues;
 
         [Inject]
         private void Construct(INicknameDataService nicknameDataService, IClickDataService clickDataService,
-            ISlavesDataService slavesDataService,IDBPlayerDataProvider playerDataProvider)
+            ISlavesDataService slavesDataService, IDBPlayerDataProvider playerDataProvider)
         {
             _nicknameData = nicknameDataService;
             _clickDataService = clickDataService;
@@ -37,26 +37,29 @@ namespace PlayerData
         {
             _dbValues = ValuesFromBootScene.DBValues;
 
-            var PlayerData = await _playerDataProvider.GetPlayerDataByIdAsync();
+            var PlayerData = await _playerDataProvider.GetPlayerDataById();
+
+            ValuesFromBootScene.PlayerData = PlayerData;
 
             SetNickname(PlayerData);
             SetClicks(PlayerData);
-            
+            await SetSlaves(PlayerData);
+        }
+
+     
+        private async Task SetSlaves(BsonDocument PlayerData)
+        {
             List<BsonDocument> slaves = await GetMySlavesData(PlayerData);
-            SetSlaves(slaves);
+            _slavesDataService.SetSlaves(slaves);
         }
 
         private async Task<List<BsonDocument>> GetMySlavesData(BsonDocument PlayerData)
         {
-            List<string> slavesId = PlayerData[DBKeys.Referrals].AsBsonArray.Select(v => v.AsString).ToList();
+            string[] slavesId = PlayerData[DBKeys.Referrals].AsBsonArray.Select(v => v.AsString).ToArray();
             return await _dbValues.GetPlayersDataById(slavesId);
         }
 
-        private void SetSlaves(List<BsonDocument> slaves)
-        {
-            _slavesDataService.SetSlaves(slaves);
-        }
-
+        
         private void SetClicks(BsonDocument PlayerData)
         {
             _clickDataService.SetClickCount(PlayerData[DBKeys.AllClick].AsInt32);

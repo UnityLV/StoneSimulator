@@ -41,7 +41,7 @@ namespace MainMenuUI
 
         public SlavesData(SavablePlayerSlavesData savable)
         {
-            Data = savable.Data;
+            Data = savable.Slaves;
             AllClicks = Data.Select(d => d.Clicks).Sum();
             AllSlaves = Data.Count();
         }

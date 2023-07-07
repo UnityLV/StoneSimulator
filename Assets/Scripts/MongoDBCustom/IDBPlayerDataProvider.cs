@@ -5,6 +5,6 @@ namespace MongoDBCustom
 {
     public interface IDBPlayerDataProvider
     {
-        Task<BsonDocument> GetPlayerDataByIdAsync();
+        Task<BsonDocument> GetPlayerDataById();
     }
 }

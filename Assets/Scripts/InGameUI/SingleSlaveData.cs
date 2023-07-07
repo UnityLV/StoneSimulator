@@ -8,6 +8,6 @@ namespace PlayerData.Interfaces
     {
         public string Name;
         public int Clicks;
-        [FormerlySerializedAs("deviseId")] public string DeviseId;
+        public string DeviseId;
     }
 }

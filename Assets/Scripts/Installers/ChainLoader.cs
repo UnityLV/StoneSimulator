@@ -6,6 +6,7 @@ using Network;
 using PlayerData;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Installers
 {
@@ -15,6 +16,7 @@ namespace Installers
 
         [SerializeField] private MongoDBConnectionConfig _db;
         [SerializeField] private ConnectionConfig _mirror;
+        [SerializeField] private PlayerConfig playerConfig;
 
         [SerializeField] private PlayerDataSetter _playerDataSetter;
 
@@ -46,7 +48,7 @@ namespace Installers
 
         private async Task LoadRemoteConfig()
         {
-            RemoteConfigSetter remoteConfigSetter = new RemoteConfigSetter(_mirror, _db);
+            RemoteConfigSetter remoteConfigSetter = new RemoteConfigSetter(_mirror, _db, playerConfig);
             remoteConfigSetter.SetConfigs(await new RemoteConfigLoader().Load());
         }
     }

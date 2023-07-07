@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace PlayerData
 {
+    
     public class PlayerSlavesData : BasePlayerData<JsonSavableClass>, ISlavesDataService
     {
         private const string DATA_PATCH = "SlavesData";
@@ -22,7 +23,7 @@ namespace PlayerData
         public void SetSlaves(List<BsonDocument> slaves)
         {
             _slavesData = new SlavesData(slaves);
-            Data.Json = JsonUtility.ToJson(new SavablePlayerSlavesData().Data = _slavesData.Data);
+            Data.Json = JsonUtility.ToJson(new SavablePlayerSlavesData().Slaves = _slavesData.Data);
             Save();
         }
 

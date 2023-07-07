@@ -14,6 +14,9 @@ namespace MongoDBCustom
         public const string Name = "name";
         public const string Referrals = "referrals";
         public const string Referrer = "referrer";
+        public const string Role = "role";
+        public const string PlayerRole = "player";
+        public const string ChatRole = "chat";
 
     }
 }

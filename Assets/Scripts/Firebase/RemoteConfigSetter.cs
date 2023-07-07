@@ -7,15 +7,17 @@ namespace FirebaseCustom
 {
     public class RemoteConfigSetter
     {
-        public RemoteConfigSetter(ConnectionConfig unityServerConnectionConfig,
-            ConnectionConfig dbConnectionConfig)
-        {
-            this._unityServerConnectionConfig = unityServerConnectionConfig;
-            this._dbConnectionConfig = dbConnectionConfig;
-        }
-
         private readonly ConnectionConfig _unityServerConnectionConfig;
         private readonly ConnectionConfig _dbConnectionConfig;
+        private readonly PlayerConfig _playerConfig;
+
+
+        public RemoteConfigSetter(ConnectionConfig unityServerConnectionConfig, ConnectionConfig dbConnectionConfig, PlayerConfig playerConfig)
+        {
+            _unityServerConnectionConfig = unityServerConnectionConfig;
+            _dbConnectionConfig = dbConnectionConfig;
+            _playerConfig = playerConfig;
+        }
 
         public void SetConfigs(Config config)
         {
@@ -23,6 +25,7 @@ namespace FirebaseCustom
             _unityServerConnectionConfig.Port = config.UnityServerPort;
             _dbConnectionConfig.Ip = config.DBServerIp;
             _dbConnectionConfig.Port = config.DBServerPort;
+            _playerConfig.ClicksToRedeemed = config.ClicksToRedeemed;
         }
     }
 }

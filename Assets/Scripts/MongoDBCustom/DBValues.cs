@@ -8,9 +8,6 @@ using UnityEngine;
 using Zenject;
 using static MongoDBCustom.DBKeys;
 
-
-
-
 namespace MongoDBCustom
 {
     public class DBValues : IDBValues
@@ -45,7 +42,7 @@ namespace MongoDBCustom
             return playersDataBeforeUpdate;
         }
 
-        public async Task<List<BsonDocument>> GetPlayersDataById(IEnumerable<string> id)
+        public async Task<List<BsonDocument>> GetPlayersDataById(params string[] id)
         {
             var filter = Builders<BsonDocument>.Filter.In(DeviceID, id);
             var documents = await _connection.Collection.Find(filter).ToListAsync();
