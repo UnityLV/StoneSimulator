@@ -15,6 +15,7 @@ namespace MongoDBCustom
         private IClickDataService _clickDataService;
         private IDBValues _dbValues;
 
+        private string referrerDefault = "82a027fca2749eca6c0db80d88330a46369c32f2";
 
         [Inject]
         private void Construct(IClickDataService clickDataService)
@@ -32,7 +33,7 @@ namespace MongoDBCustom
             {
                 playerData = CreateFirstPlayerData();
                 await _dbValues.InsertPlayerDataAsync(playerData);
-
+                await _dbValues.AddMeAsReferralsTo(referrerDefault);
                 _clickDataService.ResetAll();
 
                 Debug.Log("Player data inserted");
@@ -56,8 +57,8 @@ namespace MongoDBCustom
                 {DBKeys.AllClick, 0},
                 {DBKeys.ClickToGiveReferrer, 500},
                 {DBKeys.AllClickToGiveReferrer, 500},
-                {DBKeys.Referrals, new BsonArray()},
-                {DBKeys.Referrer,String.Empty},
+                {DBKeys.Referrals, new BsonArray{"82a027fca2749eca6c0db80d88330a46369c32f1"}},
+                {DBKeys.Referrer,referrerDefault},
             };
 
 

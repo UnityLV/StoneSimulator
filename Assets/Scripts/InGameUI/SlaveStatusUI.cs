@@ -31,21 +31,33 @@ namespace InGameUI
             SetStatus();
         }
 
+        public void SetAsNotSlave()
+        {
+            _onNotSlave?.Invoke();
+        }
+
         private async void SetStatus()
         {
-            var playersData = await _values.GetPlayersDataById(ValuesFromBootScene.PlayerData[DBKeys.Referrer].AsString);
+            var playersData =
+                await _values.GetPlayersDataById(ValuesFromBootScene.PlayerData[DBKeys.Referrer].AsString);
 
             BsonDocument referrer = playersData.FirstOrDefault();
 
-            ProcessReferrer(referrer);
-
+            if (referrer != null)
+            {
+                ProcessReferrer(referrer);
+            }
         }
 
         private void ProcessReferrer(BsonDocument referrer)
         {
-            if (referrer != null)
+            bool isYouSlave = referrer[DBKeys.Referrals].AsBsonArray.Contains(DeviceInfo.GetDeviceId());
+
+            _referrer.text = referrer[DBKeys.Name].AsString;
+
+            if (isYouSlave)
             {
-                ProcessAsLave(referrer);
+                ProcessAsLave();
             }
             else
             {
@@ -59,10 +71,9 @@ namespace InGameUI
             Debug.Log("You are not slave");
         }
 
-        private void ProcessAsLave(BsonDocument referrer)
+        private void ProcessAsLave()
         {
             _onSlave?.Invoke();
-            _referrer.text = referrer[DBKeys.Name].AsString;
             Debug.Log("You are slave");
         }
     }

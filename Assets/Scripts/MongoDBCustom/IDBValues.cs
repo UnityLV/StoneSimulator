@@ -16,5 +16,6 @@ namespace MongoDBCustom
         Task<List<BsonDocument>> PlayersRating();
         Task<BsonDocument> GetPlayerDataAsync();
         Task<List<BsonDocument>> GetPlayersDataById(params string[] id);
+        Task DeleteMyData();
     }
 }

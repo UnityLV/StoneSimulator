@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Installers;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ namespace Debugging
     {
         public void OnClick()
         {
+            ValuesFromBootScene.DBValues.DeleteMyData();
             string path = Application.persistentDataPath;
             DirectoryInfo directory = new DirectoryInfo(path);
 

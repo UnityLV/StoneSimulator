@@ -24,11 +24,11 @@ namespace MongoDBCustom
         {
             BsonDocument data = await GetPlayerDataAsync();
             string deviceId = data[Referrer].AsString;
-            
+
             var filter = Builders<BsonDocument>.Filter.Eq(DeviceID, deviceId);
             var update = Builders<BsonDocument>.Update.Pull(Referrals, DeviceInfo.GetDeviceId());
-            var options = new UpdateOptions { IsUpsert = false };
-            var result = await _connection.Collection.UpdateOneAsync(filter, update, options);
+            var options = new UpdateOptions {IsUpsert = false};
+            await _connection.Collection.UpdateOneAsync(filter, update, options);
             Debug.Log("Removed device ID " + DeviceInfo.GetDeviceId() + " from player " + deviceId + " referrals.");
         }
 
@@ -49,6 +49,12 @@ namespace MongoDBCustom
             return documents;
         }
 
+        public async Task DeleteMyData()
+        {
+            var filter = Filters.MyDeviseIDFilter();
+            await _connection.Collection.DeleteOneAsync(filter);
+        }
+
         public async Task AddMeAsReferralsTo(string newReferrer)
         {
             var filter = Filters.IDFilter(newReferrer);
@@ -58,7 +64,7 @@ namespace MongoDBCustom
             await _connection.Collection.UpdateOneAsync(filter, update);
             Debug.Log("Referral me added: to" + newReferrer);
         }
-        
+
         private async Task AddReferrerToMyData(string newReferrer)
         {
             var filter = Filters.MyDeviseIDFilter();
@@ -67,6 +73,7 @@ namespace MongoDBCustom
             await _connection.Collection.UpdateOneAsync(filter, update);
             Debug.Log("Referrer my set: " + newReferrer);
         }
+
         public async Task AddAllPlayerClicks(int add)
         {
             var filter = Filters.MyDeviseIDFilter();

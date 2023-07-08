@@ -2,6 +2,7 @@
 using MongoDBCustom;
 using PlayerData.Interfaces;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace InGameUI
@@ -9,7 +10,8 @@ namespace InGameUI
     public class SlaveRedeemed : MonoBehaviour
     {
         [SerializeField] private PlayerConfig _config;
-     
+
+        [SerializeField] private UnityEvent _onRedeemed;
         private IClickDataService _clickData;
         private IDBValues _values;
         
@@ -25,6 +27,8 @@ namespace InGameUI
         {
             if (_clickData.GetClickCount() >= _config.ClicksToRedeemed)
             {
+                _values.AddAllPlayerClicks(-_config.ClicksToRedeemed);
+                _clickData.AddClick(-_config.ClicksToRedeemed);
                 Redeemed();
             }
         }
@@ -32,6 +36,7 @@ namespace InGameUI
         private void Redeemed()
         {
             Debug.Log("Slave Redeemed");
+            _onRedeemed?.Invoke();
             _values.RemoveMeFromReferral();
         }
     }
