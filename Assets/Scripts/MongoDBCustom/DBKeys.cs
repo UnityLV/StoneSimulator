@@ -5,7 +5,7 @@ namespace MongoDBCustom
 {
     public static class DBKeys
     {
-        public const string DataBase = "mongo";
+        public const string DataBase = "admin";
         public const string Collection = "users";
         public const string DeviceID = "deviceId";
         public const string AllClick = "allClicks";

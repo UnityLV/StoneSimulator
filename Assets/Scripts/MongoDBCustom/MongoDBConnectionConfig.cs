@@ -5,9 +5,10 @@ namespace FirebaseCustom
     [CreateAssetMenu]
     public class MongoDBConnectionConfig : ConnectionConfig
     {
-        public string GetConnectionString()
+        public string GetConnection()
         {
-            return $"mongodb://{Ip}:{Port}";
+            return $"mongodb://admin:10285967@{Ip}:{Port}";
+            
         }
     }
 }
