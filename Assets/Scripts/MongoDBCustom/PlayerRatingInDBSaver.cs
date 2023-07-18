@@ -31,7 +31,7 @@ namespace MongoDBCustom
             _clickEvent.OnStoneClick -= HandleStoneClick;
         }
 
-        private void HandleStoneClick()
+        private void HandleStoneClick(int _)
         {
             if (ShouldUpdateRating())
             {

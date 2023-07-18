@@ -7,11 +7,11 @@ namespace Stone
         IStoneAnimatorEventsInvoke, IStoneAnimatorEventCallback, IStoneAnimatorCallbackInvoke
     {
         
-        public event Action OnStoneClick;
+        public event Action<int> OnStoneClick;
 
         public void OnStoneClickInvoke()
         {
-            OnStoneClick?.Invoke();
+            OnStoneClick?.Invoke(2);
         }
 
         public event Action OnStoneDestroyPlay;

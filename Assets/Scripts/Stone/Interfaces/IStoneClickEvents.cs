@@ -4,6 +4,6 @@ namespace Stone.Interfaces
 {
     public interface IStoneClickEvents
     {
-        public event Action OnStoneClick;
+        public event Action<int> OnStoneClick;
     }
 }

@@ -22,7 +22,7 @@ namespace MongoDBCustom
             _stoneClickEvents.OnStoneClick += OnStoneClick;
         }
 
-        private void OnStoneClick()
+        private void OnStoneClick(int _)
         {
             _clickCount++;
         }
