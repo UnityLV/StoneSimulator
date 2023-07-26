@@ -28,7 +28,7 @@ namespace InGameUI
             if (_clickData.GetClickCount() >= _config.ClicksToRedeemed)
             {
                 _values.AddAllPlayerClicks(-_config.ClicksToRedeemed);
-                _clickData.AddClick(-_config.ClicksToRedeemed);
+                _clickData.AddClicks(-_config.ClicksToRedeemed);
                 Redeemed();
             }
         }

@@ -17,6 +17,7 @@ namespace GameState
         IGameStateService, IHealthDebugging, IChageLocationDebugging
     {
         #region Dependency
+
         private ILocationSpawnerService _locationSpawner;
         private IStoneSpawnerService _stoneSpawner;
         private IGetLocationCountService _getLocationCountService;
@@ -47,6 +48,7 @@ namespace GameState
             _stoneClickEvents = stoneClickEvents;
             _stoneClickEvents.OnStoneClick += AddCLickOnServer;
         }
+
         #endregion
 
         private int _currentLocation;
@@ -105,16 +107,16 @@ namespace GameState
             _isInGame = true;
             _locationSpawner.SpawnLocationObjects(_currentLocation);
             _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
-            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
-        }
-
+            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation,_currentStone));
+        }   
+       
         [ClientRpc]
         private void AllStartGameTarget()
         {
             _isInGame = true;
             _locationSpawner.SpawnLocationObjects(_currentLocation);
             _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
-            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
+            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation,_currentStone));
         }
 
         [TargetRpc]
@@ -138,8 +140,8 @@ namespace GameState
             _currentHealth = currentHealth;
             OnHealthChanged?.Invoke();
             OnLocationChanged?.Invoke();
-        }
-
+        }  
+        
         public void TryWatchLocation(int id)
         {
             Debug.Log(id);
@@ -161,7 +163,7 @@ namespace GameState
             _isInGame = false;
             _stoneSpawner.DestroyStoneObject(true);
         }
-
+        
         public override void OnStartServer()
         {
             _networkIdentity = GetComponent<NetworkIdentity>();
@@ -169,7 +171,7 @@ namespace GameState
             LoadHealth();
             _locationSpawner.SpawnLocationObjects(_currentLocation);
             _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
-            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
+            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation,_currentStone));
             StartCoroutine(IStoneServerCallbackProcess());
         }
 
@@ -202,17 +204,17 @@ namespace GameState
                 OnLocationChanged?.Invoke();
             }
 
-            _currentHealth = GetHealth(_currentLocation, _currentStone);
+            _currentHealth = GetHealth(_currentLocation,_currentStone);
             _healthBarUIService.UpdateHealthBarState(_currentHealth, _currentHealth);
             OnHealthChanged?.Invoke();
         }
 
-        private void OnStoneClick(int damage)
+        private void OnStoneClick()
         {
-            TakeDamage(damage);
+            TakeDamage();
 
-            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
-            _clickDataService.AddClick();
+            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation,_currentStone));
+            _clickDataService.AddClicks();
             _stoneAnimatorEventsInvoke.OnStoneClickPlayInvoke();
 
             _countClickAfterCallback += 1;
@@ -221,15 +223,15 @@ namespace GameState
         private void OnStoneClickNetwork()
         {
             TakeDamage();
-            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
+            _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation,_currentStone));
 
             _stoneAnimatorEventsInvoke.OnStoneClickPlayInvoke();
         }
 
-        private void TakeDamage(int damage = 1)
+        private void TakeDamage()
         {
             Debug.Log("Current h " + _currentHealth);
-            _currentHealth = Mathf.Max(0, _currentHealth - damage);
+            _currentHealth = Mathf.Max(0, _currentHealth - 1);
             OnHealthChanged?.Invoke();
             if (_currentHealth == 0) NextStone();
         }
@@ -243,10 +245,10 @@ namespace GameState
             _countClickAfterCallback = 0;
         }
 
-        private void AddCLickOnServer(int damage)
+        private void AddCLickOnServer()
         {
-            Debug.Log("Add click on Server " + damage);
-            CmdAddClickToServer(netIdentity.connectionToClient, damage);
+            Debug.Log("Add click on Server");
+            CmdAddClickToServer(netIdentity.connectionToClient);
         }
 
         private void Test()
@@ -258,19 +260,19 @@ namespace GameState
         }
 
         [Command(requiresAuthority = false)]
-        private void CmdAddClickToServer(NetworkConnectionToClient target, int damage)
+        private void CmdAddClickToServer(NetworkConnectionToClient target)
         {
             _countClickAllCallback += 1;
             TakeDamage();
             //Test();
             Debug.Log("Take dmg on server");
-            TargetCallbackOnClick(target, damage);
+            TargetCallbackOnClick(target);
         }
 
         [TargetRpc]
-        private void TargetCallbackOnClick(NetworkConnectionToClient target, int damage)
+        private void TargetCallbackOnClick(NetworkConnectionToClient target)
         {
-            OnStoneClick(damage);
+            OnStoneClick();
         }
 
         private IEnumerator IStoneServerCallbackProcess()
@@ -306,7 +308,7 @@ namespace GameState
         private void LoadData()
         {
             _stoneSaveSystem ??= new BinarySaveSystem(STONE_DATA_PATCH);
-            _stoneData = (StoneData)_stoneSaveSystem.Load();
+            _stoneData = (StoneData) _stoneSaveSystem.Load();
             if (_stoneData == null)
             {
                 _stoneData = new StoneData();
@@ -321,20 +323,20 @@ namespace GameState
         private void LoadHealth()
         {
             _healthSaveSystem ??= new BinarySaveSystem(HEALTH_DATA_PATCH);
-            _healthData = (HealthData)_healthSaveSystem.Load();
+            _healthData = (HealthData) _healthSaveSystem.Load();
             if (_healthData == null)
             {
                 _healthData = new HealthData();
                 for (int i = 0; i < _getLocationCountService.GetLocationsCount(); i++)
                 {
-                    _healthData.Healths.Add(new());
+                    _healthData.Healths.Add(new ());
                     for (int j = 0; j < _getLocationCountService.GetStoneCount(i); j++)
                         _healthData.Healths[i].Array.Add(GetHealthLvl(j));
                 }
                 _healthSaveSystem.Save(_healthData);
             }
             _hpList.Clear();
-
+            
             for (int i = 0; i < _healthData.Healths.Count; i++)
             {
                 _hpList.Add(_healthData.Healths[i].Array);
@@ -351,11 +353,11 @@ namespace GameState
         {
             return _currentHealth;
         }
-
+        
         public int GetCurrentLocationHealth()
         {
             int result = _currentHealth;
-            for (int i = _currentStone + 1; i < _hpList[_currentLocation].Count; i++)
+            for (int i = _currentStone+1; i < _hpList[_currentLocation].Count; i++)
             {
                 result += _hpList[_currentLocation][i];
             }
@@ -388,7 +390,7 @@ namespace GameState
         {
             return _hpPerLvl;
         }
-
+        
         public int GetHealth(int location, int lvl)
         {
             return _hpList[location][lvl];
@@ -396,7 +398,7 @@ namespace GameState
 
         public void SetHealth(int location, int lvl, int value)
         {
-            CmdSaveHealth(location, lvl, value, _networkIdentity.connectionToClient);
+            CmdSaveHealth(location,lvl,value,_networkIdentity.connectionToClient);
         }
 
         public void SetCurrentHealth(int value)
@@ -408,32 +410,32 @@ namespace GameState
         {
             return (lvl + 1) * _hpPerLvl;
         }
-
+        
         [Command(requiresAuthority = false)]
-        private void CmdSaveHealth(int location, int lvl, int value, NetworkConnectionToClient target = null)
+        private void CmdSaveHealth(int location, int lvl, int value,NetworkConnectionToClient target=null)
         {
             _hpList[location][lvl] = value;
             Debug.Log(_hpList[location][lvl]);
             _healthData.Healths[location].Array[lvl] = value;
             SaveHealth();
-            RpcSetHealth(location, lvl, value);
+            RpcSetHealth(location,lvl,value);
         }
-
-        [ClientRpc]
+        
+        [ClientRpc] 
         private void RpcSetHealth(int location, int lvl, int value)
         {
             _hpList[location][lvl] = value;
         }
-
+        
         [Command(requiresAuthority = false)]
-        private void CmdSaveCurrentHealth(int value, NetworkConnectionToClient target = null)
+        private void CmdSaveCurrentHealth(int value,NetworkConnectionToClient target=null)
         {
             _currentHealth = value;
             _countClickAllCallback = 0;
             RpcSetCurrentHealth(value);
         }
-
-        [ClientRpc]
+        
+        [ClientRpc] 
         private void RpcSetCurrentHealth(int value)
         {
             _currentHealth = value;
@@ -446,13 +448,13 @@ namespace GameState
         }
 
         [Command(requiresAuthority = false)]
-        private void CmdChangeLocation(int location, int stone, NetworkConnectionToClient target = null)
+        private void CmdChangeLocation(int location, int stone,NetworkConnectionToClient target=null)
         {
             _currentLocation = location;
             _currentStone = stone;
             _currentHealth = GetHealth(location, stone);
             SaveData();
-            AllLoadGameTarget(_currentLocation, _currentStone, _currentHealth);
+            AllLoadGameTarget(_currentLocation,_currentStone,_currentHealth);
             AllStartGameTarget();
         }
     }

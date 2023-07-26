@@ -22,7 +22,6 @@ namespace MongoDBCustom
         [SerializeField] private Sprite _imageDefault;
 
         private IDBValues _dbValues;
-        
 
         [Inject]
         private void Construct(IDBValues values)
@@ -30,9 +29,9 @@ namespace MongoDBCustom
             _dbValues = values;
         }
 
-        private async void Start()
+        private void Start()
         {
-            await LoadRating();
+            LoadRating();
         }
 
         public void LoadFromButton()
@@ -40,7 +39,7 @@ namespace MongoDBCustom
             LoadRating();
         }
 
-        private async Task LoadRating()
+        private async void LoadRating()
         {
             if (_dbValues == null)
             {

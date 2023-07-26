@@ -3,6 +3,7 @@ using PlayerData.Interfaces;
 using Stone.Interfaces;
 using UnityEngine.Events;
 
+
 namespace PlayerData
 {
     public class PlayerClickData : BasePlayerData<ClickData>, IClickDataService
@@ -39,7 +40,7 @@ namespace PlayerData
             Save();
         }
 
-        public void AddClick(int amount = 1)
+        public void AddClicks(int amount = 1)
         {
             Data.ClickCount += amount;
             Data.AllClickCount += amount;

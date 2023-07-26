@@ -19,9 +19,8 @@ namespace MongoDBCustom
 
         public MongoMongoConnectionData GetConnectionData()
         {
-          
-          
-       
+            Debug.Log("Connection string " + _config.GetConnection());
+
             IMongoClient client = new MongoClient( _config.GetConnection());
             
             IMongoDatabase database = client.GetDatabase(DBKeys.DataBase);

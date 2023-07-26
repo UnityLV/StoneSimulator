@@ -38,7 +38,7 @@ namespace MainMenuUI
             List<string> slavesId = _slavesData.GetSlaves().Data.Select(d => d.DeviseId).ToList();
             List<BsonDocument> slavesBeforeCollect = await _dbValues.CollectClicksToGiveReferrer(slavesId);// here we already remove clicks from slaves data 
             int collect = slavesBeforeCollect.Select(ToCollectClicks()).Sum();
-            _clickDataService.AddClick(collect);
+            _clickDataService.AddClicks(collect);
             Collected?.Invoke(collect);
         }
 

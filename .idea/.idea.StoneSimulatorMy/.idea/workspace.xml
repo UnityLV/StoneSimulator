@@ -26,14 +26,21 @@
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/Ratingmenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/Ratingmenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRatingInDBSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRatingInDBSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/Interfaces/IStoneClickEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/Interfaces/IStoneClickEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneEventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneEventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Local/Mongo DB Connection Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Local/Mongo DB Connection Config.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/TestMarketLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/TestMarketLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayersRatingsLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayersRatingsLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/CustomTelepathyTransport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomTelepathyTransport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerClickData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerClickData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +62,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd0a9f693efa4bb2a8d0097ddd0ec57fb5e00/b8/40bc6a16/MongoClientSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/Singleton/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Platformer/Assets/Scripts/Gravity/GravityField.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Board/BoardFiller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/Singleton/SingletonSO.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/582e42538c104db3925602d208b5bfc581800/8e/87d97253/BsonDocument.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Code/Bank/Hearts.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlavesData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestRun/Tasks/BuildActionTaskBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Platformer/Assets/Scripts/Player/States/BaseState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Code/VisualNovelElements/VisualNovel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
@@ -73,24 +80,22 @@
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Code/UI/CanvasController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../find-the-differences2/Assets/Scripts/Комок шерсти из пупка/LevelBulder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/TransformCopy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilites/SkipSplash.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Installers/SequenceDetectorsInstaller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/3e/566a80ea/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9384495d2a482ac7341d67ca84e16d267d16c62458a9d67a92b119199a9/System.Threading.Tasks.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/3e/95f280d0/ReadOnlySpan`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Plugins/EnhancedTouch/EnhancedTouchSupport.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/BaseComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd0a9f693efa4bb2a8d0097ddd0ec57fb5e00/a2/59310276/MongoClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a1efe86478034c12aa24d00c7dc715fe15a000/6c/3a91a5f9/SerializeReference.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/EditorUtils/SerializableDictionary/SerializableDictionary/Editor/SerializableDictionaryPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/7d/b44a1eff/AsyncTaskMethodBuilder`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/GameDebug.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameScene/DOMoveY.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/bb/7d89b5c4/Task.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd0a9f693efa4bb2a8d0097ddd0ec57fb5e00/ae/0c303033/MongoUrl.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBConnector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/91/220d9c08/Task`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ee0a21073b349b884ac8e9a3ec24723d0800/19/f5a337fc/ICluster.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/84/82e99f57/TaskAwaiter`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ee0a21073b349b884ac8e9a3ec24723d0800/f1/bfdd2bd2/ClusterSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../find-the-differences2/Assets/Scripts/Комок шерсти из пупка/UIImageCurve.cs" root0="SKIP_HIGHLIGHTING" />
@@ -236,7 +241,13 @@
       <workItem from="1688724485745" duration="12392000" />
       <workItem from="1689597808334" duration="3223000" />
       <workItem from="1689699007571" duration="2856000" />
-      <workItem from="1689710574170" duration="1728000" />
+      <workItem from="1689710574170" duration="3049000" />
+      <workItem from="1689776376328" duration="895000" />
+      <workItem from="1689784198626" duration="3996000" />
+      <workItem from="1689882120464" duration="2985000" />
+      <workItem from="1689901446140" duration="80000" />
+      <workItem from="1690040166921" duration="1381000" />
+      <workItem from="1690345119021" duration="4394000" />
     </task>
     <servers />
   </component>
@@ -259,63 +270,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Mirror/Core/NetworkMessages.cs</url>
-          <line>144</line>
-          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Mirror\Core\NetworkMessages.cs" initialLine="144" containingFunctionPresentation="lambda expression inside method 'WrapHandler'">
-            <startOffsets>
-              <option value="6520" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6684" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveSingleLine.cs</url>
-          <line>14</line>
-          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Scripts\InGameUI\SlaveSingleLine.cs" initialLine="14" containingFunctionPresentation="method 'SetData'">
-            <startOffsets>
-              <option value="341" />
-            </startOffsets>
-            <endOffsets>
-              <option value="364" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs</url>
-          <line>51</line>
-          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Scripts\PlayerData\PlayerDataSetter.cs" initialLine="51" containingFunctionPresentation="method 'SetSlaves'">
-            <startOffsets>
-              <option value="1552" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1614" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs</url>
-          <line>52</line>
-          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Scripts\PlayerData\PlayerDataSetter.cs" initialLine="52" containingFunctionPresentation="method 'SetSlaves'">
-            <startOffsets>
-              <option value="1627" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1664" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

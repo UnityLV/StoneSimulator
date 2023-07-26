@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f26db1f136a4cd391e44673efe4b79a, type: 3}
   m_Name: Mongo DB Connection Config
   m_EditorClassIdentifier: 
-  <Ip>k__BackingField: 180.ip.ply.gg
-  <Port>k__BackingField: 11378
+  <Ip>k__BackingField: 193.32.188.190
+  <Port>k__BackingField: 18533

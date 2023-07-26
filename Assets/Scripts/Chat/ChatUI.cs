@@ -88,7 +88,8 @@ namespace Chat
             LoadPinData();
             if (_pinnedMsgData.ReleaseDateTime > DateTime.Now)
             {
-                if (_realisingPin != null) StopCoroutine(_realisingPin);
+                if (_realisingPin != null)
+                    StopCoroutine(_realisingPin);
                 _realisingPin = StartCoroutine(IPinReleasing());
             }
 
@@ -105,15 +106,9 @@ namespace Chat
 
         public override void OnStopServer()
         {
-            if (isServer) SaveChatData();
+            if (isServer)
+                SaveChatData();
             base.OnStopServer();
-        }
-
-        private void Update()
-        {
-            if (!isClient) return;
-            if (Input.GetKeyDown(KeyCode.P))
-                CmdPinMessage("Tester", "its a test msg", _networkIdentity.connectionToClient);
         }
 
         [Command(requiresAuthority = false)]
@@ -130,7 +125,8 @@ namespace Chat
         {
             if (_pinnedMsgData.ReleaseDateTime > DateTime.Now)
                 TargetRPCPinMsg(sender, _pinnedMsgData.PinnedMessage.Nickname, _pinnedMsgData.PinnedMessage.Message);
-            else TargetRPCUnpinMessageObject(sender);
+            else
+                TargetRPCUnpinMessageObject(sender);
         }
 
         [Command(requiresAuthority = false)]
@@ -139,7 +135,8 @@ namespace Chat
             if (!_connNames.ContainsKey(sender))
                 _connNames.Add(sender, nickname);
 
-            if (string.IsNullOrWhiteSpace(message)) return;
+            if (string.IsNullOrWhiteSpace(message))
+                return;
             _chatData.ChatHistory.Add(new ChatMsg(nickname, message));
             RpcReceive(_connNames[sender], message.Trim());
             Debug.Log($"Message in chat {sender}, {nickname}: {message}");
@@ -209,7 +206,7 @@ namespace Chat
         private void LoadChatData()
         {
             _chatSaveSystem = new BinarySaveSystem(CHAT_DATA_PATCH);
-            _chatData = (ChatData) _chatSaveSystem.Load();
+            _chatData = (ChatData)_chatSaveSystem.Load();
             if (_chatData == null)
             {
                 _chatData = new ChatData();
@@ -225,7 +222,7 @@ namespace Chat
         private void LoadPinData()
         {
             _pinnedSaveSystem = new BinarySaveSystem(PINNED_DATA_PATCH);
-            _pinnedMsgData = (PinnedMsgData) _pinnedSaveSystem.Load();
+            _pinnedMsgData = (PinnedMsgData)_pinnedSaveSystem.Load();
             if (_pinnedMsgData == null)
             {
                 _pinnedMsgData = new PinnedMsgData();
@@ -254,17 +251,18 @@ namespace Chat
             _pinnedMsgData.PinnedMessage = new ChatMsg(nickname, message);
             _pinnedMsgData.ReleaseDateTime = DateTime.Now.AddDays(1);
             SavePinnedData();
-            if (_realisingPin != null) StopCoroutine(_realisingPin);
+            if (_realisingPin != null)
+                StopCoroutine(_realisingPin);
             _realisingPin = StartCoroutine(IPinReleasing());
             ClientRPCPinMsg(nickname, message);
         }
 
         public void PinMessage(string nickname, string message)
         {
-            CmdPinMessage(nickname,message,_networkIdentity.connectionToClient);
+            CmdPinMessage(nickname, message, _networkIdentity.connectionToClient);
         }
-        
-        
+
+
         [ClientRpc]
         private void ClientRPCPinMsg(string nickname, string message)
         {
@@ -283,7 +281,8 @@ namespace Chat
         {
             _pinnedMsgData.ReleaseDateTime = DateTime.MinValue;
             SavePinnedData();
-            if (_realisingPin != null) StopCoroutine(_realisingPin);
+            if (_realisingPin != null)
+                StopCoroutine(_realisingPin);
             _realisingPin = null;
             ClientRPCUnpinMessageObject();
         }
@@ -321,7 +320,8 @@ namespace Chat
             }
             _pinnedMsgData.ReleaseDateTime = DateTime.MinValue;
             SavePinnedData();
-            if (_realisingPin != null) StopCoroutine(_realisingPin);
+            if (_realisingPin != null)
+                StopCoroutine(_realisingPin);
             _realisingPin = null;
             ClientRPCUnpinMessageObject();
         }

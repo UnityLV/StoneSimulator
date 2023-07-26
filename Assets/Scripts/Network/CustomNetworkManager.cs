@@ -14,8 +14,10 @@ namespace Network
 {
     public class CustomNetworkManager : NetworkManager, INetworkManagerService
     {
-        [SerializeField] private FirebaseCustom.ConnectionConfig _connectionConfig; 
-        
+        [SerializeField] private FirebaseCustom.ConnectionConfig _connectionConfig;
+
+        [SerializeField] private bool _isUseLocalHost;
+
         #region Dependency
 
         private IGameSceneService _gameSceneService;
@@ -30,21 +32,22 @@ namespace Network
 
 
         private ConnectionType _currentConnectionType;
-        
+
         private const string LOCALHOST_ADDRESS = "localhost";
 
         public override void Start()
         {
             //base.Start();
-            
+
             TryConnect();
         }
 
         private void TryConnect()
         {
-            networkAddress = _connectionConfig.Ip;
+            networkAddress = _isUseLocalHost ? LOCALHOST_ADDRESS : _connectionConfig.Ip;
+
 #if UNITY_SERVER
-Debug.Log("Try start server");
+            Debug.Log("Try start server");
             StartServer();
 
 #else
@@ -57,6 +60,7 @@ Debug.Log("Try start server");
         {
             base.OnStartServer();
             _currentConnectionType = ConnectionType.Server;
+
             //_gameSceneService.BeginTransaction();
             NetworkServer.SpawnObjects();
         }
@@ -70,22 +74,26 @@ Debug.Log("Try start server");
             NetworkServer.AddPlayerForConnection(conn, player);
         }
 
-         public override async void OnClientDisconnect()
-         {
-             base.OnClientDisconnect();
-             for (int i = 0; i < 5; i++) await Task.Yield();
-             //TryConnect();
-             //_gameSceneService.BeginTransaction();
-             //_gameSceneService.BeginLoadGameScene(GameSceneType.Boot);
-             //_gameSceneService.BeginTransaction();
-         }
-        
+        public override async void OnClientDisconnect()
+        {
+            base.OnClientDisconnect();
+            for (int i = 0; i < 5; i++)
+                await Task.Yield();
+
+            //TryConnect();
+            //_gameSceneService.BeginTransaction();
+            //_gameSceneService.BeginLoadGameScene(GameSceneType.Boot);
+            //_gameSceneService.BeginTransaction();
+        }
+
         public override async void OnClientConnect()
         {
             base.OnClientConnect();
             Debug.Log("Join on server");
-            for (int i = 0; i < 160; i++) await Task.Yield();
+            for (int i = 0; i < 160; i++)
+                await Task.Yield();
             _currentConnectionType = ConnectionType.Client;
+
             //_gameSceneService.BeginTransaction();
         }
 
@@ -98,7 +106,7 @@ Debug.Log("Try start server");
         // }
         public ConnectionType GetConnectionType()
         {
-            return  _currentConnectionType;
+            return _currentConnectionType;
         }
 
         public void SetPort(string port)
