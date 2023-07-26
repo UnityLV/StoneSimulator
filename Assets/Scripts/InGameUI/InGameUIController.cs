@@ -10,6 +10,7 @@ using Zenject;
 
 namespace InGameUI
 {
+
     public class InGameUIController : MonoBehaviour, IInGameService
     {
         [SerializeField]

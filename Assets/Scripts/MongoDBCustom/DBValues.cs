@@ -91,7 +91,9 @@ namespace MongoDBCustom
                 .Inc(AllClickToGiveReferrer, clicksToAdd);
 
             await _connection.Collection.UpdateOneAsync(filter, update);
-            Debug.Log("Player Click To Give Referrer updated " + clicksToAdd);
+
+            
+            Debug.Log("Player Referrer Click updated " + clicksToAdd);
         }
 
 

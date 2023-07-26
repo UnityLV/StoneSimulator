@@ -214,7 +214,7 @@ namespace GameState
             TakeDamage();
 
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation,_currentStone));
-            _clickDataService.AddClick();
+            _clickDataService.AddClicks();
             _stoneAnimatorEventsInvoke.OnStoneClickPlayInvoke();
 
             _countClickAfterCallback += 1;

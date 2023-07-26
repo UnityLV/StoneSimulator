@@ -39,7 +39,6 @@ namespace SaveSystem
 
             foreach (FileInfo file in dirInfo.GetFiles())
             {
-
                 if (file.Name.EndsWith("dat"))
                 {
                     Debug.Log("DELETE FILE " + file.Name);

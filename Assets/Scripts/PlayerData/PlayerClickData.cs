@@ -39,7 +39,7 @@ namespace PlayerData
             Save();
         }
 
-        public void AddClick(int amount = 1)
+        public void AddClicks(int amount = 1)
         {
             Data.ClickCount += amount;
             Data.AllClickCount += amount;
