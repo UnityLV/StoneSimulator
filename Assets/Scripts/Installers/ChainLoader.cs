@@ -1,5 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+
+
+
+#if !UNITY_SERVER
+using FirebaseCustom.Loaders;
+#endif
+
 using FirebaseCustom;
 using MongoDBCustom;
 using Network;
@@ -18,6 +25,9 @@ namespace Installers
         [SerializeField] private ConnectionConfig _mirror;
         [SerializeField] private PlayerConfig playerConfig;
 
+
+
+
         [SerializeField] private PlayerDataSetter _playerDataSetter;
 
         private DBValues _dbValues;
@@ -26,7 +36,6 @@ namespace Installers
         {
             await LoadRemoteConfig();
             Debug.Log("RemoteConfig Loaded");
-
 
             var connection = await ConstructConnection();
             _dbValues = new DBValues(connection);
@@ -48,8 +57,11 @@ namespace Installers
 
         private async Task LoadRemoteConfig()
         {
+#if !UNITY_SERVER
             RemoteConfigSetter remoteConfigSetter = new RemoteConfigSetter(_mirror, _db, playerConfig);
-            remoteConfigSetter.SetConfigs(await new RemoteConfigLoader().Load());
+            Config config = await new RemoteConfigLoader().Load();
+            remoteConfigSetter.SetConfig(config);
+#endif
         }
     }
 }

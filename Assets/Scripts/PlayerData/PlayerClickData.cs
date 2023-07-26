@@ -3,6 +3,7 @@ using PlayerData.Interfaces;
 using Stone.Interfaces;
 using UnityEngine.Events;
 
+
 namespace PlayerData
 {
     public class PlayerClickData : BasePlayerData<ClickData>, IClickDataService

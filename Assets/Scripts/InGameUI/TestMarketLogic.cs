@@ -14,8 +14,10 @@ namespace InGameUI
         {
             _clickDataService = clickDataService;
             _dbAllClickSaver = dbAllClickSaver;
-        }
 
+     
+        }
+  
         public void BuyClicks()
         {
             int add = 2500;

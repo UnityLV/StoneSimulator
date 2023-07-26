@@ -7,7 +7,7 @@ using Firebase.Unity;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace FirebaseCustom
+namespace FirebaseCustom.Loaders
 {
     public class RemoteConfigLoader 
     {

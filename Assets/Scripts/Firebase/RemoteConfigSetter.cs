@@ -19,7 +19,7 @@ namespace FirebaseCustom
             _playerConfig = playerConfig;
         }
 
-        public void SetConfigs(Config config)
+        public void SetConfig(Config config)
         {
             _unityServerConnectionConfig.Ip = config.UnityServerIp;
             _unityServerConnectionConfig.Port = config.UnityServerPort;
