@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using ChatDB;
 using MongoDB.Bson;
 
 namespace MongoDBCustom
 {
     public interface IDBValues
     {
+        Task InsertChatMessageAsync(ChatMessage chatMessage);
+        Task<List<BsonDocument>> GetLastChatMessagesAsync(int numMessages);
         Task InsertPlayerDataAsync(BsonDocument playerData);
         Task RemoveMeFromReferral();
         Task UpdatePlayerName(string result);

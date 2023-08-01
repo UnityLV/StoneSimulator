@@ -6,6 +6,7 @@ namespace MongoDBCustom
     public interface IMongoConnection
     {
         IMongoClient Client { get; }
-        IMongoCollection<BsonDocument> Collection { get; }
+        IMongoCollection<BsonDocument> UsersCollection { get; }
+        IMongoCollection<BsonDocument> ChatCollection { get; }
     }
 }

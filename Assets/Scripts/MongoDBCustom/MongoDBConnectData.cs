@@ -19,15 +19,14 @@ namespace MongoDBCustom
 
         public MongoMongoConnectionData GetConnectionData()
         {
-            Debug.Log("Connection string " + _config.GetConnection());
-
             IMongoClient client = new MongoClient( _config.GetConnection());
             
             IMongoDatabase database = client.GetDatabase(DBKeys.DataBase);
             
-            IMongoCollection<BsonDocument> playerCollection = database.GetCollection<BsonDocument>(DBKeys.Collection);
+            IMongoCollection<BsonDocument> playerCollection = database.GetCollection<BsonDocument>(DBKeys.UsersCollection);
+            IMongoCollection<BsonDocument> chatCollection = database.GetCollection<BsonDocument>(DBKeys.ChatCollection);
             
-            MongoMongoConnectionData connectionData = new MongoMongoConnectionData(client, playerCollection);
+            MongoMongoConnectionData connectionData = new MongoMongoConnectionData(client, playerCollection,chatCollection);
 
             return connectionData;
         }

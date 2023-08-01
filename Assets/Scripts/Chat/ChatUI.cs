@@ -13,37 +13,31 @@ namespace Chat
 {
     public class ChatUI : NetworkBehaviour
     {
-        [Header("Scale properties"), SerializeField]
-        private RectTransform _mainCanvas;
+        // [Header("UI Elements"), SerializeField]
+        // private GameObject chatObjectPrefab;
+        //
+        // [SerializeField]
+        // private Transform _chatParent;
 
-        [SerializeField]
-        private Vector2 _defaultResolution;
+        private List<ChatMessageGameObject> _messages;
 
-        [Header("UI Elements"), SerializeField]
-        private GameObject chatObjectPrefab;
-
-        [SerializeField]
-        private Transform _chatParent;
-
-        private List<ChatObj> _messages;
-
-        [SerializeField]
-        Scrollbar scrollbar;
-
-        [SerializeField]
-        TMP_InputField chatMessage;
-
-        [SerializeField]
-        Button sendButton;
-
-        [Header("Pined message"), SerializeField]
-        private ChatObj _pinnedObj;
-
-        [SerializeField]
-        private RectTransform _pinnedRect;
-
-        [SerializeField]
-        private RectTransform _viewRect;
+        // [SerializeField]
+        // Scrollbar scrollbar;
+        //
+        // [SerializeField]
+        // TMP_InputField chatMessage;
+        //
+        // [SerializeField]
+        // Button sendButton;
+        //
+        // [Header("Pined message"), SerializeField]
+        // private ChatMessageGameObject _pinnedMessageGameObject;
+        //
+        // [SerializeField]
+        // private RectTransform _pinnedRect;
+        //
+        // [SerializeField]
+        // private RectTransform _viewRect;
 
         private Coroutine _realisingPin;
 
@@ -99,7 +93,7 @@ namespace Chat
         public override void OnStartClient()
         {
             _networkIdentity = GetComponent<NetworkIdentity>();
-            _messages = new List<ChatObj>();
+            _messages = new List<ChatMessageGameObject>();
             CmdLoadMsg(_networkIdentity.connectionToClient);
             CmdLoadPinMsg(_networkIdentity.connectionToClient);
         }
@@ -132,6 +126,7 @@ namespace Chat
         [Command(requiresAuthority = false)]
         void CmdSend(string nickname, string message, NetworkConnectionToClient sender = null)
         {
+            Debug.Log("CmdSend");
             if (!_connNames.ContainsKey(sender))
                 _connNames.Add(sender, nickname);
 
@@ -161,27 +156,28 @@ namespace Chat
 
         IEnumerator AppendAndScroll(string nickname, string message)
         {
-            var messageObj = Instantiate(chatObjectPrefab).GetComponent<ChatObj>();
-            messageObj.MessageText.text = message;
-            messageObj.NicknameText.text = nickname;
-            messageObj.SetChatUI(this);
-            messageObj.transform.SetParent(_chatParent);
-            messageObj.transform.localScale = Vector3.one;
-
-            _messages.Add(messageObj);
-
-            // it takes 2 frames for the UI to update ?!?!
+            // var messageObj = Instantiate(chatObjectPrefab).GetComponent<ChatMessageGameObject>();
+            // messageObj.MessageText.text = message;
+            // messageObj.NicknameText.text = nickname;
+            // messageObj.SetChatUI(this);
+            // messageObj.transform.SetParent(_chatParent);
+            // messageObj.transform.localScale = Vector3.one;
+            //
+            // _messages.Add(messageObj);
+            //
+            // // it takes 2 frames for the UI to update ?!?!
+            // yield return null;
+            // yield return null;
+            //
+            // // slam the scrollbar down
+            // scrollbar.value = 0;
             yield return null;
-            yield return null;
-
-            // slam the scrollbar down
-            scrollbar.value = 0;
         }
 
         // Called by UI element MessageField.OnValueChanged
         public void ToggleButton(string input)
         {
-            sendButton.interactable = !string.IsNullOrWhiteSpace(input);
+            // sendButton.interactable = !string.IsNullOrWhiteSpace(input);
         }
 
         // Called by UI element MessageField.OnEndEdit
@@ -195,12 +191,12 @@ namespace Chat
         // Called by OnEndEdit above and UI element SendButton.OnClick
         public void SendMessage()
         {
-            if (!string.IsNullOrWhiteSpace(chatMessage.text))
-            {
-                CmdSend(_nicknameDataService.GetNickname(), chatMessage.text.Trim());
-                chatMessage.text = string.Empty;
-                chatMessage.ActivateInputField();
-            }
+            // if (!string.IsNullOrWhiteSpace(chatMessage.text))
+            // {
+            //     // CmdSend(_nicknameDataService.GetNickname(), chatMessage.text.Trim());
+            //     // chatMessage.text = string.Empty;
+            //     // chatMessage.ActivateInputField();
+            // }
         }
 
         private void LoadChatData()
@@ -290,26 +286,26 @@ namespace Chat
         [ClientRpc]
         private void ClientRPCUnpinMessageObject()
         {
-            _pinnedObj.gameObject.SetActive(false);
-            _viewRect.offsetMax = new Vector2(_viewRect.offsetMax.x, -DEFAULT_TOP);
+            // _pinnedMessageGameObject.gameObject.SetActive(false);
+            // _viewRect.offsetMax = new Vector2(_viewRect.offsetMax.x, -DEFAULT_TOP);
         }
 
         [TargetRpc]
         private void TargetRPCUnpinMessageObject(NetworkConnectionToClient target)
         {
-            _pinnedObj.gameObject.SetActive(false);
-            _viewRect.offsetMax = new Vector2(_viewRect.offsetMax.x, -DEFAULT_TOP);
+            // _pinnedMessageGameObject.gameObject.SetActive(false);
+            // _viewRect.offsetMax = new Vector2(_viewRect.offsetMax.x, -DEFAULT_TOP);
         }
 
         private IEnumerator PinMessageObject(ChatMsg msg)
         {
-            _pinnedObj.gameObject.SetActive(true);
-            _pinnedObj.NicknameText.text = msg.Nickname;
-            _pinnedObj.MessageText.text = msg.Message;
+           // _pinnedMessageGameObject.gameObject.SetActive(true);
+           // _pinnedMessageGameObject.NicknameText.text = msg.Nickname;
+           // _pinnedMessageGameObject.MessageText.text = msg.Message;
             yield return null;
             yield return null;
             yield return null;
-            _viewRect.offsetMax = new Vector2(_viewRect.offsetMax.x, -(_pinnedRect.rect.height + SPACING_TOP));
+            //_viewRect.offsetMax = new Vector2(_viewRect.offsetMax.x, -(_pinnedRect.rect.height + SPACING_TOP));
         }
 
         private IEnumerator IPinReleasing()

@@ -185,6 +185,7 @@ MonoBehaviour:
   _mirror: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
   playerConfig: {fileID: 11400000, guid: c8454e6dbb3e35c4b9eebce58a5325d4, type: 2}
   _playerDataSetter: {fileID: 103472860}
+  _loadRemoteConfig: 1
 --- !u!1 &235805071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1750747897
 Transform:
   m_ObjectHideFlags: 0
@@ -1605,7 +1606,7 @@ MonoBehaviour:
     deliveryTimeEmaDuration: 2
   timeInterpolationGui: 0
   _connectionConfig: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
-  _isUseLocalHost: 1
+  _isUseLocalHost: 0
 --- !u!114 &1750747902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,7 +1632,7 @@ MonoBehaviour:
   clientSendQueueLimit: 10000
   clientReceiveQueueLimit: 10000
   _connectionConfig: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
-  _isUseLocalHost: 1
+  _isUseLocalHost: 0
 --- !u!1 &1859271405
 GameObject:
   m_ObjectHideFlags: 0

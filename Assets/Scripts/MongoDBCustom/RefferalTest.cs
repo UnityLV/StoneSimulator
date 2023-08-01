@@ -24,7 +24,7 @@ namespace MongoDBCustom
         public async Task AddRandomPlayerToReferralsAsync()
         {
             var filter = Builders<BsonDocument>.Filter.Ne(DBKeys.DeviceID, DeviceInfo.GetDeviceId());
-            var documents = await _connection.Collection.Find(filter).ToListAsync();
+            var documents = await _connection.UsersCollection.Find(filter).ToListAsync();
 
             if (documents.Count > 0)
             {
@@ -35,7 +35,7 @@ namespace MongoDBCustom
                 var myFilter = Filters.MyDeviseIDFilter();
                 var update = Builders<BsonDocument>.Update.AddToSet(DBKeys.Referrals, referralDeviceId);
 
-                await _connection.Collection.UpdateOneAsync(myFilter, update);
+                await _connection.UsersCollection.UpdateOneAsync(myFilter, update);
                 Debug.Log("Random player added to referrals: " + referralDeviceId);
             }
             else
@@ -48,7 +48,7 @@ namespace MongoDBCustom
         public async Task ClearDatabaseAsync()
         {
             var filter = new BsonDocument();
-            await _connection.Collection.DeleteManyAsync(filter);
+            await _connection.UsersCollection.DeleteManyAsync(filter);
             Debug.Log("Database cleared");
         }
 
@@ -59,7 +59,7 @@ namespace MongoDBCustom
             var players = new List<BsonDocument>();
 
             var existingPlayers =
-                await _connection.Collection.Find(new BsonDocument()).ToListAsync();
+                await _connection.UsersCollection.Find(new BsonDocument()).ToListAsync();
 
             for (int i = 0; i < count; i++)
             {
@@ -80,7 +80,7 @@ namespace MongoDBCustom
                 players.Add(player);
             }
 
-            await _connection.Collection.InsertManyAsync(players);
+            await _connection.UsersCollection.InsertManyAsync(players);
             Debug.Log("Real test players inserted into database");
         }
 

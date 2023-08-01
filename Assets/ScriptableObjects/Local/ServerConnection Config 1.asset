@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1682ae1770b64e05af3d9c1a8bfa0a99, type: 3}
   m_Name: ServerConnection Config 1
   m_EditorClassIdentifier: 
-  <Ip>k__BackingField: 
-  <Port>k__BackingField: 34120
+  <Ip>k__BackingField: 193.32.188.190
+  <Port>k__BackingField: 15946

@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Chat;
+using ChatDB;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using VRTX.UI;
 
-public class ChatObj : MonoBehaviour
+public class ChatMessageGameObject : MonoBehaviour, IPooleable
 {
     public TextMeshProUGUI NicknameText;
     public TextMeshProUGUI MessageText;
@@ -20,5 +23,12 @@ public class ChatObj : MonoBehaviour
     public void OnMsgClick()
     {
         if (_chatUI!=null) _chatUI.PinMessage(NicknameText.text, MessageText.text);
+    }
+
+    public event UnityAction<IPooleable> Deactivation;
+
+    public void OnDisable()
+    {
+        Deactivation?.Invoke(this);
     }
 }

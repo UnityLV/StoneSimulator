@@ -29,7 +29,7 @@ namespace MongoDBCustom
             Save();
         }
 
-        private void OnStoneClick(int _)
+        private void OnStoneClick()
         {
             _clickToAdd++;
         }

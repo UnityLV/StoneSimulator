@@ -5,13 +5,15 @@ namespace MongoDBCustom
 {
     public class MongoMongoConnectionData : IMongoConnection
     {
-        public MongoMongoConnectionData(IMongoClient client, IMongoCollection<BsonDocument> collection)
+        public MongoMongoConnectionData(IMongoClient client, IMongoCollection<BsonDocument> collection, IMongoCollection<BsonDocument> chatCollection)
         {
             Client = client;
-            Collection = collection;
+            UsersCollection = collection;
+            ChatCollection = chatCollection;
         }
 
         public IMongoClient Client { get; }
-        public IMongoCollection<BsonDocument> Collection { get; }
+        public IMongoCollection<BsonDocument> UsersCollection { get; }
+        public IMongoCollection<BsonDocument> ChatCollection { get; }
     }
 }

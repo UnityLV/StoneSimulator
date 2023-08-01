@@ -35,14 +35,9 @@ namespace Network
 
         private const string LOCALHOST_ADDRESS = "localhost";
 
-        public override void Start()
-        {
-            //base.Start();
 
-            TryConnect();
-        }
 
-        private void TryConnect()
+        public void TryConnect()
         {
             networkAddress = _isUseLocalHost ? LOCALHOST_ADDRESS : _connectionConfig.Ip;
 
