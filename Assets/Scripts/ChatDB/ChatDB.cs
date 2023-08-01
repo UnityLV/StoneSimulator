@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -18,9 +19,9 @@ namespace ChatDB
         private INicknameDataService _nicknameDataService;
 
         private readonly ChatMessageConverter _messageConverter = new ChatMessageConverter();
-        
-     
-        
+
+
+
         [Inject]
         public void Construct(IDBValues dbValues, INicknameDataService nicknameDataService)
         {
@@ -31,7 +32,9 @@ namespace ChatDB
         public async Task<List<ChatMessage>> GetLastChatMessagesAsync(int numMessages = 20)
         {
             List<BsonDocument> bsonMessages = await _dbValues.GetLastChatMessagesAsync(numMessages);
-            return _messageConverter.ConvertToChatMessages(bsonMessages);
+            List<ChatMessage> chatMessages = _messageConverter.ConvertToChatMessages(bsonMessages);
+
+            return chatMessages.OrderBy(message => message.Timestamp).ToList();
         }
 
         public async Task InsertMessage(string message)
@@ -42,9 +45,8 @@ namespace ChatDB
                 Timestamp = DateTime.UtcNow,
                 MessageText = message
             };
-            
+
             await _dbValues.InsertChatMessageAsync(chatMessage);
         }
-
     }
 }

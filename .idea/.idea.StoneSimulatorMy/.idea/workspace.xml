@@ -25,47 +25,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatMessage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatMessageConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatMessageConverter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatMessageGameObjectSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatMessageGameObjectSpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/IPooleable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/IPooleable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ObjectPooler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ObjectPooler.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Font/Roboto-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Font/Roboto-Black SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/TestBehavior.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/TestBehavior.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Local/ServerConnection Config 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Local/ServerConnection Config 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessageGameObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatObj.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessageGameObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBValues.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IMongoConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IMongoConnection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRatingInDBSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerRatingInDBSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RefferalTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RefferalTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/CustomTelepathyTransport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomTelepathyTransport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/PlayerBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/PlayerBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/Interfaces/IStoneClickEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/Interfaces/IStoneClickEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneEventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneEventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +51,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd0a9f693efa4bb2a8d0097ddd0ec57fb5e00/b8/40bc6a16/MongoClientSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/Singleton/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Platformer/Assets/Scripts/Gravity/GravityField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/UnityProject/Vengeance-Project/Assets/Scripts/Debug/DebugConsole/DebugConsole.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Board/BoardFiller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/Singleton/SingletonSO.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
@@ -279,7 +244,7 @@
       <workItem from="1690040166921" duration="1381000" />
       <workItem from="1690345119021" duration="4394000" />
       <workItem from="1690816968726" duration="3408000" />
-      <workItem from="1690878320975" duration="11853000" />
+      <workItem from="1690878320975" duration="14648000" />
     </task>
     <servers />
   </component>

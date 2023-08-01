@@ -11,7 +11,7 @@ namespace ChatDB
         [SerializeField] private ChatDBTest _chatDB;
 
         private ObjectPooler<ChatMessageGameObject> _chatObjPool;
-        private List<ChatMessageGameObject> _activeChatObjects = new List<ChatMessageGameObject>();
+        private HashSet<ChatMessageGameObject> _activeChatObjects = new HashSet<ChatMessageGameObject>();
 
         private void Awake()
         {
@@ -24,8 +24,6 @@ namespace ChatDB
             _chatDB.ChatUpdated -= OnChatUpdated;
         }
 
-
-
         private void OnChatUpdated(List<ChatMessage> chatMessages)
         {
             ClearChat();
@@ -35,14 +33,27 @@ namespace ChatDB
 
         private void FillChat(List<ChatMessage> chatMessages)
         {
+            int counter = 0;
             foreach (var chatMessage in chatMessages)
             {
                 ChatMessageGameObject chatMessageGameObject = _chatObjPool.Get();
+                _activeChatObjects.Add(chatMessageGameObject);
                 chatMessageGameObject.gameObject.SetActive(true);
+                chatMessageGameObject.gameObject.name = counter++.ToString();
+                chatMessageGameObject.transform.SetAsLastSibling();
 
                 chatMessageGameObject.MessageText.text = chatMessage.MessageText;
-                chatMessageGameObject.NicknameText.text = chatMessage.PlayerNickname;
+                DateTime localTime = ConvertUtcToTimeZone(chatMessage.Timestamp);
+                chatMessageGameObject.NicknameText.text = chatMessage.PlayerNickname + " " + localTime.ToString("HH:mm");
+                ;
             }
+        }
+        
+        public DateTime ConvertUtcToTimeZone(DateTime utcTime)
+        {
+            TimeSpan localOffset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
+            DateTime localTime = utcTime + localOffset;
+            return localTime;
         }
 
         private void ClearChat()
