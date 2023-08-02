@@ -8,7 +8,7 @@ namespace ChatDB
     public class ChatDBViewDataConstructor : MonoBehaviour
     {
         [SerializeField] private ChatMessageGameObjectSpawner _chatMessageSpawner;
-        [SerializeField] private ChatDBTest _chatDB;
+        [SerializeField] private ChatDBModel _chatDB;
 
         private ObjectPooler<ChatMessageGameObject> _chatObjPool;
         private HashSet<ChatMessageGameObject> _activeChatObjects = new HashSet<ChatMessageGameObject>();

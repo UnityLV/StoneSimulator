@@ -185,7 +185,6 @@ MonoBehaviour:
   _mirror: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
   playerConfig: {fileID: 11400000, guid: c8454e6dbb3e35c4b9eebce58a5325d4, type: 2}
   _playerDataSetter: {fileID: 103472860}
-  _loadRemoteConfig: 1
 --- !u!1 &235805071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1559,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750747893}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
@@ -1632,7 +1631,6 @@ MonoBehaviour:
   clientSendQueueLimit: 10000
   clientReceiveQueueLimit: 10000
   _connectionConfig: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
-  _isUseLocalHost: 0
 --- !u!1 &1859271405
 GameObject:
   m_ObjectHideFlags: 0
