@@ -8,5 +8,6 @@ namespace MongoDBCustom
         IMongoClient Client { get; }
         IMongoCollection<BsonDocument> UsersCollection { get; }
         IMongoCollection<BsonDocument> ChatCollection { get; }
+        IMongoCollection<BsonDocument> PinnedMessagesCollection { get; }
     }
 }

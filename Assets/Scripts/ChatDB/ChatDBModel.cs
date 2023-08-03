@@ -66,7 +66,6 @@ namespace ChatDB
             List<ChatMessage> chatMessages = await _chatDB.GetLastChatMessagesAsync(20);
 
             ChatUpdated?.Invoke(chatMessages);
-            Debug.Log("Update Chat messages " + chatMessages.Count);
             _isAvalableForUpdating = true;
         }
     }

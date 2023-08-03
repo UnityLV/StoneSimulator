@@ -25,8 +25,9 @@ namespace MongoDBCustom
             
             IMongoCollection<BsonDocument> playerCollection = database.GetCollection<BsonDocument>(DBKeys.UsersCollection);
             IMongoCollection<BsonDocument> chatCollection = database.GetCollection<BsonDocument>(DBKeys.ChatCollection);
+            IMongoCollection<BsonDocument> pinnedMessagesCollection = database.GetCollection<BsonDocument>(DBKeys.PinnedMessagesCollection);
             
-            MongoMongoConnectionData connectionData = new MongoMongoConnectionData(client, playerCollection,chatCollection);
+            MongoMongoConnectionData connectionData = new MongoMongoConnectionData(client, playerCollection,chatCollection,pinnedMessagesCollection);
 
             return connectionData;
         }

@@ -1,11 +1,12 @@
-﻿namespace InGameUI
+﻿using System;
+namespace InGameUI
 {
     public interface IMarketLogic
     {
-        void BuyClicks();
+        void BuyClicks(Action callback);
         
-        void RemoveAD();
+        void BuyRemoveAD(Action callback);
         
-        void PinMessage();
+        void BuyPinMessage(Action callback);
     }
 }

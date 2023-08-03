@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ChatDB;
+using ChatDB.PinMessage;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using UnityEngine;
@@ -22,7 +23,42 @@ namespace MongoDBCustom
             _connection = connection;
         }
 
+        public async Task PinMessageAsync(PinMessageData data)
+        {
+            var pinnedMessageDocument = new BsonDocument {
+                { DeviceID, data.Message.DeviceID },
+                { Name, data.Message.PlayerNickname },
+                { Timestamp, data.Message.Timestamp },
+                { Message, data.Message.MessageText },
+                { PinDate, data.PinDate }
+            };
+
+            await _connection.PinnedMessagesCollection.InsertOneAsync(pinnedMessageDocument);
+        }
+
+        public async Task<PinMessageData> GetPinnedMessageForDateAsync(DateTime date)
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq(PinDate, date);
+            var pinnedMessageDocument = await _connection.PinnedMessagesCollection.Find(filter).FirstOrDefaultAsync();
+
+            if (pinnedMessageDocument != null)
+            {
+                var message = ChatMessageConverter.ConvertToChatMessage(pinnedMessageDocument);
+                return new PinMessageData { Message = message, PinDate = date };
+            }
+
+            return default;
+        }
+
+
         public async Task InsertChatMessageAsync(ChatMessage chatMessage)
+        {
+            BsonDocument chatDocument = ConvertToBson(chatMessage);
+
+            await _connection.ChatCollection.InsertOneAsync(chatDocument);
+        }
+
+        private static BsonDocument ConvertToBson(ChatMessage chatMessage)
         {
             var chatDocument = new BsonDocument {
                 { DeviceID, chatMessage.DeviceID },
@@ -30,8 +66,7 @@ namespace MongoDBCustom
                 { Timestamp, chatMessage.Timestamp },
                 { Message, chatMessage.MessageText }
             };
-
-            await _connection.ChatCollection.InsertOneAsync(chatDocument);
+            return chatDocument;
         }
 
         public async Task<List<BsonDocument>> GetLastChatMessagesAsync(int numMessages)

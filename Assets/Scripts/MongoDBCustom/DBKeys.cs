@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using FirebaseCustom;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace MongoDBCustom
@@ -8,10 +9,11 @@ namespace MongoDBCustom
         public const string DataBase = "admin";
         public const string UsersCollection = "users";
         public const string ChatCollection = "chat";
+        public const string PinnedMessagesCollection = "pinnedMessages";
         public const string DeviceID = "deviceId";
         public const string AllClick = "allClicks";
-        public const string ClickToGiveReferrer= "clicksToGiveReferrer";
-        public const string AllClickToGiveReferrer= "allClicksToGiveReferrer";
+        public const string ClickToGiveReferrer = "clicksToGiveReferrer";
+        public const string AllClickToGiveReferrer = "allClicksToGiveReferrer";
         public const string Name = "name";
         public const string Referrals = "referrals";
         public const string Referrer = "referrer";
@@ -20,6 +22,6 @@ namespace MongoDBCustom
         public const string ChatRole = "chat";
         public const string Timestamp = "timestamp";
         public const string Message = "message";
-
+        public const string PinDate = "pinDate";
     }
 }
