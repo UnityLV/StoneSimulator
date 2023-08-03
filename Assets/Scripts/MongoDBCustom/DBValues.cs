@@ -7,9 +7,7 @@ using ChatDB.PinMessage;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using UnityEngine;
-using Zenject;
 using static MongoDBCustom.DBKeys;
-
 
 namespace MongoDBCustom
 {
@@ -17,10 +15,23 @@ namespace MongoDBCustom
     {
         private readonly IMongoConnection _connection;
 
-
         public DBValues(IMongoConnection connection)
         {
             _connection = connection;
+        }
+
+        public async Task<List<PinMessageData>> GetAllPinnedMessageDatesAsync()
+        {
+            var filter = Builders<BsonDocument>.Filter.Exists(PinDate);
+            var projection = Builders<BsonDocument>.Projection.Include(PinDate);
+            var pinnedMessages = await _connection.ChatCollection.Find(filter).Project(projection).ToListAsync();
+
+            var pinnedDates = pinnedMessages
+                .Select(doc => new PinMessageData
+                    { PinDate = doc[PinDate].ToUniversalTime(), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
+                .ToList();
+
+            return pinnedDates;
         }
 
         public async Task PinMessageAsync(PinMessageData data)
@@ -36,8 +47,10 @@ namespace MongoDBCustom
             await _connection.PinnedMessagesCollection.InsertOneAsync(pinnedMessageDocument);
         }
 
-        public async Task<PinMessageData> GetPinnedMessageForDateAsync(DateTime date)
+        public async Task<PinMessageData> GetPinnedMessageAsync()
         {
+            DateTime date = DateTime.UtcNow.Date;
+
             var filter = Builders<BsonDocument>.Filter.Eq(PinDate, date);
             var pinnedMessageDocument = await _connection.PinnedMessagesCollection.Find(filter).FirstOrDefaultAsync();
 

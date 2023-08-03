@@ -1,12 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ChatDB;
+using ChatDB.PinMessage;
 using MongoDB.Bson;
 
 namespace MongoDBCustom
 {
     public interface IDBValues
     {
+        Task<List<PinMessageData>> GetAllPinnedMessageDatesAsync();
+        Task<PinMessageData> GetPinnedMessageAsync();
+        Task PinMessageAsync(PinMessageData data);
         Task InsertChatMessageAsync(ChatMessage chatMessage);
         Task<List<BsonDocument>> GetLastChatMessagesAsync(int numMessages);
         Task InsertPlayerDataAsync(BsonDocument playerData);

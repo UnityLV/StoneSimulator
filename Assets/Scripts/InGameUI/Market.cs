@@ -13,13 +13,16 @@ namespace InGameUI
         private IClickDataService _clickDataService;
         private IDBAllClickSaver _dbAllClickSaver;
 
+        private IDBValues _dbValues;
+
         [SerializeField] private PinMessageUISystem _pinMessageUISystem;
 
         [Inject]
-        private void Construct(IClickDataService clickDataService, IDBAllClickSaver dbAllClickSaver)
+        private void Construct(IClickDataService clickDataService, IDBAllClickSaver dbAllClickSaver , IDBValues dbValues)
         {
             _clickDataService = clickDataService;
             _dbAllClickSaver = dbAllClickSaver;
+            _dbValues = dbValues;
         }
 
         private void OnEnable()
@@ -71,6 +74,7 @@ namespace InGameUI
 
         private void OnConfirmPinMessage(PinMessageData data)
         {
+            _dbValues.PinMessageAsync(data);
             Debug.Log("Pin Message " + data);
         }
     }

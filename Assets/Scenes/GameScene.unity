@@ -12200,7 +12200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _marketLogic:
     _underlyingValue: {fileID: 1316433627}
-  _pinMessageSystem: {fileID: 1588414655}
+  _pinMessageUISystem: {fileID: 1588414655}
 --- !u!4 &1316433629
 Transform:
   m_ObjectHideFlags: 0
@@ -22661,9 +22661,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4063411097945739032, guid: 6cf959b0ac4115146a567958fce108b2, type: 3}
+      propertyPath: _chatDB
+      value: 
+      objectReference: {fileID: 642971325}
+    - target: {fileID: 4063411097945739032, guid: 6cf959b0ac4115146a567958fce108b2, type: 3}
       propertyPath: _messageTextInput
       value: 
       objectReference: {fileID: 1588414659}
+    - target: {fileID: 4063411097945739033, guid: 6cf959b0ac4115146a567958fce108b2, type: 3}
+      propertyPath: _calendar
+      value: 
+      objectReference: {fileID: 4063411096441243560}
     - target: {fileID: 4063411097945739035, guid: 6cf959b0ac4115146a567958fce108b2, type: 3}
       propertyPath: m_Name
       value: CalendarSystem
@@ -22715,6 +22723,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6511835166787113021, guid: 6cf959b0ac4115146a567958fce108b2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6cf959b0ac4115146a567958fce108b2, type: 3}
+--- !u!114 &4063411096441243560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4063411097945739034, guid: 6cf959b0ac4115146a567958fce108b2, type: 3}
+  m_PrefabInstance: {fileID: 4063411096441243559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588414652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca1b603cba15324cae3ba2bec383f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5546790882054617775
 MonoBehaviour:
   m_ObjectHideFlags: 0

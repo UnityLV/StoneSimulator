@@ -1,15 +1,33 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using ChatDB.PinMessage;
+using MongoDBCustom;
 using UnityEngine;
+using Zenject;
 
 public class ColoringCalendar : MonoBehaviour
 {
-    private Calendar _calendar;
+    private IDBValues _dbValues;
+    [SerializeField] private Calendar _calendar;
+    private List<PinMessageData> _pinMessages = new List<PinMessageData>();
+    
+    [Inject]
+    public void Construct(IDBValues dbValues)
+    {
+        _dbValues = dbValues;
+    }
+ 
+
+    private async void UpdateDataFromDB()
+    {
+        _pinMessages = await _dbValues.GetAllPinnedMessageDatesAsync();
+    }
 
     private void Awake()
     {
-        _calendar = GameObject.FindObjectOfType<Calendar>();
         _calendar.Updated += UpdateCalendar;
+        UpdateDataFromDB();
     }
 
     private void OnDestroy()
@@ -20,13 +38,7 @@ public class ColoringCalendar : MonoBehaviour
 
     private void UpdateCalendar()
     {
-        // Create an array of special dates
-        DateTime[] specialDates = new DateTime[] {
-            new DateTime(2023, 8, 1),
-            new DateTime(2023, 8, 2),
-            new DateTime(2023, 8, 3),
-            new DateTime(2023, 8, 31),
-        };
+        DateTime[] busyDates = _pinMessages.Select(d => d.PinDate).ToArray();
         
         foreach (var button in _calendar.DayButtons)
         {
@@ -34,7 +46,7 @@ public class ColoringCalendar : MonoBehaviour
             button.button.interactable = true;
         }
 
-        foreach (var button in GetMatchButtons(specialDates))
+        foreach (var button in GetMatchButtons(busyDates))
         {
             button.image.color = Color.red;
             button.button.interactable = false;
@@ -62,9 +74,4 @@ public class ColoringCalendar : MonoBehaviour
     }
 
 
-
-    public void OnSpecialDateSelected(DayButton dayButton)
-    {
-        dayButton.image.color = Color.red;
-    }
 }

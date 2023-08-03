@@ -19,8 +19,6 @@ namespace ChatDB
         private INicknameDataService _nicknameDataService;
 
 
-
-
         [Inject]
         public void Construct(IDBValues dbValues, INicknameDataService nicknameDataService)
         {
