@@ -66,8 +66,8 @@ namespace MongoDBCustom
         {
             DateTime date = DateTime.UtcNow.Date;
 
-            var filter = Builders<BsonDocument>.Filter.Eq(PinDate, date);
-            var pinnedMessageDocument = await _connection.PinnedMessagesCollection.Find(filter).FirstOrDefaultAsync();
+            var filter = Builders<BsonDocument>.Filter.Eq(PinDate, DateTimeConverter.ConvertToCustomFormat(date));
+            BsonDocument pinnedMessageDocument = await _connection.PinnedMessagesCollection.Find(filter).FirstOrDefaultAsync();
 
             if (pinnedMessageDocument != null)
             {

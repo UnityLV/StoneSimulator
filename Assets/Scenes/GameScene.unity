@@ -3480,6 +3480,7 @@ GameObject:
   - component: {fileID: 187162159}
   - component: {fileID: 187162161}
   - component: {fileID: 187162160}
+  - component: {fileID: 187162162}
   m_Layer: 5
   m_Name: ChatUI
   m_TagString: Untagged
@@ -3536,6 +3537,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chatMessageSpawner: {fileID: 187162160}
   _chatDB: {fileID: 642971326}
+--- !u!114 &187162162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187162158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d5b93db424ceb883bc8520dae76a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message: {fileID: 1509694665}
 --- !u!1 &190073346
 GameObject:
   m_ObjectHideFlags: 0
@@ -6107,8 +6121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114.595, y: -0}
-  m_SizeDelta: {x: 153.19, y: 64.19}
+  m_AnchoredPosition: {x: 114.595, y: 0}
+  m_SizeDelta: {x: 153.19, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &365349803
 MonoBehaviour:
@@ -15077,7 +15091,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -9}
-  m_SizeDelta: {x: 136.33, y: 18}
+  m_SizeDelta: {x: 0, y: 18}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &924034590
 MonoBehaviour:
@@ -15099,7 +15113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0000000000000000000
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -15134,7 +15148,7 @@ MonoBehaviour:
   m_fontSizeMax: 34.4
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -21133,7 +21147,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -18}
-  m_SizeDelta: {x: 149.09, y: 46.19}
+  m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1361121406
 MonoBehaviour:
@@ -23175,8 +23189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74.545, y: -23.095}
-  m_SizeDelta: {x: 129.09, y: 42.19}
+  m_AnchoredPosition: {x: 10, y: -5}
+  m_SizeDelta: {x: 0, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430782876
 MonoBehaviour:
@@ -23198,7 +23212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1234567890123456789012345678901234567890
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
   m_sharedMaterial: {fileID: -7439991685077117050, guid: 370be57769fec8f42baa6ac4be10fbdd, type: 2}
@@ -24598,9 +24612,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509694661}
-  - component: {fileID: 1509694662}
   - component: {fileID: 1509694664}
   - component: {fileID: 1509694663}
+  - component: {fileID: 1509694665}
+  - component: {fileID: 1509694666}
   m_Layer: 5
   m_Name: PinMessage
   m_TagString: Untagged
@@ -24629,22 +24644,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -142.7, y: -9.700012}
-  m_SizeDelta: {x: 189.19, y: 64.19}
+  m_SizeDelta: {x: 189.19, y: 38}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1509694662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509694660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b1e2a9ce8ae554e83ef533f6edbdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NicknameText: {fileID: 924034590}
-  MessageText: {fileID: 1430782876}
 --- !u!114 &1509694663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24685,6 +24686,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1509694665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509694660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b1e2a9ce8ae554e83ef533f6edbdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NicknameText: {fileID: 924034590}
+  MessageText: {fileID: 1430782876}
+--- !u!114 &1509694666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509694660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1daec26d644207a91ddea5a42d3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1520180521
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Pool;
 namespace ChatDB
 {
+    
+    
     public class ChatDBViewDataConstructor : MonoBehaviour
     {
         [SerializeField] private ChatMessageGameObjectSpawner _chatMessageSpawner;
@@ -45,7 +47,6 @@ namespace ChatDB
                 chatMessageGameObject.MessageText.text = chatMessage.MessageText;
                 DateTime localTime = ConvertUtcToTimeZone(chatMessage.Timestamp);
                 chatMessageGameObject.NicknameText.text = chatMessage.PlayerNickname + " " + localTime.ToString("HH:mm");
-                ;
             }
         }
         
