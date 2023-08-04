@@ -26,20 +26,7 @@
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Calendar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Calendar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Calendar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Calendar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColoringCalendar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CalendarDateCellMarker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColoringCalendar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CalendarDateCellMarker.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageCalendar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageCalendar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageUISystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageUISystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ChainLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnect.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnectionData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +247,7 @@
       <workItem from="1690996387800" duration="595000" />
       <workItem from="1690997036255" duration="786000" />
       <workItem from="1691055661003" duration="11085000" />
-      <workItem from="1691142354488" duration="4407000" />
+      <workItem from="1691142354488" duration="6097000" />
     </task>
     <servers />
   </component>
