@@ -8,16 +8,16 @@ using UnityEngine.Events;
 
 namespace MongoDBCustom
 {
-    public class MongoDBConnectData
+    public class MongoDBConnect
     {
         private MongoDBConnectionConfig _config;
 
-        public MongoDBConnectData(MongoDBConnectionConfig config)
+        public MongoDBConnect(MongoDBConnectionConfig config)
         {
             _config = config;
         }
 
-        public MongoMongoConnectionData GetConnectionData()
+        public MongoConnectionData GetConnectionData()
         {
             IMongoClient client = new MongoClient( _config.GetConnection());
             
@@ -27,7 +27,7 @@ namespace MongoDBCustom
             IMongoCollection<BsonDocument> chatCollection = database.GetCollection<BsonDocument>(DBKeys.ChatCollection);
             IMongoCollection<BsonDocument> pinnedMessagesCollection = database.GetCollection<BsonDocument>(DBKeys.PinnedMessagesCollection);
             
-            MongoMongoConnectionData connectionData = new MongoMongoConnectionData(client, playerCollection,chatCollection,pinnedMessagesCollection);
+            MongoConnectionData connectionData = new MongoConnectionData(client, playerCollection,chatCollection,pinnedMessagesCollection);
 
             return connectionData;
         }

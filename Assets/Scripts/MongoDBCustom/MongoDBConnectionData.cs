@@ -3,9 +3,9 @@ using MongoDB.Driver;
 
 namespace MongoDBCustom
 {
-    public class MongoMongoConnectionData : IMongoConnection
+    public class MongoConnectionData : IMongoConnection
     {
-        public MongoMongoConnectionData(IMongoClient client, IMongoCollection<BsonDocument> collection, IMongoCollection<BsonDocument> chatCollection, IMongoCollection<BsonDocument> pinnedMessagesCollection)
+        public MongoConnectionData(IMongoClient client, IMongoCollection<BsonDocument> collection, IMongoCollection<BsonDocument> chatCollection, IMongoCollection<BsonDocument> pinnedMessagesCollection)
         
         {
             Client = client;

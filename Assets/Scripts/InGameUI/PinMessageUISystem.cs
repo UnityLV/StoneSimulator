@@ -6,6 +6,8 @@ namespace ChatDB.PinMessage
     public class PinMessageUISystem : MonoBehaviour
     {
         [SerializeField] private PinMessageCalendar _messageCalendar;
+        [SerializeField] private CalendarDateCellMarker _calendarDateCellMarker;
+        [SerializeField] private Calendar _calendar;
         [SerializeField] private PinMessageTextInput _messageTextInput;
         [SerializeField] private ChatDB _chatDB;
         
@@ -29,7 +31,9 @@ namespace ChatDB.PinMessage
 
         public void StartListenPlayerInputForPinMessage()
         {
+            _calendarDateCellMarker.UpdateDataFromDB();
             _messageCalendar.Show();
+            _calendar.SelectCurrentDate();
         }
 
         private void OnDateSelected(DateTime date)

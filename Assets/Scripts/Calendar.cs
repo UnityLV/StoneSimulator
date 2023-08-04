@@ -33,12 +33,6 @@ public class Calendar : MonoBehaviour
         monthYearText.text = dtSelected.ToString("MMMM yyyy");
     }
 
-    private async void OnEnable()
-    {
-        await Task.Delay(10);
-        SelectCurrentDate();
-    }
-
     private void UpdateCalendar()
     {
         selectedYear = dtSelected.Year;

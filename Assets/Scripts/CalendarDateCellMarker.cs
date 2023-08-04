@@ -6,22 +6,16 @@ using MongoDBCustom;
 using UnityEngine;
 using Zenject;
 
-public class ColoringCalendar : MonoBehaviour
+public class CalendarDateCellMarker : MonoBehaviour
 {
     private IDBValues _dbValues;
     [SerializeField] private Calendar _calendar;
     private List<PinMessageData> _pinMessages = new List<PinMessageData>();
-    
+
     [Inject]
     public void Construct(IDBValues dbValues)
     {
         _dbValues = dbValues;
-    }
- 
-
-    private async void UpdateDataFromDB()
-    {
-        _pinMessages = await _dbValues.GetAllPinnedMessageDatesAsync();
     }
 
     private void Awake()
@@ -35,11 +29,16 @@ public class ColoringCalendar : MonoBehaviour
         _calendar.Updated -= UpdateCalendar;
     }
 
+    public async void UpdateDataFromDB()
+    {
+        _pinMessages = await _dbValues.GetAllPinnedMessageDatesAsync();
+        UpdateCalendar();
+    }
 
     private void UpdateCalendar()
     {
         DateTime[] busyDates = _pinMessages.Select(d => d.PinDate).ToArray();
-        
+
         foreach (var button in _calendar.DayButtons)
         {
             button.image.color = Color.green;
@@ -72,6 +71,4 @@ public class ColoringCalendar : MonoBehaviour
             }
         }
     }
-
-
 }

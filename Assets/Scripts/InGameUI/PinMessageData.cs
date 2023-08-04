@@ -1,6 +1,8 @@
 ﻿using System;
 namespace ChatDB.PinMessage
 {
+    
+    
     public struct PinMessageData
     {
         public ChatMessage Message;

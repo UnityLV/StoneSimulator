@@ -11,6 +11,19 @@ using static MongoDBCustom.DBKeys;
 
 namespace MongoDBCustom
 {
+    public class DateTimeConverter
+    {
+        public static string ConvertToCustomFormat(DateTime dateTime)
+        {
+            return dateTime.ToString("dd.MM.yyyy");
+        }
+
+        public static DateTime ConvertFromCustomFormat(string dateString)
+        {
+            return DateTime.ParseExact(dateString, "dd.MM.yyyy", null);
+        }
+    }
+    
     public class DBValues : IDBValues
     {
         private readonly IMongoConnection _connection;
@@ -23,12 +36,12 @@ namespace MongoDBCustom
         public async Task<List<PinMessageData>> GetAllPinnedMessageDatesAsync()
         {
             var filter = Builders<BsonDocument>.Filter.Exists(PinDate);
-            var projection = Builders<BsonDocument>.Projection.Include(PinDate);
-            var pinnedMessages = await _connection.ChatCollection.Find(filter).Project(projection).ToListAsync();
+            //var projection = Builders<BsonDocument>.Projection.Include(PinDate);
+            var pinnedMessages = await _connection.PinnedMessagesCollection.Find(filter).ToListAsync();
 
             var pinnedDates = pinnedMessages
                 .Select(doc => new PinMessageData
-                    { PinDate = doc[PinDate].ToUniversalTime(), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
+                    { PinDate = DateTimeConverter.ConvertFromCustomFormat( doc[PinDate].AsString), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
                 .ToList();
 
             return pinnedDates;
@@ -41,11 +54,13 @@ namespace MongoDBCustom
                 { Name, data.Message.PlayerNickname },
                 { Timestamp, data.Message.Timestamp },
                 { Message, data.Message.MessageText },
-                { PinDate, data.PinDate }
+                { PinDate, DateTimeConverter.ConvertToCustomFormat(data.PinDate ) }
             };
 
             await _connection.PinnedMessagesCollection.InsertOneAsync(pinnedMessageDocument);
         }
+        
+        
 
         public async Task<PinMessageData> GetPinnedMessageAsync()
         {

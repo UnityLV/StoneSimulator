@@ -46,7 +46,7 @@ namespace Installers
 
         private async Task<IMongoConnection> ConstructConnection()
         {
-            IMongoConnection connection = new MongoDBConnectData(_db).GetConnectionData();
+            IMongoConnection connection = new MongoDBConnect(_db).GetConnectionData();
             MongoDBConnector connector = new MongoDBConnector(connection);
             await connector.TryConnect();
             return connection;
