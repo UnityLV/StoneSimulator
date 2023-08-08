@@ -56,6 +56,11 @@ namespace ChatDB
             _isAvalableForSending = true;
         }
 
+        public void EnableChatUpdating()
+        {
+            _isAvalableForUpdating = true;
+        }
+
         public async Task UpdateChat()
         {
             if (_isAvalableForUpdating == false)

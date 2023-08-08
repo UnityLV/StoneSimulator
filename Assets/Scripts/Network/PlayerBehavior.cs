@@ -9,8 +9,9 @@ public class PlayerBehavior : NetworkBehaviour
     {
         DontDestroyOnLoad(this);
     }
-
-#region PlayerDamage
+    
+//Регион дерьма
+#region PlayerDamage 
 
     [SyncVar]
     public int playerDamageOnServer = 1;
