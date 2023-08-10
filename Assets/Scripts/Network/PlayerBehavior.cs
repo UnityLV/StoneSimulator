@@ -9,6 +9,11 @@ public class PlayerBehavior : NetworkBehaviour
     public override void OnStartClient()
     {
         DontDestroyOnLoad(this);
+
+        if (isLocalPlayer)
+        {
+            PowerButton.PlayerBehavior = this;
+        }
     }
 
     #region PlayerDamage

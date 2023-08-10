@@ -13,9 +13,10 @@ public class PowerButton : MonoBehaviour
     private IStoneClickEvents _stoneClickEvents;
     private IStoneClickEventsInvoke _clickEventsInvoke;
     private int _counter;
+    private bool _isNeedToIgnoreOneInputClick;
 
-    private PlayerBehavior PlayerBehavior => CustomNetworkManager.Player;
-
+    public static PlayerBehavior PlayerBehavior { get; set; }
+    
     [Inject]
     private void Construct(
         IStoneClickEvents stoneClickEvents,
@@ -41,6 +42,12 @@ public class PowerButton : MonoBehaviour
 
     private void OnOnStoneClick()
     {
+        if (_isNeedToIgnoreOneInputClick)
+        {
+            _isNeedToIgnoreOneInputClick = false;
+            return;
+            
+        }
         _counter++;
         _counterText.text = _counter.ToString();
     }
@@ -51,7 +58,7 @@ public class PowerButton : MonoBehaviour
         {
             return;
         }
-        
+        _isNeedToIgnoreOneInputClick = true;
         int power = GetAndResetCounter();
         
         PlayerBehavior.SetDamage(power);

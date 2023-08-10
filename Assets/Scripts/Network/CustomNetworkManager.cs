@@ -12,6 +12,9 @@ using Zenject;
 
 namespace Network
 {
+
+  
+    
     public class CustomNetworkManager : NetworkManager, INetworkManagerService
     {
         [SerializeField] private FirebaseCustom.ConnectionConfig _connectionConfig;
@@ -35,7 +38,7 @@ namespace Network
 
         private const string LOCALHOST_ADDRESS = "localhost";
 
-        public static PlayerBehavior Player { get; private set; }//TODO: придумать более подходящее место для хранения игрока
+      
 
 
         public void TryConnect()
@@ -68,7 +71,7 @@ namespace Network
             GameObject player = Instantiate(playerPrefab);
             DontDestroyOnLoad(player);
             NetworkServer.AddPlayerForConnection(conn, player);
-            Player = player.GetComponent<PlayerBehavior>();
+          
         }
 
         public override async void OnClientDisconnect()
