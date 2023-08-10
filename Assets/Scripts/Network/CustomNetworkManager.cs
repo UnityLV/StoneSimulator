@@ -35,6 +35,7 @@ namespace Network
 
         private const string LOCALHOST_ADDRESS = "localhost";
 
+        public static PlayerBehavior Player { get; private set; }//TODO: придумать более подходящее место для хранения игрока
 
 
         public void TryConnect()
@@ -67,12 +68,13 @@ namespace Network
             GameObject player = Instantiate(playerPrefab);
             DontDestroyOnLoad(player);
             NetworkServer.AddPlayerForConnection(conn, player);
+            Player = player.GetComponent<PlayerBehavior>();
         }
 
         public override async void OnClientDisconnect()
         {
             base.OnClientDisconnect();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 60; i++)
                 await Task.Yield();
 
             //TryConnect();
@@ -91,6 +93,7 @@ namespace Network
 
             //_gameSceneService.BeginTransaction();
         }
+        
 
         //
         // public override void OnServerSceneChanged(string sceneName)
