@@ -11,7 +11,7 @@ using UnityEngine.Serialization;
 
 namespace Installers
 {
-    public class ChainLoader : MonoBehaviour
+    public class BootStraper : MonoBehaviour
     {
         [SerializeField] private CustomNetworkManager _customNetworkManager;
 
