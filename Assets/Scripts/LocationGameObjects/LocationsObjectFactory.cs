@@ -45,7 +45,8 @@ namespace LocationGameObjects
 
         public void DestroyLocationObject()
         {
-            if (_currentLocationObject == null) return;
+            if (_currentLocationObject == null)
+                return;
             for (int i = 0; i < _currentLocationObject.Count; i++)
                 Object.Destroy(_currentLocationObject[i]);
             _currentLocationObject = null;
@@ -53,6 +54,7 @@ namespace LocationGameObjects
 
         public async void SpawnStoneObject(int location, int stoneLvl)
         {
+            Debug.Log("Task Destroy Stone Object");
             await TaskDestroyStoneObject();
 
             _currentStone = null;
@@ -64,8 +66,10 @@ namespace LocationGameObjects
         public async void DestroyStoneObject(bool force)
         {
             Debug.Log($"Try destroy. Current stone{_currentStone}");
-            if (_currentStone == null) return;
-            if (!force) await AwaitDestroy();
+            if (_currentStone == null)
+                return;
+            if (!force)
+                await AwaitDestroy();
             Object.Destroy(_currentStone);
 
             _currentStone = null;
@@ -74,7 +78,12 @@ namespace LocationGameObjects
         public async Task TaskDestroyStoneObject()
         {
             Debug.Log($"Try destroy. Current stone{_currentStone}");
-            if (_currentStone == null) return;
+            
+            if (_currentStone is null)
+            {
+                Debug.Log("_currentStone is null");
+                return;
+            }
 
             await AwaitDestroy();
             Object.Destroy(_currentStone);

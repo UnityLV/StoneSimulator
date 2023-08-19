@@ -29,7 +29,7 @@ namespace Debugging
             {
                 _text.text = result;
             }
-            await Task.Delay(40);
+            await Task.Delay(540);
             ShowMessage();
         }
     }

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 namespace ChatDB
 {
-    
-    
     public class ChatDBViewDataConstructor : MonoBehaviour
     {
         [SerializeField] private ChatMessageGameObjectSpawner _chatMessageSpawner;
         [SerializeField] private ChatDBModel _chatDB;
+        [SerializeField] private UnityEvent _chatFielded;
 
         private ObjectPooler<ChatMessageGameObject> _chatObjPool;
         private HashSet<ChatMessageGameObject> _activeChatObjects = new HashSet<ChatMessageGameObject>();
@@ -31,6 +31,8 @@ namespace ChatDB
             ClearChat();
 
             FillChat(chatMessages);
+
+            _chatFielded.Invoke();
         }
 
         private void FillChat(List<ChatMessage> chatMessages)
@@ -49,7 +51,7 @@ namespace ChatDB
                 chatMessageGameObject.NicknameText.text = chatMessage.PlayerNickname + " " + localTime.ToString("HH:mm");
             }
         }
-        
+
         public DateTime ConvertUtcToTimeZone(DateTime utcTime)
         {
             TimeSpan localOffset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);

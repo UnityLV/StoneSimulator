@@ -98,12 +98,15 @@ namespace GameState
         {
             if (isServer)
                 return;
+            Debug.Log("Cmd Start Game On Client");
             CmdStartGameOnClient(_networkIdentity.connectionToClient);
+            
         }
 
         [Command(requiresAuthority = false)]
         private void CmdStartGameOnClient(NetworkConnectionToClient client)
         {
+            Debug.Log("Start Game Target");
             StartGameTarget(client);
         }
 
@@ -118,6 +121,7 @@ namespace GameState
         {
             _isInGame = true;
             _locationSpawner.SpawnLocationObjects(_currentLocation);
+
             _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
         }
@@ -491,7 +495,7 @@ namespace GameState
         }
 
         [Command(requiresAuthority = false)]
-        private void CmdChangeLocation(int location, int stone, NetworkConnectionToClient target = null) //TODO: Не работает обновление камня на сервере
+        private void CmdChangeLocation(int location, int stone, NetworkConnectionToClient target = null) 
         {
             _currentLocation = location;
             _currentStone = stone;

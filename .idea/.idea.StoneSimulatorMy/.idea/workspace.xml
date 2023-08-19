@@ -26,26 +26,15 @@
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/DestroyAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/DestroyAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/SpawnAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/SpawnAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/StoneClick.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimationClips/StoneClick.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimatorController.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimatorController/StoneAnimationController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/DefaultAnimatorController/StoneAnimationController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Light.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Light.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Light.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Light.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Message.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Message.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Debugging/ConsoleInterceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debugging/ConsoleInterceptor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/LocationsObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/LocationsObjectFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +65,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/3e/95f280d0/ReadOnlySpan`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Plugins/EnhancedTouch/EnhancedTouchSupport.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/BaseComponent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/UnityProject/Vengeance-Project/Assets/Scripts/Debug/DebugingTools/UpdateAllLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/EditorUtils/SerializableDictionary/SerializableDictionary/Editor/SerializableDictionaryPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/7d/b44a1eff/AsyncTaskMethodBuilder`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/bb/7d89b5c4/Task.cs" root0="FORCE_HIGHLIGHTING" />
@@ -275,7 +265,11 @@
       <workItem from="1691676012606" duration="255000" />
       <workItem from="1691833512443" duration="5471000" />
       <workItem from="1691943327559" duration="578000" />
-      <workItem from="1692277845256" duration="132000" />
+      <workItem from="1692277845256" duration="1362000" />
+      <workItem from="1692376097266" duration="1222000" />
+      <workItem from="1692395394767" duration="635000" />
+      <workItem from="1692482582514" duration="801000" />
+      <workItem from="1692485435737" duration="754000" />
     </task>
     <servers />
   </component>
@@ -298,24 +292,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/LocationsObjectFactory.cs</url>
-          <line>79</line>
-          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Scripts\LocationGameObjects\LocationsObjectFactory.cs" initialLine="79" containingFunctionPresentation="method 'TaskDestroyStoneObject'">
-            <startOffsets>
-              <option value="2735" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2765" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
