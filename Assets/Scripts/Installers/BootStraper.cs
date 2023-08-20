@@ -25,7 +25,7 @@ namespace Installers
         [SerializeField] private PlayerDataSetter _playerDataSetter;
 
 
-        private DBValues _dbValues;
+        private IdbCommands _idbCommands;
 
         private async void Start()
         {
@@ -35,8 +35,8 @@ namespace Installers
 #endif
 
             var connection = await ConstructConnection();
-            _dbValues = new DBValues(connection);
-            ValuesFromBootScene.DBValues = _dbValues;
+            _idbCommands = new IdbCommands(connection);
+            ValuesFromBootScene.IdbCommands = _idbCommands;
             ValuesFromBootScene.MongoConnection = connection;
 
             await _playerDataSetter.SetData();

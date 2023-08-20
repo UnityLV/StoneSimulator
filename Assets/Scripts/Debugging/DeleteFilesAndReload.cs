@@ -10,7 +10,7 @@ namespace Debugging
     {
         public void OnClick()
         {
-            ValuesFromBootScene.DBValues.DeleteMyData();
+            ValuesFromBootScene.IdbCommands.DeleteMyData();
             string path = Application.persistentDataPath;
             DirectoryInfo directory = new DirectoryInfo(path);
 

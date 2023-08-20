@@ -18,7 +18,7 @@ namespace PlayerData
 
         public int GetClickCount()
         {
-            return Data.ClickCount;
+            return Data.AbilityClickCount;
         }
 
         public int GetAllClickCount()
@@ -28,24 +28,24 @@ namespace PlayerData
 
         public void ResetAll()
         {
-            Data.ClickCount = 0;
+            Data.AbilityClickCount = 0;
             Data.AllClickCount = 0;
             Save();
         }
 
         public void SetClickCount(int value)
         {
-            Data.ClickCount = value;
+            Data.AbilityClickCount = value;
             Data.AllClickCount = value;
             Save();
         }
 
         public void AddClicks(int amount = 1)
         {
-            Data.ClickCount += amount;
+            Data.AbilityClickCount += amount;
             Data.AllClickCount += amount;
             Save();
-            ClickUpdated?.Invoke(Data.ClickCount);
+            ClickUpdated?.Invoke(Data.AbilityClickCount);
         }
     }
 }

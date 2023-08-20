@@ -24,11 +24,11 @@ namespace MongoDBCustom
         }
     }
     
-    public class DBValues : IDBValues
+    public class IdbCommands : IDBCommands
     {
         private readonly IMongoConnection _connection;
 
-        public DBValues(IMongoConnection connection)
+        public IdbCommands(IMongoConnection connection)
         {
             _connection = connection;
         }

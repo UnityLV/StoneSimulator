@@ -10,12 +10,12 @@ namespace ChatDB.PinMessage
         [SerializeField] private ChatMessageGameObject _message;
         
         
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
 
         [Inject]
-        public void Construct(IDBValues dbValues)
+        public void Construct(IDBCommands idbCommands)
         {
-            _dbValues = dbValues;
+            _idbCommands = idbCommands;
         }
 
         private void Start()
@@ -25,7 +25,7 @@ namespace ChatDB.PinMessage
 
         private async void GetCurrentPinMessage()
         {
-            PinMessageData message = await _dbValues.GetPinnedMessageAsync();
+            PinMessageData message = await _idbCommands.GetPinnedMessageAsync();
 
             bool isMessageExist = message.PinDate != DateTime.MinValue;    
             if (isMessageExist)

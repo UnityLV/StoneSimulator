@@ -21,7 +21,7 @@ namespace PlayerData
         private ISlavesDataService _slavesDataService;
         private IDBPlayerDataProvider _playerDataProvider;
 
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
 
         [Inject]
         private void Construct(INicknameDataService nicknameDataService, IClickDataService clickDataService,
@@ -35,7 +35,7 @@ namespace PlayerData
 
         public async Task SetData()
         {
-            _dbValues = ValuesFromBootScene.DBValues;
+            _idbCommands = ValuesFromBootScene.IdbCommands;
 
             var PlayerData = await _playerDataProvider.GetPlayerDataById();
 
@@ -56,7 +56,7 @@ namespace PlayerData
         private async Task<List<BsonDocument>> GetMySlavesData(BsonDocument PlayerData)
         {
             string[] slavesId = PlayerData[DBKeys.Referrals].AsBsonArray.Select(v => v.AsString).ToArray();
-            return await _dbValues.GetPlayersDataById(slavesId);
+            return await _idbCommands.GetPlayersDataById(slavesId);
         }
 
         

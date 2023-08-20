@@ -9,16 +9,16 @@ namespace MongoDBCustom
     public class ReferrerClicks : IDBReferrerClicksSaver, IDisposable
     {
         private IStoneClickEvents _stoneClickEvents;
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
         
         private readonly float _percentToAdd = 0.1f;
         private int _clickCount = 0;
 
         [Inject]
-        private void Construct(IStoneClickEvents stoneClickEvents,IDBValues dbValues)
+        private void Construct(IStoneClickEvents stoneClickEvents,IDBCommands idbCommands)
         {
             _stoneClickEvents = stoneClickEvents;
-            _dbValues = dbValues;
+            _idbCommands = idbCommands;
             _stoneClickEvents.OnStoneClick += OnStoneClick;
         }
 
@@ -35,7 +35,7 @@ namespace MongoDBCustom
                 return;
             }
         
-            _dbValues.AddPlayerClickToGiveReferrer(clicksToAdd).ContinueWith(
+            _idbCommands.AddPlayerClickToGiveReferrer(clicksToAdd).ContinueWith(
                 (task)=> _clickCount = 0);
         }
 

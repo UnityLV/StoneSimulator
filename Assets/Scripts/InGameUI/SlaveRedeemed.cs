@@ -13,11 +13,11 @@ namespace InGameUI
 
         [SerializeField] private UnityEvent _onRedeemed;
         private IClickDataService _clickData;
-        private IDBValues _values;
+        private IDBCommands _values;
         
         
         [Inject]
-        public void Construct(IClickDataService clickData, IDBValues values)
+        public void Construct(IClickDataService clickData, IDBCommands values)
         {
             _clickData = clickData;
             _values = values;

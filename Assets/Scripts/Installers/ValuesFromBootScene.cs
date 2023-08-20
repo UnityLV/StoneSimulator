@@ -8,7 +8,7 @@ namespace Installers
 {
     public class ValuesFromBootScene
     {
-        public static IDBValues DBValues { get; set; }
+        public static IDBCommands IdbCommands { get; set; }
         public static CustomNetworkManager CustomNetworkManager { get; set; }
         public static IMongoConnection MongoConnection { get; set; }
         public static BsonDocument PlayerData { get; set; }

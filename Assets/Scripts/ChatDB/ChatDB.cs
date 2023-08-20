@@ -15,20 +15,20 @@ namespace ChatDB
 {
     public class ChatDB : MonoBehaviour
     {
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
         private INicknameDataService _nicknameDataService;
 
 
         [Inject]
-        public void Construct(IDBValues dbValues, INicknameDataService nicknameDataService)
+        public void Construct(IDBCommands idbCommands, INicknameDataService nicknameDataService)
         {
-            _dbValues = dbValues;
+            _idbCommands = idbCommands;
             _nicknameDataService = nicknameDataService;
         }
 
         public async Task<List<ChatMessage>> GetLastChatMessagesAsync(int numMessages = 30)
         {
-            List<BsonDocument> bsonMessages = await _dbValues.GetLastChatMessagesAsync(numMessages);
+            List<BsonDocument> bsonMessages = await _idbCommands.GetLastChatMessagesAsync(numMessages);
             List<ChatMessage> chatMessages =  ChatMessageConverter.ConvertToChatMessages(bsonMessages);
 
             return chatMessages.OrderBy(message => message.Timestamp).ToList();
@@ -38,7 +38,7 @@ namespace ChatDB
         {
             ChatMessage chatMessage = ConvertToChatMessage(message);
 
-            await _dbValues.InsertChatMessageAsync(chatMessage);
+            await _idbCommands.InsertChatMessageAsync(chatMessage);
         }
 
         public ChatMessage ConvertToChatMessage(string message)

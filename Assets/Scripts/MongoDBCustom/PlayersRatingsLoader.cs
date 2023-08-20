@@ -21,12 +21,12 @@ namespace MongoDBCustom
         [SerializeField] private Sprite _image3;
         [SerializeField] private Sprite _imageDefault;
 
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
 
         [Inject]
-        private void Construct(IDBValues values)
+        private void Construct(IDBCommands values)
         {
-            _dbValues = values;
+            _idbCommands = values;
         }
 
         private void Start()
@@ -41,11 +41,11 @@ namespace MongoDBCustom
 
         private async void LoadRating()
         {
-            if (_dbValues == null)
+            if (_idbCommands == null)
             {
                 return;
             }
-            var playersRatings = await _dbValues.PlayersRating();
+            var playersRatings = await _idbCommands.PlayersRating();
             var ratingPlayerDataList = new List<RatingPlayerData>();
 
             for (int i = 0; i < playersRatings.Count; i++)

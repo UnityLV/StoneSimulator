@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameScene;
 using GameState.Interfaces;
 using Health.Interfaces;
 using LocationGameObjects.Interfaces;
 using Mirror;
+using Network;
 using PlayerData.Interfaces;
 using SaveSystem;
 using Stone.Interfaces;
@@ -294,7 +296,7 @@ namespace GameState
         {
             Debug.Log("Add click on Server");
 
-            PlayerBehavior playerBehavior = PowerButton.PlayerBehavior;
+            PlayerBehavior playerBehavior = AbilityButton.PlayerBehavior;
             int damage = playerBehavior.playerDamageOnServer;
             playerBehavior.playerDamageOnServer = 1;
             CmdAddClickToServer(damage);

@@ -11,13 +11,13 @@ namespace MongoDBCustom
     public class RefferalTest : MonoBehaviour
     {
         public string id;
-        public IDBValues _dbValues;
+        public IDBCommands IdbCommands;
         public IMongoConnection _connection;
 
         [Button()]
         private void RemoveMeFromReferrals()
         {
-            _dbValues.RemoveMeFromReferral();
+            IdbCommands.RemoveMeFromReferral();
         }
 
         [Button()]
@@ -110,7 +110,7 @@ namespace MongoDBCustom
         [Button()]
         public void SetMeAsRefferal()
         {
-            _dbValues.AddMeAsReferralsTo(id);
+            IdbCommands.AddMeAsReferralsTo(id);
         }
     }
 }

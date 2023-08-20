@@ -10,12 +10,12 @@ namespace Debugging
 {
     public class RankDebug : MonoBehaviour
     {
-        private IDBValues _dbValues => ValuesFromBootScene.DBValues;
+        private IDBCommands IdbCommands => ValuesFromBootScene.IdbCommands;
 
         [Button()]
         private async void Test()
         {
-            var data = await _dbValues.GetPlayerDataAsync();
+            var data = await IdbCommands.GetPlayerDataAsync();
             Debug.Log(data);
         }
     }

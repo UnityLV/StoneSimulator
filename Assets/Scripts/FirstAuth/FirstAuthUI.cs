@@ -33,18 +33,18 @@ namespace FirstAuth
 
         #region Dependency
 
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
         private INicknameDataService _nicknameDataService;
         private INetworkManagerService _networkManagerService;
 
         [Inject]
         private void Construct(
             INicknameDataService nicknameDataService,
-            INetworkManagerService networkManagerService, IDBValues dbValues)
+            INetworkManagerService networkManagerService, IDBCommands idbCommands)
         {
             _nicknameDataService = nicknameDataService;
             _networkManagerService = networkManagerService;
-            _dbValues = dbValues;
+            _idbCommands = idbCommands;
         }
 
         #endregion
@@ -92,7 +92,7 @@ namespace FirstAuth
             _nicknameDataService.SetNickname(result);
             Debug.Log($"User set nick name \"{_nicknameDataService.GetNickname()}\"");
 
-            _dbValues.UpdatePlayerName(result);
+            _idbCommands.UpdatePlayerName(result);
         }
 
         private bool IsValidNick(string nick)

@@ -8,14 +8,14 @@ using Zenject;
 
 public class CalendarDateCellMarker : MonoBehaviour
 {
-    private IDBValues _dbValues;
+    private IDBCommands _idbCommands;
     [SerializeField] private Calendar _calendar;
     private List<PinMessageData> _pinMessages = new List<PinMessageData>();
 
     [Inject]
-    public void Construct(IDBValues dbValues)
+    public void Construct(IDBCommands idbCommands)
     {
-        _dbValues = dbValues;
+        _idbCommands = idbCommands;
     }
 
     private void Awake()
@@ -31,7 +31,7 @@ public class CalendarDateCellMarker : MonoBehaviour
 
     public async void UpdateDataFromDB()
     {
-        _pinMessages = await _dbValues.GetAllPinnedMessageDatesAsync();
+        _pinMessages = await _idbCommands.GetAllPinnedMessageDatesAsync();
         UpdateCalendar();
     }
 

@@ -19,16 +19,16 @@ namespace MainMenuUI
 {
     public class SlaveClicksCollector :ISlaveClickCollector
     {
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
         private ISlavesDataService _slavesData;
         private IClickDataService _clickDataService;
 
         public event UnityAction<int> Collected;
 
         [Inject]
-        private void Construct(IDBValues dbValues, ISlavesDataService slavesData, IClickDataService clickDataService)
+        private void Construct(IDBCommands idbCommands, ISlavesDataService slavesData, IClickDataService clickDataService)
         {
-            _dbValues = dbValues;
+            _idbCommands = idbCommands;
             _slavesData = slavesData;
             _clickDataService = clickDataService;
         }
@@ -36,7 +36,7 @@ namespace MainMenuUI
         public async void CollectClicksFromReferrals()
         {
             List<string> slavesId = _slavesData.GetSlaves().Data.Select(d => d.DeviseId).ToList();
-            List<BsonDocument> slavesBeforeCollect = await _dbValues.CollectClicksToGiveReferrer(slavesId);// here we already remove clicks from slaves data 
+            List<BsonDocument> slavesBeforeCollect = await _idbCommands.CollectClicksToGiveReferrer(slavesId);// here we already remove clicks from slaves data 
             int collect = slavesBeforeCollect.Select(ToCollectClicks()).Sum();
             _clickDataService.AddClicks(collect);
             Collected?.Invoke(collect);

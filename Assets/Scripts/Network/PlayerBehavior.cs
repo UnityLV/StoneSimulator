@@ -1,6 +1,8 @@
 using System;
+using GameScene;
 using Mirror;
 using NaughtyAttributes;
+using Network;
 using UnityEngine;
 
 
@@ -12,7 +14,7 @@ public class PlayerBehavior : NetworkBehaviour
 
         if (isLocalPlayer)
         {
-            PowerButton.PlayerBehavior = this;
+            AbilityButton.PlayerBehavior = this;
         }
     }
 

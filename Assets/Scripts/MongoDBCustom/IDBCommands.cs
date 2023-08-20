@@ -7,7 +7,7 @@ using MongoDB.Bson;
 
 namespace MongoDBCustom
 {
-    public interface IDBValues
+    public interface IDBCommands
     {
         Task<List<PinMessageData>> GetAllPinnedMessageDatesAsync();
         Task<PinMessageData> GetPinnedMessageAsync();

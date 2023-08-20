@@ -13,7 +13,7 @@ namespace InGameUI
 {
     public class SlaveStatusUI : MonoBehaviour
     {
-        private IDBValues _values;
+        private IDBCommands _values;
 
         [SerializeField] private TMP_Text _referrer;
 
@@ -21,7 +21,7 @@ namespace InGameUI
         [SerializeField] private UnityEvent _onNotSlave;
 
         [Inject]
-        public void Construct(IDBValues values)
+        public void Construct(IDBCommands values)
         {
             _values = values;
         }

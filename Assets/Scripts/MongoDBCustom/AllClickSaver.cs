@@ -9,18 +9,27 @@ namespace MongoDBCustom
     {
         private IStoneClickEvents _stoneClickEvents;
         private ISlaveClickCollector _slaveClickCollector;
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
         
         private int _clickToAdd = 0;
+        private IAbilityClickEvents _aAbilityClickEvents;
 
         [Inject]
-        private void Construct(IStoneClickEvents stoneClickEvents,IDBValues dbValues ,ISlaveClickCollector slaveClickCollector)
+        private void Construct(IStoneClickEvents stoneClickEvents,IDBCommands idbCommands ,ISlaveClickCollector slaveClickCollector,IAbilityClickEvents abilityClickEvents)
         {
             _stoneClickEvents = stoneClickEvents;
-            _dbValues = dbValues;
+            _idbCommands = idbCommands;
             _slaveClickCollector = slaveClickCollector;
+            _aAbilityClickEvents = abilityClickEvents;
             _stoneClickEvents.OnStoneClick += OnStoneClick;
             _slaveClickCollector.Collected += OnClicksCollected;
+            _aAbilityClickEvents.OnAbilityClick += OnAbilityClick;
+        }
+
+        private void OnAbilityClick(int abilityClicks)
+        {
+            _clickToAdd += abilityClicks;
+            Save();
         }
 
         private void OnClicksCollected(int collected)
@@ -42,14 +51,16 @@ namespace MongoDBCustom
                 return;
             }
             
-            _dbValues.AddAllPlayerClicks(_clickToAdd).ContinueWith(
-                (task)=> _clickToAdd = 0);
+            _idbCommands.AddAllPlayerClicks(_clickToAdd);
+            
+            _clickToAdd = 0;
         }
 
         public void Dispose()
         {
             _stoneClickEvents.OnStoneClick -= OnStoneClick;
             _slaveClickCollector.Collected -= OnClicksCollected;
+            _aAbilityClickEvents.OnAbilityClick -= OnAbilityClick;
         }
     }
 }

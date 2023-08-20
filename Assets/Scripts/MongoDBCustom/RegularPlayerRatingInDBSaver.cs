@@ -6,7 +6,7 @@ using Zenject;
 
 namespace MongoDBCustom
 {
-    public class PlayerRatingInDBSaver : MonoBehaviour
+    public class RegularPlayerRatingInDBSaver : MonoBehaviour
     {
         private IStoneClickEvents _clickEvent;
         private IDBAllClickSaver _ratingSaver;

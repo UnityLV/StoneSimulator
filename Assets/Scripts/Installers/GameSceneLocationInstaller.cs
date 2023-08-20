@@ -1,4 +1,5 @@
 using CameraRotation;
+using GameScene;
 using GameState;
 using Health;
 using Health.Interfaces;
@@ -36,8 +37,9 @@ namespace Installers
         [SerializeField] private CameraRotationObject _cameraRotation;
         [SerializeField] private InGameRatingListUI _ratingListUI;
 
-        [SerializeField] private PlayerRatingInDBSaver _playerRatingInDBSaver;
+        [SerializeField] private RegularPlayerRatingInDBSaver _regularPlayerRatingInDBSaver;
         [SerializeField] private RankData _rankData;
+        [SerializeField] private AbilityButton _abilityButton;
 
 
 
@@ -60,13 +62,14 @@ namespace Installers
             BindRatingSaver();
 
             Container.BindInterfacesAndSelfTo<InGameRatingListUI>().FromInstance(_ratingListUI).AsSingle();
+            Container.BindInterfacesAndSelfTo<AbilityButton>().FromInstance(_abilityButton).AsSingle();
             Container.BindInterfacesAndSelfTo<ReferrerClicks>().AsSingle();
             Container.BindInterfacesAndSelfTo<SlaveClicksCollector>().AsSingle();
             
             Container.Bind<IMongoConnection>().FromInstance(ValuesFromBootScene.MongoConnection).AsSingle()
                 .NonLazy(); 
             
-            Container.Bind<IDBValues>().FromInstance(ValuesFromBootScene.DBValues).AsSingle()
+            Container.Bind<IDBCommands>().FromInstance(ValuesFromBootScene.IdbCommands).AsSingle()
                 .NonLazy();
             Container.Bind<RankData>().FromInstance(_rankData);
             Container.BindInterfacesAndSelfTo<PlayerRank>().AsSingle();
@@ -80,7 +83,7 @@ namespace Installers
 
         private void BindPlayerRating()
         {
-            Container.BindInterfacesAndSelfTo<PlayerRatingInDBSaver>().FromInstance(_playerRatingInDBSaver).AsSingle();
+            Container.BindInterfacesAndSelfTo<RegularPlayerRatingInDBSaver>().FromInstance(_regularPlayerRatingInDBSaver).AsSingle();
         }
 
         private void BindCameraRotation()

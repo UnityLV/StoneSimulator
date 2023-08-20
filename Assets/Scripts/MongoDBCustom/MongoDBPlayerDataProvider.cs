@@ -13,7 +13,7 @@ namespace MongoDBCustom
     public class MongoDBPlayerDataProvider : IDBPlayerDataProvider
     {
         private IClickDataService _clickDataService;
-        private IDBValues _dbValues;
+        private IDBCommands _idbCommands;
 
         private string referrerDefault = "82a027fca2749eca6c0db80d88330a46369c32f2";
 
@@ -25,15 +25,15 @@ namespace MongoDBCustom
 
         public async Task<BsonDocument> GetPlayerDataById()
         {
-            _dbValues = ValuesFromBootScene.DBValues;
+            _idbCommands = ValuesFromBootScene.IdbCommands;
 
-            BsonDocument playerData = await _dbValues.GetPlayerDataAsync();
+            BsonDocument playerData = await _idbCommands.GetPlayerDataAsync();
 
             if (playerData == null)
             {
                 playerData = CreateFirstPlayerData();
-                await _dbValues.InsertPlayerDataAsync(playerData);
-                await _dbValues.AddMeAsReferralsTo(referrerDefault);
+                await _idbCommands.InsertPlayerDataAsync(playerData);
+                await _idbCommands.AddMeAsReferralsTo(referrerDefault);
                 _clickDataService.ResetAll();
 
                 Debug.Log("Player data inserted");
