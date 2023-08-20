@@ -17,7 +17,7 @@ namespace MainMenuUI
             _slavesData = slavesDataService;
         }
 
-        private async void OnEnable()
+        private void Start()
         {
             SlavesData Data = _slavesData.GetSlaves();
             _slaveUI.SetData(Data);
