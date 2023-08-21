@@ -1,7 +1,8 @@
-﻿namespace MongoDBCustom
+﻿using System.Threading.Tasks;
+namespace MongoDBCustom
 {
     public interface IDBAllClickSaver
     {
-        void Save(int amount  = 0);
+        Task Save(int amount  = 0);
     }
 }

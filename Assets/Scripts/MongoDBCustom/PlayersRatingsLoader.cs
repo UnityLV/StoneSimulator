@@ -22,11 +22,13 @@ namespace MongoDBCustom
         [SerializeField] private Sprite _imageDefault;
 
         private IDBCommands _idbCommands;
+        private IDBAllClickSaver _idbAllClickSaver;
 
         [Inject]
-        private void Construct(IDBCommands values)
+        private void Construct(IDBCommands idbCommands, IDBAllClickSaver idbAllClickSaver)
         {
-            _idbCommands = values;
+            _idbCommands = idbCommands;
+            _idbAllClickSaver = idbAllClickSaver;
         }
 
         private void Start()
@@ -34,32 +36,27 @@ namespace MongoDBCustom
             LoadRating();
         }
 
-        public void LoadFromButton()
+        public async void LoadFromButton()
         {
+            await _idbAllClickSaver.Save();
             LoadRating();
         }
 
         private async void LoadRating()
         {
-            if (_idbCommands == null)
-            {
-                return;
-            }
             var playersRatings = await _idbCommands.PlayersRating();
             var ratingPlayerDataList = new List<RatingPlayerData>();
 
             for (int i = 0; i < playersRatings.Count; i++)
             {
-                Sprite sprite = i switch
-                {
+                Sprite sprite = i switch {
                     0 => _image1,
                     1 => _image2,
                     2 => _image3,
                     _ => _imageDefault
                 };
 
-                var ratingPlayerData = new RatingPlayerData
-                {
+                var ratingPlayerData = new RatingPlayerData {
                     Sprite = sprite,
                     Name = playersRatings[i][DBKeys.Name].AsString,
                     RatingNumber = (i + 1),
@@ -71,6 +68,5 @@ namespace MongoDBCustom
             ratingListUI.SetData(ratingPlayerDataList);
             ratingListUI2.SetData(ratingPlayerDataList);
         }
-
     }
 }

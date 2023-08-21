@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using PlayerData.Interfaces;
 using Stone.Interfaces;
 using Zenject;
@@ -10,12 +11,12 @@ namespace MongoDBCustom
         private IStoneClickEvents _stoneClickEvents;
         private ISlaveClickCollector _slaveClickCollector;
         private IDBCommands _idbCommands;
-        
+
         private int _clickToAdd = 0;
         private IAbilityClickEvents _aAbilityClickEvents;
 
         [Inject]
-        private void Construct(IStoneClickEvents stoneClickEvents,IDBCommands idbCommands ,ISlaveClickCollector slaveClickCollector,IAbilityClickEvents abilityClickEvents)
+        private void Construct(IStoneClickEvents stoneClickEvents, IDBCommands idbCommands, ISlaveClickCollector slaveClickCollector, IAbilityClickEvents abilityClickEvents)
         {
             _stoneClickEvents = stoneClickEvents;
             _idbCommands = idbCommands;
@@ -43,16 +44,16 @@ namespace MongoDBCustom
             _clickToAdd++;
         }
 
-        public void Save(int amount = 0)
+        public async Task Save(int amount = 0)
         {
             _clickToAdd += amount;
             if (_clickToAdd == 0)
             {
                 return;
             }
-            
-            _idbCommands.AddAllPlayerClicks(_clickToAdd);
-            
+
+            await _idbCommands.AddAllPlayerClicks(_clickToAdd);
+
             _clickToAdd = 0;
         }
 
