@@ -4,6 +4,7 @@ using PlayerData.Interfaces;
 using Stone.Interfaces;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Zenject;
 
@@ -13,6 +14,7 @@ namespace GameScene
     {
         [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _counterText;
+        [SerializeField] private UnityEvent _emptyAbilityClick;
         private IStoneClickEvents _stoneClickEvents;
         private IStoneClickEventsInvoke _clickEventsInvoke;
         private IClickDataService _clickDataService;
@@ -59,16 +61,11 @@ namespace GameScene
         {
             if (_counter <= 0)
             {
+                _emptyAbilityClick?.Invoke();
                 return;
             }
             ProcessAbilityUse();
         }
-        
-          
-         
-          
-         
-        
 
         private async void ProcessAbilityUse()
         {

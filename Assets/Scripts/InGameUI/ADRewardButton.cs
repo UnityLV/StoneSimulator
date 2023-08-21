@@ -10,15 +10,6 @@ namespace InGameUI
     {
         [SerializeField] private InterfaceReference<IADReward> _adRewardSystem;
 
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                ShowReward();
-            }
-        }
-
         public void ShowReward()
         {
             _adRewardSystem.Value.ShowReward();
