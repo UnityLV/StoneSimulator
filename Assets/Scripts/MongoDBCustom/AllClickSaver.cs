@@ -23,7 +23,6 @@ namespace MongoDBCustom
             _slaveClickCollector = slaveClickCollector;
             _aAbilityClickEvents = abilityClickEvents;
             _stoneClickEvents.OnStoneClick += OnStoneClick;
-            _slaveClickCollector.Collected += OnClicksCollected;
             _aAbilityClickEvents.OnAbilityClick += OnAbilityClick;
         }
 
@@ -33,11 +32,6 @@ namespace MongoDBCustom
             Save();
         }
 
-        private void OnClicksCollected(int collected)
-        {
-            _clickToAdd += collected;
-            Save();
-        }
 
         private void OnStoneClick()
         {
@@ -60,7 +54,7 @@ namespace MongoDBCustom
         public void Dispose()
         {
             _stoneClickEvents.OnStoneClick -= OnStoneClick;
-            _slaveClickCollector.Collected -= OnClicksCollected;
+         
             _aAbilityClickEvents.OnAbilityClick -= OnAbilityClick;
         }
     }

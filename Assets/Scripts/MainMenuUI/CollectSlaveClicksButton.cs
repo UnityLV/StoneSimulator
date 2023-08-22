@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Threading.Tasks;
+using UnityEngine;
 using Zenject;
 
 namespace MainMenuUI
@@ -12,7 +14,13 @@ namespace MainMenuUI
         {
             _slaveClickCollector = slaveClickCollector;
         }
-        
+
+        private async void Awake()
+        {
+            await Task.Delay(100);
+            Collect();
+        }
+
         public void Collect()
         {
             _slaveClickCollector.CollectClicksFromReferrals();

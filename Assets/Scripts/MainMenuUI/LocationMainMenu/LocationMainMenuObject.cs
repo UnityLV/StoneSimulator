@@ -140,7 +140,7 @@ namespace MainMenuUI.LocationMainMenu
             _progressBarBG.color = _progressBarBgColor.CompleteColor;
             
             _enableStartPointObj.SetActive(true);
-            _enableStartPointText.text = $"Lv.{lvl}";
+            _enableStartPointText.text = $"Lv.{lvl + 1}";
             _disableStartPointObj.SetActive(false);
             _endPointObject.SetActive(false);
             _startPointLight.SetActive(false);
@@ -161,7 +161,7 @@ namespace MainMenuUI.LocationMainMenu
             _progressBarBG.color = _progressBarBgColor.InProgressColor;
             
             _enableStartPointObj.SetActive(true);
-            _enableStartPointText.text = $"Lv.{lvl}";
+            _enableStartPointText.text = $"Lv.{lvl + 1}";
             _disableStartPointObj.SetActive(false);
             _endPointObject.SetActive(false);
             
@@ -184,7 +184,7 @@ namespace MainMenuUI.LocationMainMenu
             
             _enableStartPointObj.SetActive(false);
             _disableStartPointObj.SetActive(isNeedStart);
-            _disableStartPointText.text = $"Lv.{lvl}";
+            _disableStartPointText.text = $"Lv.{lvl + 1}";
             
             _endPointObject.SetActive(true);
             

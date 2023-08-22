@@ -47,7 +47,7 @@ namespace PlayerData
         }
 
      
-        private async Task SetSlaves(BsonDocument PlayerData)
+        public async Task SetSlaves(BsonDocument PlayerData)
         {
             List<BsonDocument> slaves = await GetMySlavesData(PlayerData);
             _slavesDataService.SetSlaves(slaves);

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using GameScene;
 using MongoDB.Bson;
 using MongoDBCustom;
 using NaughtyAttributes;
@@ -11,35 +14,37 @@ using Zenject;
 
 public interface ISlaveClickCollector
 {
-    event UnityAction<int> Collected;
     void CollectClicksFromReferrals();
-} 
+}
 
 namespace MainMenuUI
 {
-    public class SlaveClicksCollector :ISlaveClickCollector
+    public class SlaveClicksCollector : ISlaveClickCollector
     {
         private IDBCommands _idbCommands;
         private ISlavesDataService _slavesData;
-        private IClickDataService _clickDataService;
-
-        public event UnityAction<int> Collected;
+        private AbilityButton _abilityButton;
 
         [Inject]
-        private void Construct(IDBCommands idbCommands, ISlavesDataService slavesData, IClickDataService clickDataService)
+        private void Construct(IDBCommands idbCommands, ISlavesDataService slavesData, AbilityButton abilityButton)
         {
             _idbCommands = idbCommands;
             _slavesData = slavesData;
-            _clickDataService = clickDataService;
+            _abilityButton = abilityButton;
         }
-        
+
         public async void CollectClicksFromReferrals()
         {
+            int collect = await CalculateClicks();
+            _abilityButton.AddClicks(collect);
+        }
+
+        private async Task<int> CalculateClicks()
+        {
             List<string> slavesId = _slavesData.GetSlaves().Data.Select(d => d.DeviseId).ToList();
-            List<BsonDocument> slavesBeforeCollect = await _idbCommands.CollectClicksToGiveReferrer(slavesId);// here we already remove clicks from slaves data 
+            List<BsonDocument> slavesBeforeCollect = await _idbCommands.CollectClicksToGiveReferrer(slavesId); // here we already remove clicks from slaves data 
             int collect = slavesBeforeCollect.Select(ToCollectClicks()).Sum();
-            _clickDataService.AddClicks(collect);
-            Collected?.Invoke(collect);
+            return collect;
         }
 
         private Func<BsonDocument, int> ToCollectClicks()

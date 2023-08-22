@@ -71,8 +71,9 @@ namespace MainMenuUI.LocationMainMenu
         {
             float curHp = _healthService.GetCurrentLocationHealth();
             float maxHp = _healthService.GetMaxLocationHealth();
-            _locationMainMenuList[_currentLocationIDService.GetCurrentLocationId()]
-                .SetInProgressState(1,(maxHp - curHp) / maxHp);
+            int locationId = _currentLocationIDService.GetCurrentLocationId();
+            _locationMainMenuList[locationId]
+                .SetInProgressState(locationId,(maxHp - curHp) / maxHp);
             ChangeCurrentObject(_locationMainMenuList[_currentLocationIDService.GetCurrentLocationId()]);
         }
 

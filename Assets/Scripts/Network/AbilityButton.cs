@@ -18,12 +18,19 @@ namespace GameScene
         private IStoneClickEvents _stoneClickEvents;
         private IStoneClickEventsInvoke _clickEventsInvoke;
         private IClickDataService _clickDataService;
-        private int _counter;
-        private bool _isNeedToIgnoreOneInputClick;
+
+        private const string CounterKey = nameof(CounterKey);
+
+        private int Counter
+        {
+            get => PlayerPrefs.GetInt(CounterKey);
+
+            set => PlayerPrefs.SetInt(CounterKey, value);
+        }
 
         public static PlayerBehavior PlayerBehavior { get; set; }
         public event Action<int> OnAbilityClick;
-
+        
 
         [Inject]
         private void Construct(IStoneClickEvents stoneClickEvents, IStoneClickEventsInvoke clickEventsInvoke, IClickDataService clickDataService)
@@ -46,20 +53,20 @@ namespace GameScene
             _button.onClick.RemoveListener(OnButtonClick);
         }
 
+        public void AddClicks(int clicks)
+        {
+            Counter += clicks;
+            _counterText.text = Counter.ToString();
+        }
+
         private void OnOnStoneClick()
         {
-            if (_isNeedToIgnoreOneInputClick)
-            {
-                _isNeedToIgnoreOneInputClick = false;
-                return;
-            }
-            _counter++;
-            _counterText.text = _counter.ToString();
+            //AddClicks(1);
         }
 
         private void OnButtonClick()
         {
-            if (_counter <= 0)
+            if (Counter <= 0)
             {
                 _emptyAbilityClick?.Invoke();
                 return;
@@ -69,7 +76,6 @@ namespace GameScene
 
         private async void ProcessAbilityUse()
         {
-            _isNeedToIgnoreOneInputClick = true;
             int clicksInAbility = GetAndResetCounter();
 
             PlayerBehavior.SetDamage(clicksInAbility);
@@ -83,9 +89,9 @@ namespace GameScene
 
         public int GetAndResetCounter()
         {
-            int temp = _counter;
-            _counter = 0;
-            _counterText.text = _counter.ToString();
+            int temp = Counter;
+            Counter = 0;
+            _counterText.text = Counter.ToString();
             return temp;
         }
     }
