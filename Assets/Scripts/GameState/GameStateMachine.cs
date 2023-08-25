@@ -102,20 +102,19 @@ namespace GameState
                 return;
             Debug.Log("Cmd Start Game On Client");
             CmdStartGameOnClient(_networkIdentity.connectionToClient);
-            
         }
 
         [Command(requiresAuthority = false)]
         private void CmdStartGameOnClient(NetworkConnectionToClient client)
         {
             Debug.Log("Start Game Target");
-            StartGameTarget(client);
+            StartGameTarget(client as NetworkConnectionToClient);
         }
 
         [Command(requiresAuthority = false)]
         private void CmdLoadGameOnClient(NetworkConnectionToClient client)
         {
-            LoadGameTarget(client, _currentLocation, _currentStone);
+            LoadGameTarget(client as NetworkConnectionToClient, _currentLocation, _currentStone);
         }
 
         [TargetRpc]
@@ -138,7 +137,8 @@ namespace GameState
         }
 
         [TargetRpc]
-        private void LoadGameTarget(NetworkConnectionToClient target,
+        private void LoadGameTarget(
+            NetworkConnectionToClient target,
             int currentLocation,
             int currentStone)
         {
@@ -166,14 +166,14 @@ namespace GameState
             Debug.Log(id);
             if (isServer)
                 return;
-            CmdWatchLocationOnClient(_networkIdentity.connectionToClient);
+            CmdWatchLocationOnClient(_networkIdentity.connectionToClient as NetworkConnectionToClient);
             _locationToLoad = id;
         }
 
         [Command(requiresAuthority = false)]
         private void CmdWatchLocationOnClient(NetworkConnectionToClient client)
         {
-            WatchLocationTarget(client);
+            WatchLocationTarget(client as NetworkConnectionToClient);
         }
 
         [TargetRpc]
@@ -310,7 +310,7 @@ namespace GameState
             _currentHealth = Mathf.Max(0, _currentHealth - damage);
 
             Debug.Log("Take dmg on server " + damage);
-            TargetCallbackOnClick(target, damage);
+            TargetCallbackOnClick(target as NetworkConnectionToClient, damage);
 
             if (_currentHealth <= 0)
                 NextStone();
@@ -497,7 +497,7 @@ namespace GameState
         }
 
         [Command(requiresAuthority = false)]
-        private void CmdChangeLocation(int location, int stone, NetworkConnectionToClient target = null) 
+        private void CmdChangeLocation(int location, int stone, NetworkConnectionToClient target = null)
         {
             _currentLocation = location;
             _currentStone = stone;
