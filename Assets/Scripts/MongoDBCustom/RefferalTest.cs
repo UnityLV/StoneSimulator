@@ -106,11 +106,5 @@ namespace MongoDBCustom
             return Guid.NewGuid().ToString("N");
         }
 
-
-        [Button()]
-        public void SetMeAsRefferal()
-        {
-            IdbCommands.AddMeAsReferralsTo(id);
-        }
     }
 }

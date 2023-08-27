@@ -11,19 +11,6 @@ using static MongoDBCustom.DBKeys;
 
 namespace MongoDBCustom
 {
-    public class DateTimeConverter
-    {
-        public static string ConvertToCustomFormat(DateTime dateTime)
-        {
-            return dateTime.ToString("dd.MM.yyyy");
-        }
-
-        public static DateTime ConvertFromCustomFormat(string dateString)
-        {
-            return DateTime.ParseExact(dateString, "dd.MM.yyyy", null);
-        }
-    }
-    
     public class IdbCommands : IDBCommands
     {
         private readonly IMongoConnection _connection;
@@ -36,12 +23,13 @@ namespace MongoDBCustom
         public async Task<List<PinMessageData>> GetAllPinnedMessageDatesAsync()
         {
             var filter = Builders<BsonDocument>.Filter.Exists(PinDate);
+
             //var projection = Builders<BsonDocument>.Projection.Include(PinDate);
             var pinnedMessages = await _connection.PinnedMessagesCollection.Find(filter).ToListAsync();
 
             var pinnedDates = pinnedMessages
                 .Select(doc => new PinMessageData
-                    { PinDate = DateTimeConverter.ConvertFromCustomFormat( doc[PinDate].AsString), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
+                    { PinDate = DateTimeConverter.ConvertFromCustomFormat(doc[PinDate].AsString), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
                 .ToList();
 
             return pinnedDates;
@@ -54,13 +42,13 @@ namespace MongoDBCustom
                 { Name, data.Message.PlayerNickname },
                 { Timestamp, data.Message.Timestamp },
                 { Message, data.Message.MessageText },
-                { PinDate, DateTimeConverter.ConvertToCustomFormat(data.PinDate ) }
+                { PinDate, DateTimeConverter.ConvertToCustomFormat(data.PinDate) }
             };
 
             await _connection.PinnedMessagesCollection.InsertOneAsync(pinnedMessageDocument);
         }
-        
-        
+
+
 
         public async Task<PinMessageData> GetPinnedMessageAsync()
         {
@@ -141,14 +129,28 @@ namespace MongoDBCustom
             await _connection.UsersCollection.DeleteOneAsync(filter);
         }
 
-        public async Task AddMeAsReferralsTo(string newReferrer)
+        public async Task TryAddMeAsReferralsTo(string referrer)
         {
-            var filter = Filters.IDFilter(newReferrer);
+            if (await IsMyReferrerExist())
+            {
+                return;
+            }
+
+            var filter = Filters.IDFilter(referrer);
             var update = Builders<BsonDocument>.Update.AddToSet(Referrals, DeviceInfo.GetDeviceId());
 
-            await AddReferrerToMyData(newReferrer);
+            await AddReferrerToMyData(referrer);
             await _connection.UsersCollection.UpdateOneAsync(filter, update);
-            Debug.Log("Referral me added: to" + newReferrer);
+            Debug.Log("Added as referral device ID " + DeviceInfo.GetDeviceId() + " to player " + referrer);
+        }
+
+        private async Task<bool> IsMyReferrerExist()
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq(DeviceID, DeviceInfo.GetDeviceId()) &
+                (Builders<BsonDocument>.Filter.Exists(Referrer, false) |
+                    Builders<BsonDocument>.Filter.Eq(Referrer, ""));
+            var document = await _connection.UsersCollection.Find(filter).FirstOrDefaultAsync();
+            return document != null;
         }
 
         private async Task AddReferrerToMyData(string newReferrer)
@@ -166,7 +168,7 @@ namespace MongoDBCustom
             var update = Builders<BsonDocument>.Update.Inc(AllClick, add);
 
             await _connection.UsersCollection.UpdateOneAsync(filter, update);
-            Debug.Log("Player clicks add " + add);
+            Debug.Log("All Player clicks db add " + add);
         }
 
         public async Task AddPlayerClickToGiveReferrer(int clicksToAdd)

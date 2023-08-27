@@ -18,7 +18,7 @@ namespace Ugi.PlayInstallReferrerPlugin
         public static void GetInstallReferrerInfo(Action<PlayInstallReferrerDetails> callback)
         {
             PlayInstallReferrerDetails installReferrerDetails = new PlayInstallReferrerDetails(
-                "test-install-referrer",
+                "",
                 123456,
                 123456,
                 123456,

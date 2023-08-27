@@ -1,5 +1,6 @@
 ﻿using System;
 using Stone.Interfaces;
+using UnityEngine;
 
 namespace Stone
 {
@@ -11,6 +12,7 @@ namespace Stone
 
         public void OnStoneClickInvoke()
         {
+            Debug.Log("OnStoneClickInvoke");
             OnStoneClick?.Invoke();
         }
 

@@ -108,13 +108,13 @@ namespace GameState
         private void CmdStartGameOnClient(NetworkConnectionToClient client)
         {
             Debug.Log("Start Game Target");
-            StartGameTarget(client as NetworkConnectionToClient);
+            StartGameTarget(client);
         }
 
         [Command(requiresAuthority = false)]
         private void CmdLoadGameOnClient(NetworkConnectionToClient client)
         {
-            LoadGameTarget(client as NetworkConnectionToClient, _currentLocation, _currentStone);
+            LoadGameTarget(client, _currentLocation, _currentStone);
         }
 
         [TargetRpc]
@@ -142,6 +142,7 @@ namespace GameState
             int currentLocation,
             int currentStone)
         {
+            Debug.Log("LoadGameTarget " + _currentHealth);
             _currentLocation = currentLocation;
             _currentStone = currentStone;
             OnHealthChanged?.Invoke();
@@ -166,14 +167,14 @@ namespace GameState
             Debug.Log(id);
             if (isServer)
                 return;
-            CmdWatchLocationOnClient(_networkIdentity.connectionToClient as NetworkConnectionToClient);
+            CmdWatchLocationOnClient(_networkIdentity.connectionToClient);
             _locationToLoad = id;
         }
 
         [Command(requiresAuthority = false)]
         private void CmdWatchLocationOnClient(NetworkConnectionToClient client)
         {
-            WatchLocationTarget(client as NetworkConnectionToClient);
+            WatchLocationTarget(client);
         }
 
         [TargetRpc]
@@ -194,18 +195,36 @@ namespace GameState
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
             StartCoroutine(IStoneServerCallbackProcess());
         }
+        
+        private IEnumerator IStoneServerCallbackProcess()
+        {
+            while (true)
+            {
+                yield return new WaitForSecondsRealtime(_serverCallBackTime);
+                OnStoneCallbackNetwork(_countClickAllCallback);
+                _countClickAllCallback = 0; // 8
+                SaveData();
+            }
+        }
 
         public override void OnStartClient()
         {
             base.OnStartClient();
             _networkIdentity = GetComponent<NetworkIdentity>();
             CmdLoadGameOnClient(_networkIdentity.connectionToClient);
+            Debug.Log("OnStartClient " + _currentHealth);
         }
 
         [ClientRpc]
         private void OnStoneChangeOnServer()
         {
-            Debug.Log("OnStoneChangeOnServer " + _currentStone);
+            if (_currentHealth == default)
+            {
+                return;
+            }
+
+            Debug.Log("OnStoneChangeOnServer stone" + _currentStone);
+            Debug.Log("OnStoneChangeOnServer health" + _currentHealth);
             _stoneAnimatorEventsInvoke.OnStoneDestroyPlayInvoke();
 
             if (_currentStone < _getLocationCountService.GetStoneCount(_currentLocation) - 1)
@@ -223,6 +242,7 @@ namespace GameState
                 _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
                 OnLocationChanged?.Invoke();
             }
+            Debug.Log("OnStoneChangeOnServer " + _currentHealth);
 
             _healthBarUIService.UpdateHealthBarState(_currentHealth, _currentHealth);
 
@@ -239,7 +259,7 @@ namespace GameState
             if (_currentStone < _getLocationCountService.GetStoneCount(_currentLocation) - 1)
             {
                 _currentStone += 1;
-                Debug.Log("NextStone");
+                Debug.Log("NextStone index " + _currentStone);
                 _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
             }
             else
@@ -255,40 +275,39 @@ namespace GameState
 
             _healthBarUIService.UpdateHealthBarState(_currentHealth, _currentHealth);
             _currentHealth = GetHealth(_currentLocation, _currentStone);
+            Debug.Log("NextStone new health " + _currentHealth);
             OnHealthChanged?.Invoke();
             OnStoneChangeOnServer();
         }
 
         private void OnStoneClick(int damage) //3
         {
-            TakeDamage(damage);
+            OnTakeDamage(damage);
 
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
             _clickDataService.AddClicks();
             _stoneAnimatorEventsInvoke.OnStoneClickPlayInvoke();
 
             _countDamageAfterCallback += damage;
-
-            if (_currentHealth <= 0)
-                NextStone();
+            Debug.Log("OnStoneClick " + _currentHealth);
         }
 
         private void OnStoneClickNetwork(int damage) // 4
         {
-            if (damage == 0)
+            if (damage == default)
             {
                 return;
             }
-            TakeDamage(damage);
+            OnTakeDamage(damage);
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
 
             _stoneAnimatorEventsInvoke.OnStoneClickPlayInvoke();
         }
 
-        private void TakeDamage(int damage) // 1
+        private void OnTakeDamage(int damage) // 1
         {
             Debug.Log("Current health " + _currentHealth);
-
+         
             OnHealthChanged?.Invoke();
         }
 
@@ -298,6 +317,7 @@ namespace GameState
 
             PlayerBehavior playerBehavior = AbilityButton.PlayerBehavior;
             int damage = playerBehavior.playerDamageOnServer;
+            Debug.Log("damage " + damage);
             playerBehavior.playerDamageOnServer = 1;
             CmdAddClickToServer(damage);
         }
@@ -310,8 +330,8 @@ namespace GameState
             _currentHealth = Mathf.Max(0, _currentHealth - damage);
 
             Debug.Log("Take dmg on server " + damage);
-            TargetCallbackOnClick(target as NetworkConnectionToClient, damage);
-
+            TargetCallbackOnClick(target, damage);
+            Debug.Log("CurrentHealth " + _currentHealth);
             if (_currentHealth <= 0)
                 NextStone();
         }
@@ -319,6 +339,8 @@ namespace GameState
         [TargetRpc]
         private void TargetCallbackOnClick(NetworkConnectionToClient target, int damage) // 7
         {
+            Debug.Log("TargetCallbackOnClick " + damage);
+            Debug.Log("TargetCallbackOnClick health " +_currentHealth);
             OnStoneClick(damage);
         }
 
@@ -327,21 +349,12 @@ namespace GameState
         {
             int clearCount = damage - _countDamageAfterCallback; // 5
 
-            //Debug.Log($"Get server callback. All count {count}. Clear count {clearCount}");
+            //Debug.Log($"Get server callback. All count {damage}. Clear count {clearCount}");
             OnStoneClickNetwork(clearCount);
             _countDamageAfterCallback = 0;
         }
 
-        private IEnumerator IStoneServerCallbackProcess()
-        {
-            while (true)
-            {
-                yield return new WaitForSecondsRealtime(_serverCallBackTime);
-                OnStoneCallbackNetwork(_countClickAllCallback);
-                _countClickAllCallback = 0; // 8
-                SaveData();
-            }
-        }
+    
 
         private void SaveData()
         {
@@ -390,6 +403,7 @@ namespace GameState
             }
 
             _currentHealth = (_stoneData.CurrentHealth != 0) ? _stoneData.CurrentHealth : _hpPerLvl * (_currentStone + 1);
+            Debug.Log("LoadHealth " + _currentHealth);
         }
 
         private void SaveHealth()

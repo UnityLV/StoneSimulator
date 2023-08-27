@@ -34,8 +34,6 @@ public class Example : MonoBehaviour
 
     void Awake()
     {
-        AndroidJNIHelper.debug = true;
-
         txtInstallReferrer = "Install referrer: ";
         txtReferrerClickTimestamp = "Referrer click timestamp: ";
         txtInstallBeginTimestamp = "Install begin timestamp: ";

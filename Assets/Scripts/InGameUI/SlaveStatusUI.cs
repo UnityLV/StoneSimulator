@@ -7,6 +7,7 @@ using PlayerData.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace InGameUI
@@ -18,7 +19,9 @@ namespace InGameUI
         [SerializeField] private TMP_Text _referrer;
 
         [SerializeField] private UnityEvent _onSlave;
-        [SerializeField] private UnityEvent _onNotSlave;
+        [FormerlySerializedAs("_onNotSlave")]
+        [SerializeField] private UnityEvent _onRedeemedSlave;
+        [SerializeField] private UnityEvent _onNeverBeSlave;
 
         [Inject]
         public void Construct(IDBCommands values)
@@ -33,7 +36,7 @@ namespace InGameUI
 
         public void SetAsNotSlave()
         {
-            _onNotSlave?.Invoke();
+            _onRedeemedSlave?.Invoke();
         }
 
         private async void SetStatus()
@@ -47,6 +50,16 @@ namespace InGameUI
             {
                 ProcessReferrer(referrer);
             }
+            else
+            {
+                ProcessAsNeverSlave();
+            }
+        }
+
+        private void ProcessAsNeverSlave()
+        {
+            Debug.Log("You are never been slave");
+            _onNeverBeSlave?.Invoke();
         }
 
         private void ProcessReferrer(BsonDocument referrer)
@@ -67,7 +80,7 @@ namespace InGameUI
 
         private void ProcessOnNotSlave()
         {
-            _onNotSlave?.Invoke();
+            _onRedeemedSlave?.Invoke();
             Debug.Log("You are not slave");
         }
 

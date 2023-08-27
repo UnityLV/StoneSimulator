@@ -22,7 +22,6 @@ namespace ChatDB
 
         private float _updateTimer = 3f;
 
-        private bool _isAvalableForSending = true;
         private bool _isAvalableForUpdating = true;
 
         private void Awake()
@@ -45,7 +44,6 @@ namespace ChatDB
 
         private async Task ProcessSending(string message)
         {
-            _isAvalableForSending = false;
             _isAvalableForUpdating = false;
 
             await _chatDB.InsertMessage(message);
@@ -53,7 +51,6 @@ namespace ChatDB
             _isAvalableForUpdating = true;
             await UpdateChat();
 
-            _isAvalableForSending = true;
         }
 
         public void EnableChatUpdating()

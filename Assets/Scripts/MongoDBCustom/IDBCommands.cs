@@ -19,7 +19,7 @@ namespace MongoDBCustom
         Task UpdatePlayerName(string result);
         Task AddPlayerClickToGiveReferrer(int clicksToAdd);
         Task AddAllPlayerClicks(int add);
-        Task AddMeAsReferralsTo(string newReferrer);
+        Task TryAddMeAsReferralsTo(string referrer);
         Task<List<BsonDocument>> CollectClicksToGiveReferrer(List<string> slavesId);
         Task<List<BsonDocument>> PlayersRating();
         Task<BsonDocument> GetPlayerDataAsync();

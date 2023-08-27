@@ -19,9 +19,6 @@ namespace Installers
         [SerializeField] private ConnectionConfig _mirror;
         [SerializeField] private PlayerConfig playerConfig;
 
-
-
-
         [SerializeField] private PlayerDataSetter _playerDataSetter;
 
 
@@ -34,20 +31,25 @@ namespace Installers
             Debug.Log("RemoteConfig Loaded");
 #endif
 
-            var connection = await ConstructConnection();
-            _idbCommands = new IdbCommands(connection);
-            ValuesFromBootScene.IdbCommands = _idbCommands;
-            ValuesFromBootScene.MongoConnection = connection;
+            await ConstructDB();
 
             await _playerDataSetter.SetData();
 
             _customNetworkManager.TryConnect();
         }
 
+        private async Task ConstructDB()
+        {
+            var connection = await ConstructConnection();
+            _idbCommands = new IdbCommands(connection);
+            ValuesFromBootScene.IdbCommands = _idbCommands;
+            ValuesFromBootScene.MongoConnection = connection;
+        }
+
         private async Task<IMongoConnection> ConstructConnection()
         {
             IMongoConnection connection = new MongoDBConnect(_db).GetConnectionData();
-            MongoDBConnector connector = new MongoDBConnector(connection);
+            MongoDBConnector connector = new (connection);
             await connector.TryConnect();
             return connection;
         }

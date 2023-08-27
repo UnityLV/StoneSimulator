@@ -22,6 +22,7 @@ namespace Stone
         
         public void OnObjectClick()
         {
+            Debug.Log("OnObjectClick");
             _stoneClickEvents.OnStoneClickInvoke();
         }
     }

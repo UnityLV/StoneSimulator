@@ -24,8 +24,10 @@ namespace PlayerData
         private IDBCommands _idbCommands;
 
         [Inject]
-        private void Construct(INicknameDataService nicknameDataService, IClickDataService clickDataService,
-            ISlavesDataService slavesDataService, IDBPlayerDataProvider playerDataProvider)
+        private void Construct(INicknameDataService nicknameDataService,
+            IClickDataService clickDataService,
+            ISlavesDataService slavesDataService,
+            IDBPlayerDataProvider playerDataProvider)
         {
             _nicknameData = nicknameDataService;
             _clickDataService = clickDataService;
@@ -38,7 +40,7 @@ namespace PlayerData
             _idbCommands = ValuesFromBootScene.IdbCommands;
 
             var PlayerData = await _playerDataProvider.GetPlayerDataById();
-
+     
             ValuesFromBootScene.PlayerData = PlayerData;
 
             SetNickname(PlayerData);
@@ -46,7 +48,7 @@ namespace PlayerData
             await SetSlaves(PlayerData);
         }
 
-     
+
         public async Task SetSlaves(BsonDocument PlayerData)
         {
             List<BsonDocument> slaves = await GetMySlavesData(PlayerData);
@@ -59,7 +61,7 @@ namespace PlayerData
             return await _idbCommands.GetPlayersDataById(slavesId);
         }
 
-        
+
         private void SetClicks(BsonDocument PlayerData)
         {
             _clickDataService.SetClickCount(PlayerData[DBKeys.AllClick].AsInt32);
