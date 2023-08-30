@@ -25,58 +25,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ReferralLinkGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ReferralLinkGenerator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ReferralLinkInTextSetter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ReferralLinkInTextSetter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ShareReferralLinkButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ShareReferralLinkButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DateTimeConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DateTimeConverter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NativeElements/Scripts/ShareMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NativeElements/Scripts/ShareMessage.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Example/Example.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Example/Example.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Unity/PlayInstallReferrerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Unity/PlayInstallReferrerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveStatusUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveStatusUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootStraper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootStraper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PlayerAvatarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PlayerAvatarUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBCommands.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RefferalTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RefferalTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneEventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneEventController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/CHANGELOG.md.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/LICENSE.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/DnsClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/DnsClient.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Bson.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Bson.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Driver.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Driver.Core.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Driver.Plugins.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Driver.Plugins.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Driver.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/MongoDB.Driver.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/System.Buffers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/Plugins/System.Buffers.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/README.md.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mongodb.driver.unity/package.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,6 +276,8 @@
       <workItem from="1693048781213" duration="8784000" />
       <workItem from="1693106776175" duration="2681000" />
       <workItem from="1693111698472" duration="6939000" />
+      <workItem from="1693202068355" duration="2030000" />
+      <workItem from="1693420729719" duration="348000" />
     </task>
     <servers />
   </component>

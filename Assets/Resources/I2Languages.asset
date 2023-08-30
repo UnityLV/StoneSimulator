@@ -239,6 +239,14 @@ MonoBehaviour:
       - "\u0412\u043E\u0439\u0442\u0438"
       Flags: 0000
       Languages_Touch: []
+    - Term: "\u0421\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435"
+      TermType: 0
+      Description: 
+      Languages:
+      - Connection
+      - "\u0421\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435"
+      Flags: 0000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

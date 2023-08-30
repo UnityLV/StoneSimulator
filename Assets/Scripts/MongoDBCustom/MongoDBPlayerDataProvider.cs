@@ -30,7 +30,7 @@ namespace MongoDBCustom
 
             if (playerData == null)
             {
-                playerData = CreateFirstPlayerData();
+                playerData = await CreateFirstPlayerData();
                 await _idbCommands.InsertPlayerDataAsync(playerData);
                 _clickDataService.ResetAll();
 
@@ -44,7 +44,7 @@ namespace MongoDBCustom
             return playerData;
         }
 
-        private BsonDocument CreateFirstPlayerData()
+        private async Task<BsonDocument> CreateFirstPlayerData()
         {
             BsonDocument playerData = new BsonDocument {
                 { DBKeys.DeviceID, DeviceInfo.GetDeviceId() },
@@ -54,15 +54,16 @@ namespace MongoDBCustom
                 { DBKeys.ClickToGiveReferrer, 500 },
                 { DBKeys.AllClickToGiveReferrer, 500 },
                 { DBKeys.Referrals, new BsonArray { "82a027fca2749eca6c0db80d88330a46369c32f1" } },
-                { DBKeys.Referrer, GetReferrerFromLinkOrEmpty() },
+                { DBKeys.Referrer, await GetReferrerFromLinkAsync() },
             };
 
             return playerData;
         }
 
-        private string GetReferrerFromLinkOrEmpty()
+        private async Task<string> GetReferrerFromLinkAsync()
         {
-            string value = string.Empty;
+            TaskCompletionSource<string> tcs = new TaskCompletionSource<string>();
+
             PlayInstallReferrer.GetInstallReferrerInfo((installReferrerDetails) =>
             {
                 if (installReferrerDetails.Error != null)
@@ -73,15 +74,17 @@ namespace MongoDBCustom
                         Debug.LogError("Exception message: " + installReferrerDetails.Error.Exception.Message);
                     }
                     Debug.LogError("Response code: " + installReferrerDetails.Error.ResponseCode.ToString());
+                    tcs.SetResult("No Referrer"); 
                     return;
                 }
 
                 if (installReferrerDetails.InstallReferrer != null)
                 {
-                    value = installReferrerDetails.InstallReferrer;
+                    tcs.SetResult(installReferrerDetails.InstallReferrer);
                 }
             });
-            return value;
+
+            return await tcs.Task;
         }
     }
 }
