@@ -26,10 +26,10 @@
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mirror/Core/NetworkMessages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirror/Core/NetworkMessages.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PlayerAvatarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PlayerAvatarUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +71,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6d53f1ee8ee746e4b3c819c68e33f29646ac00/84/82e99f57/TaskAwaiter`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../find-the-differences2/Assets/Scripts/Комок шерсти из пупка/UIImageCurve.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/PositionMemory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a1efe86478034c12aa24d00c7dc715fe15a000/60/e0f3a590/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Framework/Control/If.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Shadows-of-Vengeance-MVP-main/Assets/!!!General/Scripts/Singleton/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Platformer/Assets/Scripts/Gravity/GravityField.cs" root0="SKIP_HIGHLIGHTING" />
@@ -191,10 +192,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="33768">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="33768" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -278,6 +279,7 @@
       <workItem from="1693111698472" duration="6939000" />
       <workItem from="1693202068355" duration="2030000" />
       <workItem from="1693420729719" duration="348000" />
+      <workItem from="1693461149857" duration="2221000" />
     </task>
     <servers />
   </component>
@@ -300,5 +302,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Mirror/Transports/Telepathy/TelepathyTransport.cs</url>
+          <line>100</line>
+          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Mirror\Transports\Telepathy\TelepathyTransport.cs" initialLine="100" containingFunctionPresentation="method 'CreateClient'">
+            <startOffsets>
+              <option value="5098" />
+              <option value="5128" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5159" />
+              <option value="5158" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Mirror/Transports/Telepathy/TelepathyTransport.cs</url>
+          <line>96</line>
+          <properties documentPath="E:\UnityProjects\StoneSimulatorMy\Assets\Mirror\Transports\Telepathy\TelepathyTransport.cs" initialLine="96" containingFunctionPresentation="method 'CreateClient'">
+            <startOffsets>
+              <option value="4801" />
+              <option value="4830" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4886" />
+              <option value="4885" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

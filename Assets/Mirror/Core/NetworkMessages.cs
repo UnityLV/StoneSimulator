@@ -63,8 +63,7 @@ namespace Mirror
         }
 
         // max message size which includes header + content.
-        public static int MaxMessageSize(int channelId) =>
-            MaxContentSize(channelId) + IdSize;
+        public static int MaxMessageSize(int channelId) => MaxContentSize(channelId) + IdSize;
 
         // automated message id from type hash.
         // platform independent via stable hashcode.
@@ -74,8 +73,7 @@ namespace Mirror
         //    registering a messageId twice will log a warning anyway.
         // keep this for convenience. easier to use than NetworkMessageId<T>.Id.
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GetId<T>() where T : struct, NetworkMessage =>
-            NetworkMessageId<T>.Id;
+        public static ushort GetId<T>() where T : struct, NetworkMessage => NetworkMessageId<T>.Id;
 
         // pack message before sending
         // -> NetworkWriter passed as arg so that we can use .ToArraySegment
@@ -109,65 +107,73 @@ namespace Mirror
         // inline! only exists for 20-30 messages and they call it all the time.
         internal static NetworkMessageDelegate WrapHandler<T, C>(Action<C, T, int> handler, bool requireAuthentication)
             where T : struct, NetworkMessage
-            where C : NetworkConnection
-            => (conn, reader, channelId) =>
+            where C : NetworkConnection => (conn, reader, channelId) =>
+        {
+            // protect against DOS attacks if attackers try to send invalid
+            // data packets to crash the server/client. there are a thousand
+            // ways to cause an exception in data handling:
+            // - invalid headers
+            // - invalid message ids
+            // - invalid data causing exceptions
+            // - negative ReadBytesAndSize prefixes
+            // - invalid utf8 strings
+            // - etc.
+            //
+            // let's catch them all and then disconnect that connection to avoid
+            // further attacks.
+            T message = default;
+
+            // record start position for NetworkDiagnostics because reader might contain multiple messages if using batching
+            int startPos = reader.Position;
+            try
             {
-                // protect against DOS attacks if attackers try to send invalid
-                // data packets to crash the server/client. there are a thousand
-                // ways to cause an exception in data handling:
-                // - invalid headers
-                // - invalid message ids
-                // - invalid data causing exceptions
-                // - negative ReadBytesAndSize prefixes
-                // - invalid utf8 strings
-                // - etc.
-                //
-                // let's catch them all and then disconnect that connection to avoid
-                // further attacks.
-                T message = default;
-                // record start position for NetworkDiagnostics because reader might contain multiple messages if using batching
-                int startPos = reader.Position;
-                try
+                if (requireAuthentication && !conn.isAuthenticated)
                 {
-                    if (requireAuthentication && !conn.isAuthenticated)
-                    {
-                        // message requires authentication, but the connection was not authenticated
-                        Debug.LogWarning($"Disconnecting connection: {conn}. Received message {typeof(T)} that required authentication, but the user has not authenticated yet");
-                        conn.Disconnect();
-                        return;
-                    }
-
-                    //Debug.Log($"ConnectionRecv {conn} msgType:{typeof(T)} content:{BitConverter.ToString(reader.buffer.Array, reader.buffer.Offset, reader.buffer.Count)}");
-
-                    // if it is a value type, just use default(T)
-                    // otherwise allocate a new instance
-                    message = reader.Read<T>();
-                }
-                catch (Exception exception)
-                {
-                    Debug.LogError($"Disconnecting connection: {conn}. This can happen if the other side accidentally (or an attacker intentionally) sent invalid data. Reason: {exception}");
+                    // message requires authentication, but the connection was not authenticated
+                    Debug.LogWarning($"Disconnecting connection: {conn}. Received message {typeof(T)} that required authentication, but the user has not authenticated yet");
                     conn.Disconnect();
                     return;
                 }
-                finally
-                {
-                    int endPos = reader.Position;
-                    // TODO: Figure out the correct channel
-                    NetworkDiagnostics.OnReceive(message, channelId, endPos - startPos);
-                }
 
-                // user handler exception should not stop the whole server
-                try
-                {
-                    // user implemented handler
-                    handler((C)conn, message, channelId);
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError($"Disconnecting connId={conn.connectionId} to prevent exploits from an Exception in MessageHandler: {e.GetType().Name} {e.Message}\n{e.StackTrace}");
-                    conn.Disconnect();
-                }
-            };
+                //Debug.Log($"ConnectionRecv {conn} msgType:{typeof(T)} content:{BitConverter.ToString(reader.buffer.Array, reader.buffer.Offset, reader.buffer.Count)}");
+
+                // if it is a value type, just use default(T)
+                // otherwise allocate a new instance
+                message = reader.Read<T>();
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError($"Disconnecting connection: {conn}. This can happen if the other side accidentally (or an attacker intentionally) sent invalid data. Reason: {exception}");
+                conn.Disconnect();
+                return;
+            }
+            finally
+            {
+                int endPos = reader.Position;
+
+                // TODO: Figure out the correct channel
+                NetworkDiagnostics.OnReceive(message, channelId, endPos - startPos);
+            }
+
+            // user handler exception should not stop the whole server
+            try
+            {
+                // user implemented handler
+                handler((C)conn, message, channelId);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Disconnecting connId={conn.connectionId} to prevent exploits from an Exception in MessageHandler: {e.GetType().Name} {e.Message}\n{e.StackTrace}");
+                conn.Disconnect();
+#if UNITY_ANDROID && !UNITY_EDITOR
+                Application.Quit();
+  #endif
+
+                #if UNITY_EDITOR
+                UnityEditor.EditorApplication.ExitPlaymode();
+  #endif
+            }
+        };
 
         // version for handlers without channelId
         // TODO obsolete this some day to always use the channelId version.
