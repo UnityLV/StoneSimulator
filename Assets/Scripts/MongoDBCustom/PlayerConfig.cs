@@ -6,5 +6,6 @@ namespace FirebaseCustom
     public class PlayerConfig : ScriptableObject
     {
         [field: SerializeField] public int ClicksToRedeemed { get;  set; }
+        [field: SerializeField] public int PercentToAddToReferrer { get;  set; }
     }
 }

@@ -293,6 +293,51 @@ MonoBehaviour:
       - "\u0422\u044B \u0443 \u0432\u0441\u0435\u0445 \u043D\u0430 \u0441\u043B\u0443\u0445\u0443!"
       Flags: 0000
       Languages_Touch: []
+    - Term: "+2500 \u043A\u043B\u0438\u043A\u043E\u0432"
+      TermType: 0
+      Description: 
+      Languages:
+      - '+2500
+
+        clicks'
+      - "+2500\n\u043A\u043B\u0438\u043A\u043E\u0432"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u0417\u0430\u043A\u0440\u0435\u043F\u0438 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435
+        \u0432 \u0447\u0430\u0442\u0435 \u043D\u0430 \u0441\u0443\u0442\u043A\u0438!"
+      TermType: 0
+      Description: 
+      Languages:
+      - Pin a message in the chat for a day!
+      - "\u0417\u0430\u043A\u0440\u0435\u043F\u0438 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435
+        \u0432 \u0447\u0430\u0442\u0435 \u043D\u0430 \u0441\u0443\u0442\u043A\u0438!"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u041F\u0420\u0418\u0413\u041B\u0410\u0421\u0418\u0422\u042C \u0414\u0420\u0423\u0413\u0410"
+      TermType: 0
+      Description: 
+      Languages:
+      - INVITE A FREND
+      - "\u041F\u0420\u0418\u0413\u041B\u0410\u0421\u0418\u0422\u042C \u0414\u0420\u0423\u0413\u0410"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u0412\u044B \u0431\u044B\u043B\u0438 \u0440\u0430\u0431\u043E\u043C
+        \u0438\u0433\u0440\u043E\u043A\u0430"
+      TermType: 0
+      Description: 
+      Languages:
+      - You were a slave of
+      - "\u0412\u044B \u0431\u044B\u043B\u0438 \u0440\u0430\u0431\u043E\u043C \u0438\u0433\u0440\u043E\u043A\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u0412\u044B \u0440\u0430\u0431 \u0438\u0433\u0440\u043E\u043A\u0430"
+      TermType: 0
+      Description: 
+      Languages:
+      - 'You are a slave of '
+      - "\u0412\u044B \u0440\u0430\u0431 \u0438\u0433\u0440\u043E\u043A\u0430"
+      Flags: 0000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

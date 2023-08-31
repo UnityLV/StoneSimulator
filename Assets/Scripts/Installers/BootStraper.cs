@@ -18,6 +18,7 @@ namespace Installers
         [SerializeField] private MongoDBConnectionConfig _db;
         [SerializeField] private ConnectionConfig _mirror;
         [SerializeField] private PlayerConfig playerConfig;
+        [SerializeField] private RankData _rankData;
 
         [SerializeField] private PlayerDataSetter _playerDataSetter;
 
@@ -56,7 +57,7 @@ namespace Installers
 
         private async Task LoadRemoteConfig()
         {
-            RemoteConfigSetter remoteConfigSetter = new RemoteConfigSetter(_mirror, _db, playerConfig);
+            RemoteConfigSetter remoteConfigSetter = new RemoteConfigSetter(_mirror, _db, playerConfig,_rankData);
             Config config = await new RemoteConfigLoader().Load();
             remoteConfigSetter.SetConfig(config);
         }

@@ -9,7 +9,8 @@ namespace FirebaseCustom
         public string DBServerIp { get; private set; }
         public string DBServerPort { get; private set; }
         public int ClicksToRedeemed { get; private set; }
-
+        public int PercentToAddToReferrer { get; private set; }
+        public string RanksJson { get; private set; }
 
         private FirebaseRemoteConfig _remoteConfig;
 
@@ -22,6 +23,13 @@ namespace FirebaseCustom
             DBServerIp = GetString(ConfigKeys.DBServerIp);
             DBServerPort = GetString(ConfigKeys.DBServerPort);
             ClicksToRedeemed = GetInt(ConfigKeys.ClicksToRedeemed);
+            PercentToAddToReferrer = GetInt(ConfigKeys.PercentToAddToReferrer); 
+            RanksJson = GetString(ConfigKeys.Ranks);
+        }
+
+        private float GetFloat(string key)
+        {
+            return (float) _remoteConfig.GetValue(key).DoubleValue;
         }
 
         private string GetString(string key)
@@ -42,5 +50,8 @@ namespace FirebaseCustom
         public const string UnityServerIp = "UnityServerIp";
         public const string UnityServerPort = "UnityServerPort";
         public const string ClicksToRedeemed = "ClicksToRedeemed";
+        public const string PercentToAddToReferrer = "PercentToAddToReferrer";
+        public const string Ranks = "Ranks";
+      
     }
 }

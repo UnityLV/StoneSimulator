@@ -31,6 +31,12 @@ namespace GlobalUI
 
         #endregion
 
+        private void OnDisable()
+        {
+            _allClickSaver?.Save();
+            _referrerClicks?.Save();
+        }
+
         private void Start()
         {
             _inGameService.SetState(false, false);
@@ -56,6 +62,9 @@ namespace GlobalUI
                 _inGameService.SetState(true, false);
                 _mainMenuService.SetState(false);
                 _gameStateService.TryWatchLocation(x);
+                _allClickSaver.Save();
+                _referrerClicks.Save();
+               
             });
         }
     }

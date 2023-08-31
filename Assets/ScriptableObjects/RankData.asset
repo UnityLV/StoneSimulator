@@ -16,9 +16,66 @@ MonoBehaviour:
   - rankNameRu: "\u0420\u0430\u0431"
     rankNameEn: Slave
     rankPoints: 0
-  - rankNameRu: "\u0412\u0442\u043E\u0440\u043E\u0439"
+  - rankNameRu: "\u0421\u043B\u0443\u0433\u0430"
     rankNameEn: Second
     rankPoints: 1000
-  - rankNameRu: "\u0422\u0440\u0435\u0442\u0438\u0439"
+  - rankNameRu: "\u041F\u0440\u0438\u0441\u043B\u0443\u0436\u043D\u0438\u043A"
+    rankNameEn: Third
+    rankPoints: 2000
+  - rankNameRu: "\u0425\u043E\u043B\u043E\u043F"
     rankNameEn: Third
     rankPoints: 3000
+  - rankNameRu: "\u0425\u043E\u043B\u0443\u0439"
+    rankNameEn: Third
+    rankPoints: 4000
+  - rankNameRu: "\u041D\u0435\u0432\u043E\u043B\u044C\u043D\u0438\u043A"
+    rankNameEn: Third
+    rankPoints: 5000
+  - rankNameRu: "\u041A\u0430\u0442\u043E\u0440\u0436\u043D\u0438\u043A"
+    rankNameEn: Third
+    rankPoints: 6000
+  - rankNameRu: "\u0423\u0437\u043D\u0438\u043A"
+    rankNameEn: Third
+    rankPoints: 7000
+  - rankNameRu: "\u041F\u043B\u0435\u043D\u043D\u0438\u043A"
+    rankNameEn: Third
+    rankPoints: 8000
+  - rankNameRu: "\u041D\u0430\u043B\u043E\u0436\u043D\u0438\u043A"
+    rankNameEn: Third
+    rankPoints: 9000
+  - rankNameRu: "\u041F\u043B\u0435\u0431\u0435\u0439"
+    rankNameEn: Third
+    rankPoints: 10000
+  - rankNameRu: "\u041C\u0430\u043A\u0435\u0434\u043E\u043D\u0438\u044F\u043D\u0438\u043D"
+    rankNameEn: Third
+    rankPoints: 11000
+  - rankNameRu: "\u0424\u0438\u043D\u0438\u043A\u0438\u0435\u0446"
+    rankNameEn: Third
+    rankPoints: 12000
+  JSON: "{     \"ranks\": [         {             \"rankNameRu\": \"\u0420\u0430\u0431\",            
+    \"rankNameEn\": \"Slave\",             \"rankPoints\": 0         },         {            
+    \"rankNameRu\": \"\u0421\u043B\u0443\u0433\u0430\",             \"rankNameEn\":
+    \"Second\",             \"rankPoints\": 1000         },         {            
+    \"rankNameRu\": \"\u041F\u0440\u0438\u0441\u043B\u0443\u0436\u043D\u0438\u043A\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 2000         },        
+    {             \"rankNameRu\": \"\u0425\u043E\u043B\u043E\u043F\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 3000         },        
+    {             \"rankNameRu\": \"\u0425\u043E\u043B\u0443\u0439\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 4000         },        
+    {             \"rankNameRu\": \"\u041D\u0435\u0432\u043E\u043B\u044C\u043D\u0438\u043A\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 5000         },        
+    {             \"rankNameRu\": \"\u041A\u0430\u0442\u043E\u0440\u0436\u043D\u0438\u043A\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 6000         },        
+    {             \"rankNameRu\": \"\u0423\u0437\u043D\u0438\u043A\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 7000         },        
+    {             \"rankNameRu\": \"\u041F\u043B\u0435\u043D\u043D\u0438\u043A\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 8000         },        
+    {             \"rankNameRu\": \"\u041D\u0430\u043B\u043E\u0436\u043D\u0438\u043A\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 9000         },        
+    {             \"rankNameRu\": \"\u041F\u043B\u0435\u0431\u0435\u0439\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 10000         },        
+    {             \"rankNameRu\": \"\u041C\u0430\u043A\u0435\u0434\u043E\u043D\u0438\u044F\u043D\u0438\u043D\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 11000         },        
+    {             \"rankNameRu\": \"\u0424\u0438\u043D\u0438\u043A\u0438\u0435\u0446\",            
+    \"rankNameEn\": \"Third\",             \"rankPoints\": 12000         }     ]
+    }"

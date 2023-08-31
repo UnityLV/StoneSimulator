@@ -1,4 +1,5 @@
-﻿using FirebaseCustom;
+﻿using System.Collections.Generic;
+using FirebaseCustom;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -23,5 +24,7 @@ namespace MongoDBCustom
         public const string Timestamp = "timestamp";
         public const string Message = "message";
         public const string PinDate = "pinDate";
+        public const string  RegisteredTime = "registeredTime";
+    
     }
 }

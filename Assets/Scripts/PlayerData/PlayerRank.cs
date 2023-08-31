@@ -10,8 +10,6 @@ namespace PlayerData
         private IClickDataService _clickDataService;
         private RankData _data;
 
-        
-
         [Inject]
         private void Construct(IClickDataService clickDataService,RankData rankData)
         {

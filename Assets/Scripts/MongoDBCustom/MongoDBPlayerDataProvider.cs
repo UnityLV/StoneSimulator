@@ -48,17 +48,24 @@ namespace MongoDBCustom
         {
             BsonDocument playerData = new BsonDocument {
                 { DBKeys.DeviceID, DeviceInfo.GetDeviceId() },
+                { DBKeys.RegisteredTime, DateTime.Now.ToString("mm/hh/dd/MM/yyyy") },
                 { DBKeys.Name, String.Empty },
                 { DBKeys.Role, DBKeys.PlayerRole },
                 { DBKeys.AllClick, 0 },
                 { DBKeys.ClickToGiveReferrer, 500 },
                 { DBKeys.AllClickToGiveReferrer, 500 },
-                { DBKeys.Referrals, new BsonArray { "82a027fca2749eca6c0db80d88330a46369c32f1" } },
+                { DBKeys.Referrals, new BsonArray { } },
                 { DBKeys.Referrer, await GetReferrerFromLinkAsync() },
             };
 
             return playerData;
         }
+
+        private async Task SetMeAsReferralTo(string referrer)
+        {
+            await _idbCommands.TryAddMeAsReferralsTo(referrer);
+        }
+
 
         private async Task<string> GetReferrerFromLinkAsync()
         {
@@ -74,7 +81,7 @@ namespace MongoDBCustom
                         Debug.LogError("Exception message: " + installReferrerDetails.Error.Exception.Message);
                     }
                     Debug.LogError("Response code: " + installReferrerDetails.Error.ResponseCode.ToString());
-                    tcs.SetResult("No Referrer"); 
+                    tcs.SetResult("No Referrer");
                     return;
                 }
 
@@ -84,7 +91,9 @@ namespace MongoDBCustom
                 }
             });
 
-            return await tcs.Task;
+            string result = await tcs.Task;
+            await SetMeAsReferralTo(result);
+            return result;
         }
     }
 }

@@ -201,6 +201,7 @@ MonoBehaviour:
   _db: {fileID: 11400000, guid: 1cf8bc9d767cd8144814a78f58113d5b, type: 2}
   _mirror: {fileID: 11400000, guid: a95129e6bd512474b945ec045c23f567, type: 2}
   playerConfig: {fileID: 11400000, guid: c8454e6dbb3e35c4b9eebce58a5325d4, type: 2}
+  _rankData: {fileID: 11400000, guid: 3e01d3af83c6fc348bc00e928bd556bf, type: 2}
   _playerDataSetter: {fileID: 103472860}
 --- !u!1 &235805071
 GameObject:

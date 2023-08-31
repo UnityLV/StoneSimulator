@@ -15,10 +15,5 @@ namespace PlayerData
         public string rankNameRu;
         public string rankNameEn;
         public int rankPoints;
-
-        public override string ToString()
-        {
-            return $"rankNameRu {rankNameRu} / rankNameEn {rankNameEn} / rankPoints {rankPoints}";
-        }
     }
 }
