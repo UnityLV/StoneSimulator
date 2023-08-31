@@ -33,6 +33,7 @@ namespace FirebaseCustom
             _dbConnectionConfig.Port = config.DBServerPort;
             _playerConfig.ClicksToRedeemed = config.ClicksToRedeemed;
             _playerConfig.PercentToAddToReferrer = config.PercentToAddToReferrer;
+            _playerConfig.EarnedFromEachReferral = config.EarnedFromEachReferral;
             _rankData.FromJson(config.RanksJson);
         }
     }

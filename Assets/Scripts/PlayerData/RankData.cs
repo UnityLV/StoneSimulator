@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using I2.Loc;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -12,19 +13,27 @@ namespace PlayerData
 
         public string JSON;
 
-        public SingleRank GetRankByClicks(int points)
+        public string GetRankByClicks(int points)
         {
             _ranks = _ranks.OrderBy(rank => rank.rankPoints).ToArray();
+
+            SingleRank selectedRank = _ranks[0];
 
             for (int i = _ranks.Length - 1; i >= 0; i--)
             {
                 if (points >= _ranks[i].rankPoints)
                 {
-                    return _ranks[i];
+                    selectedRank = _ranks[i];
+                    break;
                 }
             }
 
-            return _ranks[0];
+            if (LocalizationManager.CurrentLanguage == "Russian")
+            {
+                return selectedRank.rankNameRu;
+            }
+
+            return selectedRank.rankNameEn;
         }
 
         [Button()]

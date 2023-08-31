@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using FirebaseCustom;
 using Installers;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -15,6 +16,8 @@ namespace MongoDBCustom
     {
         private IClickDataService _clickDataService;
         private IDBCommands _idbCommands;
+        
+        private PlayerConfig PlayerConfig => RemoteConfigSetter.PlayerConfig;
 
         [Inject]
         private void Construct(IClickDataService clickDataService)
@@ -52,8 +55,8 @@ namespace MongoDBCustom
                 { DBKeys.Name, String.Empty },
                 { DBKeys.Role, DBKeys.PlayerRole },
                 { DBKeys.AllClick, 0 },
-                { DBKeys.ClickToGiveReferrer, 500 },
-                { DBKeys.AllClickToGiveReferrer, 500 },
+                { DBKeys.ClickToGiveReferrer, PlayerConfig.EarnedFromEachReferral },
+                { DBKeys.AllClickToGiveReferrer, PlayerConfig.EarnedFromEachReferral },
                 { DBKeys.Referrals, new BsonArray { } },
                 { DBKeys.Referrer, await GetReferrerFromLinkAsync() },
             };

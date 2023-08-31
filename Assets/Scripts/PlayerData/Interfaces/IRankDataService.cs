@@ -2,6 +2,6 @@
 {
     public interface IRankDataService
     {
-        SingleRank GetMyRank();
+        string GetMyRank();
     }
 }

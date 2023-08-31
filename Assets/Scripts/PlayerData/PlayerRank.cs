@@ -17,7 +17,7 @@ namespace PlayerData
             _data = rankData;
         }
 
-        public SingleRank GetMyRank()
+        public string GetMyRank()
         {
             return _data.GetRankByClicks(_clickDataService.GetAllClickCount());
         }

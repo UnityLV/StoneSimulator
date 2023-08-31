@@ -26,7 +26,7 @@ namespace MainMenuUI
         public void UpdateText()
         {
             _nickname.text = _nicknameData.GetNickname();
-            _rank.text = _rankData.GetMyRank().rankNameRu;
+            _rank.text = _rankData.GetMyRank();
         }
     }
 }

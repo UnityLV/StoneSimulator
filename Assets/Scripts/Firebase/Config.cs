@@ -11,6 +11,7 @@ namespace FirebaseCustom
         public int ClicksToRedeemed { get; private set; }
         public int PercentToAddToReferrer { get; private set; }
         public string RanksJson { get; private set; }
+        public int EarnedFromEachReferral { get; private set; }
 
         private FirebaseRemoteConfig _remoteConfig;
 
@@ -25,6 +26,7 @@ namespace FirebaseCustom
             ClicksToRedeemed = GetInt(ConfigKeys.ClicksToRedeemed);
             PercentToAddToReferrer = GetInt(ConfigKeys.PercentToAddToReferrer); 
             RanksJson = GetString(ConfigKeys.Ranks);
+            EarnedFromEachReferral = GetInt(ConfigKeys.EarnedFromEachReferral);
         }
 
         private float GetFloat(string key)
@@ -52,6 +54,6 @@ namespace FirebaseCustom
         public const string ClicksToRedeemed = "ClicksToRedeemed";
         public const string PercentToAddToReferrer = "PercentToAddToReferrer";
         public const string Ranks = "Ranks";
-      
+        public const string EarnedFromEachReferral = "EarnedFromEachReferral";
     }
 }

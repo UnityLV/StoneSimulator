@@ -7,5 +7,6 @@ namespace FirebaseCustom
     {
         [field: SerializeField] public int ClicksToRedeemed { get;  set; }
         [field: SerializeField] public int PercentToAddToReferrer { get;  set; }
+        [field: SerializeField] public int EarnedFromEachReferral { get;  set; }
     }
 }
