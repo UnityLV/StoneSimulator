@@ -4,13 +4,11 @@ using TMPro;
 using UnityEngine;
 namespace MainMenuUI
 {
-    public class PromotionToShareReferralAndGetTotalText : MonoBehaviour
+    public class ADForClicksText : MonoBehaviour
     {
-        [SerializeField] private string _prefixRu;
-        [SerializeField] private string _prefixEn;
         [SerializeField] private TMP_Text _text;
         PlayerConfig PlayerConfig = RemoteConfigSetter.PlayerConfig;
-
+        
         private void Awake()
         {
             LocalizationManager.OnLocalizeEvent += OnUpdateLanguage;
@@ -29,16 +27,15 @@ namespace MainMenuUI
 
         private void SetText()
         {
-            int clicks = PlayerConfig.EarnedFromEachReferral;
-            int percentToAdd = PlayerConfig.PercentToAddToReferrer;
-            
+            int clicks = PlayerConfig.ClicksFromAD;
+
             if (LocalizationManager.CurrentLanguage == "Russian")
             {
                 
-                _text.text = $"{_prefixRu}Получайте {clicks} кликов и {percentToAdd}% от заработка с каждого приглашённого друга";
+                _text.text = $"Получите {clicks} кликов за просмотр рекламы";
                 return;
             }
-            _text.text = $"{_prefixEn}Get {clicks} clicks and {percentToAdd}% of earnings from each invited friend";
+            _text.text = $"Get {clicks} clicks for viewing ads";
         }
     }
 }

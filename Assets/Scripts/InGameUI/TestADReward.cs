@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using FirebaseCustom;
 using GameScene;
 using MongoDBCustom;
 using PlayerData.Interfaces;
@@ -13,7 +14,7 @@ namespace InGameUI
         private IClickDataService _clickDataService;
         private IDBAllClickSaver _dbAllClickSaver;
         private AbilityButton _abilityButton;
-
+        PlayerConfig PlayerConfig = RemoteConfigSetter.PlayerConfig;
 
         [Inject]
         private void Construct(IClickDataService clickDataService, IDBAllClickSaver dbAllClickSaver, AbilityButton abilityButton)
@@ -40,7 +41,7 @@ namespace InGameUI
 
         private void AddClicks()
         {
-            int add = 100;
+            int add = PlayerConfig.ClicksFromAD;
             // _clickDataService.AddClicks(add);
             // _dbAllClickSaver.Save(add);
             _abilityButton.AddClicks(add);

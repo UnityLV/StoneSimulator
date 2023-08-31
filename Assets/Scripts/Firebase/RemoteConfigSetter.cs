@@ -34,6 +34,7 @@ namespace FirebaseCustom
             _playerConfig.ClicksToRedeemed = config.ClicksToRedeemed;
             _playerConfig.PercentToAddToReferrer = config.PercentToAddToReferrer;
             _playerConfig.EarnedFromEachReferral = config.EarnedFromEachReferral;
+            _playerConfig.ClicksFromAD = config.ClicksFromAD;
             _rankData.FromJson(config.RanksJson);
         }
     }
