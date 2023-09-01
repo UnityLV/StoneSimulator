@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MongoDBCustom;
 using UnityEngine;
 using Zenject;
@@ -20,6 +21,12 @@ namespace ChatDB.PinMessage
 
         private void Start()
         {
+            GetCurrentPinMessage();
+        }
+        
+        public async void UpdatePinMessage()
+        {
+            await Task.Delay(1000);
             GetCurrentPinMessage();
         }
 

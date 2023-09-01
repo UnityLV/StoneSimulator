@@ -17,7 +17,6 @@ namespace InGameUI
         private IClickDataService _clickData;
         private IDBCommands _values;
 
-        public event UnityAction<int> CostSeted;
         
         [Inject]
         public void Construct(IClickDataService clickData, IDBCommands values)
@@ -26,10 +25,7 @@ namespace InGameUI
             _values = values;
         }
 
-        private void Start()
-        {
-            CostSeted?.Invoke(_clickData.GetClickCount());
-        }
+   
 
         public void TryRedeemed()
         {

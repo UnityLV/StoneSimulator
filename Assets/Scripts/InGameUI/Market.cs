@@ -4,12 +4,15 @@ using MongoDBCustom;
 using ChatDB.PinMessage;
 using PlayerData.Interfaces;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 namespace InGameUI
 {
     public class Market : MonoBehaviour
     {
+        [SerializeField] private UnityEvent _pinMessageConfirm;
         [SerializeField] private InterfaceReference<IMarketLogic> _marketLogic;
+        
         private IClickDataService _clickDataService;
         private IDBAllClickSaver _dbAllClickSaver;
 
@@ -74,6 +77,7 @@ namespace InGameUI
 
         private void OnConfirmPinMessage(PinMessageData data)
         {
+            _pinMessageConfirm?.Invoke();
             _idbCommands.PinMessageAsync(data);
             Debug.Log("Pin Message " + data);
         }

@@ -13,13 +13,42 @@ namespace PlayerData
 
         public string JSON;
 
+        private bool _isSlave;
+
+        public void OnSlave()
+        {
+            _isSlave = true;
+        }
+
+        public void OnNotSlave()
+        {
+            _isSlave = false;
+        }
+        
+        public void OnRedeemed()
+        {
+            _isSlave = false;
+        }
+
         public string GetRankByClicks(int points)
+        {
+            SingleRank selectedRank = SelectRank(points);
+
+            return Translate(selectedRank);
+        }
+
+        private SingleRank SelectRank(int points)
         {
             _ranks = _ranks.OrderBy(rank => rank.rankPoints).ToArray();
 
-            SingleRank selectedRank = _ranks[0];
+            SingleRank selectedRank = _ranks[1];
+            
+            if (_isSlave)
+            {
+                return _ranks[0];
+            }
 
-            for (int i = _ranks.Length - 1; i >= 0; i--)
+            for (int i = _ranks.Length - 1; i >= 1; i--)
             {
                 if (points >= _ranks[i].rankPoints)
                 {
@@ -27,7 +56,11 @@ namespace PlayerData
                     break;
                 }
             }
+            return selectedRank;
+        }
 
+        private static string Translate(SingleRank selectedRank)
+        {
             if (LocalizationManager.CurrentLanguage == "Russian")
             {
                 return selectedRank.rankNameRu;

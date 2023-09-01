@@ -1,4 +1,5 @@
 ﻿using System;
+using FirebaseCustom;
 using I2.Loc;
 using InGameUI;
 using TMPro;
@@ -9,17 +10,21 @@ namespace MainMenuUI
     {
         [SerializeField] private SlaveRedeemedSystem _slaveRedeemedSystem;
         [SerializeField] private TMP_Text _buttonNext;
-        private int _cost;
+        [SerializeField] private PlayerConfig _config;
+
         private void Awake()
         {
             LocalizationManager.OnLocalizeEvent += OnUpdateLanguage;
-            _slaveRedeemedSystem.CostSeted += SetCost;
         }
 
         private void OnDestroy()
         {
             LocalizationManager.OnLocalizeEvent -= OnUpdateLanguage;
-            _slaveRedeemedSystem.CostSeted -= SetCost;
+        }
+
+        private void Start()
+        {
+            SetText();
         }
 
         private void OnUpdateLanguage()
@@ -27,22 +32,17 @@ namespace MainMenuUI
             SetText();
         }
 
-        public void SetCost(int cost)
-        {
-            _cost = cost;
-            SetText();
-        }
-
         private void SetText()
         {
+            int cost = _config.ClicksToRedeemed;
             if (LocalizationManager.CurrentLanguage == "English")
             {
-                _buttonNext.text = $"REDEEM\n{_cost} clicks";
+                _buttonNext.text = $"REDEEM\n{cost} clicks";
             }
 
             if (LocalizationManager.CurrentLanguage == "Russian")
             {
-                _buttonNext.text = $"ВЫКУПИТЬСЯ\n{_cost} кликов";
+                _buttonNext.text = $"ВЫКУПИТЬСЯ\n{cost} кликов";
             }
         }
     }

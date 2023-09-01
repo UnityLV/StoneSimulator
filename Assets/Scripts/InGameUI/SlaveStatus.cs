@@ -12,7 +12,7 @@ using Zenject;
 
 namespace InGameUI
 {
-    public class SlaveStatusUI : MonoBehaviour
+    public class SlaveStatus : MonoBehaviour
     {
         private IDBCommands _values;
 
