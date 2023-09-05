@@ -14,11 +14,14 @@ public class DayButton : MonoBehaviour
     [Tooltip("The Original Number of This Button")]
     public int orgNumber; //original number of each button
 
-
-
     void Start()
     {
         NumberDays();
+    }
+
+    public void SetImage(Sprite sprite)
+    {
+        image.sprite = sprite;
     }
 
     //Change the text in the button to the day of selected month
