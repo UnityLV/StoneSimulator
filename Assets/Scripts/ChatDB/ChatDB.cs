@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChatDB.PinMessage;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDBCustom;
@@ -18,12 +19,17 @@ namespace ChatDB
         private IDBCommands _idbCommands;
         private INicknameDataService _nicknameDataService;
 
-
         [Inject]
         public void Construct(IDBCommands idbCommands, INicknameDataService nicknameDataService)
         {
             _idbCommands = idbCommands;
             _nicknameDataService = nicknameDataService;
+        }
+
+        public async Task<Boolean> IsDateNotHavePinMessage(DateTime date)
+        {
+            List<PinMessageData> pinnedMessages = await _idbCommands.GetAllPinnedMessageDatesAsync();  
+            return pinnedMessages.All(message => message.PinDate.Date != date.Date);  
         }
 
         public async Task<List<ChatMessage>> GetLastChatMessagesAsync(int numMessages = 30)

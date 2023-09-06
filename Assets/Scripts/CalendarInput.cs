@@ -15,14 +15,18 @@ public class SelectedDateButtonData
 public class CalendarInput : MonoBehaviour
 {
     [SerializeField] private Calendar calendar;
-
     public event UnityAction<SelectedDateButtonData> DateSelected;
-    public SelectedDateButtonData SelectedData { get; private set; } 
+    public SelectedDateButtonData SelectedButtonData { get; private set; } 
     private DayButton _selectedDayButton;
 
     private void Awake()
     {
         calendar = GameObject.FindObjectOfType<Calendar>();
+    }
+
+    public void ResetInput()
+    {
+        SelectedButtonData = null;
     }
 
     public void UpdateField()
@@ -33,7 +37,7 @@ public class CalendarInput : MonoBehaviour
 
             int dayNumb = _selectedDayButton.CurrentNumber();
             SelectedDateButtonData data = new SelectedDateButtonData { DayButton = _selectedDayButton, SelectedDate = calendar.ReturnDate(dayNumb) };
-            SelectedData = data;
+            SelectedButtonData = data;
             DateSelected?.Invoke(data);
         }
     }

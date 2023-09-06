@@ -74,9 +74,9 @@ public class CalendarDateCellColorizer : MonoBehaviour
     private void LightUpSelectedDate()
     {
         LightDownAll();
-        if (_calendarInput.SelectedData != null)
+        if (_calendarInput.SelectedButtonData != null)
         {
-            foreach (var button in GetMatchButtons(_calendarInput.SelectedData.SelectedDate))
+            foreach (var button in GetMatchButtons(_calendarInput.SelectedButtonData.SelectedDate))
             {
                 button.LightUp();
             }

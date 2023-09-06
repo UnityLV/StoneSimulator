@@ -21,7 +21,7 @@ namespace InGameUI
 
         private IDBCommands _idbCommands;
 
-        [SerializeField] private PinMessageUISystem _pinMessageUISystem;
+        [SerializeField] private PinMessageSystemAndUI _pinMessageSystemAndUI;
 
         [Inject]
         private void Construct(IClickDataService clickDataService, IDBAllClickSaver dbAllClickSaver , IDBCommands idbCommands)
@@ -31,14 +31,14 @@ namespace InGameUI
             _idbCommands = idbCommands;
         }
 
-        private void OnEnable()
+        private void Awake()
         {
-            _pinMessageUISystem.DataConstructed += OnPinDataConstructed;
+            _pinMessageSystemAndUI.SendingDataConstructed += OnPinSendingDataConstructed;
         }
         
-        private void OnDisable()
+        private void OnDestroy()
         {
-            _pinMessageUISystem.DataConstructed -= OnPinDataConstructed;
+            _pinMessageSystemAndUI.SendingDataConstructed -= OnPinSendingDataConstructed;
         }
 
         public void BuyClicks()
@@ -54,7 +54,7 @@ namespace InGameUI
         public void PinMessage()
         {
             HideShopPanelButLeaveBackground();
-            _pinMessageUISystem.StartListenPlayerInputForPinMessage();
+            _pinMessageSystemAndUI.StartListenPlayerInputForPinMessage();
         }
         
         private void HideShopPanelButLeaveBackground()
@@ -73,7 +73,7 @@ namespace InGameUI
             _shopPanel.SetActive(true);
         }
 
-        private void OnPinDataConstructed(PinMessageData data)
+        private void OnPinSendingDataConstructed(PinMessageData data)
         {
             _marketLogic.Value.BuyPinMessage(() => OnConfirmPinMessage(data));
             HidePanelByNormal();

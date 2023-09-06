@@ -10,9 +10,7 @@ namespace ChatDB.PinMessage
         [SerializeField] private TMP_InputField _inputField;
         [SerializeField] private Button _confirmButton;
         [SerializeField] private RectTransform _inputUI;
-
         public event UnityAction<string> GetMessage;
-
 
         private void OnEnable()
         {
