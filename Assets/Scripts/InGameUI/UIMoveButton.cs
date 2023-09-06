@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
@@ -46,13 +47,28 @@ namespace InGameUI
             _isOut = !_isOut;
         }
 
-        private async void MoveIn()
+        public virtual async Task AsyncMove()
+        {
+            transform.DOKill();
+            if (_isOut)
+            {
+                await MoveIn();
+            }
+            else
+            {
+                await MoveOut();
+            }
+
+            _isOut = !_isOut;
+        }
+
+        private async Task MoveIn()
         {
             _onMoveIn?.Invoke();
             await transform.DOLocalMove(_toMovePosition, _inTime).SetEase(_inEase).AsyncWaitForCompletion();
         }
 
-        private async void MoveOut()
+        private async Task MoveOut()
         {
             _onMoveOut?.Invoke();
             await transform.DOLocalMove(_defaultPosition, _outTime).SetEase(_outEase).AsyncWaitForCompletion();

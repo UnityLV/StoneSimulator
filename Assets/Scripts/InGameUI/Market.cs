@@ -12,6 +12,9 @@ namespace InGameUI
     {
         [SerializeField] private UnityEvent _pinMessageConfirm;
         [SerializeField] private InterfaceReference<IMarketLogic> _marketLogic;
+        [SerializeField] private UIMoveButton _closeButton;
+
+        [SerializeField] private GameObject _shopPanel;
         
         private IClickDataService _clickDataService;
         private IDBAllClickSaver _dbAllClickSaver;
@@ -38,8 +41,6 @@ namespace InGameUI
             _pinMessageUISystem.DataConstructed -= OnPinDataConstructed;
         }
 
-    
-
         public void BuyClicks()
         {
             _marketLogic.Value.BuyClicks(OnConfirmBuyClick);
@@ -52,13 +53,30 @@ namespace InGameUI
 
         public void PinMessage()
         {
+            HideShopPanelButLeaveBackground();
             _pinMessageUISystem.StartListenPlayerInputForPinMessage();
-            
         }
         
+        private void HideShopPanelButLeaveBackground()
+        {
+            _shopPanel.SetActive(false);
+        }
+
+        public void CrossButtonOnMainPinMessagePanel()
+        {
+            HidePanelByNormal();
+        }
+
+        private async void HidePanelByNormal()
+        {
+            await _closeButton.AsyncMove();
+            _shopPanel.SetActive(true);
+        }
+
         private void OnPinDataConstructed(PinMessageData data)
         {
             _marketLogic.Value.BuyPinMessage(() => OnConfirmPinMessage(data));
+            HidePanelByNormal();
         }
 
         private void OnConfirmBuyClick()
