@@ -6,11 +6,19 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+public class SelectedDateButtonData
+{
+    public DayButton DayButton;
+    public DateTime SelectedDate;
+}
+
 public class CalendarInput : MonoBehaviour
 {
     [SerializeField] private Calendar calendar;
 
-    public event UnityAction<DateTime> DateSelected;
+    public event UnityAction<SelectedDateButtonData> DateSelected;
+    public SelectedDateButtonData SelectedData { get; private set; } 
+    private DayButton _selectedDayButton;
 
     private void Awake()
     {
@@ -21,9 +29,12 @@ public class CalendarInput : MonoBehaviour
     {
         if (EventSystem.current.currentSelectedGameObject.TryGetComponent(out DayButton dayButton))
         {
-            int dayNumb = dayButton.CurrentNumber();
+            _selectedDayButton = dayButton;
 
-            DateSelected?.Invoke(calendar.ReturnDate(dayNumb));
+            int dayNumb = _selectedDayButton.CurrentNumber();
+            SelectedDateButtonData data = new SelectedDateButtonData { DayButton = _selectedDayButton, SelectedDate = calendar.ReturnDate(dayNumb) };
+            SelectedData = data;
+            DateSelected?.Invoke(data);
         }
     }
 }

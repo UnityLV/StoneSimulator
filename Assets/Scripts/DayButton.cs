@@ -14,11 +14,28 @@ public class DayButton : MonoBehaviour
     [Tooltip("The Original Number of This Button")]
     public int orgNumber; //original number of each button
 
+    [SerializeField] private Image _secondaryImage;
+
+    [SerializeField] private Sprite _selectedSprite;
+
+    
     void Start()
     {
         NumberDays();
     }
 
+    public void LightUp()
+    {
+        _secondaryImage.color = new Color(1,1,1,1);
+        _secondaryImage.sprite = _selectedSprite;
+    }
+    
+    public void LightDown()
+    {
+        _secondaryImage.sprite = null;
+        _secondaryImage.color = new Color(0,0,0,0);
+    }
+    
     public void SetImage(Sprite sprite)
     {
         image.sprite = sprite;

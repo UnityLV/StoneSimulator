@@ -8,10 +8,11 @@ using UnityEngine;
 using Zenject;
 
 
-public class CalendarDateCellMarker : MonoBehaviour
+public class CalendarDateCellColorizer : MonoBehaviour
 {
     private IDBCommands _idbCommands;
     [SerializeField] private Calendar _calendar;
+    [SerializeField] private CalendarInput _calendarInput;
     private List<PinMessageData> _pinMessages = new List<PinMessageData>();
 
     [SerializeField] private Sprite _unavailable;
@@ -28,15 +29,30 @@ public class CalendarDateCellMarker : MonoBehaviour
     private void Awake()
     {
         _calendar.Updated += UpdateCalendarColors;
+        _calendarInput.DateSelected += OnDateSelected;
         UpdateDataFromDB();
         
         int elapsedDaysBuffer = 500;
         _elapsedDates = DateTools.GeneratePastDatesArray(elapsedDaysBuffer);
     }
 
+    private void OnDateSelected(SelectedDateButtonData data)
+    {
+        LightUpSelectedDate();
+    }
+
+    private void LightDownAll()
+    {
+        foreach (DayButton button in _calendar.DayButtons)
+        {
+            button.LightDown();
+        }
+    }
+
     private void OnDestroy()
     {
         _calendar.Updated -= UpdateCalendarColors;
+        _calendarInput.DateSelected -= OnDateSelected;
     }
 
     public async void UpdateDataFromDB()
@@ -49,12 +65,25 @@ public class CalendarDateCellMarker : MonoBehaviour
     {
         DateTime[] busyDates = _pinMessages.Select(d => d.PinDate).ToArray();
 
-        SetAllAsAvailable();
+        SetButtonAsAvailable();
         SetElapsedDates();
         SetBusyDates(busyDates);
+        LightUpSelectedDate();
     }
 
-    private void SetAllAsAvailable()
+    private void LightUpSelectedDate()
+    {
+        LightDownAll();
+        if (_calendarInput.SelectedData != null)
+        {
+            foreach (var button in GetMatchButtons(_calendarInput.SelectedData.SelectedDate))
+            {
+                button.LightUp();
+            }
+        }
+    }
+
+    private void SetButtonAsAvailable()
     {
         foreach (DayButton button in _calendar.DayButtons)
         {

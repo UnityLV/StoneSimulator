@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 namespace ChatDB.PinMessage
@@ -6,15 +7,18 @@ namespace ChatDB.PinMessage
     public class PinMessageUISystem : MonoBehaviour
     {
         [SerializeField] private PinMessageCalendar _messageCalendar;
-        [SerializeField] private CalendarDateCellMarker _calendarDateCellMarker;
+        [SerializeField] private CalendarDateCellColorizer _calendarDateCellColorizer;
         [SerializeField] private Calendar _calendar;
         [SerializeField] private PinMessageTextInput _messageTextInput;
         [SerializeField] private ChatDB _chatDB;
-        
+
+        [SerializeField] private TMP_Text _selectedDateText;
         private DateTime _selectedDate;
         private string _message;
 
         public event UnityAction<PinMessageData> DataConstructed;
+   
+
 
         private void OnEnable()
         {
@@ -31,16 +35,23 @@ namespace ChatDB.PinMessage
 
         public void StartListenPlayerInputForPinMessage()
         {
-            _calendarDateCellMarker.UpdateDataFromDB();
+            _calendarDateCellColorizer.UpdateDataFromDB();
             _messageCalendar.Show();
             _calendar.SelectCurrentDate();
         }
 
-        private void OnDateSelected(DateTime date)
+        private void OnDateSelected(SelectedDateButtonData data)
         {
-            _selectedDate = date;
-            _messageCalendar.Hide();
-            _messageTextInput.Show();
+            _selectedDate = data.SelectedDate;
+            UpdateYourSelectedDateUI();
+
+            // _messageCalendar.Hide();
+            // _messageTextInput.Show();
+        }
+
+        private void UpdateYourSelectedDateUI()
+        {
+            _selectedDateText.text = DateTools.ConvertToCustomFormat(_selectedDate);
         }
 
         private void OnGetMessage(string message)
@@ -48,7 +59,7 @@ namespace ChatDB.PinMessage
             _message = message;
             _messageTextInput.Hide();
 
-            DataConstructed?.Invoke(new PinMessageData { Message = _chatDB.ConvertToChatMessage(_message) , PinDate = _selectedDate });
+            DataConstructed?.Invoke(new PinMessageData { Message = _chatDB.ConvertToChatMessage(_message), PinDate = _selectedDate });
         }
     }
 }

@@ -9,7 +9,8 @@ namespace ChatDB.PinMessage
 
         [SerializeField] private RectTransform _calendar;
         [SerializeField] private RectTransform _buttonsInCalendarUI;
-        public event UnityAction<DateTime> DateSelected;
+        public event UnityAction<SelectedDateButtonData> DateSelected;
+        
 
         private void OnEnable()
         {
@@ -21,9 +22,9 @@ namespace ChatDB.PinMessage
             _calendarInput.DateSelected -= OnDateSelected;
         }
 
-        private void OnDateSelected(DateTime arg0)
+        private void OnDateSelected(SelectedDateButtonData data)
         {
-            DateSelected?.Invoke(arg0);
+            DateSelected?.Invoke(data);
         }
 
         public void Show()

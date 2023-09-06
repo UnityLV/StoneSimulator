@@ -29,7 +29,7 @@ namespace MongoDBCustom
 
             var pinnedDates = pinnedMessages
                 .Select(doc => new PinMessageData
-                    { PinDate = DateTimeConverter.ConvertFromCustomFormat(doc[PinDate].AsString), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
+                    { PinDate = DateTools.ConvertFromCustomFormat(doc[PinDate].AsString), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
                 .ToList();
 
             return pinnedDates;
@@ -42,7 +42,7 @@ namespace MongoDBCustom
                 { Name, data.Message.PlayerNickname },
                 { Timestamp, data.Message.Timestamp },
                 { Message, data.Message.MessageText },
-                { PinDate, DateTimeConverter.ConvertToCustomFormat(data.PinDate) }
+                { PinDate, DateTools.ConvertToCustomFormat(data.PinDate) }
             };
 
             await _connection.PinnedMessagesCollection.InsertOneAsync(pinnedMessageDocument);
@@ -54,7 +54,7 @@ namespace MongoDBCustom
         {
             DateTime date = DateTime.UtcNow.Date;
 
-            var filter = Builders<BsonDocument>.Filter.Eq(PinDate, DateTimeConverter.ConvertToCustomFormat(date));
+            var filter = Builders<BsonDocument>.Filter.Eq(PinDate, DateTools.ConvertToCustomFormat(date));
             BsonDocument pinnedMessageDocument = await _connection.PinnedMessagesCollection.Find(filter).FirstOrDefaultAsync();
 
             if (pinnedMessageDocument != null)

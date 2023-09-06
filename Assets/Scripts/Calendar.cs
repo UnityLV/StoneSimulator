@@ -14,16 +14,13 @@ public class Calendar : MonoBehaviour
     private DateTime dtSelected;
     [SerializeField] private TMP_Text monthYearText;
 
-    [SerializeField]   private  DayButton[] _dayButtons;
+    [SerializeField] private DayButton[] _dayButtons;
 
     public DayButton[] DayButtons => _dayButtons;
 
     public int SelectedYear => selectedYear;
     public int SelectedMonth => selectedMonth;
-
     public event UnityAction Updated;
-
- 
 
     public void Awake()
     {
@@ -38,14 +35,14 @@ public class Calendar : MonoBehaviour
         selectedYear = dtSelected.Year;
         selectedMonth = dtSelected.Month;
         monthYearText.text = dtSelected.ToString("MMMM yyyy");
-       
+
         for (int i = 0; i < _dayButtons.Length; i++)
         {
             _dayButtons[i].NumberDays();
         }
         Updated?.Invoke();
     }
-    
+
     public void SelectCurrentDate()
     {
         dtSelected = DateTime.Today;
