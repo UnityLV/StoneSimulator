@@ -315,7 +315,7 @@ namespace GameState
         {
             Debug.Log("Add click on Server");
 
-            PlayerBehavior playerBehavior = AbilityButton.PlayerBehavior;
+            PlayerBehavior playerBehavior = AbilityClicks.PlayerBehavior;
             int damage = playerBehavior.playerDamageOnServer;
             Debug.Log("damage " + damage);
             playerBehavior.playerDamageOnServer = 1;

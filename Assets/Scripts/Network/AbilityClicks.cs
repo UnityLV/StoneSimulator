@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using FirebaseCustom;
+using I2.Loc;
 using PlayerData.Interfaces;
 using Stone.Interfaces;
 using TMPro;
@@ -10,10 +12,11 @@ using Zenject;
 
 namespace GameScene
 {
-    public class AbilityButton : MonoBehaviour, IAbilityClickEvents
+    public class AbilityClicks : MonoBehaviour, IAbilityClickEvents
     {
         [SerializeField] private Button _button;
-        [SerializeField] private TMP_Text _counterText;
+        [SerializeField] private TMP_Text[] _counterTexts;
+        [SerializeField] private TMP_Text _specialText;
         [SerializeField] private UnityEvent _emptyAbilityClick;
         private IStoneClickEvents _stoneClickEvents;
         private IStoneClickEventsInvoke _clickEventsInvoke;
@@ -21,7 +24,7 @@ namespace GameScene
 
         private const string CounterKey = nameof(CounterKey);
 
-        private int Counter
+        public int Counter
         {
             get => PlayerPrefs.GetInt(CounterKey);
 
@@ -39,24 +42,56 @@ namespace GameScene
             _clickEventsInvoke = clickEventsInvoke;
             _clickDataService = clickDataService;
         }
+  
+     
 
-        private void OnEnable()
+
+        private void Awake()
         {
+            LocalizationManager.OnLocalizeEvent += OnUpdateLanguage;
             _stoneClickEvents.OnStoneClick += OnOnStoneClick;
             _button.onClick.AddListener(OnButtonClick);
         }
 
-
-        private void OnDisable()
+        private void OnDestroy()
         {
+            LocalizationManager.OnLocalizeEvent -= OnUpdateLanguage;
             _stoneClickEvents.OnStoneClick -= OnOnStoneClick;
             _button.onClick.RemoveListener(OnButtonClick);
         }
 
+        private void OnUpdateLanguage()
+        {
+            UpdateSpecialText();
+        }
+        
         public void AddClicks(int clicks)
         {
             Counter += clicks;
-            _counterText.text = Counter.ToString();
+
+            UpdateAllTexts();
+        }
+
+        private void UpdateSpecialText()
+        {
+            if (LocalizationManager.CurrentLanguage == "Russian")
+            {
+                _specialText.text = $"Вы собрали {Counter.ToString()} кликов";
+                return;
+            }
+            _specialText.text = $"You have collected {Counter.ToString()} clicks";
+            
+          
+        }
+
+        private void UpdateAllTexts()
+        {
+            foreach (var text in _counterTexts)
+            {
+                text.text = Counter.ToString();
+            }
+
+            UpdateSpecialText();
         }
 
         private void OnOnStoneClick()
@@ -91,7 +126,9 @@ namespace GameScene
         {
             int temp = Counter;
             Counter = 0;
-            _counterText.text = Counter.ToString();
+
+            UpdateAllTexts();
+          
             return temp;
         }
     }

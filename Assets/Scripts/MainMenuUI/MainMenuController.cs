@@ -12,14 +12,10 @@ namespace MainMenuUI
 {
     public class MainMenuController : MonoBehaviour, IMainMenuService
     {
-        [SerializeField] private TMP_Text _clickText;
-
+        //[SerializeField] private TMP_Text _clickText; //HACK: Changed counter update class
         [SerializeField] private TMP_InputField _nicknameText;
-
         [SerializeField] private TextMeshProUGUI _currentHealth;
-
         [SerializeField] private GameObject _mainMenuUI;
-
         [SerializeField] private LocationMainMenuController _locationMainMenuController;
 
 
@@ -67,12 +63,12 @@ namespace MainMenuUI
 
         private void UpdateClickCountFromClickDataUpdated(int newClicks)
         {
-            _clickText.text = _clickDataService.GetClickCount().ToString();
+            //_clickText.text = _clickDataService.GetClickCount().ToString();
         }
 
         private void UpdateClickTextFromUIState()
         {
-            _clickText.text = _clickDataService.GetClickCount().ToString();
+            //_clickText.text = _clickDataService.GetClickCount().ToString();
         }
 
         public void UpdateNicknameText()

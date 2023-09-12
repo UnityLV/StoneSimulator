@@ -14,7 +14,7 @@ public class PlayerBehavior : NetworkBehaviour
 
         if (isLocalPlayer)
         {
-            AbilityButton.PlayerBehavior = this;
+            AbilityClicks.PlayerBehavior = this;
         }
     }
 

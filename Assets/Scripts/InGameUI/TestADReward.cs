@@ -13,15 +13,15 @@ namespace InGameUI
 
         private IClickDataService _clickDataService;
         private IDBAllClickSaver _dbAllClickSaver;
-        private AbilityButton _abilityButton;
+        private AbilityClicks _abilityClicks;
         PlayerConfig PlayerConfig = RemoteConfigSetter.PlayerConfig;
 
         [Inject]
-        private void Construct(IClickDataService clickDataService, IDBAllClickSaver dbAllClickSaver, AbilityButton abilityButton)
+        private void Construct(IClickDataService clickDataService, IDBAllClickSaver dbAllClickSaver, AbilityClicks abilityClicks)
         {
             _clickDataService = clickDataService;
             _dbAllClickSaver = dbAllClickSaver;
-            _abilityButton = abilityButton;
+            _abilityClicks = abilityClicks;
         }
 
         public async void ShowReward()
@@ -44,7 +44,7 @@ namespace InGameUI
             int add = PlayerConfig.ClicksFromAD;
             // _clickDataService.AddClicks(add);
             // _dbAllClickSaver.Save(add);
-            _abilityButton.AddClicks(add);
+            _abilityClicks.AddClicks(add);
             Debug.Log("Reward CLicks " + add);
 
             

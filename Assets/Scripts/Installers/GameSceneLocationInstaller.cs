@@ -39,7 +39,7 @@ namespace Installers
 
         [SerializeField] private RegularPlayerRatingInDBSaver _regularPlayerRatingInDBSaver;
         [SerializeField] private RankData _rankData;
-        [SerializeField] private AbilityButton _abilityButton;
+        [FormerlySerializedAs("_abilityButton")] [SerializeField] private AbilityClicks _abilityClicks;
 
 
 
@@ -62,7 +62,7 @@ namespace Installers
             BindRatingSaver();
 
             Container.BindInterfacesAndSelfTo<InGameRatingListUI>().FromInstance(_ratingListUI).AsSingle();
-            Container.BindInterfacesAndSelfTo<AbilityButton>().FromInstance(_abilityButton).AsSingle();
+            Container.BindInterfacesAndSelfTo<AbilityClicks>().FromInstance(_abilityClicks).AsSingle();
             Container.BindInterfacesAndSelfTo<ReferrerClicks>().AsSingle();
             Container.BindInterfacesAndSelfTo<SlaveClicksCollector>().AsSingle();
             

@@ -23,20 +23,20 @@ namespace MainMenuUI
     {
         private IDBCommands _idbCommands;
         private ISlavesDataService _slavesData;
-        private AbilityButton _abilityButton;
+        private AbilityClicks _abilityClicks;
 
         [Inject]
-        private void Construct(IDBCommands idbCommands, ISlavesDataService slavesData, AbilityButton abilityButton)
+        private void Construct(IDBCommands idbCommands, ISlavesDataService slavesData, AbilityClicks abilityClicks)
         {
             _idbCommands = idbCommands;
             _slavesData = slavesData;
-            _abilityButton = abilityButton;
+            _abilityClicks = abilityClicks;
         }
 
         public async void CollectClicksFromReferrals()
         {
             int collect = await CalculateClicks();
-            _abilityButton.AddClicks(collect);
+            _abilityClicks.AddClicks(collect);
         }
 
         private async Task<int> CalculateClicks()
