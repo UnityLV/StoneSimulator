@@ -26,17 +26,12 @@
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/CalendarSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/CalendarSystem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CalendarDateCellColorizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CalendarDateCellColorizer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CalendarInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CalendarInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/Market.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/Market.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageTextInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageTextInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageUISystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageSystemAndUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageUISystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageSystemAndUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +286,7 @@
       <workItem from="1693474771404" duration="11217000" />
       <workItem from="1693497702978" duration="1784000" />
       <workItem from="1693553657474" duration="2918000" />
-      <workItem from="1693987500718" duration="11907000" />
+      <workItem from="1693987500718" duration="13173000" />
     </task>
     <servers />
   </component>
