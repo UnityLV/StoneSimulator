@@ -14751,6 +14751,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385258382}
   m_CullTransparentMesh: 1
+--- !u!114 &1385945677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5365081684339461403, guid: 947e39d092531d24a9c4510ea08db285, type: 3}
+  m_PrefabInstance: {fileID: 6369362741405778172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1388032325
 GameObject:
   m_ObjectHideFlags: 0
@@ -16068,6 +16079,7 @@ MonoBehaviour:
   _closeButton: {fileID: 1305157347}
   _shopPanel: {fileID: 9088474556199922416}
   _pinMessageSystemAndUI: {fileID: 6369362741405778173}
+  _abilityClicks: {fileID: 0}
 --- !u!114 &1495126814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16987,6 +16999,14 @@ PrefabInstance:
     - target: {fileID: 3308153824960872578, guid: 794ff0b7958782841bdf3e23f59d7504, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894324664717472183, guid: 794ff0b7958782841bdf3e23f59d7504, type: 3}
+      propertyPath: m_Name
+      value: RaitingMenuList
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894324664717472183, guid: 794ff0b7958782841bdf3e23f59d7504, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7064705666461256637, guid: 794ff0b7958782841bdf3e23f59d7504, type: 3}
       propertyPath: m_IsActive
@@ -25697,6 +25717,14 @@ PrefabInstance:
       propertyPath: _chatDB
       value: 
       objectReference: {fileID: 642971325}
+    - target: {fileID: 3150652974435196158, guid: 947e39d092531d24a9c4510ea08db285, type: 3}
+      propertyPath: _sendPinMessageButton
+      value: 
+      objectReference: {fileID: 1385945677}
+    - target: {fileID: 5365081684339461403, guid: 947e39d092531d24a9c4510ea08db285, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7110524409644919267, guid: 947e39d092531d24a9c4510ea08db285, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

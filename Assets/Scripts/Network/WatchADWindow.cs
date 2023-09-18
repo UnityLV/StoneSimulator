@@ -10,7 +10,7 @@ namespace GameScene
         [SerializeField] private Button _watchButton;
 
         [SerializeField] private UnityEvent _onWatchButtonClick;
-        [SerializeField] private int a;
+ 
         private void Awake()
         {
             _watchButton.onClick.AddListener(OnWatchButtonClick);

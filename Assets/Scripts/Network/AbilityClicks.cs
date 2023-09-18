@@ -33,7 +33,6 @@ namespace GameScene
 
         public static PlayerBehavior PlayerBehavior { get; set; }
         public event Action<int> OnAbilityClick;
-        
 
         [Inject]
         private void Construct(IStoneClickEvents stoneClickEvents, IStoneClickEventsInvoke clickEventsInvoke, IClickDataService clickDataService)
@@ -42,9 +41,6 @@ namespace GameScene
             _clickEventsInvoke = clickEventsInvoke;
             _clickDataService = clickDataService;
         }
-  
-     
-
 
         private void Awake()
         {

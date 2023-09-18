@@ -2,6 +2,7 @@
 using AYellowpaper;
 using MongoDBCustom;
 using ChatDB.PinMessage;
+using GameScene;
 using PlayerData.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,18 +17,15 @@ namespace InGameUI
 
         [SerializeField] private GameObject _shopPanel;
         
-        private IClickDataService _clickDataService;
-        private IDBAllClickSaver _dbAllClickSaver;
 
         private IDBCommands _idbCommands;
 
         [SerializeField] private PinMessageSystemAndUI _pinMessageSystemAndUI;
+        [SerializeField] private AbilityClicks _abilityClicks;
 
         [Inject]
-        private void Construct(IClickDataService clickDataService, IDBAllClickSaver dbAllClickSaver , IDBCommands idbCommands)
+        private void Construct(IDBCommands idbCommands)
         {
-            _clickDataService = clickDataService;
-            _dbAllClickSaver = dbAllClickSaver;
             _idbCommands = idbCommands;
         }
 
@@ -82,9 +80,7 @@ namespace InGameUI
         private void OnConfirmBuyClick()
         {
             int add = 2500;
-            _clickDataService.AddClicks(add);
-            _dbAllClickSaver.Save(add);
-
+            _abilityClicks .AddClicks(add);
             Debug.Log("Buy Clicks");
         }
 

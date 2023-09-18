@@ -18,7 +18,6 @@ namespace MainMenuUI
         [SerializeField] private GameObject _mainMenuUI;
         [SerializeField] private LocationMainMenuController _locationMainMenuController;
 
-
         #region Dependency
 
         private INicknameDataService _nicknameDataService;

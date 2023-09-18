@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FirstAuth;
 using InGameUI;
@@ -64,9 +65,15 @@ namespace MongoDBCustom
                 };
                 ratingPlayerDataList.Add(ratingPlayerData);
             }
+            ratingPlayerDataList = SkipEmptyNames(ratingPlayerDataList);
 
             ratingListUI.SetData(ratingPlayerDataList);
             ratingListUI2.SetData(ratingPlayerDataList);
+        }
+
+        private List<RatingPlayerData> SkipEmptyNames(List<RatingPlayerData> list)
+        {
+            return list.Where(d => string.IsNullOrWhiteSpace(d.Name) == false).ToList();
         }
     }
 }

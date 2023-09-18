@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
 namespace ChatDB.PinMessage
 {
     public class PinMessageSystemAndUI : MonoBehaviour //TODO: Выделить UI в обдельный класс
@@ -14,43 +17,72 @@ namespace ChatDB.PinMessage
         [SerializeField] private GameObject _mainInputWindow;
         [SerializeField] private TMP_Text _selectedDateTextsInCalendar;
         [SerializeField] private TMP_Text _selectedDateTextsInMainWindow;
-        [SerializeField] private TMP_InputField _inputField;
+
+        [FormerlySerializedAs("_inputField")] [SerializeField]
+        private TMP_InputField _messageInputField;
+
         [SerializeField] private CalendarInput _calendarInput;
+        [Space] [SerializeField] private Button _sendPinMessageButton;
+
 
         private DateTime _selectedDate;
+        private string _writedMessage;
         public event UnityAction<PinMessageData> SendingDataConstructed;
 
         private bool _inWork;
+        private bool _isSelectedDateValid;
 
 
         private void Awake()
         {
             _messageCalendar.DateSelected += OnDateSelected;
+            _sendPinMessageButton.onClick.AddListener(SendPinMessageButton);
         }
 
         private void OnDestroy()
         {
             _messageCalendar.DateSelected -= OnDateSelected;
+            _sendPinMessageButton.onClick.RemoveListener(SendPinMessageButton);
         }
 
-        public async void SendPinMessageButton()
+        private void Update()
+        {
+            UpdateInteractableWithButton();
+        }
+
+        private void UpdateInteractableWithButton()
+        {
+            _sendPinMessageButton.interactable = IsDataValidToSendPinMessage();
+        }
+
+        private bool IsDataValidToSendPinMessage()
+        {
+            if (_isSelectedDateValid == false)
+            {
+                return false;
+            }
+
+            if (IsMessageExist(out _writedMessage) == false)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public void SendPinMessageButton()
         {
             if (_inWork)
                 return;
             _inWork = true;
 
-            if (await IsDateValid() == false)
-            {
-                _inWork = false;
-                return;
-            }
-            if (IsMessageExist(out string message) == false)
+            if (IsDataValidToSendPinMessage() == false)
             {
                 _inWork = false;
                 return;
             }
 
-            ConstructMessage(message);
+            SendMessage();
 
             _inWork = false;
         }
@@ -62,8 +94,8 @@ namespace ChatDB.PinMessage
 
         private bool IsMessageExist(out string message)
         {
-            message = _inputField.text;
-            return string.IsNullOrWhiteSpace(_inputField.text) == false;
+            message = _messageInputField.text;
+            return string.IsNullOrWhiteSpace(_messageInputField.text) == false;
         }
 
         private async Task<bool> IsDateAvailableForPin(DateTime date)
@@ -102,25 +134,42 @@ namespace ChatDB.PinMessage
             }
         }
 
-        private void OnDateSelected(SelectedDateButtonData data)
+        private async void OnDateSelected(SelectedDateButtonData data)
         {
             _selectedDate = data.SelectedDate;
             _selectedDateTextsInCalendar.text = DateTools.ConvertToCustomFormat(_selectedDate);
+
+            await UpdateValidData();
         }
 
-        private void ConstructMessage(string message)
+        private async Task UpdateValidData()
         {
-            PinMessageData pinMessageData = new() { Message = _chatDB.ConvertToChatMessage(message), PinDate = _selectedDate };
+            _isSelectedDateValid = false;
+            _isSelectedDateValid = await IsDateValid();
+        }
+
+        private void SendMessage()
+        {
+            PinMessageData pinMessageData = ConstructMessage();
             SendingDataConstructed?.Invoke(pinMessageData);
             DisableWindows();
             ResetCalendar();
+        }
+
+        private PinMessageData ConstructMessage()
+        {
+            PinMessageData pinMessageData = new()
+                { Message = _chatDB.ConvertToChatMessage(_writedMessage), PinDate = _selectedDate };
+            return pinMessageData;
         }
 
         private void ResetCalendar()
         {
             _selectedDateTextsInCalendar.text = "NOT SELECTED";
             _selectedDateTextsInMainWindow.text = "NOT SELECTED";
-            _inputField.text = String.Empty;
+            _messageInputField.text = String.Empty;
+            _selectedDate = default;
+            _isSelectedDateValid = false;
             _calendarInput.ResetInput();
         }
     }
