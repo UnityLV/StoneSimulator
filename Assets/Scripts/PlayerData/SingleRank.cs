@@ -3,7 +3,7 @@
 namespace PlayerData
 {
     [Serializable]
-    public struct SingleRank
+    public class SingleRank
     {
         public SingleRank(string rankNameRu, string rankNameEn, int rankPoints)
         {

@@ -24,25 +24,30 @@ namespace PlayerData
         {
             _isSlave = false;
         }
-        
+
         public void OnRedeemed()
         {
             _isSlave = false;
         }
 
-        public string GetRankByClicks(int points)
+        public string GetRankNameByClicks(int points)
         {
-            SingleRank selectedRank = SelectRank(points);
+            SingleRank selectedRank = FindMyRank(points);
 
-            return Translate(selectedRank);
+            return TranslateToName(selectedRank);
         }
 
-        private SingleRank SelectRank(int points)
+        public SingleRank[] GetRanks()
+        {
+            return _ranks;
+        }
+
+        public SingleRank FindMyRank(int points)
         {
             _ranks = _ranks.OrderBy(rank => rank.rankPoints).ToArray();
 
             SingleRank selectedRank = _ranks[1];
-            
+
             if (_isSlave)
             {
                 return _ranks[0];
@@ -56,10 +61,11 @@ namespace PlayerData
                     break;
                 }
             }
+
             return selectedRank;
         }
 
-        private static string Translate(SingleRank selectedRank)
+        public string TranslateToName(SingleRank selectedRank)
         {
             if (LocalizationManager.CurrentLanguage == "Russian")
             {
@@ -81,8 +87,7 @@ namespace PlayerData
             _ranks = data.ranks;
         }
 
-        [Serializable]
-        private class RanksWrapper
+        [Serializable] private class RanksWrapper
         {
             public SingleRank[] ranks;
         }

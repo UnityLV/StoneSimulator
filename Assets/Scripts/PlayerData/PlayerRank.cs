@@ -19,7 +19,7 @@ namespace PlayerData
 
         public string GetMyRank()
         {
-            return _data.GetRankByClicks(_clickDataService.GetAllClickCount());
+            return _data.GetRankNameByClicks(_clickDataService.GetAllClickCount());
         }
 
     }

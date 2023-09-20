@@ -16,7 +16,6 @@ namespace InGameUI
         [SerializeField] private RatingSingleLine _linePrefab;
 
         protected INicknameDataService NicknameData;
-
         protected IClickDataService ClickData;
 
         private RatingSingleLine[] _lines;
@@ -69,7 +68,7 @@ namespace InGameUI
             }
         }
 
-        protected virtual void OnFindPlayerInRating(int raiting)
+        protected virtual void OnFindPlayerInRating(int rating)
         {
         }
 

@@ -16,10 +16,10 @@ namespace InGameUI
             _allClickCount.text = ClickData.GetAllClickCount().ToString();
         }
 
-        protected override void OnFindPlayerInRating(int raiting)
+        protected override void OnFindPlayerInRating(int rating)
         {
-            _playerRaitingPosition.text = raiting.ToString();
-            _playerRaitingPosition2.text = raiting.ToString();
+            _playerRaitingPosition.text = rating.ToString();
+            _playerRaitingPosition2.text = rating.ToString();
         }
     }
 }
