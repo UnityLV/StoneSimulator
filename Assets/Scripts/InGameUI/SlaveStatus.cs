@@ -12,6 +12,20 @@ using Zenject;
 
 namespace InGameUI
 {
+    public static class StringExtension
+    {
+        public static void LogValue(this string value, string name = "")
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                Debug.Log(name + " is empty");
+                return;
+            }
+
+            Debug.Log(name + " = " + value);
+        }
+    }
+
     public class SlaveStatus : MonoBehaviour
     {
         private IDBCommands _values;
@@ -19,8 +33,10 @@ namespace InGameUI
         [SerializeField] private TMP_Text _referrer;
 
         [SerializeField] private UnityEvent _onSlave;
+
         [FormerlySerializedAs("_onNotSlave")]
         [SerializeField] private UnityEvent _onRedeemedSlave;
+
         [SerializeField] private UnityEvent _onNeverBeSlave;
 
         [Inject]
@@ -46,7 +62,7 @@ namespace InGameUI
 
             BsonDocument referrer = playersData.FirstOrDefault();
 
-            if (referrer != null)
+            if (referrer != null && IsReferrerNameExist(referrer))
             {
                 ProcessReferrer(referrer);
             }
@@ -62,12 +78,17 @@ namespace InGameUI
             _onNeverBeSlave?.Invoke();
         }
 
+        private bool IsReferrerNameExist(BsonDocument referrer)
+        {
+            return string.IsNullOrWhiteSpace(referrer[DBKeys.Name].AsString) == false;
+        }
+
         private void ProcessReferrer(BsonDocument referrer)
         {
             bool isYouSlave = referrer[DBKeys.Referrals].AsBsonArray.Contains(DeviceInfo.GetDeviceId());
 
             _referrer.text = referrer[DBKeys.Name].AsString;
-
+            _referrer.text.LogValue("Referrer.text");
             if (isYouSlave)
             {
                 ProcessAsLave();

@@ -84,7 +84,7 @@ namespace MongoDBCustom
                         Debug.LogError("Exception message: " + installReferrerDetails.Error.Exception.Message);
                     }
                     Debug.LogError("Response code: " + installReferrerDetails.Error.ResponseCode.ToString());
-                    tcs.SetResult("No Referrer");
+                    tcs.SetResult("");
                     return;
                 }
 

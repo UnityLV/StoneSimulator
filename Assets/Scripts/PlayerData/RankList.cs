@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using I2.Loc;
 using InGameUI;
 using PlayerData.Interfaces;
 using UnityEngine;
@@ -10,12 +12,45 @@ namespace PlayerData
     public class RankList : MonoBehaviour
     {
         [SerializeField] private RankListLineFactory _lineFactory;
-        private List<RankLine> _lines = new();
+        [SerializeField] private RankData _rankData;
+        private readonly List<RankLine> _lines = new();
 
         [Inject]
         private void Construct(IClickDataService clickDataService)
         {
             _lineFactory.SetDep(clickDataService);
+        }
+
+        private void OnEnable()
+        {
+            LocalizationManager.OnLocalizeEvent += UpdateText;
+        }
+
+        private void Start()
+        {
+            DrawRankList();
+        }
+
+        private void OnDisable()
+        {
+            LocalizationManager.OnLocalizeEvent -= UpdateText;
+        }
+
+        private void UpdateText()
+        {
+            DrawRankList();
+        }
+
+        private void DrawRankList()
+        {
+            ClearLines();
+            var sortedRanks = _rankData.GetRanks().OrderBy(d => d.rankPoints).ToArray();
+
+            foreach (SingleRank rank in sortedRanks)
+            {
+                RankLine line = _lineFactory.CreateLine(rank);
+                _lines.Add(line);
+            }
         }
 
         private void ClearLines()
@@ -25,17 +60,7 @@ namespace PlayerData
             {
                 Destroy(line.gameObject);
             }
-        }
-
-        private void SetData(IEnumerable<SingleRank> rankLines)
-        {
-            ClearLines();
-            var sortedData = rankLines.OrderBy(d => d.rankPoints).ToArray();
-
-            foreach (SingleRank rank in sortedData)
-            {
-                RankLine rankLine = _lineFactory.CreateLine(rank);
-            }
+            _lines.Clear();
         }
     }
 }

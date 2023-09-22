@@ -28,23 +28,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankLine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankLine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankLineUIData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankLineUIData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankList.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/AvatarMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/AvatarMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/Rank/RegularLIne.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/Rank/RegularLIne.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/Rank/SelfLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/UI/Rank/SelfLine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FigmaImporter/Renders/stone-30_267_6071.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FigmaImporter/Renders/stone-30_267_6071.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FigmaImporter/Renders/stone-36 1_267_6072.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FigmaImporter/Renders/stone-36 1_267_6072.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameRatingListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameRatingListUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InMenuRatingListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InMenuRatingListUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerRank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerRank.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/SingleRank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/SingleRank.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/RankData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/RankData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankListLineFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankListLineFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/78/50b50caf/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/c8/f6f16fa1/LogType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d9536d9127f4a489d989c7a566aee1c46ac00/4a/637dca0c/Int32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d97e74faa69f36f3128e84dc52334a189c26641628bc79c17ee66f81f557/System.Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Documents/GitHub/Vengeance-Project/Assets/Scripts/Singleton/Game.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Board/BoardFiller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Lara-Story-/Assets/Scripts/Code/Bank/Hearts.cs" root0="SKIP_HIGHLIGHTING" />
@@ -147,28 +149,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\vazil\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\vazil\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Downloads/StoneServer\StoneSimulatorMy.exe" />
@@ -302,7 +304,10 @@
       <workItem from="1694897977561" duration="1091000" />
       <workItem from="1695008021994" duration="2032000" />
       <workItem from="1695010153170" duration="1858000" />
-      <workItem from="1695170211966" duration="7750000" />
+      <workItem from="1695170211966" duration="15180000" />
+      <workItem from="1695372530478" duration="559000" />
+      <workItem from="1695378896172" duration="568000" />
+      <workItem from="1695379492830" duration="368000" />
     </task>
     <servers />
   </component>

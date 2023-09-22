@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using PlayerData.Interfaces;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -47,8 +48,37 @@ namespace PlayerData
             return new RankLineUIData
             {
                 rank = _rankData.TranslateToName(singleRank),
-                points = singleRank.rankPoints.ToString("NO"),
+                points = FormatPointsWithDots(singleRank.rankPoints)
             };
+        }
+
+        private string FormatPointsWithDots(int points)
+        {
+            string numberString = points.ToString();
+            int length = numberString.Length;
+            if (length <= 3)
+            {
+                return numberString; 
+            }
+
+            StringBuilder result = new StringBuilder();
+            int separatorPosition = length % 3;
+            if (separatorPosition == 0)
+            {
+                separatorPosition = 3;
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                if (i == separatorPosition)
+                {
+                    result.Append(".");
+                    separatorPosition += 3;
+                }
+                result.Append(numberString[i]);
+            }
+
+            return result.ToString();
         }
     }
 }
