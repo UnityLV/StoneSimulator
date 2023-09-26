@@ -46,9 +46,6 @@ namespace InGameUI
             _isOut = !_isOut;
         }
 
-        // voice:.idea/1695379617418.wav
-
-        // voice:.idea/1695379617418.wav
         public virtual async Task AsyncMove()
         {
             transform.DOKill();
@@ -63,8 +60,6 @@ namespace InGameUI
 
             _isOut = !_isOut;
         }
-
-        // voice:.idea/1695379741707.wav
 
         private async Task MoveIn()
         {
