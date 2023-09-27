@@ -1,8 +1,6 @@
-﻿using System;
-using PlayerData.Interfaces;
+﻿using PlayerData.Interfaces;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace MainMenuUI

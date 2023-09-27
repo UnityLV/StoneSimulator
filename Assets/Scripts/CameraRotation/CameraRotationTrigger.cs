@@ -1,5 +1,4 @@
-﻿using System;
-using CameraRotation.Interfaces;
+﻿using CameraRotation.Interfaces;
 using Zenject;
 using UnityEngine;
 

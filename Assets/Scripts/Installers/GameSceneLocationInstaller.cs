@@ -9,7 +9,6 @@ using Zenject;
 using InputService;
 using InputService.Interfaces;
 using LocationGameObjects;
-using LocationGameObjects.Interfaces;
 using MainMenuUI;
 using MainMenuUI.LocationMainMenu;
 using MongoDBCustom;

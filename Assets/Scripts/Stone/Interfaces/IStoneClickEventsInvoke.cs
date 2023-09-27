@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Stone.Interfaces
+﻿namespace Stone.Interfaces
 {
     public interface IStoneClickEventsInvoke
     {

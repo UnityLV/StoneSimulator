@@ -1,7 +1,7 @@
 ﻿using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
 namespace InGameUI
 {
     public class ButtonsSettings : MonoBehaviour

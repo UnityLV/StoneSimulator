@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using NativeAndroidElements;
+﻿using NativeAndroidElements;
 using UnityEngine;
 namespace NativeElements.Scripts
 {

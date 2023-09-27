@@ -29,13 +29,149 @@
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Common/Scripts/NGUI_LanguagePopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Common/Scripts/NGUI_LanguagePopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Configurables/SpecializationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Configurables/SpecializationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/GoogleTranslation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/GoogleTranslation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/GoogleTranslation_Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/GoogleTranslation_Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/GoogleTranslation_Queries.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/GoogleTranslation_Queries.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_GET.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_GET.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_Main.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_POST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_POST.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_WEB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/TranslationJob_WEB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceAsset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceAsset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData_Assets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData_Assets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData_Languages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData_Languages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData_Terms.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/LanguageSource/LanguageSourceData_Terms.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Localize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Localize.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Language.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Language.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Parameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Parameters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_RTL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_RTL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Sources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Sources.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_SystemLanguage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_SystemLanguage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Targets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Targets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Translation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Manager/LocalizationManager_Translation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Targets/ILocalizeTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Targets/ILocalizeTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Targets/ILocalizeTargetDesc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Targets/ILocalizeTargetDesc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/TermData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/TermData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/CustomLocalizeCallback.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/CustomLocalizeCallback.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/HindiFixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/HindiFixer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/I2Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/I2Utils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/RTLFixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/RTLFixer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/RegisterCallback_AllowSyncFromGoogle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/RegisterCallback_AllowSyncFromGoogle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/StringObfuscator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/StringObfuscator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Android/PlayInstallReferrerAndroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Android/PlayInstallReferrerAndroid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Example/Example.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Example/Example.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Unity/PlayInstallReferrerDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Unity/PlayInstallReferrerDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Unity/PlayInstallReferrerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayInstallReferrer/Unity/PlayInstallReferrerEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Calendar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Calendar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CalendarDateCellColorizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CalendarDateCellColorizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CalendarInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CalendarInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraRotation/CameraRotationTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraRotation/CameraRotationTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessageGameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chat/ChatMessageGameObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chat/MessageSendSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chat/MessageSendSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDB.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChatDB/ChatDBViewDataConstructor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DayButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DayButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Debugging/ConsoleInterceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debugging/ConsoleInterceptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Debugging/DeleteFilesAndReload.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debugging/DeleteFilesAndReload.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Debugging/RankDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debugging/RankDebug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstAuth/FirstAuthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstAuth/FirstAuthUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameScene/DOMoveY.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameScene/DOMoveY.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameScene/GameSceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameScene/GameSceneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlobalUI/GlobalGameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalUI/GlobalGameUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/ButtonsSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/ButtonsSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/ContentSizeFitterUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/ContentSizeFitterUpdater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/CurrentPinMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/CurrentPinMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameRatingListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameRatingListUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/InGameUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/Market.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/Market.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageCalendar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageCalendar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageTextInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/PinMessageTextInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingListUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingPlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/RatingPlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SingleSlaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SingleSlaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveRedeemedSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveRedeemedSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveSingleLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveSingleLine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/TestMarketLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/TestMarketLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UpdateAllContentSizeFitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UpdateAllContentSizeFitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButtonGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButtonGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootSceneInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootSceneInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootStraper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootStraper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootstrapInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootstrapInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ValuesFromBootScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ValuesFromBootScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/Interfaces/IStoneSpawnerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/Interfaces/IStoneSpawnerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/CollectSlaveClicksButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/CollectSlaveClicksButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/MainMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PlayerAvatarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PlayerAvatarUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PromotionToShareReferralAndGetTotalText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PromotionToShareReferralAndGetTotalText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/RedemptionButtonText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/RedemptionButtonText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SettingPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SettingPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ShareReferralLinkButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ShareReferralLinkButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveClicksCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveClicksCollector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveDataConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveDataConstructor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlavesData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlavesData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/AllClickSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBKeys.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBCommands.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBConnector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/IDBConnector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBConnector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayersRatingsLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayersRatingsLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RegularPlayerRatingInDBSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/RegularPlayerRatingInDBSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/Alert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/Alert.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/Calendar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/Calendar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/TextIntent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/TextIntent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/Toast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NativeElements/NativeAndroidElements/Toast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NativeElements/Scripts/NativeUnityTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NativeElements/Scripts/NativeUnityTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/AbilityClicks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/AbilityClicks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/CustomNetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/PlayerBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/PlayerBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/WatchADWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/WatchADWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParrelSync/Examples/CustomArgumentExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParrelSync/Examples/CustomArgumentExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerClickData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerClickData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerDataSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerRank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerRank.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/RankList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData/SavablePlayerSlavesData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/SavablePlayerSlavesData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/Interfaces/IStoneClickEventsInvoke.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/Interfaces/IStoneClickEventsInvoke.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilites/TransformExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilites/TransformExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/IInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/IInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/InteractableAsset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/InteractableAsset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/InteractableComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/InteractableComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/InteractableTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SerializeInterfaces/Samples/Scripts/InteractableTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,10 +336,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18624">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="18624" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -302,7 +438,8 @@
       <workItem from="1695372530478" duration="559000" />
       <workItem from="1695378896172" duration="568000" />
       <workItem from="1695379492830" duration="368000" />
-      <workItem from="1695736230075" duration="1779000" />
+      <workItem from="1695736230075" duration="2969000" />
+      <workItem from="1695806852938" duration="782000" />
     </task>
     <servers />
   </component>

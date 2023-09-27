@@ -1,8 +1,6 @@
 ﻿using System;
-using MongoDBCustom;
-using PlayerData.Interfaces;
 using UnityEngine;
-using Zenject;
+
 namespace InGameUI
 {
     public class TestMarketLogic : MonoBehaviour, IMarketLogic

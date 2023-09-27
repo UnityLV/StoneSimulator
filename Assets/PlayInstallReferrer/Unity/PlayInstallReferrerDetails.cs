@@ -6,9 +6,6 @@
 //  Copyright © 2020 Uglješa Erceg. All rights reserved.
 //
 
-using System;
-using System.Collections.Generic;
-
 namespace Ugi.PlayInstallReferrerPlugin
 {
     public class PlayInstallReferrerDetails

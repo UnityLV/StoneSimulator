@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using PlayerData.Interfaces;
+﻿using PlayerData.Interfaces;
 using TMPro;
 using UnityEngine;
 

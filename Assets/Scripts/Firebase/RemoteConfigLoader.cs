@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Firebase;
 using Firebase.RemoteConfig;
-using Firebase.Unity;
-using UnityEngine;
-using UnityEngine.Events;
 
 namespace FirebaseCustom.Loaders
 {

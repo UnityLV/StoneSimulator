@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 using FirebaseCustom;
 using Installers;
 using MongoDB.Bson;
-using MongoDB.Driver;
-using NaughtyAttributes;
 using PlayerData.Interfaces;
 using Ugi.PlayInstallReferrerPlugin;
 using UnityEngine;

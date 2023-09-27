@@ -1,5 +1,4 @@
-﻿using System;
-using NativeElements.Scripts;
+﻿using NativeElements.Scripts;
 using UnityEngine;
 namespace MainMenuUI
 {

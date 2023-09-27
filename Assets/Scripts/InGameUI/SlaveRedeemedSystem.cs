@@ -1,10 +1,8 @@
-﻿using System;
-using FirebaseCustom;
+﻿using FirebaseCustom;
 using MongoDBCustom;
 using PlayerData.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using Zenject;
 
 namespace InGameUI

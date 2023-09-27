@@ -6,7 +6,6 @@ using GameState.Interfaces;
 using Health.Interfaces;
 using LocationGameObjects.Interfaces;
 using Mirror;
-using Network;
 using PlayerData.Interfaces;
 using SaveSystem;
 using Stone.Interfaces;

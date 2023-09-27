@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using I2.Loc;
 using InGameUI.Interfaces;
 using PlayerData.Interfaces;
-using Stone.Interfaces;
 using TMPro;
 using UnityEngine;
 using Zenject;

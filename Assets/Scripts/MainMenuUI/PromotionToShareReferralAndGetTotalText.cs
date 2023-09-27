@@ -9,7 +9,7 @@ namespace MainMenuUI
         [SerializeField] private string _prefixRu;
         [SerializeField] private string _prefixEn;
         [SerializeField] private TMP_Text _text;
-        PlayerConfig PlayerConfig = RemoteConfigSetter.PlayerConfig;
+        private PlayerConfig PlayerConfig = RemoteConfigSetter.PlayerConfig;
 
         private void Awake()
         {
@@ -34,11 +34,10 @@ namespace MainMenuUI
             
             if (LocalizationManager.CurrentLanguage == "Russian")
             {
-                
-                _text.text = $"{_prefixRu}Получайте {clicks} кликов и {percentToAdd}% от заработка с каждого приглашённого друга";
+                _text.text = $"{_prefixRu}\nПолучайте {clicks} кликов и {percentToAdd}% от заработка с каждого приглашённого друга";
                 return;
             }
-            _text.text = $"{_prefixEn}Get {clicks} clicks and {percentToAdd}% of earnings from each invited friend";
+            _text.text = $"{_prefixEn}\nGet {clicks} clicks and {percentToAdd}% of earnings from each invited friend";
         }
     }
 }

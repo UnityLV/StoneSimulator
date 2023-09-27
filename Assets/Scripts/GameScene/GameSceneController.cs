@@ -1,5 +1,4 @@
 using GameScene.Interfaces;
-using Mirror;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

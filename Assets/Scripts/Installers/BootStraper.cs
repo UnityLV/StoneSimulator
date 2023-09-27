@@ -1,13 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using FirebaseCustom.Loaders;
 using FirebaseCustom;
 using MongoDBCustom;
 using Network;
 using PlayerData;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Installers
 {

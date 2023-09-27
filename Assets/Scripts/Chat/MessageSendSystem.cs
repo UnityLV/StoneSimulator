@@ -1,15 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Mirror;
-using PlayerData.Interfaces;
-using SaveSystem;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-using Zenject;
 
 namespace Chat
 {

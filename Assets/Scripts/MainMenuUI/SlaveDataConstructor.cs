@@ -1,6 +1,4 @@
-﻿using System;
-using InGameUI;
-using PlayerData.Interfaces;
+﻿using PlayerData.Interfaces;
 using UnityEngine;
 using Zenject;
 

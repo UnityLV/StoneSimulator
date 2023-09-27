@@ -1,5 +1,4 @@
-﻿using System;
-using FirebaseCustom;
+﻿using FirebaseCustom;
 using I2.Loc;
 using InGameUI;
 using TMPro;

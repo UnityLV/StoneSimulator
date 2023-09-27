@@ -1,8 +1,5 @@
-using System;
 using GameScene;
 using Mirror;
-using NaughtyAttributes;
-using Network;
 using UnityEngine;
 
 

@@ -2,7 +2,6 @@
 using Installers;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Debugging
 {

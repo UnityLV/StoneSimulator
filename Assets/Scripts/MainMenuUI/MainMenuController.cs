@@ -3,7 +3,6 @@ using GameState.Interfaces;
 using MainMenuUI.Inrefaces;
 using MainMenuUI.LocationMainMenu;
 using PlayerData.Interfaces;
-using Stone.Interfaces;
 using TMPro;
 using UnityEngine;
 using Zenject;

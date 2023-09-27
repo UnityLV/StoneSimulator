@@ -1,13 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using FirstAuth;
 using InGameUI;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace MongoDBCustom

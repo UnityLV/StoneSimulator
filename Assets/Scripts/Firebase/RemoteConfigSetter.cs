@@ -1,8 +1,4 @@
-﻿using System;
-using PlayerData;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
+﻿using PlayerData;
 
 namespace FirebaseCustom
 {

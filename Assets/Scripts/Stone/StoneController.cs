@@ -1,6 +1,4 @@
-﻿using System;
-using CameraRotation;
-using Stone.Interfaces;
+﻿using Stone.Interfaces;
 using UnityEngine;
 using Zenject;
 

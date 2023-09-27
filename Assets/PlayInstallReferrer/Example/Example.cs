@@ -6,12 +6,7 @@
 //  Copyright © 2020 Uglješa Erceg. All rights reserved.
 //
 
-using System;
-using System.Text;
-using System.Collections;
-using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.UI;
 using Ugi.PlayInstallReferrerPlugin;
 
 public class Example : MonoBehaviour

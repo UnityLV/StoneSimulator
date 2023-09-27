@@ -1,7 +1,5 @@
 using GameScene;
 using PlayerData;
-using PlayerData.Interfaces;
-using UnityEngine;
 using Zenject;
 
 public class BootstrapInstaller : MonoInstaller

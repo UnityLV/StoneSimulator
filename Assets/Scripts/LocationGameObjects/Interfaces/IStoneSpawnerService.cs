@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace LocationGameObjects.Interfaces
+﻿namespace LocationGameObjects.Interfaces
 {
     public interface IStoneSpawnerService
     {

@@ -1,7 +1,5 @@
-﻿using System;
-using I2.Loc;
+﻿using I2.Loc;
 using TMPro;
-using UnityEditor.Experimental;
 using UnityEngine;
 
 namespace InGameUI
