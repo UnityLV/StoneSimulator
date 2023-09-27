@@ -7,6 +7,9 @@ using Zenject;
 
 namespace GlobalUI
 {
+    
+    
+    
     public class GlobalGameUIController : MonoBehaviour
     {
         #region Dependency
@@ -58,6 +61,8 @@ namespace GlobalUI
 
             _mainMenuService.SetOnCompleteLocationClickAction((x) =>
             {
+                //TODO: вызывать это после подтверждения в окне захода в пройдкенный уровень, а это окно вызывать
+                //тут передавая в него Х который являеться индексом локации
                 _inGameService.SetState(true, false);
                 _mainMenuService.SetState(false);
                 _gameStateService.TryWatchLocation(x);

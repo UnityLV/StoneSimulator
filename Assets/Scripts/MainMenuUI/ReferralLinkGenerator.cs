@@ -1,4 +1,5 @@
 ﻿using MongoDBCustom;
+
 namespace MainMenuUI
 {
     public static class ReferralLinkGenerator

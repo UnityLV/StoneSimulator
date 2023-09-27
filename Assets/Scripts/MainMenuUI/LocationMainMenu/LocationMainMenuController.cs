@@ -82,14 +82,24 @@ namespace MainMenuUI.LocationMainMenu
             for (var i = 0; i < _locationMainMenuList.Count; i++)
             {
                 var obj = _locationMainMenuList[i];
-                obj.transform.SetParent(_locationParent);
-                obj.transform.localScale= Vector3.one;
-                obj.SetLocationController(this);
-                obj.SetLocationSprite(_getLocationSpritesService.GetAvatarLocationSprite(i));
-                if (i < _currentLocationIDService.GetCurrentLocationId()) obj.SetCompleteState(i);
-                else if (i == _currentLocationIDService.GetCurrentLocationId()) UpdateCurrentLocation();
-                else obj.SetLockedState(i,i-1 == _currentLocationIDService.GetCurrentLocationId());
+                UpdateLocation(obj, i);
             }
+        }
+
+        public void UpdateLocation(LocationMainMenuObject obj, int i)
+        {
+            obj.transform.SetParent(_locationParent);
+            obj.transform.localScale = Vector3.one;
+            UpdateLocationInternalState(obj, i);
+        }
+
+        public void UpdateLocationInternalState(LocationMainMenuObject obj, int i)
+        {
+            obj.SetLocationController(this);
+            obj.SetLocationSprite(_getLocationSpritesService.GetAvatarLocationSprite(i));
+            if (i < _currentLocationIDService.GetCurrentLocationId()) obj.SetCompleteState(i);
+            else if (i == _currentLocationIDService.GetCurrentLocationId()) UpdateCurrentLocation();
+            else obj.SetLockedState(i, i - 1 == _currentLocationIDService.GetCurrentLocationId());
         }
 
         public void ChangeCurrentObject(LocationMainMenuObject locationMainMenuObject)
