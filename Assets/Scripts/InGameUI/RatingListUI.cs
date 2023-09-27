@@ -1,66 +1,59 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using PlayerData.Interfaces;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace InGameUI
 {
     public class RatingListUI : MonoBehaviour
     {
-        [SerializeField] private Transform _lineParent;
-        [SerializeField] private RatingSingleLine _linePrefab;
-
         protected INicknameDataService NicknameData;
         protected IClickDataService ClickData;
 
-        private RatingSingleLine[] _lines;
+        [SerializeField] private RatingLineFactory _lineFactory;
+        [SerializeField] private Scrollbar _scrollbar;
+        private RatingSingleLine[] _ratingLines = Array.Empty<RatingSingleLine>();
 
         [Inject]
         private void Construct(INicknameDataService InicknameDataService, IClickDataService clickDataService)
         {
             NicknameData = InicknameDataService;
             ClickData = clickDataService;
-
-            CreateLines();
+            _lineFactory.SetDep(InicknameDataService);
         }
-
-        private void CreateLines()
-        {
-            _lines = new RatingSingleLine [100];
-            for (int i = 0; i < _lines.Length; i++)
-            {
-                _lines[i] = Instantiate(_linePrefab, _lineParent);
-            }
-        }
-
 
         public void SetData(IEnumerable<RatingPlayerData> playersData)
         {
-            SetPlayersData(playersData);
+            SetRating(playersData);
             OnSetData();
         }
 
-
-        private void SetPlayersData(IEnumerable<RatingPlayerData> playersData)
+        private void SetRating(IEnumerable<RatingPlayerData> playersData)
         {
-            RatingPlayerData[] sortedData = playersData.OrderBy(d => d.RatingNumber).ToArray();
+            _scrollbar.value = 1;
+            ClearLines();
+            _ratingLines = _lineFactory.CreateLines(playersData);
+            FindPlayerInRatingLines();
+        }
 
-            for (int i = 0; i < sortedData.Length; i++)
+        private void ClearLines()
+        {
+            for (int i = 0; i < _ratingLines.Length; i++)
             {
-                RatingSingleLine line = _lines[i];
-                line.SetData(sortedData[i]);
-                line.transform.SetSiblingIndex(i);
-                SetPlayerRatingNumber(sortedData, i);
+                Destroy(_ratingLines[i].gameObject);
             }
         }
 
-
-        private void SetPlayerRatingNumber(RatingPlayerData[] sortedData, int i)
+        private void FindPlayerInRatingLines()
         {
-            if (sortedData[i].Name == NicknameData.GetNickname())
+            for (int i = 0; i < _ratingLines.Length; i++)
             {
-                OnFindPlayerInRating(i + 1);
+                if (NicknameData.GetNickname() == _ratingLines[i].Data.Name)
+                {
+                    OnFindPlayerInRating(i + 1);
+                }
             }
         }
 

@@ -2,6 +2,7 @@
 using I2.Loc;
 using TMPro;
 using UnityEngine;
+
 namespace MainMenuUI
 {
     public class ADForClicksText : MonoBehaviour

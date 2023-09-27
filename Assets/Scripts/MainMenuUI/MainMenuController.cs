@@ -58,7 +58,6 @@ namespace MainMenuUI
             UpdateClickTextFromUIState();
         }
 
-
         private void UpdateClickCountFromClickDataUpdated(int newClicks)
         {
             //_clickText.text = _clickDataService.GetClickCount().ToString();
