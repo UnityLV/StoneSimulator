@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using FirebaseCustom;
 using GameScene;
 using GameState.Interfaces;
 using Health.Interfaces;
+using Installers;
 using LocationGameObjects.Interfaces;
 using Mirror;
 using PlayerData.Interfaces;
@@ -66,10 +69,8 @@ namespace GameState
         private int _currentHealth;
 
 
-
-
         [SyncVar]
-        private readonly int _hpPerLvl = 10;
+        private int _hpPerLvl;
 
         private int _countDamageAfterCallback;
         private int _countClickAllCallback;
@@ -187,12 +188,20 @@ namespace GameState
         public override void OnStartServer()
         {
             _networkIdentity = GetComponent<NetworkIdentity>();
+            SetHealthPerLevel();
             LoadData();
             LoadHealth();
             _locationSpawner.SpawnLocationObjects(_currentLocation);
             _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
             StartCoroutine(IStoneServerCallbackProcess());
+           
+        }
+
+        private void SetHealthPerLevel()
+        {
+            _hpPerLvl = ValuesFromBootScene.HealthPointPerLevel;
+            Debug .Log("SetHealthPerLevel " + _hpPerLvl);
         }
         
         private IEnumerator IStoneServerCallbackProcess()
@@ -456,6 +465,11 @@ namespace GameState
         public int GetHealth(int location, int lvl)
         {
             return _hpList[location][lvl];
+        }
+
+        public int GetAllHealthInLocation(int location)
+        {
+            return _hpList[location].Sum();
         }
 
         public void SetHealth(int location, int lvl, int value)

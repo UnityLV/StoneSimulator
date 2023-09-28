@@ -28,6 +28,11 @@ namespace MainMenuUI
 
         private void SetText()
         {
+            
+            if (PlayerConfig is null)
+            {
+                return;
+            }
             int clicks = PlayerConfig.ClicksFromAD;
 
             if (LocalizationManager.CurrentLanguage == "Russian")

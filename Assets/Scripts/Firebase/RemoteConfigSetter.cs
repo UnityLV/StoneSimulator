@@ -1,4 +1,5 @@
-﻿using PlayerData;
+﻿using Installers;
+using PlayerData;
 
 namespace FirebaseCustom
 {

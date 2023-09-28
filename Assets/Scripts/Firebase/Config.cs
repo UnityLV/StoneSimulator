@@ -1,7 +1,11 @@
 ﻿using Firebase.RemoteConfig;
+using UnityEngine;
 
 namespace FirebaseCustom
 {
+    /// <summary>
+    /// Remote Config from FireBase
+    /// </summary>
     public struct Config
     {
         public string UnityServerIp { get; private set; }
@@ -25,15 +29,31 @@ namespace FirebaseCustom
             DBServerIp = GetString(ConfigKeys.DBServerIp);
             DBServerPort = GetString(ConfigKeys.DBServerPort);
             ClicksToRedeemed = GetInt(ConfigKeys.ClicksToRedeemed);
-            PercentToAddToReferrer = GetInt(ConfigKeys.PercentToAddToReferrer); 
+            PercentToAddToReferrer = GetInt(ConfigKeys.PercentToAddToReferrer);
             RanksJson = GetString(ConfigKeys.Ranks);
             EarnedFromEachReferral = GetInt(ConfigKeys.EarnedFromEachReferral);
             ClicksFromAD = GetInt(ConfigKeys.ClicksFromAD);
+            DebugValues();
+        }
+
+        private void DebugValues()
+        {
+            Debug.Log("Remote Values ==================================================");
+            Debug.Log($"UnityServerIp: {UnityServerIp}");
+            Debug.Log($"UnityServerPort: {UnityServerPort}");
+            Debug.Log($"DBServerIp: {DBServerIp}");
+            Debug.Log($"DBServerPort: {DBServerPort}");
+            Debug.Log($"ClicksToRedeemed: {ClicksToRedeemed}");
+            Debug.Log($"PercentToAddToReferrer: {PercentToAddToReferrer}");
+            Debug.Log($"RanksJson: {RanksJson}");
+            Debug.Log($"EarnedFromEachReferral: {EarnedFromEachReferral}");
+            Debug.Log($"ClicksFromAD: {ClicksFromAD}");
+            Debug.Log("==================================================");
         }
 
         private float GetFloat(string key)
         {
-            return (float) _remoteConfig.GetValue(key).DoubleValue;
+            return (float)_remoteConfig.GetValue(key).DoubleValue;
         }
 
         private string GetString(string key)
@@ -43,12 +63,13 @@ namespace FirebaseCustom
 
         private int GetInt(string key)
         {
-            return (int) _remoteConfig.GetValue(key).DoubleValue;
+            return (int)_remoteConfig.GetValue(key).DoubleValue;
         }
     }
 
     public static class ConfigKeys
     {
+        public const string HpPerLevel = "LocationHealthPerLevel";
         public const string DBServerIp = "DBServerIp";
         public const string DBServerPort = "DBServerPort";
         public const string UnityServerIp = "UnityServerIp";

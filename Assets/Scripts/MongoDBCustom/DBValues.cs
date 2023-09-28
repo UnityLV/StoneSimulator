@@ -29,7 +29,10 @@ namespace MongoDBCustom
 
             var pinnedDates = pinnedMessages
                 .Select(doc => new PinMessageData
-                    { PinDate = DateTools.ConvertFromCustomFormat(doc[PinDate].AsString), Message = ChatMessageConverter.ConvertToChatMessage(doc) })
+                {
+                    PinDate = DateTools.ConvertFromCustomFormat(doc[PinDate].AsString),
+                    Message = ChatMessageConverter.ConvertToChatMessage(doc)
+                })
                 .ToList();
 
             return pinnedDates;
@@ -37,7 +40,8 @@ namespace MongoDBCustom
 
         public async Task PinMessageAsync(PinMessageData data)
         {
-            var pinnedMessageDocument = new BsonDocument {
+            var pinnedMessageDocument = new BsonDocument
+            {
                 { DeviceID, data.Message.DeviceID },
                 { Name, data.Message.PlayerNickname },
                 { Timestamp, data.Message.Timestamp },
@@ -48,14 +52,13 @@ namespace MongoDBCustom
             await _connection.PinnedMessagesCollection.InsertOneAsync(pinnedMessageDocument);
         }
 
-
-
         public async Task<PinMessageData> GetPinnedMessageAsync()
         {
             DateTime date = DateTime.UtcNow.Date;
 
             var filter = Builders<BsonDocument>.Filter.Eq(PinDate, DateTools.ConvertToCustomFormat(date));
-            BsonDocument pinnedMessageDocument = await _connection.PinnedMessagesCollection.Find(filter).FirstOrDefaultAsync();
+            BsonDocument pinnedMessageDocument =
+                await _connection.PinnedMessagesCollection.Find(filter).FirstOrDefaultAsync();
 
             if (pinnedMessageDocument != null)
             {
@@ -66,7 +69,6 @@ namespace MongoDBCustom
             return default;
         }
 
-
         public async Task InsertChatMessageAsync(ChatMessage chatMessage)
         {
             BsonDocument chatDocument = ConvertToBson(chatMessage);
@@ -76,7 +78,8 @@ namespace MongoDBCustom
 
         private static BsonDocument ConvertToBson(ChatMessage chatMessage)
         {
-            var chatDocument = new BsonDocument {
+            var chatDocument = new BsonDocument
+            {
                 { DeviceID, chatMessage.DeviceID },
                 { Name, chatMessage.PlayerNickname },
                 { Timestamp, chatMessage.Timestamp },
@@ -89,7 +92,8 @@ namespace MongoDBCustom
         {
             var filter = Builders<BsonDocument>.Filter.Empty;
             var sort = Builders<BsonDocument>.Sort.Descending(Timestamp);
-            var bsonMessages = await _connection.ChatCollection.Find(filter).Sort(sort).Limit(numMessages).ToListAsync();
+            var bsonMessages =
+                await _connection.ChatCollection.Find(filter).Sort(sort).Limit(numMessages).ToListAsync();
             return bsonMessages;
         }
 
@@ -122,7 +126,6 @@ namespace MongoDBCustom
             return documents;
         }
 
-
         public async Task DeleteMyData()
         {
             var filter = Filters.MyDeviseIDFilter();
@@ -147,8 +150,8 @@ namespace MongoDBCustom
         private async Task<bool> IsMyReferrerExist()
         {
             var filter = Builders<BsonDocument>.Filter.Eq(DeviceID, DeviceInfo.GetDeviceId()) &
-                (Builders<BsonDocument>.Filter.Exists(Referrer, false) |
-                    Builders<BsonDocument>.Filter.Eq(Referrer, ""));
+                         (Builders<BsonDocument>.Filter.Exists(Referrer, false) |
+                          Builders<BsonDocument>.Filter.Eq(Referrer, ""));
             var document = await _connection.UsersCollection.Find(filter).FirstOrDefaultAsync();
             return document != null;
         }
@@ -183,7 +186,6 @@ namespace MongoDBCustom
             Debug.Log("Player Referrer Click updated " + clicksToAdd);
         }
 
-
         public async Task<BsonDocument> GetPlayerDataAsync()
         {
             var filter = Filters.MyDeviseIDFilter();
@@ -192,7 +194,6 @@ namespace MongoDBCustom
 
             return playerData;
         }
-
 
         public async Task UpdatePlayerName(string newName)
         {
@@ -208,7 +209,6 @@ namespace MongoDBCustom
             await _connection.UsersCollection.InsertOneAsync(playerData);
         }
 
-
         public async Task<List<BsonDocument>> PlayersRating()
         {
             var collection = _connection.UsersCollection;
@@ -217,7 +217,30 @@ namespace MongoDBCustom
             var limit = 100;
             var cursor = await collection.Find(filter).Sort(sort).Limit(limit).ToCursorAsync();
             var playersData = await cursor.ToListAsync();
-            return playersData;
+            return RemoveInvalidUsers(playersData);
+        }
+
+        private List<BsonDocument> RemoveInvalidUsers(List<BsonDocument> users)
+        {
+            List<BsonDocument> validUsers = new();
+
+            foreach (var user in users)
+            {
+                if (user.Contains(Name))
+                {
+                    validUsers.Add(user);
+                }
+            }
+
+            return validUsers;
+        }
+
+        public async Task<int> GetLocationHealth()
+        {
+            const string dataDeviceId = "ServerDataHolder";
+            var filter = Builders<BsonDocument>.Filter.Eq(DeviceID, dataDeviceId);
+            BsonDocument playerData = await _connection.UsersCollection.Find(filter).FirstOrDefaultAsync();
+            return playerData["HealthPerLevel"].AsInt32;
         }
     }
 }

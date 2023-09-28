@@ -53,8 +53,8 @@ namespace MongoDBCustom
                 { DBKeys.Name, String.Empty },
                 { DBKeys.Role, DBKeys.PlayerRole },
                 { DBKeys.AllClick, 0 },
-                { DBKeys.ClickToGiveReferrer, PlayerConfig.EarnedFromEachReferral },
-                { DBKeys.AllClickToGiveReferrer, PlayerConfig.EarnedFromEachReferral },
+                { DBKeys.ClickToGiveReferrer,  PlayerConfig?.EarnedFromEachReferral },
+                { DBKeys.AllClickToGiveReferrer, PlayerConfig?.EarnedFromEachReferral },
                 { DBKeys.Referrals, new BsonArray { } },
                 { DBKeys.Referrer, await GetReferrerFromLinkAsync() },
             };

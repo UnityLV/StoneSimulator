@@ -29,11 +29,21 @@ namespace Installers
             Debug.Log("RemoteConfig Loaded");
 #endif
 
+
             await ConstructDB();
 
             await _playerDataSetter.SetData();
-
+#if UNITY_SERVER
+            await LoadLocationHealthFromDB();
+#endif
             _customNetworkManager.TryConnect();
+        }
+
+        private async Task LoadLocationHealthFromDB()
+        {
+            int health = await _idbCommands.GetLocationHealth();
+            ValuesFromBootScene.HealthPointPerLevel = health;
+            Debug.Log( "HealthPointPerLevel: " + health);
         }
 
         private async Task ConstructDB()

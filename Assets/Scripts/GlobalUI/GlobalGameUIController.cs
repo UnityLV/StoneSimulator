@@ -1,5 +1,6 @@
 ﻿using GameState.Interfaces;
 using InGameUI.Interfaces;
+using MainMenuUI;
 using MainMenuUI.Inrefaces;
 using MongoDBCustom;
 using UnityEngine;
@@ -7,11 +8,10 @@ using Zenject;
 
 namespace GlobalUI
 {
-    
-    
-    
     public class GlobalGameUIController : MonoBehaviour
     {
+        [SerializeField] private LocationWindowManager _locationWindow;
+
         #region Dependency
 
         private IInGameService _inGameService;
@@ -22,7 +22,8 @@ namespace GlobalUI
 
         [Inject]
         private void Construct(IInGameService inGameService, IMainMenuService mainMenuService,
-            IGameStateService gameStateService, IDBAllClickSaver idbAllClickSaver,IDBReferrerClicksSaver referrerClicks)
+            IGameStateService gameStateService, IDBAllClickSaver idbAllClickSaver,
+            IDBReferrerClicksSaver referrerClicks)
         {
             _inGameService = inGameService;
             _mainMenuService = mainMenuService;
@@ -59,17 +60,18 @@ namespace GlobalUI
                 _gameStateService.TryStartGame();
             });
 
-            _mainMenuService.SetOnCompleteLocationClickAction((x) =>
-            {
-                //TODO: вызывать это после подтверждения в окне захода в пройдкенный уровень, а это окно вызывать
-                //тут передавая в него Х который являеться индексом локации
-                _inGameService.SetState(true, false);
-                _mainMenuService.SetState(false);
-                _gameStateService.TryWatchLocation(x);
-                _allClickSaver.Save();
-                _referrerClicks.Save();
-               
-            });
+            _mainMenuService.SetOnCompleteLocationClickAction((locationId) =>
+                _locationWindow.ShowWindow(locationId, OpenCompleteLocation)
+            );
+        }
+
+        private void OpenCompleteLocation(int x)
+        {
+            _inGameService.SetState(true, false);
+            _mainMenuService.SetState(false);
+            _gameStateService.TryWatchLocation(x);
+            _allClickSaver.Save();
+            _referrerClicks.Save();
         }
     }
 }

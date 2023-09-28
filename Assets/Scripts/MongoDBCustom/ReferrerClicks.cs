@@ -11,7 +11,18 @@ namespace MongoDBCustom
         private IStoneClickEvents _stoneClickEvents;
         private IDBCommands _idbCommands;
 
-        private float _percentToAdd => RemoteConfigSetter.PlayerConfig.PercentToAddToReferrer;
+        private float _percentToAdd
+        {
+            get
+            {
+                if (RemoteConfigSetter.PlayerConfig is not null)
+                {
+                    return RemoteConfigSetter.PlayerConfig.PercentToAddToReferrer;
+                }
+                return 0;
+            }
+        }
+
         private int _clickCount = 0;
 
         [Inject]

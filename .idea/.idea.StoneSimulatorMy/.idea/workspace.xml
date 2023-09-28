@@ -27,7 +27,43 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="" />
+    <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/CompleteLocationWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/CompleteLocationWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/LocationNames.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/LocationNames.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/LocationWindowDataConstructor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/LocationWindowDataConstructor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/LocationWindowManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/LocationWindowManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/I2Languages.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BootScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Firebase/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Firebase/RemoteConfigSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/Interfaces/IHealthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/Interfaces/IHealthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlobalUI/GlobalGameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalUI/GlobalGameUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveRedeemedSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/SlaveRedeemedSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/TestADReward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/TestADReward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameUI/UIMoveButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootStraper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootStraper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ValuesFromBootScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ValuesFromBootScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ADForClicksText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/ADForClicksText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PromotionToShareReferralAndGetTotalText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PromotionToShareReferralAndGetTotalText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PromotionToShareReferralText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/PromotionToShareReferralText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlavePayRoReferralText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlavePayRoReferralText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuUI/SlaveUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/DBValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/MongoDBPlayerDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/PlayerConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MongoDBCustom/ReferrerClicks.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,10 +81,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/14/e31f847d/UnityEventQueueSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/78/50b50caf/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/c8/f6f16fa1/LogType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/e9/94ecbf82/SystemInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/fc/44ed170f/DeviceType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23ad7f92c896477eb16b9ccea96a37b672200/f5/5850f4c0/BsonDocument.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d9536d9127f4a489d989c7a566aee1c46ac00/4a/637dca0c/Int32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d303c2bf72cd4cec95665b89c457d265d2b8ef3ed6da17cd4f85587c2f9de7/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
@@ -160,7 +198,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Downloads/StoneServer\StoneSimulatorMy.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Downloads/StoneServer\StoneSimulator.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\vazil\Downloads\StoneServer" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -297,7 +335,7 @@
       <workItem from="1695379492830" duration="368000" />
       <workItem from="1695736230075" duration="2969000" />
       <workItem from="1695806852938" duration="1103000" />
-      <workItem from="1695808588729" duration="8926000" />
+      <workItem from="1695808588729" duration="25257000" />
     </task>
     <servers />
   </component>

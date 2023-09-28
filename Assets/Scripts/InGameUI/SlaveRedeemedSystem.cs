@@ -23,8 +23,6 @@ namespace InGameUI
             _values = values;
         }
 
-   
-
         public void TryRedeemed()
         {
             if (_clickData.GetClickCount() >= _config.ClicksToRedeemed)

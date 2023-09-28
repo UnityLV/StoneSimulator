@@ -60,6 +60,18 @@ namespace InGameUI
             _isOut = !_isOut;
         }
 
+        public void ForceMoveIn()
+        {
+            MoveIn();
+            _isOut = false;
+        }
+        
+        public void ForceMoveOut()
+        {
+            MoveOut();
+            _isOut = true;
+        }
+
         private async Task MoveIn()
         {
             _onMoveIn?.Invoke();

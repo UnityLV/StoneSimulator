@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &37075269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mTarget: {fileID: 1859271407}
-  mAlignment_RTL: 514
-  mAlignment_LTR: 514
-  mAlignmentWasRTL: 0
-  mInitializeAlignment: 0
 --- !u!1 &103472859
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +135,7 @@ GameObject:
   - component: {fileID: 103472860}
   - component: {fileID: 103472862}
   m_Layer: 0
-  m_Name: PlayerDataSetter
+  m_Name: BootStrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,23 +731,6 @@ MonoBehaviour:
   mAlignment_LTR: 1025
   mAlignmentWasRTL: 0
   mInitializeAlignment: 0
---- !u!114 &721589984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mTarget: {fileID: 1541631316}
-  mAlignment_RTL: 260
-  mAlignment_LTR: 257
-  mAlignmentWasRTL: 0
-  mInitializeAlignment: 0
 --- !u!1 &1073429733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1280,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 721589984}
+  mLocalizeTarget: {fileID: 0}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
 --- !u!1 &1609883214
 GameObject:
@@ -1871,7 +1837,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 37075269}
+  mLocalizeTarget: {fileID: 0}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
 --- !u!1 &2124463205
 GameObject:

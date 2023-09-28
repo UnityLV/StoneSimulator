@@ -5,6 +5,6 @@
         public int GetCurrentStoneHealth();
         public int GetCurrentLocationHealth();
         public int GetMaxLocationHealth();
-        
+        public int GetAllHealthInLocation(int location);
     }
 }

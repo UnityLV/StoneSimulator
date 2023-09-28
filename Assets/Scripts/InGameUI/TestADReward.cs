@@ -41,6 +41,11 @@ namespace InGameUI
 
         private void AddClicks()
         {
+            if (PlayerConfig is null)
+            {
+                return;
+            }
+            
             int add = PlayerConfig.ClicksFromAD;
             // _clickDataService.AddClicks(add);
             // _dbAllClickSaver.Save(add);

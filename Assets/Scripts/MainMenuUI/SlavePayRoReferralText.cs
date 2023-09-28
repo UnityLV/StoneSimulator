@@ -27,6 +27,10 @@ namespace MainMenuUI
 
         private void SetText()
         {
+            if (PlayerConfig is null)
+            {
+                return;
+            }
             int percentToAdd = PlayerConfig.PercentToAddToReferrer;
 
             if (LocalizationManager.CurrentLanguage == "Russian")

@@ -617,6 +617,52 @@ MonoBehaviour:
         \u0414\u0410\u0422\u0423"
       Flags: 0000
       Languages_Touch: []
+    - Term: "\u0412\u043E\u0439\u0442\u0438"
+      TermType: 0
+      Description: 
+      Languages:
+      - Enter
+      - "\u0412\u043E\u0439\u0442\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u042D\u0442\u0430 \u043B\u043E\u043A\u0430\u0446\u0438\u044F \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u0430"
+      TermType: 0
+      Description: 
+      Languages:
+      - This location has been completed
+      - "\u042D\u0442\u0430 \u043B\u043E\u043A\u0430\u0446\u0438\u044F \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u0416\u0435\u043B\u0430\u0435\u0442\u0435 \u0432\u043E\u0439\u0442\u0438
+        \u0432 \u043B\u043E\u043A\u0430\u0446\u0438\u044E?"
+      TermType: 0
+      Description: 
+      Languages:
+      - Would you like to enter the location?
+      - "\u0416\u0435\u043B\u0430\u0435\u0442\u0435 \u0432\u043E\u0439\u0442\u0438
+        \u0432 \u043B\u043E\u043A\u0430\u0446\u0438\u044E?"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u0440\u043E\u0439\u0442\u0438
+        \u044D\u0442\u0443 \u043B\u043E\u043A\u0430\u0446\u0438\u044E \u0432 \u043B\u044E\u0431\u043E\u0439
+        \u043C\u043E\u043C\u0435\u043D\u0442."
+      TermType: 0
+      Description: 
+      Languages:
+      - You can enter this location at any time.
+      - "\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u043E\u0439\u0442\u0438
+        \u0432 \u044D\u0442\u0443 \u043B\u043E\u043A\u0430\u0446\u0438\u044E \u0432
+        \u043B\u044E\u0431\u043E\u0439 \u043C\u043E\u043C\u0435\u043D\u0442."
+      Flags: 0000
+      Languages_Touch: []
+    - Term: "\u0420\u0430\u0431\u044B:"
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Slaves:'
+      - "\u0420\u0430\u0431\u044B:"
+      Flags: 0000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
