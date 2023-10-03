@@ -22,10 +22,6 @@ namespace PlayerData
         private void OnEnable()
         {
             LocalizationManager.OnLocalizeEvent += UpdateText;
-        }
-
-        private void Start()
-        {
             DrawRankList();
         }
 

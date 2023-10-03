@@ -11,10 +11,10 @@ namespace Debugging
         public async void UpdateCoupleTimes()
         {
             _filters = GetComponentsInChildren<ContentSizeFitter>();
-            int updateCount = 1;
+            int updateCount = 5;
             for (int i = 0; i < updateCount; i++)
             {
-                await Task.Delay(10);
+                await Task.Delay(1);
                 UpdateFilters();
                 Debug.Log("Update Chat UI Couple Times");
             }
