@@ -6,8 +6,6 @@ namespace MainMenuUI
 {
     public class PromotionToShareReferralAndGetTotalText : MonoBehaviour
     {
-        [SerializeField] private string _prefixRu;
-        [SerializeField] private string _prefixEn;
         [SerializeField] private TMP_Text _text;
         private PlayerConfig PlayerConfig = RemoteConfigSetter.PlayerConfig;
 
@@ -39,10 +37,10 @@ namespace MainMenuUI
             
             if (LocalizationManager.CurrentLanguage == "Russian")
             {
-                _text.text = $"{_prefixRu}\nПолучайте {clicks} кликов и {percentToAdd}% от заработка с каждого приглашённого друга";
+                _text.text = $"Получайте {clicks} кликов и {percentToAdd}% от заработка с каждого приглашённого друга";
                 return;
             }
-            _text.text = $"{_prefixEn}\nGet {clicks} clicks and {percentToAdd}% of earnings from each invited friend";
+            _text.text = $"Get {clicks} clicks and {percentToAdd}% of earnings from each invited friend";
         }
     }
 }

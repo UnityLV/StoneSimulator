@@ -1,9 +1,11 @@
-﻿using GameState.Interfaces;
+﻿using GameScene;
+using GameState.Interfaces;
 using InGameUI.Interfaces;
 using MainMenuUI;
 using MainMenuUI.Inrefaces;
 using MongoDBCustom;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace GlobalUI
@@ -11,9 +13,13 @@ namespace GlobalUI
     public class GlobalGameUIController : MonoBehaviour
     {
         [SerializeField] private LocationWindowManager _locationWindow;
-
+     
+        [SerializeField] private UnityEvent _onEnterCompleteLocation;
+        [SerializeField] private UnityEvent _onEnterInProgressLocation;
+   
+        
+        
         #region Dependency
-
         private IInGameService _inGameService;
         private IMainMenuService _mainMenuService;
         private IGameStateService _gameStateService;
@@ -58,6 +64,7 @@ namespace GlobalUI
                 _inGameService.SetState(true, true);
                 _mainMenuService.SetState(false);
                 _gameStateService.TryStartGame();
+                _onEnterInProgressLocation?.Invoke();
             });
 
             _mainMenuService.SetOnCompleteLocationClickAction((locationId) =>
@@ -72,6 +79,7 @@ namespace GlobalUI
             _gameStateService.TryWatchLocation(x);
             _allClickSaver.Save();
             _referrerClicks.Save();
+            _onEnterCompleteLocation?.Invoke();
         }
     }
 }
