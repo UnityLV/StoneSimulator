@@ -21,6 +21,7 @@ namespace Installers
 {
     public class GameSceneLocationInstaller : MonoInstaller
     {
+        [SerializeField] private AbilityClickEffectDataHolder _abilityClickEffectDataHolder;
         [SerializeField] private InputController _inputController;
 
         [SerializeField] private LocationsObjectDataHolder _locationsObjectDataHolder;
@@ -64,14 +65,14 @@ namespace Installers
             Container.BindInterfacesAndSelfTo<AbilityClicks>().FromInstance(_abilityClicks).AsSingle();
             Container.BindInterfacesAndSelfTo<ReferrerClicks>().AsSingle();
             Container.BindInterfacesAndSelfTo<SlaveClicksCollector>().AsSingle();
-            
-            Container.Bind<IMongoConnection>().FromInstance(ValuesFromBootScene.MongoConnection).AsSingle()
-                .NonLazy(); 
-            
-            Container.Bind<IDBCommands>().FromInstance(ValuesFromBootScene.IdbCommands).AsSingle()
-                .NonLazy();
+            Container.Bind<IMongoConnection>().FromInstance(ValuesFromBootScene.MongoConnection).AsSingle().NonLazy();
+            Container.Bind<IDBCommands>().FromInstance(ValuesFromBootScene.IdbCommands).AsSingle().NonLazy();
             Container.Bind<RankData>().FromInstance(_rankData);
             Container.BindInterfacesAndSelfTo<PlayerRank>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ConstantLocationEffects>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ClickOnStoneEffects>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AbilityClickEffect>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AbilityClickEffectDataHolder>().FromInstance(_abilityClickEffectDataHolder).AsSingle();
             
         }
 

@@ -3008,6 +3008,37 @@ Transform:
   m_Father: {fileID: 8971535118095761647}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 6.3776574, y: -1.0151801, z: -17.8237}
+--- !u!1 &3909176002863173248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7755009997841679452}
+  m_Layer: 0
+  m_Name: UnderStonePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7755009997841679452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909176002863173248}
+  m_LocalRotation: {x: -0, y: -0.9562452, z: -0, w: 0.29256642}
+  m_LocalPosition: {x: -11.599999, y: -5.77, z: 22}
+  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8910549874011610835}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3909505438981546431
 GameObject:
   m_ObjectHideFlags: 0
@@ -6380,6 +6411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8910549874011610835}
   - component: {fileID: 8944738864437032208}
+  - component: {fileID: 5733333146569721545}
   m_Layer: 0
   m_Name: Stronghold
   m_TagString: Untagged
@@ -6411,6 +6443,7 @@ Transform:
   - {fileID: 7049111605163214472}
   - {fileID: 2412604154706777036}
   - {fileID: 6297829102884095465}
+  - {fileID: 7755009997841679452}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6435,6 +6468,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5733333146569721545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134469918418355305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1bd1aeb20754d129ed2cb634e5b2eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _point: {fileID: 7755009997841679452}
 --- !u!1 &8165158837744431879
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e07355b3124830a1dcc62b6a5faa8d, type: 3}
+  m_Name: Ability Click Effect Data Holder
+  m_EditorClassIdentifier: 
+  _effects:
+  - {fileID: 4040964385477513619, guid: 106e80406f0206648b7ccaf2a3d6d010, type: 3}
+  - {fileID: 6891291519092082853, guid: f8c2d4cc44c53d348a31254d6ec12242, type: 3}
+  - {fileID: 2459771594855473814, guid: 03be0a2ec8733ac428ca09da018c21b5, type: 3}
+  _topEffects:
+  - {fileID: 2348986143147364520, guid: 8c6cde8dbb8347aab27e692b0c8d4032, type: 3}
+  - {fileID: 5882814825712509882, guid: 3b137983b63d4a649f04205ef84161a2, type: 3}
+  - {fileID: 1209399627295410835, guid: 3c939a5701dd4995afb650f83410bbd7, type: 3}
