@@ -28,81 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/AbilityClickEffectDataHolder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/AbilityClickEffectDataHolder.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/ClickOnStoneEffects.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/ClickOnStoneEffects.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/ConstantLocationEffects.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/ConstantLocationEffects.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/GroundEffectPoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/GroundEffectPoint.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/ScaleOnEnable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/ScaleOnEnable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/StoneClickEffectPoints.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/StoneClickEffectPoints.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/UltimateClickEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/UltimateClickEffect.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/StoneCastle/Prefab/StoneCastle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/StoneCastle/Prefab/StoneCastle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Stronghold/Prefab/Stronghold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Stronghold/Prefab/Stronghold.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/mobile-home/source/mobile_home.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/mobile-home/source/mobile_home.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/VFX_lab_HyperCasualFX.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/VFX_lab_HyperCasualFX.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/VFX_lab_HyperCasualFX_Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/VFX_lab_HyperCasualFX_Player.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/2.5.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/2.5.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/3.2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/3.2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_01_Step1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_01_Step1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_01_Step2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_01_Step2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_01_Step3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_01_Step3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_02_Step1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_02_Step1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_02_Step2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_02_Step2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_02_Step3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Charging_02_Step3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_02_Air.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_02_Air.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_03.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Explosion_03.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Poison_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Poison_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Poison_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Poison_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_03.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_03.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_04.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_04.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_06.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_06.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_07.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/HCFX_Shine_07.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/VFX_Lab/PostProcess Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/VFX_Lab/PostProcess Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/VFX_Lab/VFX_Lab_HyperCasualFX.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/VFX_Lab/VFX_Lab_HyperCasualFX.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mirror/Examples/MultipleAdditiveScenes/Materials/Render/PlayArea.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirror/Examples/MultipleAdditiveScenes/Materials/Render/PlayArea.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mirror/Examples/MultipleAdditiveScenes/Models/Icosphere/Materials/Icosphere.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirror/Examples/MultipleAdditiveScenes/Models/Icosphere/Materials/Icosphere.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameSceneLocationInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/LocationsObjectDataHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/LocationsObjectDataHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/LocationsObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LocationGameObjects/LocationsObjectFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,7 +295,7 @@
       <workItem from="1696869606715" duration="1516000" />
       <workItem from="1696915605706" duration="2359000" />
       <workItem from="1697630108989" duration="2591000" />
-      <workItem from="1697679140072" duration="18719000" />
+      <workItem from="1697679140072" duration="23010000" />
     </task>
     <servers />
   </component>

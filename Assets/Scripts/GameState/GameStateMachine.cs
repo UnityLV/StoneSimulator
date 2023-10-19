@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using FirebaseCustom;
 using GameScene;
 using GameState.Interfaces;
@@ -68,7 +69,6 @@ namespace GameState
         [SyncVar]
         private int _currentHealth;
 
-
         [SyncVar]
         private int _hpPerLvl;
 
@@ -83,7 +83,7 @@ namespace GameState
         private const string HEALTH_DATA_PATCH = "HealthData";
 
         private bool _isInGame = false;
-
+        private bool _isStoneSpawnInProgress;
         private int _locationToLoad;
 
         private readonly SyncList<List<int>> _hpList = new();
@@ -195,15 +195,18 @@ namespace GameState
             _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
             StartCoroutine(IStoneServerCallbackProcess());
-           
         }
 
         private void SetHealthPerLevel()
         {
             _hpPerLvl = ValuesFromBootScene.HealthPointPerLevel;
-            Debug .Log("SetHealthPerLevel " + _hpPerLvl);
+            Debug.Log("SetHealthPerLevel " + _hpPerLvl);
         }
-        
+
+        /// <summary>
+        /// Used for call players update data
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator IStoneServerCallbackProcess()
         {
             while (true)
@@ -226,13 +229,14 @@ namespace GameState
         [ClientRpc]
         private void OnStoneChangeOnServer()
         {
-            if (_currentHealth == default)
+            if (_currentHealth == 0)
             {
+                Debug.Log("On Stone Change On Server " + _currentHealth);
                 return;
             }
 
-            Debug.Log("OnStoneChangeOnServer stone" + _currentStone);
-            Debug.Log("OnStoneChangeOnServer health" + _currentHealth);
+            Debug.Log("Stone Change On Server stone" + _currentStone);
+            Debug.Log("Stone Change On Server health" + _currentHealth);
             _stoneAnimatorEventsInvoke.OnStoneDestroyPlayInvoke();
 
             if (_currentStone < _getLocationCountService.GetStoneCount(_currentLocation) - 1)
@@ -243,13 +247,14 @@ namespace GameState
             else
             {
                 _currentStone = 0;
-                _currentLocation = _currentLocation < _getLocationCountService.GetLocationsCount() - 1
-                    ? _currentLocation + 1
-                    : 0;
+                _currentLocation = _currentLocation < _getLocationCountService.GetLocationsCount() - 1 ?
+                    _currentLocation + 1 :
+                    0;
                 _locationSpawner.SpawnLocationObjects(_currentLocation);
                 _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
                 OnLocationChanged?.Invoke();
             }
+
             Debug.Log("OnStoneChangeOnServer " + _currentHealth);
 
             _healthBarUIService.UpdateHealthBarState(_currentHealth, _currentHealth);
@@ -258,12 +263,20 @@ namespace GameState
             OnHealthChanged?.Invoke();
         }
 
-        private void NextStone()
+        private async void NextStone()
         {
             if (!_isInGame && !isServer)
                 return;
 
-            _stoneAnimatorEventsInvoke.OnStoneDestroyPlayInvoke();
+            if (_isStoneSpawnInProgress)
+            {
+                return;
+            }
+
+            _isStoneSpawnInProgress = true;
+            OnStoneStartChangingOnServer();
+            await Task.Delay(5000);
+            
             if (_currentStone < _getLocationCountService.GetStoneCount(_currentLocation) - 1)
             {
                 _currentStone += 1;
@@ -273,9 +286,9 @@ namespace GameState
             else
             {
                 _currentStone = 0;
-                _currentLocation = _currentLocation < _getLocationCountService.GetLocationsCount() - 1
-                    ? _currentLocation + 1
-                    : 0;
+                _currentLocation = _currentLocation < _getLocationCountService.GetLocationsCount() - 1 ?
+                    _currentLocation + 1 :
+                    0;
                 _locationSpawner.SpawnLocationObjects(_currentLocation);
                 _stoneSpawner.SpawnStoneObject(_currentLocation, _currentStone);
                 OnLocationChanged?.Invoke();
@@ -286,6 +299,13 @@ namespace GameState
             Debug.Log("NextStone new health " + _currentHealth);
             OnHealthChanged?.Invoke();
             OnStoneChangeOnServer();
+            _isStoneSpawnInProgress = false;
+        }
+
+        [ClientRpc]
+        private void OnStoneStartChangingOnServer()
+        {
+            Debug.Log("OnStoneStartChangingOnServer " + _currentHealth);
         }
 
         private void OnStoneClick(int damage) //3
@@ -306,6 +326,7 @@ namespace GameState
             {
                 return;
             }
+
             OnTakeDamage(damage);
             _healthBarUIService.UpdateHealthBarState(_currentHealth, GetHealth(_currentLocation, _currentStone));
 
@@ -315,7 +336,7 @@ namespace GameState
         private void OnTakeDamage(int damage) // 1
         {
             Debug.Log("Current health " + _currentHealth);
-         
+
             OnHealthChanged?.Invoke();
         }
 
@@ -348,7 +369,7 @@ namespace GameState
         private void TargetCallbackOnClick(NetworkConnectionToClient target, int damage) // 7
         {
             Debug.Log("TargetCallbackOnClick " + damage);
-            Debug.Log("TargetCallbackOnClick health " +_currentHealth);
+            Debug.Log("TargetCallbackOnClick health " + _currentHealth);
             OnStoneClick(damage);
         }
 
@@ -361,8 +382,6 @@ namespace GameState
             OnStoneClickNetwork(clearCount);
             _countDamageAfterCallback = 0;
         }
-
-    
 
         private void SaveData()
         {
@@ -401,8 +420,10 @@ namespace GameState
                     for (int j = 0; j < _getLocationCountService.GetStoneCount(i); j++)
                         _healthData.Healths[i].Array.Add(GetHealthLvl(j));
                 }
+
                 _healthSaveSystem.Save(_healthData);
             }
+
             _hpList.Clear();
 
             for (int i = 0; i < _healthData.Healths.Count; i++)
@@ -410,7 +431,9 @@ namespace GameState
                 _hpList.Add(_healthData.Healths[i].Array);
             }
 
-            _currentHealth = (_stoneData.CurrentHealth != 0) ? _stoneData.CurrentHealth : _hpPerLvl * (_currentStone + 1);
+            _currentHealth = (_stoneData.CurrentHealth != 0) ?
+                _stoneData.CurrentHealth :
+                _hpPerLvl * (_currentStone + 1);
             Debug.Log("LoadHealth " + _currentHealth);
         }
 
@@ -528,7 +551,9 @@ namespace GameState
         {
             _currentLocation = location;
             _currentStone = stone;
-            _currentHealth = (_stoneData.CurrentHealth != 0) ? _stoneData.CurrentHealth : _hpPerLvl * (_currentStone + 1);
+            _currentHealth = (_stoneData.CurrentHealth != 0) ?
+                _stoneData.CurrentHealth :
+                _hpPerLvl * (_currentStone + 1);
             SaveData();
             AllLoadGameTarget(_currentLocation, _currentStone);
             AllStartGameTarget();
