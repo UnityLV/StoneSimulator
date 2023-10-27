@@ -1,4 +1,5 @@
-﻿using Stone.Interfaces;
+﻿using System.Threading.Tasks;
+using Stone.Interfaces;
 using UnityEngine;
 using Zenject;
 
@@ -8,6 +9,8 @@ namespace Stone
     {
         [SerializeField]
         private Animator _stoneAnimator;
+
+        [SerializeField] private GameObject _spawnEffect;
 
         private static readonly int spawn = Animator.StringToHash("Spawn");
         private static readonly int click = Animator.StringToHash("Click");
@@ -30,7 +33,6 @@ namespace Stone
 
         #endregion
 
-
         private void ClickAnimationPlay()
         {
             // if (_scaleCoroutine != null) StopCoroutine(_scaleCoroutine);
@@ -38,6 +40,13 @@ namespace Stone
             _stoneAnimator.SetTrigger(click);
         }
 
+        private void Start()
+        {
+            Debug.Log("SpawnAnimationPlay");
+            Instantiate(_spawnEffect);
+        }
+
+        //Eta hueta ne vizivaetca, pochemy HZ
         private void SpawnAnimationPlay()
         {
             _stoneAnimator.SetTrigger(spawn);
@@ -45,6 +54,7 @@ namespace Stone
 
         private void DestroyAnimationPlay()
         {
+            Debug.Log("DestroyAnimationPlay");
             _stoneAnimator.SetTrigger(destroy);
         }
 
@@ -69,6 +79,5 @@ namespace Stone
         {
             _stoneAnimatorCallbackInvoke.OnStoneSpawnedInvoke();
         }
-
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using FirebaseCustom;
 using GameScene;
 using GameState.Interfaces;
@@ -83,7 +82,7 @@ namespace GameState
         private const string HEALTH_DATA_PATCH = "HealthData";
 
         private bool _isInGame = false;
-        private bool _isStoneSpawnInProgress;
+
         private int _locationToLoad;
 
         private readonly SyncList<List<int>> _hpList = new();
@@ -229,6 +228,13 @@ namespace GameState
         [ClientRpc]
         private void OnStoneChangeOnServer()
         {
+            _stoneAnimatorEventsInvoke.OnStoneDestroyPlayInvoke();
+            Debug.Log("!!!! NEW STONE !!!!");
+            SpawnNewStone();
+        }
+
+        private void SpawnNewStone()
+        {
             if (_currentHealth == 0)
             {
                 Debug.Log("On Stone Change On Server " + _currentHealth);
@@ -237,7 +243,6 @@ namespace GameState
 
             Debug.Log("Stone Change On Server stone" + _currentStone);
             Debug.Log("Stone Change On Server health" + _currentHealth);
-            _stoneAnimatorEventsInvoke.OnStoneDestroyPlayInvoke();
 
             if (_currentStone < _getLocationCountService.GetStoneCount(_currentLocation) - 1)
             {
@@ -263,20 +268,11 @@ namespace GameState
             OnHealthChanged?.Invoke();
         }
 
-        private async void NextStone()
+        private void NextStone() //Call on server
         {
             if (!_isInGame && !isServer)
                 return;
 
-            if (_isStoneSpawnInProgress)
-            {
-                return;
-            }
-
-            _isStoneSpawnInProgress = true;
-            OnStoneStartChangingOnServer();
-            await Task.Delay(5000);
-            
             if (_currentStone < _getLocationCountService.GetStoneCount(_currentLocation) - 1)
             {
                 _currentStone += 1;
@@ -299,13 +295,6 @@ namespace GameState
             Debug.Log("NextStone new health " + _currentHealth);
             OnHealthChanged?.Invoke();
             OnStoneChangeOnServer();
-            _isStoneSpawnInProgress = false;
-        }
-
-        [ClientRpc]
-        private void OnStoneStartChangingOnServer()
-        {
-            Debug.Log("OnStoneStartChangingOnServer " + _currentHealth);
         }
 
         private void OnStoneClick(int damage) //3
