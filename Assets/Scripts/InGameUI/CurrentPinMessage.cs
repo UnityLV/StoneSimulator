@@ -20,16 +20,16 @@ namespace ChatDB.PinMessage
 
         private void Start()
         {
-            GetCurrentPinMessage();
+            SetCurrentPinMessage();
         }
         
         public async void UpdatePinMessage()
         {
             await Task.Delay(1000);
-            GetCurrentPinMessage();
+            SetCurrentPinMessage();
         }
 
-        private async void GetCurrentPinMessage()
+        private async void SetCurrentPinMessage()
         {
             PinMessageData message = await _idbCommands.GetPinnedMessageAsync();
 
