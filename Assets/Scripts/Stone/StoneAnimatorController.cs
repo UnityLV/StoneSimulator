@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Stone.Interfaces;
 using UnityEngine;
 using Zenject;
@@ -7,6 +8,7 @@ namespace Stone
 {
     public class StoneAnimatorController : MonoBehaviour, IStoneAnimatorCallbackInvoke
     {
+
         [SerializeField]
         private Animator _stoneAnimator;
 
@@ -46,7 +48,7 @@ namespace Stone
             Instantiate(_spawnEffect);
         }
 
-        //Eta hueta ne vizivaetca, pochemy HZ
+        //Eta *** ne vizivaetca, pochemy HZ (bqs vizivaetsa on default on spawn object in animator)
         private void SpawnAnimationPlay()
         {
             _stoneAnimator.SetTrigger(spawn);

@@ -29,27 +29,56 @@
   <component name="ChangeListManager">
     <list default="true" id="02b085e7-02a3-4890-990f-46c613084067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StoneSimulatorMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Animation/DefaultAnimatorController/StoneAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Animation/DefaultAnimatorController/StoneAnimationController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Geodesic/Prefab/Geodesic.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Geodesic/Prefab/Geodesic.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Stone2_1/Prefab/Stone2_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Stone2_1/Prefab/Stone2_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Stone2_2/Prefab/Stone2_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Stone2_2/Prefab/Stone2_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Stone2_3/Prefab/Stone2_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Stone2_3/Prefab/Stone2_3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Stone3_1/Prefab/Stone3_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Stone3_1/Prefab/Stone3_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Stone3_2/Prefab/Stone3_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Stone3_2/Prefab/Stone3_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Stone3_3/Prefab/Stone3_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Stone3_3/Prefab/Stone3_3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/StoneCastle/Prefab/StoneCastle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/StoneCastle/Prefab/StoneCastle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/magic-gyroscope/Prefab/magic-gyroscope.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/magic-gyroscope/Prefab/magic-gyroscope.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/Animator.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/Animator/GlassSphereAnimator.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/Animator/GlassSphereAnimator.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/Prefab/SnowGlobewith snowanim.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/Prefab/SnowGlobewith snowanim.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/material/Background 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/material/Background 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/material/Background.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/material/Background.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/material/BaseMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/material/BaseMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/source.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/source/SnowGlobewith snowanim.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/source/SnowGlobewith snowanim.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/Panorama_6144x3072_(3) 1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/Panorama_6144x3072_(3) 1.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/jIJ1Onpk_360Image_Albedo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/jIJ1Onpk_360Image_Albedo.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/jIJ1Onpk_360Image_Opacity.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/jIJ1Onpk_360Image_Opacity.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_AO.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_AO.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Albedo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Albedo.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_BumpMap.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_BumpMap.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Cavity.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Cavity.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Displacement.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Displacement.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Glossiness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Glossiness.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_NormalMap.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_NormalMap.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Roughness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Roughness.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Specular.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/evening-horizon-sphere-cloud-atlas-v13/textures/w3EDbzJD_Base_Specular.jpg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.6.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.6.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.7.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.7.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.8.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Prefabs/Hyper Casual FX/1.8.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/Mat_fx_HCFX_set_add.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/Mat_fx_HCFX_set_add.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/Mat_fx_HCFX_set_apb.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/VFX_Klaus/Materials/Mat_fx_HCFX_set_apb.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputService/CameraInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputService/CameraInput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stone/StoneAnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +109,13 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.0/Runtime/VisualScripting.State/StateMachine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/14/e31f847d/UnityEventQueueSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/21/2fb0ed21/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/44/4f95dfaf/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/69/aefbbad1/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/6d/e0b54645/ObjectPool`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/78/50b50caf/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/7b/b9d4c9ef/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/b6/16d2ed73/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/c7/f6990e7c/NetworkConnectionError.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/c8/f6f16fa1/LogType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/e9/94ecbf82/SystemInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120b8d04add741329ccd415c000fb66615ac00/fc/44ed170f/DeviceType.cs" root0="SKIP_HIGHLIGHTING" />
@@ -145,29 +179,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "do_not_show_Android_plugin_suggestion": "true",
-    "git-widget-placeholder": "newMain",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;do_not_show_Android_plugin_suggestion&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;newMain&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\vazil\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\vazil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\vazil\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Downloads/StoneServer\StoneSimulator.exe" />
@@ -317,7 +351,8 @@
       <workItem from="1697630108989" duration="2591000" />
       <workItem from="1697679140072" duration="23010000" />
       <workItem from="1697792293458" duration="654000" />
-      <workItem from="1698417197874" duration="3528000" />
+      <workItem from="1698417197874" duration="6360000" />
+      <workItem from="1698574468825" duration="254000" />
     </task>
     <servers />
   </component>
